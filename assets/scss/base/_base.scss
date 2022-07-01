@@ -1,0 +1,54 @@
+/******* GÉNÉRAL *******/
+
+// DEBUG
+// * {
+//     outline: 1px solid red;
+// }
+
+::-moz-selection {
+    background: rgba(#000, 0.99);
+    color: $white;
+    text-shadow: none;
+}
+::selection {
+    background: rgba(#000, 0.99);
+    color: $white;
+    text-shadow: none;
+}
+
+:root {
+    --scroll-top: 0px;
+}
+
+html {
+    font-size: 62.5%; /* sets the base font to 10px for easier math */
+    background-color: #000;
+    &.no-scroll {
+        position: fixed;
+        overflow: hidden;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: var(--scroll-top);
+    }
+}
+
+body {
+    font: 1.6em / 1.63 sans-serif;
+    font-kerning: normal;
+    font-weight: 400;
+    color: $white;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.resize-animation-stopper * {
+    animation: none !important;
+    transition: none !important;
+    &::before,
+    &::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
