@@ -1,0 +1,32 @@
+/* Forms */
+
+input,
+textarea,
+select,
+button {
+    &:focus {
+        outline: 0;
+    }
+}
+
+input,
+textarea {
+    &:-webkit-autofill {
+        box-shadow: 0 0 0 1000px #fff inset;
+    }
+    &:invalid {
+        // FF red borders
+        box-shadow: none;
+    }
+}
+
+select {
+    // hide the arrow on edge + ie
+    &::-ms-expand {
+        display: none;
+    }
+}
+
+button {
+    border: 0;
+}
