@@ -16,13 +16,9 @@
     text-shadow: none;
 }
 
-:root {
-    --scroll-top: 0px;
-}
-
 html {
     font-size: 62.5%; /* sets the base font to 10px for easier math */
-    background-color: $primary;
+    background-color: $secondary;
     &.no-scroll {
         position: fixed;
         overflow: hidden;
@@ -37,7 +33,7 @@ body {
     font: 1.6em / 1.1 "ABC Repro", sans-serif;
     font-kerning: normal;
     font-weight: 400;
-    color: $secondary;
+    color: $primary;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -51,4 +47,18 @@ body {
         animation: none !important;
         transition: none !important;
     }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+.title {
+    font-size: 4rem;
+    line-height: 50px;
 }
