@@ -32,11 +32,13 @@ html {
 body {
     font: 1.6em / 1.1 "ABC Repro", sans-serif;
     font-kerning: normal;
+    font-feature-settings: "ss01";
     font-weight: 400;
     color: $primary;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 .resize-animation-stopper * {
@@ -57,8 +59,19 @@ h5,
 h6 {
     font-weight: 400;
 }
-
+.wrapper-animation {
+    padding: 100px 0;
+}
+.hero-title {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 0 100px;
+}
 .title {
     font-size: 4rem;
     line-height: 50px;
+    width: percentage(4/6);
+    span {
+        font-feature-settings: "ss16";
+    }
 }
