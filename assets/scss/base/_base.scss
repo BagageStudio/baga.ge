@@ -68,11 +68,17 @@ h6 {
     justify-content: flex-end;
     margin: 0 0 100px;
 }
-.title {
+.wrapper-title {
+    position: relative;
+    width: percentage(math.div(4, 6));
     font-size: 4rem;
     line-height: 50px;
-    width: percentage(math.div(4, 6));
-    span {
-        font-feature-settings: "ss16";
-    }
+}
+.subtitle {
+    position: absolute;
+    width: 25%;
+    font-feature-settings: "ss16";
+}
+.title {
+    text-indent: calc(25% + (var(--gutter) / 2));
 }
