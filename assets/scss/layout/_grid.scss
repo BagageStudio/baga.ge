@@ -2,7 +2,8 @@
 
 .container {
     width: 100%;
-    padding: 0 var(--gutter-out);
+    padding-left: var(--gutter-out);
+    padding-right: var(--gutter-out);
     margin: 0 auto;
 }
 

@@ -142,3 +142,21 @@ h6 {
     text-decoration: none;
     color: $primary;
 }
+
+.footer {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    > a {
+        margin-left: 25px;
+        text-decoration: none;
+        color: $primary;
+    }
+}
