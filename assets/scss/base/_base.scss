@@ -33,7 +33,7 @@ html {
 body {
     font: 1.6em / 1.1 "ABC Repro", sans-serif;
     font-kerning: normal;
-    font-feature-settings: "ss01";
+    font-feature-settings: "ss01", "ss13";
     font-weight: 400;
     color: $primary;
     overflow-x: hidden;
