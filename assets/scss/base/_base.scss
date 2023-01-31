@@ -67,10 +67,12 @@ h6 {
     position: relative;
     font-size: 4rem;
     line-height: 50px;
+    .subtitle {
+        position: absolute;
+        width: 25%;
+    }
 }
 .subtitle {
-    position: absolute;
-    width: 25%;
     font-feature-settings: "ss16";
 }
 .small-title {
@@ -124,4 +126,19 @@ h6 {
 }
 .bio {
     margin-bottom: 50px;
+}
+
+.contact {
+    text-align: center;
+    padding: 150px 0;
+    .subtitle {
+        display: block;
+        font-size: 4rem;
+    }
+}
+.mail {
+    font-size: 9.6rem;
+    line-height: 140px;
+    text-decoration: none;
+    color: $primary;
 }
