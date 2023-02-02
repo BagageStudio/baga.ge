@@ -2,13 +2,15 @@
 
 :root {
     --scroll-top: 0px;
-    --gutter: 20px;
+    --gutter: 40px;
     --gutter-out: 60px;
+    --gutter-out-monolith: 20px;
 }
 
 // Colors 🎨
 $white: #ffffff;
 $primary: #f24f2b;
+$primary-light: #f6836a;
 $secondary: #e8e0d9;
 
 // Grids variables 📐
