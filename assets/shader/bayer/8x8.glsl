@@ -1,0 +1,75 @@
+float dither8x8(vec2 position,float brightness){
+    int x=int(mod(position.x,8.));
+    int y=int(mod(position.y,8.));
+    int index=x+y*8;
+    float limit=0.;
+    
+    if(x<8){
+        if(index==0)limit=.015625;
+        if(index==1)limit=.515625;
+        if(index==2)limit=.140625;
+        if(index==3)limit=.640625;
+        if(index==4)limit=.046875;
+        if(index==5)limit=.546875;
+        if(index==6)limit=.171875;
+        if(index==7)limit=.671875;
+        if(index==8)limit=.765625;
+        if(index==9)limit=.265625;
+        if(index==10)limit=.890625;
+        if(index==11)limit=.390625;
+        if(index==12)limit=.796875;
+        if(index==13)limit=.296875;
+        if(index==14)limit=.921875;
+        if(index==15)limit=.421875;
+        if(index==16)limit=.203125;
+        if(index==17)limit=.703125;
+        if(index==18)limit=.078125;
+        if(index==19)limit=.578125;
+        if(index==20)limit=.234375;
+        if(index==21)limit=.734375;
+        if(index==22)limit=.109375;
+        if(index==23)limit=.609375;
+        if(index==24)limit=.953125;
+        if(index==25)limit=.453125;
+        if(index==26)limit=.828125;
+        if(index==27)limit=.328125;
+        if(index==28)limit=.984375;
+        if(index==29)limit=.484375;
+        if(index==30)limit=.859375;
+        if(index==31)limit=.359375;
+        if(index==32)limit=.0625;
+        if(index==33)limit=.5625;
+        if(index==34)limit=.1875;
+        if(index==35)limit=.6875;
+        if(index==36)limit=.03125;
+        if(index==37)limit=.53125;
+        if(index==38)limit=.15625;
+        if(index==39)limit=.65625;
+        if(index==40)limit=.8125;
+        if(index==41)limit=.3125;
+        if(index==42)limit=.9375;
+        if(index==43)limit=.4375;
+        if(index==44)limit=.78125;
+        if(index==45)limit=.28125;
+        if(index==46)limit=.90625;
+        if(index==47)limit=.40625;
+        if(index==48)limit=.25;
+        if(index==49)limit=.75;
+        if(index==50)limit=.125;
+        if(index==51)limit=.625;
+        if(index==52)limit=.21875;
+        if(index==53)limit=.71875;
+        if(index==54)limit=.09375;
+        if(index==55)limit=.59375;
+        if(index==56)limit=1.;
+        if(index==57)limit=.5;
+        if(index==58)limit=.875;
+        if(index==59)limit=.375;
+        if(index==60)limit=.96875;
+        if(index==61)limit=.46875;
+        if(index==62)limit=.84375;
+        if(index==63)limit=.34375;
+    }
+    
+    return brightness<limit?0.:1.;
+}

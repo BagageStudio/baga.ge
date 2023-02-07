@@ -42,6 +42,19 @@ body {
     text-rendering: optimizeLegibility;
 }
 
+#c {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    z-index: -1;
+    > canvas {
+        image-rendering: pixelated;
+    }
+}
+
 .resize-animation-stopper * {
     animation: none !important;
     transition: none !important;
@@ -66,9 +79,10 @@ p {
     line-height: 29px;
 }
 
-.wrapper-animation {
-    padding: 100px 0;
+.home {
+    padding-top: 33vw;
 }
+
 .wrapper-title {
     position: relative;
     font-size: 4.5rem;
