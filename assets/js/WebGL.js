@@ -2,9 +2,6 @@ import resolveLygia from "https://lygia.xyz/resolve.esm.js";
 
 import {
     Renderer,
-    Camera,
-    Transform,
-    Plane,
     Triangle,
     Program,
     Mesh,
@@ -18,15 +15,13 @@ import { gsap } from "gsap";
 import { SlowMo } from "gsap/EasePack";
 gsap.registerPlugin(SlowMo);
 
-import { lerp, map } from "./utils.js";
+import { lerp } from "./utils.js";
 
 import planeFragment from "../shader/planeFragment.glsl";
 import planeVertex from "../shader/planeVertex.glsl";
 import post from "../shader/post.glsl";
 
 import planeImage from "../img/repro-black.png";
-
-// const planeImage = new URL("img/repro-black.png", import.meta.url);
 
 class WebGL {
     constructor() {
@@ -77,6 +72,7 @@ class WebGL {
                 tMap: { value: texture },
                 uPlaneSizes: { value: [0, 0] },
                 uImageSizes: { value: [0, 0] },
+                uTextGutter: { value: 0 },
                 uResolution: this.resolution,
                 uTime: { value: 0 },
                 pixelated: { value: 0 },
@@ -171,6 +167,7 @@ class WebGL {
      */
     onResize() {
         this.resolution = { value: new Vec2() };
+        this.textGutter = 120;
 
         this.screen = {
             height: window.innerHeight,
@@ -227,6 +224,8 @@ class WebGL {
         );
 
         this.fullscreenShader.program.uniforms.uResolution = this.resolution;
+        this.fullscreenShader.program.uniforms.uTextGutter.value =
+            this.textGutter;
         this.fullscreenShader.program.uniforms.uTime.value += 0.04;
         this.fullscreenShader.program.uniforms.uAppear.value =
             this.params.appearTween;

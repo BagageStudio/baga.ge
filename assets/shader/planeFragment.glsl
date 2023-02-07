@@ -2,6 +2,7 @@ precision highp float;
 
 uniform vec2 uImageSizes;
 uniform vec2 uResolution;
+uniform float uTextGutter;
 uniform vec2 uPlaneSizes;
 uniform sampler2D tMap;
 
@@ -27,12 +28,18 @@ float maxScaleY=.4;
 float minScaleY=3.8;
 
 vec4 typo(){
+    
     vec2 resolution=vec2(gl_FragCoord.xy/vUv.xy);
     
     float textureAspect=uImageSizes.x/uImageSizes.y;
     float frameAspect=uResolution.x/uResolution.y;
     float textureFrameRatio=textureAspect/frameAspect;
+    
+    // Gutter is 120px , to have it in shader space we're doing 120/window.innerWidth
+    float gutter=uTextGutter/uResolution.x;
+    
     vec2 textureScale=vec2(1.,textureFrameRatio);
+    textureScale=textureScale*(1.+gutter);
     
     vec2 uv=textureScale*(vUv-.5)+.5;
     
