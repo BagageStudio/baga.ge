@@ -16,18 +16,18 @@ export function CreateScroll() {
 
 export function CreateProjectsAnimation() {
     // OPACITY PROJECTS
-    const projects = document.querySelectorAll(".project");
-    [...projects].forEach((project) => {
-        gsap.to(project, {
-            scrollTrigger: {
-                trigger: project,
-                scrub: true,
-                start: "top 90%",
-                end: "top 50%",
-            },
-            opacity: 1,
-        });
-    });
+    // const projects = document.querySelectorAll(".project");
+    // [...projects].forEach((project) => {
+    //     gsap.to(project, {
+    //         scrollTrigger: {
+    //             trigger: project,
+    //             scrub: true,
+    //             start: "top 90%",
+    //             end: "top 50%",
+    //         },
+    //         opacity: 1,
+    //     });
+    // });
 
     // DRAWING LINES
     const lines = document.querySelectorAll(".overflow-line");
@@ -36,11 +36,11 @@ export function CreateProjectsAnimation() {
             scrollTrigger: {
                 trigger: line,
                 scrub: true,
-                start: "top 80%",
-                end: "top 50%",
-                markers: true,
+                start: "top 100%",
+                end: "top 20%",
             },
             width: 0,
+            ease: "power4.inOut",
         });
     });
 
