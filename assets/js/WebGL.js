@@ -256,18 +256,6 @@ class WebGL {
     addEventListeners() {
         window.addEventListener("resize", this.onResize.bind(this));
         window.addEventListener("mousemove", this.onMouseMove.bind(this));
-
-        /* EVENTS FOR SCROLL */
-        // window.addEventListener("mousewheel", this.onWheel.bind(this));
-        // window.addEventListener("wheel", this.onWheel.bind(this));
-
-        // window.addEventListener("mousedown", this.onTouchDown.bind(this));
-        // window.addEventListener("mousemove", this.onTouchMove.bind(this));
-        // window.addEventListener("mouseup", this.onTouchUp.bind(this));
-
-        // window.addEventListener("touchstart", this.onTouchDown.bind(this));
-        // window.addEventListener("touchmove", this.onTouchMove.bind(this));
-        // window.addEventListener("touchend", this.onTouchUp.bind(this));
     }
 }
 

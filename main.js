@@ -1,12 +1,20 @@
 import "./assets/scss/main.scss";
-import WebGL from "./assets/js/WebGL";
 
-const gridEl = document.getElementById("grid");
+import { gsap } from "gsap";
 
-document.addEventListener("keydown", (e) => {
-    const keyName = e.key;
-    if (keyName !== "g" || !e.ctrlKey) return;
-    gridEl.classList.toggle("hide");
-});
+import CreateWebGL from "./assets/js/WebGL";
+import CreateGrid from "./assets/js/grid";
+import { CreateScroll, CreateProjectsAnimation } from "./assets/js/scroll";
 
-const gl = new WebGL();
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+
+const { lenis } = CreateScroll();
+const gl = new CreateWebGL();
+CreateProjectsAnimation();
+
+CreateGrid();
+
+requestAnimationFrame(raf);
