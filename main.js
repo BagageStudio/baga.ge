@@ -2,9 +2,13 @@ import "./assets/scss/main.scss";
 
 import { gsap } from "gsap";
 
-import CreateWebGL from "./assets/js/WebGL";
+import WebGl from "./assets/js/WebGL";
 import CreateGrid from "./assets/js/grid";
-import { CreateScroll, CreateProjectsAnimation } from "./assets/js/scroll";
+import {
+    CreateScroll,
+    CreateProjectsAnimation,
+    CreateHelloAnimation,
+} from "./assets/js/scroll";
 
 function raf(time) {
     lenis.raf(time);
@@ -12,7 +16,7 @@ function raf(time) {
 }
 
 const { lenis } = CreateScroll();
-const gl = new CreateWebGL();
+CreateHelloAnimation();
 CreateProjectsAnimation();
 
 CreateGrid();

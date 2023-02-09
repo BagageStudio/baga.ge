@@ -4,6 +4,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SlowMo } from "gsap/EasePack";
 
+import WebGl from "./WebGL";
+
 export function CreateScroll() {
     gsap.registerPlugin(ScrollTrigger, SlowMo);
 
@@ -15,21 +17,92 @@ export function CreateScroll() {
 }
 
 export function CreateProjectsAnimation() {
-    // OPACITY PROJECTS
-    // const projects = document.querySelectorAll(".project");
-    // [...projects].forEach((project) => {
-    //     gsap.to(project, {
-    //         scrollTrigger: {
-    //             trigger: project,
-    //             scrub: true,
-    //             start: "top 90%",
-    //             end: "top 50%",
-    //         },
-    //         opacity: 1,
-    //     });
-    // });
+    /** --- SMOOTH STICKY --- **/
+    /**
+     * VVO = Vertical Offset we want Visually
+     *     = The offset that was initially in the CSS "top" on the "position: sticky" element ) : 150px
+     *     = 150px
+     *
+     * ED  = Easing Distance
+     *     = The distance the element should translate up to smooth the sticky. The larger the smoother
+     *     = 200px
+     *
+     * PPT = Parent Padding Top (optionnal)
+     *     = In our case we are watching the parent (#projectsMonolith) entering and leaving the screen.
+     *       If it has a padding top we should keep it in mind for our calculations
+     *     = 130px
+     *
+     * PPB = Parent Padding Bottom (optionnal)
+     *     = In our case we are watching the parent (#projectsMonolith) entering and leaving the screen.
+     *       If it has a padding bottom we should keep it in mind for our calculations
+     *     = 200px
+     *
+     * H   = Sticky Element Height
+     *     = Computed from javascript, we're using it like this ${stickyElement.offsetHeight} to have it dynamic (auto recalculate on resize)
+     *
+     * With these 3 values we can set the parameters:
+     *
+     * CSS "top" on the sticky element
+     *     = VVO + ED
+     *
+     * CSS "padding-bottom" on the sticky element
+     *     = ED
+     *
+     * scrollTrigger In "start" param
+     *     = VVO + ED - PPT
+     *
+     * scrollTrigger In "end" param
+     *     = -ED
+     *
+     * scrollTrigger In "y" transform
+     *     = -ED
+     *
+     * scrollTrigger Out "start" param. Use a function to have the H dynamic (auto recalculate on resize)
+     *     = VVO + ED + PPB + H
+     *
+     * scrollTrigger Out "end" param
+     *     = PPB
+     *
+     * scrollTrigger Out "y" transform
+     *     = ED
+     *
+     */
 
-    // DRAWING LINES
+    const stickyElement =
+        document.getElementById("projectsTitle").parentElement;
+
+    /** --- SMOOTH STICKY IN --- **/
+    gsap.to("#projectsTitle", {
+        scrollTrigger: {
+            trigger: "#projectsMonolith",
+            scrub: true,
+            start: "top 220px",
+            end: "top -200px",
+        },
+        y: -200,
+        ease: "sine.out",
+    });
+
+    /** --- SMOOTH STICKY OUT --- **/
+    gsap.fromTo(
+        "#projectsTitle",
+        {
+            y: -200,
+        },
+        {
+            scrollTrigger: {
+                trigger: "#projectsMonolith",
+                scrub: true,
+                start: () => `bottom ${550 + stickyElement.offsetHeight}px`,
+                end: "bottom 200px",
+            },
+            y: 200,
+            ease: "sine.out",
+            immediateRender: false,
+        }
+    );
+
+    /** --- DRAWING LINES --- **/
     const lines = document.querySelectorAll(".overflow-line");
     [...lines].forEach((line) => {
         gsap.to(line, {
@@ -44,19 +117,7 @@ export function CreateProjectsAnimation() {
         });
     });
 
-    // SMOOTH STICKY
-    gsap.to("#projectsTitle", {
-        scrollTrigger: {
-            trigger: "#projectsTitle",
-            scrub: true,
-            start: "top 450px",
-            end: "top -350px",
-        },
-        y: 500,
-        ease: "sine.in",
-    });
-
-    // BACKGROUND EXPAND
+    /** --- BACKGROUND EXPAND --- **/
     const expandTl = gsap.timeline({
         scrollTrigger: {
             trigger: "#projectsMonolith",
@@ -65,7 +126,6 @@ export function CreateProjectsAnimation() {
             end: "bottom 70%",
         },
     });
-
     expandTl
         .to("#projectsMonolithBg", {
             duration: 1.8,
@@ -79,4 +139,26 @@ export function CreateProjectsAnimation() {
             duration: 1.4,
             scaleX: 1,
         });
+}
+
+export function CreateHelloAnimation() {
+    const logo = {
+        scaleY: 1,
+    };
+
+    const TOP_OFFSET = 120;
+
+    gsap.to(logo, {
+        scrollTrigger: {
+            trigger: "#helloMonolith",
+            scrub: true,
+            start: () => `top ${(window, (innerWidth / 100) * 19)}`,
+            end: `top ${TOP_OFFSET}`,
+            onUpdate: () => {
+                WebGl.setLogo(logo);
+            },
+        },
+        scaleY: 0,
+        ease: "power1.in",
+    });
 }

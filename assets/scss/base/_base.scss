@@ -114,6 +114,7 @@ p {
             right: 0;
             bottom: 0;
             background-color: $primary;
+            z-index: -1;
         }
     }
 }
@@ -133,6 +134,15 @@ p {
 }
 .classic-list {
     list-style: none;
+}
+
+.hello-monolith-wrapper {
+    position: relative;
+    height: 2000px;
+    .monolith {
+        position: sticky;
+        top: 120px;
+    }
 }
 
 // intro
@@ -180,7 +190,8 @@ p {
 }
 .projects-title {
     position: sticky;
-    top: -350px;
+    top: 350px;
+    padding-bottom: 200px;
     .subtitle {
         width: percentage(math.div(1, 3));
     }

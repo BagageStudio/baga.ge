@@ -44,6 +44,11 @@ class WebGL {
             appearTween: 1,
         };
 
+        this.logo = {
+            scaleY: 1,
+            y: 0,
+        };
+
         this.MAX_ANGLE = Math.PI / 8;
 
         this.createRenderer();
@@ -80,6 +85,7 @@ class WebGL {
                 dithered: { value: 0 },
                 pixelRatio: { value: 0.3 },
                 uAppear: { value: 0 },
+                uReduceScaling: { value: this.logo.scaleY },
             },
             transparent: true,
         });
@@ -230,6 +236,9 @@ class WebGL {
         this.fullscreenShader.program.uniforms.uAppear.value =
             this.params.appearTween;
 
+        this.fullscreenShader.program.uniforms.uReduceScaling.value =
+            this.logo.scaleY;
+
         this.pass.program.uniforms.uResolution = this.resolution;
         this.pass.program.uniforms.uTime.value += 0.04;
         this.pass.program.uniforms.pixelated.value = this.params.pixelated;
@@ -257,6 +266,10 @@ class WebGL {
         window.addEventListener("resize", this.onResize.bind(this));
         window.addEventListener("mousemove", this.onMouseMove.bind(this));
     }
+
+    setLogo(logo) {
+        this.logo = logo;
+    }
 }
 
-export default WebGL;
+export default new WebGL();

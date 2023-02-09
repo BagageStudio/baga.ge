@@ -13,6 +13,7 @@ uniform float pixelation;
 uniform float dithered;
 uniform float pixelRatio;
 uniform float uAppear;
+uniform float uReduceScaling;
 
 varying vec2 vUv;
 varying vec4 vWorldPos;
@@ -23,7 +24,7 @@ float map(float value,float min1,float max1,float min2,float max2){
     return min2+(value-min1)*(max2-min2)/(max1-min1);
 }
 
-float verticalOffsetFromCenter=.45;
+float verticalOffsetFromCenter=.5;
 float maxScaleY=.4;
 float minScaleY=3.8;
 
@@ -44,22 +45,27 @@ vec4 typo(){
     vec2 uv=textureScale*(vUv-.5)+.5;
     
     float verticalOffset=textureFrameRatio*verticalOffsetFromCenter;
+    uv.y=uv.y-1.;
     
-    uv.y=uv.y-verticalOffset+.5;
+    // // Making Y going from 0->1 to -1->1 so we can scale it from top and bottom at the same time
+    // // If we don't make it it'll be scaled only from top
+    // float verticalPosition=(uv.y-.5)*2.;
+    // // Offseting the position so the top stay at the top
+    // float beforeAppearingScaleY=verticalPosition*maxScaleY+.5;
+    // // Going back to 0->1 because that what the texture needs
+    // beforeAppearingScaleY=(beforeAppearingScaleY+1.)*.5;
     
-    // Making Y going from 0->1 to -1->1 so we can scale it from top and bottom at the same time
-    // If we don't make it it'll be scaled only from top
-    float verticalPosition=(uv.y-.5)*2.;
-    
+    // Making Y going from 0->1 to 1->0 so we can scale it from top
+    // If we don't make it it'll be scaled only from bottom
+    float verticalPosition=1.-uv.y;
     // Offseting the position so the top stay at the top
-    float scaleY=verticalPosition*minScaleY+.5;
-    
+    float compressedScaleY=verticalPosition*minScaleY;
     // Going back to 0->1 because that what the texture needs
-    scaleY=(scaleY+1.)*.5;
+    compressedScaleY=(compressedScaleY-1.)*-1.;
     
-    float y=mix(scaleY,uv.y,uAppear);
-    uv=vec2(uv.x,y);
+    float currentScaleY=mix(compressedScaleY,uv.y,uReduceScaling);
     
+    uv=vec2(uv.x,currentScaleY);
     vec4 color=texture2D(tMap,uv);
     
     float opacity=min(mix(uv.y-1.,uv.y+1.,uAppear),color.a);
