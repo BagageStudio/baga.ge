@@ -104,6 +104,18 @@ p {
     padding: 130px var(--gutter-out-monolith) 200px;
     background: $primary;
     color: $white;
+    &.bgless {
+        position: relative;
+        background: transparent;
+        .monolith-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: $primary;
+        }
+    }
 }
 
 // hero
@@ -201,13 +213,13 @@ p {
     bottom: 0;
     left: var(--gutter);
     right: var(--gutter);
-    border-top: 1px dashed $white;
+    border-top: 1px solid white;
 }
 .overflow-line {
     position: absolute;
     right: 100%;
     top: -1px;
-    border-top: 1px dashed $white;
+    border-top: 1px solid white;
     width: calc(100% + 80px);
     transform-origin: 100% 0;
 }

@@ -36,11 +36,11 @@ export function CreateProjectsAnimation() {
             scrollTrigger: {
                 trigger: line,
                 scrub: true,
-                start: "top 100%",
-                end: "top 20%",
+                start: "top 80%",
+                end: "top 30%",
             },
-            width: 0,
-            ease: "power4.inOut",
+            scaleX: 0,
+            ease: "power2.inOut",
         });
     });
 
@@ -49,10 +49,34 @@ export function CreateProjectsAnimation() {
         scrollTrigger: {
             trigger: "#projectsTitle",
             scrub: true,
-            start: "top 300px",
+            start: "top 450px",
             end: "top -350px",
         },
-        y: 400,
+        y: 500,
         ease: "sine.in",
     });
+
+    // BACKGROUND EXPAND
+    const expandTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#projectsMonolith",
+            scrub: true,
+            start: "top 30%",
+            end: "bottom 70%",
+        },
+    });
+
+    expandTl
+        .to("#projectsMonolithBg", {
+            duration: 1.8,
+            scaleX: 1.07,
+        })
+        .to("#projectsMonolithBg", {
+            duration: 8,
+            scaleX: 1.07,
+        })
+        .to("#projectsMonolithBg", {
+            duration: 1.4,
+            scaleX: 1,
+        });
 }
