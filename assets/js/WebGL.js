@@ -86,6 +86,7 @@ class WebGL {
                 pixelRatio: { value: 0.3 },
                 uAppear: { value: 0 },
                 uReduceScaling: { value: this.logo.scaleY },
+                uVerticalTranslation: { value: this.logo.y },
             },
             transparent: true,
         });
@@ -238,6 +239,9 @@ class WebGL {
 
         this.fullscreenShader.program.uniforms.uReduceScaling.value =
             this.logo.scaleY;
+
+        this.fullscreenShader.program.uniforms.uVerticalTranslation.value =
+            this.logo.y;
 
         this.pass.program.uniforms.uResolution = this.resolution;
         this.pass.program.uniforms.uTime.value += 0.04;

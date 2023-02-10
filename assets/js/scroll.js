@@ -144,6 +144,7 @@ export function CreateProjectsAnimation() {
 export function CreateHelloAnimation() {
     const logo = {
         scaleY: 1,
+        y: 0,
     };
 
     const TOP_OFFSET = 120;
@@ -154,11 +155,20 @@ export function CreateHelloAnimation() {
             scrub: true,
             start: () => `top ${(window, (innerWidth / 100) * 19)}`,
             end: `top ${TOP_OFFSET}`,
-            onUpdate: () => {
-                WebGl.setLogo(logo);
-            },
+            onUpdate: () => WebGl.setLogo(logo),
         },
         scaleY: 0,
         ease: "power1.in",
+    });
+    gsap.to(logo, {
+        scrollTrigger: {
+            trigger: "#helloMonolith",
+            scrub: true,
+            start: `top ${TOP_OFFSET}`,
+            end: "top top",
+            onUpdate: () => WebGl.setLogo(logo),
+        },
+        y: 1,
+        ease: "linear",
     });
 }

@@ -14,6 +14,7 @@ uniform float dithered;
 uniform float pixelRatio;
 uniform float uAppear;
 uniform float uReduceScaling;
+uniform float uVerticalTranslation;
 
 varying vec2 vUv;
 varying vec4 vWorldPos;
@@ -26,7 +27,9 @@ float map(float value,float min1,float max1,float min2,float max2){
 
 float verticalOffsetFromCenter=.5;
 float maxScaleY=.4;
+
 float minScaleY=3.8;
+float verticalTranslation=.5;
 
 vec4 typo(){
     
@@ -45,7 +48,9 @@ vec4 typo(){
     vec2 uv=textureScale*(vUv-.5)+.5;
     
     float verticalOffset=textureFrameRatio*verticalOffsetFromCenter;
-    uv.y=uv.y-1.;
+    uv.y=uv.y-verticalOffset+.5;
+    
+    uv.y-=mix(0.,verticalTranslation,uVerticalTranslation);
     
     // // Making Y going from 0->1 to -1->1 so we can scale it from top and bottom at the same time
     // // If we don't make it it'll be scaled only from top
