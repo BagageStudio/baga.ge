@@ -206,8 +206,18 @@ p {
 }
 .project {
     // opacity: 0;
+    display: block;
+    color: $white;
+    text-decoration: none;
     &:not(:last-child) {
-        margin-bottom: 120px;
+        margin-bottom: 100px;
+    }
+}
+a.project {
+    &:hover {
+        .project-arrow {
+            transform: rotate(45deg);
+        }
     }
 }
 .project-line {
@@ -230,7 +240,7 @@ p {
     transform-origin: 100% 0;
 }
 .line-content {
-    padding: 0 calc(var(--gutter) + 10px);
+    padding: 0 var(--gutter);
 }
 .wrapper-name-arrow {
     display: flex;
@@ -238,9 +248,18 @@ p {
     align-items: center;
 }
 .project-name,
-.project-arrow {
+.wrapper-arrow-number {
     font-size: 2.8rem;
     line-height: 40px;
+}
+.wrapper-arrow-number {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+}
+.project-arrow {
+    margin-left: 15px;
+    transition: transform 0.1s ease-out;
 }
 .project-year {
     display: block;
