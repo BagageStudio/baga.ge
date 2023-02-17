@@ -1,5 +1,3 @@
-import resolveLygia from "https://lygia.xyz/resolve.esm.js";
-
 import {
     Renderer,
     Triangle,
@@ -71,7 +69,7 @@ class WebGL {
         const texture = new Texture(this.gl);
 
         const program = new Program(this.gl, {
-            fragment: resolveLygia(planeFragment),
+            fragment: planeFragment,
             vertex: planeVertex,
             uniforms: {
                 tMap: { value: texture },
