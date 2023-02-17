@@ -145,30 +145,18 @@ export function CreateHelloAnimation() {
     const logo = {
         scaleY: 1,
         y: 0,
+        scrollOut: 0,
     };
 
-    const TOP_OFFSET = 120;
-
     gsap.to(logo, {
         scrollTrigger: {
-            trigger: "#helloMonolith",
+            trigger: "#home",
             scrub: true,
-            start: () => `top ${(window, (innerWidth / 100) * 19)}`,
-            end: `top ${TOP_OFFSET}`,
+            start: "top -1px",
+            end: `top -50%`,
             onUpdate: () => WebGl.setLogo(logo),
         },
-        scaleY: 0,
-        ease: "power1.in",
-    });
-    gsap.to(logo, {
-        scrollTrigger: {
-            trigger: "#helloMonolith",
-            scrub: true,
-            start: `top ${TOP_OFFSET}`,
-            end: "top top",
-            onUpdate: () => WebGl.setLogo(logo),
-        },
-        y: 1,
+        scrollOut: 1,
         ease: "linear",
     });
 }

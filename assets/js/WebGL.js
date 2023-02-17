@@ -45,6 +45,7 @@ class WebGL {
         this.logo = {
             scaleY: 1,
             y: 0,
+            scrollOut: 0,
         };
 
         this.MAX_ANGLE = Math.PI / 8;
@@ -85,6 +86,7 @@ class WebGL {
                 uAppear: { value: 0 },
                 uReduceScaling: { value: this.logo.scaleY },
                 uVerticalTranslation: { value: this.logo.y },
+                uScrollOut: { value: this.logo.scrollOut },
             },
             transparent: true,
         });
@@ -234,6 +236,9 @@ class WebGL {
         this.fullscreenShader.program.uniforms.uTime.value += 0.04;
         this.fullscreenShader.program.uniforms.uAppear.value =
             this.params.appearTween;
+
+        this.fullscreenShader.program.uniforms.uScrollOut.value =
+            this.logo.scrollOut;
 
         this.fullscreenShader.program.uniforms.uReduceScaling.value =
             this.logo.scaleY;
