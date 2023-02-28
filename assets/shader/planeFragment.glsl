@@ -12,7 +12,9 @@ uniform float pixelated;
 uniform float pixelation;
 uniform float dithered;
 uniform float pixelRatio;
-uniform float uAppear;
+uniform float uAppearNoiseOpacity;
+uniform float uAppearTypoOpacity;
+uniform float uAppearTypoScale;
 uniform float uReduceScaling;
 uniform float uVerticalTranslation;
 uniform float uScrollOut;
@@ -59,7 +61,9 @@ vec4 typo(){
     // We want the text to be at the top, so we apply the ratio when y in 0 -> 1 (it's 1 -> 0 by default).
     // Later we will go back to 1 -> 0, because the next transform will also need 0-> 1
     uv.y=(uv.y-1.)*-1.;
-    uv.y=uv.y*textureScale.y;
+    float finalScale =uv.y*textureScale.y;
+    
+    uv.y=mix(uv.y, finalScale, uAppearTypoScale);
     
     /** ----- GUTTER ------- */
     
@@ -74,7 +78,12 @@ vec4 typo(){
     // Back to 1->0 vertically
     uv.y=(uv.y-1.)*-1.;
     
-    /** ----- ANIMATION ------- */
+    /** ----- APPEAR ANIMATION ------- */
+    
+    
+    
+    
+    /** ----- SCROLL ANIMATION ------- */
     
     // Vertical translation on scroll
     uv.y-=mix(0.,scrollOutVerticalTranslation,uScrollOut);
@@ -121,9 +130,9 @@ vec4 typo(){
 
 vec4 noiseTexture(){
     
-    float noise=cnoise(vec3(gl_FragCoord.y/400.,gl_FragCoord.x/400.,uTime/30.));
+    float noise=cnoise(vec3(gl_FragCoord.y/300.,gl_FragCoord.x/600.,uTime/30.));
     
-    float noiseClamped=map(noise,0.,1.,.7,1.)+.2;
+    float noiseClamped=map(noise,0.,1.,.7,1.)+.25;
     
     vec4 noiseTexture=vec4(noiseClamped,noiseClamped,noiseClamped,1.);
     
@@ -133,9 +142,11 @@ vec4 noiseTexture(){
 void main(){
     
     vec4 noise=noiseTexture();
-    vec4 color=typo();
+    noise.a=mix(0.,noise.a,uAppearNoiseOpacity);
+    vec4 typo=typo();
+    typo.a=mix(0.,typo.a,uAppearTypoOpacity);
     
-    gl_FragColor=mix(noise,color,color.a);
+    gl_FragColor=mix(noise,typo,typo.a);
     
     // vec2 uv=vUv;
     // uv.y=(uv.y-1.)*-1.;

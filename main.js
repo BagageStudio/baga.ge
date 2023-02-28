@@ -4,6 +4,8 @@ import { gsap } from "gsap";
 
 import WebGl from "./assets/js/WebGL";
 import CreateGrid from "./assets/js/grid";
+import CreateLoadedAnimation from "./assets/js/loadedAnimation";
+
 import {
     CreateScroll,
     CreateProjectsAnimation,
@@ -15,6 +17,7 @@ function raf(time) {
     requestAnimationFrame(raf);
 }
 
+CreateLoadedAnimation();
 const { lenis } = CreateScroll();
 CreateHelloAnimation();
 CreateProjectsAnimation();

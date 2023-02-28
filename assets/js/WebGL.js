@@ -48,6 +48,12 @@ class WebGL {
             scrollOut: 0,
         };
 
+        this.appear = {
+            typoOpacity: 0,
+            typoScale: 0,
+            noiseOpacity: 0,
+        };
+
         this.MAX_ANGLE = Math.PI / 8;
 
         this.createRenderer();
@@ -83,7 +89,9 @@ class WebGL {
                 pixelation: { value: 100 },
                 dithered: { value: 0 },
                 pixelRatio: { value: 0.3 },
-                uAppear: { value: 0 },
+                uAppearNoiseOpacity: { value: 0 },
+                uAppearTypoOpacity: { value: 0 },
+                uAppearTypoScale: { value: 0 },
                 uReduceScaling: { value: this.logo.scaleY },
                 uVerticalTranslation: { value: this.logo.y },
                 uScrollOut: { value: this.logo.scrollOut },
@@ -234,8 +242,12 @@ class WebGL {
         this.fullscreenShader.program.uniforms.uTextGutter.value =
             this.textGutter;
         this.fullscreenShader.program.uniforms.uTime.value += 0.04;
-        this.fullscreenShader.program.uniforms.uAppear.value =
-            this.params.appearTween;
+        this.fullscreenShader.program.uniforms.uAppearNoiseOpacity.value =
+            this.appear.noiseOpacity;
+        this.fullscreenShader.program.uniforms.uAppearTypoOpacity.value =
+            this.appear.typoOpacity;
+        this.fullscreenShader.program.uniforms.uAppearTypoScale.value =
+            this.appear.typoScale;
 
         this.fullscreenShader.program.uniforms.uScrollOut.value =
             this.logo.scrollOut;
@@ -276,6 +288,10 @@ class WebGL {
 
     setLogo(logo) {
         this.logo = logo;
+    }
+
+    setAppearValue(appear) {
+        this.appear = appear;
     }
 }
 
