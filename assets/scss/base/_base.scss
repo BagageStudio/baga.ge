@@ -260,26 +260,23 @@ a.project {
 
 // manifesto
 .manifesto-monolith-wrapper {
-    display: flex;
-    justify-content: center;
     padding: 0 var(--gutter-out-monolith);
     .monolith {
-        width: percentage(math.div(4, 6));
         margin-bottom: 0;
         padding: 0;
     }
 }
 .value {
-    padding: 80px var(--gutter);
-    font-size: 4.5rem;
-    line-height: 54px;
+    padding: 40px var(--gutter);
+    font-size: 3.5rem;
+    line-height: 42px;
     border-bottom: 1px solid $primary-light;
 }
 
 // contact
 .contact {
     text-align: center;
-    padding: 60px 0 35px;
+    padding: 60px 0;
     .subtitle {
         display: block;
         font-size: 3rem;
@@ -367,6 +364,20 @@ a.project {
     }
     .intro {
         width: percentage(math.div(5, 6));
+    }
+
+    // manifesto
+    .manifesto-monolith-wrapper {
+        display: flex;
+        justify-content: center;
+        .monolith {
+            width: percentage(math.div(4, 6));
+        }
+    }
+    .value {
+        padding: 80px var(--gutter);
+        font-size: 4.5rem;
+        line-height: 54px;
     }
 
     // contact
