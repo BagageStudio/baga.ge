@@ -2,9 +2,8 @@
 
 :root {
     --scroll-top: 0px;
-    --gutter: 40px;
-    --gutter-out: 60px;
-    --gutter-out-monolith: 20px;
+    --gutter: 20px;
+    --gutter-out-monolith: 0;
 }
 
 // Colors 🎨
@@ -31,3 +30,20 @@ $phone-small-v: 600px;
 $desktop-v: 900px;
 $desktop-xxl-v: 1080px;
 $header-height: 120px;
+
+@media (min-width: $phone) {
+    :root {
+        --gutter: 30px;
+    }
+}
+@media (min-width: $desktop-small) {
+    :root {
+        --gutter-out-monolith: 20px;
+    }
+}
+@media (min-width: $desktop-xxl) {
+    :root {
+        --gutter: 60px;
+        --gutter-out-monolith: 0;
+    }
+}

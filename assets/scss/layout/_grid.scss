@@ -2,8 +2,8 @@
 
 .container {
     width: 100%;
-    padding-left: var(--gutter-out);
-    padding-right: var(--gutter-out);
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
     margin: 0 auto;
 }
 
@@ -48,7 +48,7 @@
     background-color: rgba(black, 0.1);
 }
 
-@media (min-width: $tablet) {
+@media (min-width: $desktop) {
     .column-block {
         &:nth-child(n + 4) {
             display: block;
