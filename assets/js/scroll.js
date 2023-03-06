@@ -207,7 +207,6 @@ export function CreateManifestoAnimation() {
             trigger: "#manifestoWrapper",
             start: "top -100px",
             end: () => `top -${additionalHeight}px`,
-            markers: true,
             scrub: true,
             invalidateOnRefresh: true,
         },
