@@ -121,6 +121,19 @@ export function CreateProjectsAnimation() {
         });
     });
 
+    const monolithBg = document.getElementById("projectsMonolithBg");
+
+    const maxScaleX = function () {
+        const gridGutter = parseInt(
+            window
+                .getComputedStyle(document.documentElement)
+                .getPropertyValue("--gutter")
+        );
+        const currentWidth = monolithBg.offsetWidth;
+        const scale = (gridGutter * 2) / currentWidth;
+        return 1 + scale;
+    };
+
     /** --- BACKGROUND EXPAND --- **/
     const expandTl = gsap.timeline({
         scrollTrigger: {
@@ -128,16 +141,17 @@ export function CreateProjectsAnimation() {
             scrub: true,
             start: "top 30%",
             end: "bottom 70%",
+            invalidateOnRefresh: true,
         },
     });
     expandTl
         .to("#projectsMonolithBg", {
             duration: 1.8,
-            scaleX: 1.07,
+            scaleX: maxScaleX,
         })
         .to("#projectsMonolithBg", {
             duration: 8,
-            scaleX: 1.07,
+            scaleX: maxScaleX,
         })
         .to("#projectsMonolithBg", {
             duration: 1.4,
