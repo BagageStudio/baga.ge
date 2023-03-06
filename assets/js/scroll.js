@@ -160,3 +160,51 @@ export function CreateHelloAnimation() {
         ease: "linear",
     });
 }
+
+export function CreateManifestoAnimation() {
+    const valueElement = document.getElementById("manifestoValues");
+    const monolithElement = document.getElementById("manifestoMonolithBg");
+    const wrapperElement = document.getElementById("manifestoWrapper");
+    let additionalHeight =
+        valueElement.offsetHeight - monolithElement.offsetHeight;
+
+    wrapperElement.style.setProperty(
+        "--additional-height",
+        `${additionalHeight}px`
+    );
+
+    window.addEventListener("resize", function () {
+        additionalHeight =
+            valueElement.offsetHeight - monolithElement.offsetHeight;
+
+        wrapperElement.style.setProperty(
+            "--additional-height",
+            `${additionalHeight}px`
+        );
+        ScrollTrigger.refresh();
+    });
+
+    gsap.to("#manifestoValues", {
+        scrollTrigger: {
+            trigger: "#manifestoWrapper",
+            start: "top -100px",
+            end: () => `top -${additionalHeight}px`,
+            markers: true,
+            scrub: true,
+            invalidateOnRefresh: true,
+        },
+        y: () => -additionalHeight,
+        ease: "linear",
+    });
+
+    gsap.to("#manifestoWrapper", {
+        scrollTrigger: {
+            trigger: "#manifestoWrapper",
+            scrub: true,
+            start: "top 200px",
+            end: "top -200px",
+        },
+        y: -200,
+        ease: "sine.out",
+    });
+}

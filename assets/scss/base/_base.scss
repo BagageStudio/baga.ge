@@ -243,6 +243,16 @@ a.project {
         padding: 0;
     }
 }
+
+.manifesto-title {
+    display: block;
+    background-color: blue;
+    height: 156px;
+    width: 100vw;
+    margin-bottom: 75px;
+    flex-shrink: 0;
+}
+
 .value {
     padding: 40px var(--gutter);
     font-size: 3.5rem;
@@ -252,6 +262,7 @@ a.project {
 
 // contact
 .contact {
+    margin-top: -200px;
     text-align: center;
     padding: 60px 0;
     .subtitle {
@@ -382,11 +393,24 @@ a.project {
     }
 
     // manifesto
+    .manifesto-wrapper {
+        --additional-height: 618px;
+        margin-top: 45px;
+        // 100vh + 618px + VO
+        height: calc(100vh + var(--additional-height) + 200px);
+    }
     .manifesto-monolith-wrapper {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        position: sticky;
+        top: 200px;
+        padding-top: 75px;
+        height: 100vh;
+        overflow: hidden;
         .monolith {
             width: percentage(math.div(4, 6));
+            overflow: hidden;
         }
     }
     .value {
