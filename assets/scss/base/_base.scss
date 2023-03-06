@@ -188,14 +188,7 @@ a.project {
     right: var(--gutter);
     border-top: 1px solid white;
 }
-.overflow-line {
-    position: absolute;
-    right: 100%;
-    top: -1px;
-    border-top: 1px solid white;
-    width: calc(100% + 80px);
-    transform-origin: 100% 0;
-}
+
 .line-content {
     padding: 0 var(--gutter);
 }
@@ -390,6 +383,14 @@ a.project {
     .wrapper-arrow-number {
         font-size: 2.8rem;
         line-height: 40px;
+    }
+    .overflow-line {
+        position: absolute;
+        right: 100%;
+        top: -1px;
+        border-top: 1px solid white;
+        width: calc(100% + 80px);
+        transform-origin: 100% 0;
     }
 
     // manifesto
