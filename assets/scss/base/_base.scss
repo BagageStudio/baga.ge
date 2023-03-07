@@ -442,7 +442,7 @@ a.project {
         right: 100%;
         top: -1px;
         border-top: 1px solid white;
-        width: calc(100% + 80px);
+        width: calc(100% + var(--gutter) * 2);
         transform-origin: 100% 0;
     }
 
