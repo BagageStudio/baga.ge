@@ -159,6 +159,10 @@ p {
 }
 
 // projects
+.project-monolith {
+    margin-bottom: 20px;
+}
+
 .projects-list {
     padding-top: 60px;
 }
@@ -229,19 +233,32 @@ a.project {
 }
 
 // manifesto
+.manifesto-wrapper {
+    --additional-height: 618px;
+    // 100vh + 618px + VO
+    height: calc(100vh + var(--additional-height) + 200px);
+}
+
 .manifesto-monolith-wrapper {
-    padding: 0 var(--gutter-out-monolith);
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 200px;
+    height: 100vh;
+    padding: 60px var(--gutter-out-monolith) 0;
     .monolith {
+        align-self: center;
         margin-bottom: 0;
         padding: 0;
+        overflow: hidden;
     }
 }
 
 .manifesto-title {
     display: block;
-    height: 156px;
+    height: 84px;
     width: 100vw;
-    margin-bottom: 75px;
+    margin-bottom: 40px;
     margin-left: calc(0px - var(--gutter) - var(--gutter-out-monolith));
     flex-shrink: 0;
     transform: translateZ(0);
@@ -252,6 +269,10 @@ a.project {
 .manifesto-title-line {
     display: flex;
     flex-wrap: no-wrap;
+    transform: translateX(-10%);
+    &:last-child {
+        transform: translateX(-30%);
+    }
 }
 
 .manifesto-title-arrow {
@@ -330,16 +351,23 @@ a.project {
         line-height: 90px;
     }
 
+    .project-monolith {
+        margin-bottom: 60px;
+    }
+
+    .manifesto-wrapper {
+        margin-top: 45px;
+    }
+
+    .manifesto-monolith-wrapper {
+        padding-top: 75px;
+    }
+
     .manifesto-title {
         font-size: 6.5rem;
         line-height: 78px;
-    }
-
-    .manifesto-title-line {
-        transform: translateX(-10%);
-        &:last-child {
-            transform: translateX(-30%);
-        }
+        height: 156px;
+        margin-bottom: 75px;
     }
 }
 @media (min-width: $desktop) {
@@ -418,23 +446,9 @@ a.project {
     }
 
     // manifesto
-    .manifesto-wrapper {
-        --additional-height: 618px;
-        margin-top: 45px;
-        // 100vh + 618px + VO
-        height: calc(100vh + var(--additional-height) + 200px);
-    }
     .manifesto-monolith-wrapper {
-        display: flex;
-        flex-direction: column;
-        position: sticky;
-        top: 200px;
-        padding-top: 75px;
-        height: 100vh;
         .monolith {
             width: percentage(math.div(4, 6));
-            align-self: center;
-            overflow: hidden;
         }
     }
     .value {
