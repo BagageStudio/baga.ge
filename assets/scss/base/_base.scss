@@ -247,8 +247,8 @@ a.project {
 }
 
 .manifesto-title {
-    display: block;
-    height: 84px;
+    display: flex;
+    flex-direction: column;
     width: 100vw;
     margin-bottom: 40px;
     margin-left: calc(0px - var(--gutter) - var(--gutter-out-monolith));
@@ -260,18 +260,20 @@ a.project {
 }
 
 .manifesto-title-line {
-    display: flex;
-    flex-wrap: no-wrap;
-    transform: translateX(-10%);
-    &:last-child {
-        transform: translateX(-30%);
+    display: inline-flex;
+    flex-shrink: 0;
+    transform: translateX(-2%);
+    &.reverse {
+        transform: translateX(-27%);
     }
 }
-
 .manifesto-title-arrow {
     margin: 0 15px;
 }
 
+.manifesto-title-rounded {
+    font-feature-settings: "ss16";
+}
 .value {
     padding: 40px var(--gutter);
     font-size: 3.5rem;
@@ -358,7 +360,6 @@ a.project {
     .manifesto-title {
         font-size: 6.5rem;
         line-height: 78px;
-        height: 156px;
         margin-bottom: 75px;
     }
 }
