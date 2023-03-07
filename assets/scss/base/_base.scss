@@ -233,18 +233,10 @@ a.project {
 }
 
 // manifesto
-.manifesto-wrapper {
-    --additional-height: 618px;
-    // 100vh + 618px + VO
-    height: calc(100vh + var(--additional-height) + 200px);
-}
 
-.manifesto-monolith-wrapper {
+.manifesto-wrapper {
     display: flex;
     flex-direction: column;
-    position: sticky;
-    top: 200px;
-    height: 100vh;
     padding: 60px var(--gutter-out-monolith) 0;
     .monolith {
         align-self: center;
@@ -289,7 +281,6 @@ a.project {
 
 // contact
 .contact {
-    margin-top: -200px;
     text-align: center;
     padding: 60px 0;
     .subtitle {
@@ -360,7 +351,7 @@ a.project {
         margin-top: 45px;
     }
 
-    .manifesto-monolith-wrapper {
+    .manifesto-wrapper {
         padding-top: 75px;
     }
 
@@ -447,7 +438,7 @@ a.project {
     }
 
     // manifesto
-    .manifesto-monolith-wrapper {
+    .manifesto-wrapper {
         .monolith {
             width: percentage(math.div(4, 6));
         }
