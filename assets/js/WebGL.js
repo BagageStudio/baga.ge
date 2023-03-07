@@ -182,7 +182,12 @@ class WebGL {
      */
     onResize() {
         this.resolution = { value: new Vec2() };
-        this.textGutter = 120;
+        this.textGutter =
+            parseInt(
+                window
+                    .getComputedStyle(document.documentElement)
+                    .getPropertyValue("--gutter")
+            ) * 2;
 
         this.screen = {
             height: window.innerHeight,
