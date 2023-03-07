@@ -239,11 +239,23 @@ a.project {
 
 .manifesto-title {
     display: block;
-    background-color: blue;
     height: 156px;
     width: 100vw;
     margin-bottom: 75px;
+    margin-left: calc(0px - var(--gutter) - var(--gutter-out-monolith));
     flex-shrink: 0;
+    transform: translateZ(0);
+    font-size: 3.5rem;
+    line-height: 42px;
+}
+
+.manifesto-title-line {
+    display: flex;
+    flex-wrap: no-wrap;
+}
+
+.manifesto-title-arrow {
+    margin: 0 15px;
 }
 
 .value {
@@ -316,6 +328,18 @@ a.project {
     .mail {
         font-size: 6.2rem;
         line-height: 90px;
+    }
+
+    .manifesto-title {
+        font-size: 6.5rem;
+        line-height: 78px;
+    }
+
+    .manifesto-title-line {
+        transform: translateX(-10%);
+        &:last-child {
+            transform: translateX(-30%);
+        }
     }
 }
 @media (min-width: $desktop) {
@@ -403,14 +427,13 @@ a.project {
     .manifesto-monolith-wrapper {
         display: flex;
         flex-direction: column;
-        align-items: center;
         position: sticky;
         top: 200px;
         padding-top: 75px;
         height: 100vh;
-        overflow: hidden;
         .monolith {
             width: percentage(math.div(4, 6));
+            align-self: center;
             overflow: hidden;
         }
     }

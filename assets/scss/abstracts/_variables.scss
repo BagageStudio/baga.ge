@@ -3,7 +3,7 @@
 :root {
     --scroll-top: 0px;
     --gutter: 20px;
-    --gutter-out-monolith: 0;
+    --gutter-out-monolith: 0px;
 }
 
 // Colors 🎨
@@ -44,6 +44,6 @@ $header-height: 120px;
 @media (min-width: $desktop-xxl) {
     :root {
         --gutter: 60px;
-        --gutter-out-monolith: 0;
+        --gutter-out-monolith: 0px;
     }
 }
