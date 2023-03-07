@@ -7,13 +7,13 @@
 // }
 
 ::-moz-selection {
-    background: rgba(#000, 0.99);
-    color: $white;
+    background: $secondary;
+    color: $primary;
     text-shadow: none;
 }
 ::selection {
-    background: rgba(#000, 0.99);
-    color: $white;
+    background: $secondary;
+    color: $primary;
     text-shadow: none;
 }
 
