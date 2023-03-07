@@ -130,7 +130,7 @@ vec4 typo(){
 
 vec4 noiseTexture(){
     
-    float noise=cnoise(vec3(gl_FragCoord.y/300.,gl_FragCoord.x/600.,uTime/30.));
+    float noise=cnoise(vec3(gl_FragCoord.y/300.,gl_FragCoord.x/600.,(uTime+100.)/30.));
     
     float noiseClamped=map(noise,0.,1.,.7,1.)+.25;
     

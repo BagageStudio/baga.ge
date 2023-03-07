@@ -25,8 +25,8 @@ export default function () {
     tl.to(
         webglAppear,
         {
-            typoOpacity: 1,
-            duration: 1,
+            noiseOpacity: 1,
+            duration: 2,
             onUpdate: () => WebGl.setAppearValue(webglAppear),
         },
         "start"
@@ -34,22 +34,23 @@ export default function () {
         .to(
             webglAppear,
             {
-                typoScale: 1,
-                duration: 1,
-                ease: "power2.inOut",
+                typoOpacity: 1,
+                duration: 2,
                 onUpdate: () => WebGl.setAppearValue(webglAppear),
             },
-            "start+=0.2"
+            "start"
         )
         .to(
             webglAppear,
             {
-                noiseOpacity: 1,
+                typoScale: 1,
                 duration: 2,
+                ease: "power4.inOut",
                 onUpdate: () => WebGl.setAppearValue(webglAppear),
             },
-            "start+=1.1"
+            "start"
         )
+
         .to(
             "#helloMonolithWrapper",
             {
@@ -57,6 +58,6 @@ export default function () {
                 duration: 1,
                 ease: "power3.out",
             },
-            "start+=0.7"
+            "start+=1"
         );
 }
