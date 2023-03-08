@@ -225,3 +225,67 @@ export function CreateManifestoTitleAnimation() {
         },
     });
 }
+
+export function CreateManifestoValuesAnimation() {
+    const maxOpacityBeforeFull = 0.5;
+    const values = document.querySelectorAll(".value");
+    [...values].forEach((value, index) => {
+        const innerValue = value.querySelector(".inner-value");
+        const isLast = index === values.length - 1;
+        const isFirst = index === 0;
+
+        const activeTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: value,
+                scrub: true,
+                start: "top 50%",
+                end: "bottom 50%",
+                invalidateOnRefresh: true,
+                amrkers: true,
+            },
+        });
+        activeTl
+            .to(innerValue, {
+                duration: 0,
+                opacity: isFirst ? 1 : maxOpacityBeforeFull,
+            })
+            .to(innerValue, {
+                duration: 0,
+                opacity: 1,
+            })
+            .to(innerValue, {
+                duration: 1,
+                opacity: 1,
+            })
+            .to(innerValue, {
+                duration: 0,
+                opacity: isLast ? 1 : maxOpacityBeforeFull,
+            });
+
+        if (!isFirst) {
+            gsap.to(innerValue, {
+                scrollTrigger: {
+                    trigger: value,
+                    scrub: true,
+                    start: "top 70%",
+                    end: "top 50%",
+                    invalidateOnRefresh: true,
+                },
+                opacity: maxOpacityBeforeFull,
+            });
+        }
+
+        if (!isLast) {
+            gsap.to(innerValue, {
+                scrollTrigger: {
+                    trigger: value,
+                    scrub: true,
+                    start: "bottom 50%",
+                    end: "bottom 30%",
+                    invalidateOnRefresh: true,
+                },
+                opacity: 0.1,
+            });
+        }
+    });
+}

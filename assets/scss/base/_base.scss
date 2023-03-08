@@ -287,6 +287,11 @@ a.project {
     font-size: 3.5rem;
     line-height: 42px;
     border-bottom: 1px solid $primary-light;
+    &:not(:first-child) {
+        .inner-value {
+            opacity: 0.1;
+        }
+    }
 }
 
 // contact

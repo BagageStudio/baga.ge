@@ -11,6 +11,7 @@ import {
     CreateProjectsAnimation,
     CreateHelloAnimation,
     CreateManifestoTitleAnimation,
+    CreateManifestoValuesAnimation,
 } from "./assets/js/scroll";
 
 function raf(time) {
@@ -23,6 +24,7 @@ const { lenis } = CreateScroll();
 CreateHelloAnimation();
 CreateProjectsAnimation();
 CreateManifestoTitleAnimation();
+CreateManifestoValuesAnimation();
 
 CreateGrid();
 
