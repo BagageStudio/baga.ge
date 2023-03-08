@@ -179,4 +179,45 @@ export function CreateHelloAnimation() {
     });
 }
 
-export function CreateManifestoAnimation() {}
+export function CreateManifestoTitleAnimation() {
+    const titleLineWrapperOne = document.getElementById(
+        "manifestoTitleLineOne"
+    );
+    const titleLineWrapperTwo = document.getElementById(
+        "manifestoTitleLineTwo"
+    );
+
+    const duplicateTitleWords = function () {};
+
+    const tl = gsap.timeline({
+        repeat: -1,
+    });
+    tl.to(
+        titleLineWrapperOne,
+        {
+            x: "-=50%",
+            duration: 20,
+            ease: "linear",
+        },
+        "start"
+    ).to(
+        titleLineWrapperTwo,
+        {
+            x: "+=50%",
+            duration: 20,
+            ease: "linear",
+        },
+        "start"
+    );
+
+    ScrollTrigger.create({
+        trigger: "#manifestoTitle",
+        start: "top bottom",
+        end: "bottom top",
+        onUpdate: function (self) {
+            const speedMultiplier = 250;
+            const velocity = Math.abs(self.getVelocity()) / speedMultiplier;
+            tl.timeScale(1 + velocity);
+        },
+    });
+}

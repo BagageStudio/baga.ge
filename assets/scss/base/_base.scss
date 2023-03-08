@@ -263,13 +263,17 @@ a.project {
     overflow: hidden;
 }
 
+.manifesto-title-wrapper.reverse {
+    display: flex;
+    justify-content: flex-end;
+    .manifesto-title-line {
+        transform: translateX(2%);
+    }
+}
 .manifesto-title-line {
     display: inline-flex;
     flex-shrink: 0;
     transform: translateX(-2%);
-    &.reverse {
-        transform: translateX(-27%);
-    }
 }
 .manifesto-title-arrow {
     margin: 0 15px;
