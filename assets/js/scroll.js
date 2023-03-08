@@ -119,6 +119,10 @@ export function CreateProjectsAnimation() {
                 ease: "power2.inOut",
             });
         });
+
+        return () => {
+            gsap.set("#projectsTitle", { y: 0 });
+        };
     });
 
     const monolithBg = document.getElementById("projectsMonolithBg");
