@@ -199,7 +199,7 @@ export function CreateManifestoTitleAnimation() {
     tl.to(
         titleLineWrapperOne,
         {
-            x: "-=50%",
+            x: "-=33.3333%",
             duration: 20,
             ease: "linear",
         },
@@ -207,7 +207,7 @@ export function CreateManifestoTitleAnimation() {
     ).to(
         titleLineWrapperTwo,
         {
-            x: "+=50%",
+            x: "+=33.3333%",
             duration: 20,
             ease: "linear",
         },

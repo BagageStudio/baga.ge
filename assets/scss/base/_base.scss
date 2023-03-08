@@ -253,14 +253,15 @@ a.project {
 .manifesto-title {
     display: flex;
     flex-direction: column;
+    align-self: center;
     width: 100vw;
     margin-bottom: 40px;
-    margin-left: calc(0px - var(--gutter) - var(--gutter-out-monolith));
     flex-shrink: 0;
     transform: translateZ(0);
     font-size: 3.5rem;
     line-height: 42px;
     overflow: hidden;
+    max-width: 3200px;
 }
 
 .manifesto-title-wrapper.reverse {
