@@ -227,7 +227,6 @@ export function CreateManifestoTitleAnimation() {
 }
 
 export function CreateManifestoValuesAnimation() {
-    const maxOpacityBeforeFull = 0.5;
     const values = document.querySelectorAll(".value");
     [...values].forEach((value, index) => {
         const innerValue = value.querySelector(".inner-value");
@@ -247,7 +246,7 @@ export function CreateManifestoValuesAnimation() {
         activeTl
             .to(innerValue, {
                 duration: 0,
-                opacity: isFirst ? 1 : maxOpacityBeforeFull,
+                opacity: isFirst ? 1 : 0.2,
             })
             .to(innerValue, {
                 duration: 0,
@@ -259,33 +258,7 @@ export function CreateManifestoValuesAnimation() {
             })
             .to(innerValue, {
                 duration: 0,
-                opacity: isLast ? 1 : maxOpacityBeforeFull,
+                opacity: isLast ? 1 : 0.2,
             });
-
-        if (!isFirst) {
-            gsap.to(innerValue, {
-                scrollTrigger: {
-                    trigger: value,
-                    scrub: true,
-                    start: "top 70%",
-                    end: "top 50%",
-                    invalidateOnRefresh: true,
-                },
-                opacity: maxOpacityBeforeFull,
-            });
-        }
-
-        if (!isLast) {
-            gsap.to(innerValue, {
-                scrollTrigger: {
-                    trigger: value,
-                    scrub: true,
-                    start: "bottom 50%",
-                    end: "bottom 30%",
-                    invalidateOnRefresh: true,
-                },
-                opacity: 0.1,
-            });
-        }
     });
 }
