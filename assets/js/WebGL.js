@@ -49,9 +49,9 @@ class WebGL {
         };
 
         this.appear = {
-            typoOpacity: 0,
-            typoScale: 0,
-            noiseOpacity: 0,
+            typoOpacity: 1,
+            typoScale: 1,
+            noiseOpacity: 1,
         };
 
         this.MAX_ANGLE = Math.PI / 8;
