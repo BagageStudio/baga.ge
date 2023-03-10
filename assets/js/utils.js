@@ -33,7 +33,7 @@ export const getNextGenImageSupport = () => {
                 img.onerror = function (err) {
                     support[image.type.toLowerCase()] = false;
                     console.log("error: ", image.type);
-                    reject({ [image.type.toLowerCase()]: false });
+                    resolve({ [image.type.toLowerCase()]: false });
                 };
 
                 img.onload = function (inst) {
