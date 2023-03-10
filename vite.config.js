@@ -9,7 +9,7 @@ export default defineConfig({
         VitePluginInjectPreload({
             files: [
                 {
-                    match: /[a-z-0-9]*.(png|jpg|jpeg|woff2)$/,
+                    match: /[a-z-0-9]*.(woff2)$/,
                 },
             ],
         }),
