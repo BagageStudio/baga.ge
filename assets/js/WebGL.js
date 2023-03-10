@@ -13,13 +13,15 @@ import { gsap } from "gsap";
 import { SlowMo } from "gsap/EasePack";
 gsap.registerPlugin(SlowMo);
 
-import { lerp } from "./utils.js";
+import { lerp, getNextGenImageSupport } from "./utils.js";
 
 import planeFragment from "../shader/planeFragment.glsl";
 import planeVertex from "../shader/planeVertex.glsl";
 import post from "../shader/post.glsl";
 
-import planeImage from "../img/repro-black.png";
+import bagageTypoPng from "../img/repro-black.png";
+import bagageTypoWebp from "../img/repro-black.webp";
+import bagageTypoAvif from "../img/repro-black.avif";
 
 class WebGL {
     constructor() {
@@ -70,7 +72,7 @@ class WebGL {
         this.addEventListeners();
     }
 
-    createFullscreenShader() {
+    async createFullscreenShader() {
         this.fullscreenGeometry = new Triangle(this.gl);
 
         const texture = new Texture(this.gl);
@@ -101,15 +103,26 @@ class WebGL {
 
         const image = new Image();
 
-        image.src = planeImage;
-        image.onload = (_) => {
-            texture.image = image;
+        getNextGenImageSupport().then((supportedImageFormats) => {
+            let bagageTypoImage = bagageTypoPng;
+            const { avif, webp } = supportedImageFormats;
 
-            program.uniforms.uImageSizes.value = [
-                image.naturalWidth,
-                image.naturalHeight,
-            ];
-        };
+            if (avif) {
+                bagageTypoImage = bagageTypoAvif;
+            } else if (webp) {
+                bagageTypoImage = bagageTypoWebp;
+            }
+
+            image.src = bagageTypoImage;
+            image.onload = (_) => {
+                texture.image = image;
+
+                program.uniforms.uImageSizes.value = [
+                    image.naturalWidth,
+                    image.naturalHeight,
+                ];
+            };
+        });
 
         this.fullscreenShader = new Mesh(this.gl, {
             geometry: this.fullscreenGeometry,
