@@ -41,7 +41,14 @@ class WebGL {
                 g: 0.88,
                 b: 0.85,
             },
-            appearTween: 1,
+        };
+
+        this.scroll = {
+            velocity: 0,
+        };
+
+        this.textMasks = {
+            bottom: 0,
         };
 
         this.logo = {
@@ -97,6 +104,7 @@ class WebGL {
                 uReduceScaling: { value: this.logo.scaleY },
                 uVerticalTranslation: { value: this.logo.y },
                 uScrollOut: { value: this.logo.scrollOut },
+                uBottomMask: { value: this.textMasks.bottom },
             },
             transparent: true,
         });
@@ -276,6 +284,9 @@ class WebGL {
         this.fullscreenShader.program.uniforms.uVerticalTranslation.value =
             this.logo.y;
 
+        this.fullscreenShader.program.uniforms.uBottomMask.value =
+            this.textMasks.bottom;
+
         this.pass.program.uniforms.uResolution = this.resolution;
         this.pass.program.uniforms.uTime.value += 0.04;
         this.pass.program.uniforms.pixelated.value = this.params.pixelated;
@@ -310,6 +321,15 @@ class WebGL {
 
     setAppearValue(appear) {
         this.appear = appear;
+    }
+
+    setScroll({ velocity }) {
+        const speedMultiplier = 5000;
+        this.scroll.velocity =
+            1 + Math.min(Math.abs(velocity), 500) / speedMultiplier;
+    }
+    setTextMasks(textMasks) {
+        this.textMasks = textMasks;
     }
 }
 

@@ -13,6 +13,10 @@ export function CreateScroll() {
 
     lenis.on("scroll", () => ScrollTrigger.update());
 
+    ScrollTrigger.create({
+        onUpdate: (self) => WebGl.setScroll({ velocity: self.getVelocity() }),
+    });
+
     return { lenis };
 }
 
@@ -191,8 +195,6 @@ export function CreateManifestoTitleAnimation() {
         "manifestoTitleLineTwo"
     );
 
-    const duplicateTitleWords = function () {};
-
     const tl = gsap.timeline({
         repeat: -1,
     });
@@ -260,5 +262,25 @@ export function CreateManifestoValuesAnimation() {
                 duration: 0,
                 opacity: isLast ? 1 : 0.2,
             });
+    });
+}
+
+export function CreateTextMasksAnimation() {
+    const textMasks = {
+        bottom: 0,
+    };
+
+    gsap.to(textMasks, {
+        scrollTrigger: {
+            trigger: "#footer",
+            scrub: true,
+            start: () => "top-=156px bottom",
+            end: () => `bottom bottom`,
+            onUpdate: () => WebGl.setTextMasks(textMasks),
+            onRefresh: () => WebGl.setTextMasks(textMasks),
+            invalidateOnRefresh: true,
+        },
+        bottom: 1,
+        ease: "linear",
     });
 }

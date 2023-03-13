@@ -12,6 +12,7 @@ import {
     CreateHelloAnimation,
     CreateManifestoTitleAnimation,
     CreateManifestoValuesAnimation,
+    CreateTextMasksAnimation,
 } from "./assets/js/scroll";
 
 function raf(time) {
@@ -25,6 +26,7 @@ CreateHelloAnimation();
 CreateProjectsAnimation();
 CreateManifestoTitleAnimation();
 CreateManifestoValuesAnimation();
+CreateTextMasksAnimation();
 
 CreateGrid();
 

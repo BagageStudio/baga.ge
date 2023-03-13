@@ -18,6 +18,7 @@ uniform float uAppearTypoScale;
 uniform float uReduceScaling;
 uniform float uVerticalTranslation;
 uniform float uScrollOut;
+uniform float uBottomMask;
 
 varying vec2 vUv;
 varying vec4 vWorldPos;
@@ -139,6 +140,21 @@ vec4 noiseTexture(){
     return noiseTexture;
 }
 
+float bottomTextMaskTexture(){
+    
+    float offset=200./uResolution.y*(1.-uBottomMask);
+    float heightOfMask=max(50./uResolution.y-offset,0.);
+    float heightOfGradient=max(150./uResolution.y-offset,0.);
+    
+    // Only gradient mask
+    float line=smoothstep(heightOfMask,heightOfGradient+heightOfMask,vUv.y);
+    // Only full mask
+    // float line=step(heightOfMask,vUv.y);
+    // Both at the same time
+    // float line=min(step(heightOfMask,vUv.y),smoothstep(heightOfMask,heightOfGradient,vUv.y));
+    return line;
+}
+
 void main(){
     
     vec4 noise=noiseTexture();
@@ -147,6 +163,9 @@ void main(){
     typo.a=mix(0.,typo.a,uAppearTypoOpacity);
     
     gl_FragColor=mix(noise,typo,typo.a);
+    
+    float bottomTextMask=bottomTextMaskTexture();
+    gl_FragColor.a=gl_FragColor.a*bottomTextMask;
     
     // vec2 uv=vUv;
     // uv.y=(uv.y-1.)*-1.;
