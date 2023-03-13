@@ -19,7 +19,7 @@ function raf(time) {
     requestAnimationFrame(raf);
 }
 
-// CreateLoadedAnimation();
+CreateLoadedAnimation();
 const { lenis } = CreateScroll();
 CreateHelloAnimation();
 CreateProjectsAnimation();
