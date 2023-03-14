@@ -4,6 +4,7 @@ uniform vec2 uImageSizes;
 uniform vec2 uResolution;
 uniform float uTextGutter;
 uniform vec2 uPlaneSizes;
+uniform vec2 uCurrentTypoSize;
 uniform sampler2D tMap;
 
 uniform vec3 uColor;
@@ -47,7 +48,7 @@ vec4 typo(){
     vec2 resolution=vec2(gl_FragCoord.xy/vUv.xy);
     
     // /** ----- TOP OFFSET ------- */
-    float normalizedTopOffset=topOffset/uResolution.y;
+    float normalizedTopOffset=mix(topOffset/uResolution.y,0.,uScrollOut);
     uv.y=uv.y+normalizedTopOffset;
     
     /** ----- COVER ------- */
@@ -86,8 +87,9 @@ vec4 typo(){
     
     /** ----- SCROLL ANIMATION ------- */
     
+    float typoMaxVerticalTranslation = 1. ;
     // Vertical translation on scroll
-    uv.y-=mix(0.,scrollOutVerticalTranslation,uScrollOut);
+    uv.y-=mix(0.,1.,uScrollOut);
     
     // Scale on scroll, we center the horizontal origin point and then reset it
     uv.x=(uv.x-.5)*2.;
@@ -133,7 +135,7 @@ vec4 noiseTexture(){
     
     float noise=cnoise(vec3(gl_FragCoord.y/300.,gl_FragCoord.x/600.,(uTime+100.)/30.));
     
-    float noiseClamped=map(noise,0.,1.,.7,1.)+.25;
+    float noiseClamped=map(noise,0.,1.,.75,1.)+.25;
     
     vec4 noiseTexture=vec4(noiseClamped,noiseClamped,noiseClamped,1.);
     

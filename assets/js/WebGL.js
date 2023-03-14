@@ -37,9 +37,9 @@ class WebGL {
                 b: 0.17,
             },
             backgroundColor: {
-                r: 0.91,
-                g: 0.88,
-                b: 0.85,
+                r: 0.961,
+                g: 0.91,
+                b: 0.906,
             },
         };
 
@@ -63,7 +63,12 @@ class WebGL {
             noiseOpacity: 0,
         };
 
-        this.MAX_ANGLE = Math.PI / 8;
+        this.typoAspectRatio = 0;
+
+        this.typoSizeInPixels = {
+            width: 0,
+            height: 0,
+        };
 
         this.createRenderer();
         this.onResize();
@@ -129,6 +134,8 @@ class WebGL {
                     image.naturalWidth,
                     image.naturalHeight,
                 ];
+                this.typoAspectRatio = image.naturalWidth / image.naturalHeight;
+                this.onResize();
             };
         });
 
@@ -215,53 +222,29 @@ class WebGL {
             width: window.innerWidth,
         };
 
-        this.mouse = {
-            ease: 0.4,
-            current: {
-                x: this.screen.width / 2,
-                y: this.screen.height / 2,
-            },
-            target: {
-                x: this.screen.width / 2,
-                y: this.screen.height / 2,
-            },
-            last: {
-                x: this.screen.width / 2,
-                y: this.screen.height / 2,
-            },
-        };
-
         this.resolution.value.set(this.screen.width, this.screen.height);
 
         this.renderer.setSize(this.screen.width, this.screen.height);
+
+        if (this.fullscreenShader) {
+            const currentTypoWidth = this.screen.width - this.textGutter;
+            const currentTypoHeight = currentTypoWidth / this.typoAspectRatio;
+
+            this.typoSizeInPixels = {
+                width: currentTypoWidth,
+                height: currentTypoHeight,
+            };
+        }
     }
 
     /**
      * Update.
      */
     update() {
-        this.mouse.current.x = lerp(
-            this.mouse.current.x,
-            this.mouse.target.x,
-            this.mouse.ease
-        );
-
-        this.mouse.current.y = lerp(
-            this.mouse.current.y,
-            this.mouse.target.y,
-            this.mouse.ease
-        );
-
         const color = new Vec3(
             this.params.color.r,
             this.params.color.g,
             this.params.color.b
-        );
-
-        const bgColor = new Vec3(
-            this.params.backgroundColor.r,
-            this.params.backgroundColor.g,
-            this.params.backgroundColor.b
         );
 
         this.fullscreenShader.program.uniforms.uResolution = this.resolution;
@@ -294,7 +277,6 @@ class WebGL {
         this.pass.program.uniforms.pixelation.value = this.params.pixelation;
         this.pass.program.uniforms.pixelRatio.value = this.params.pixelRatio;
         this.pass.program.uniforms.uColor.value = color;
-        this.pass.program.uniforms.uBgColor.value = bgColor;
 
         this.gl.clearColor(1, 1, 1, 1);
 
