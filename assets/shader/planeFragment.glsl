@@ -76,14 +76,8 @@ vec4 typo(){
     // Offseting to the right so the text in centered horizontally
     uv.x-=gutter/2.;
     
-    
     // Back to 1->0 vertically
     uv.y=(uv.y-1.)*-1.;
-    
-    /** ----- APPEAR ANIMATION ------- */
-    
-    
-    
     
     /** ----- SCROLL ANIMATION ------- */
     
@@ -96,7 +90,7 @@ vec4 typo(){
     uv=uv*mix(1.,scrollOutScale,uScrollOut);
     uv.x=(uv.x+1.)*.5;
     
-    /** ----- OLD STUFF JUST IN CASE ------- */
+    // /** ----- OLD STUFF JUST IN CASE ------- */
     
     // // Making Y going from 0->1 to -1->1 so we can scale it from top and bottom at the same time
     // // If we don't make it it'll be scaled only from top
@@ -127,6 +121,10 @@ vec4 typo(){
     float opacity=mix(color.a,mix(color.a,.4,uScrollOut),color.a);
     color.a=opacity;
     
+    if(uv.x>1.||uv.x<0.||uv.y>1.||uv.y<0.){
+        color.a=0.;
+    }
+    
     return color;
     
 }
@@ -135,7 +133,7 @@ vec4 noiseTexture(){
     
     float noise=cnoise(vec3(gl_FragCoord.y/300.,gl_FragCoord.x/600.,(uTime+100.)/30.));
     
-    float noiseClamped=map(noise,0.,1.,.75,1.)+.25;
+    float noiseClamped=map(noise,0.,1.,.74,1.)+.25;
     
     vec4 noiseTexture=vec4(noiseClamped,noiseClamped,noiseClamped,1.);
     

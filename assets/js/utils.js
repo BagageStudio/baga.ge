@@ -32,14 +32,11 @@ export const getNextGenImageSupport = () => {
             new Promise(function (resolve, reject) {
                 img.onerror = function (err) {
                     support[image.type.toLowerCase()] = false;
-                    console.log("error: ", image.type);
                     resolve({ [image.type.toLowerCase()]: false });
                 };
 
                 img.onload = function (inst) {
                     support[image.type.toLowerCase()] = true;
-                    console.log("onload: ", image.type);
-
                     resolve({ [image.type.toLowerCase()]: true });
                 };
             })
