@@ -311,8 +311,13 @@ a.project {
 .footer {
     display: flex;
     align-items: baseline;
-    justify-content: space-between;
     padding-bottom: 20px;
+    font-size: 1rem;
+}
+
+.based {
+    margin-right: auto;
+    margin-left: 10px;
 }
 
 .social-links {
@@ -326,6 +331,18 @@ a.project {
     }
 }
 
+@media (min-width: 360px) {
+    .footer {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: $phone-small) {
+    .footer {
+        font-size: 1.4rem;
+    }
+}
+
 @media (min-width: $phone) {
     // contact
     .contact {
@@ -334,6 +351,9 @@ a.project {
     .mail {
         font-size: 7.5rem;
         line-height: 110px;
+    }
+    .footer {
+        font-size: 1.6rem;
     }
 }
 @media (min-width: $tablet) {

@@ -28,6 +28,6 @@ CreateManifestoTitleAnimation();
 CreateManifestoValuesAnimation();
 CreateTextMasksAnimation();
 
-CreateGrid();
+// CreateGrid();
 
 requestAnimationFrame(raf);
