@@ -17,6 +17,19 @@
     text-shadow: none;
 }
 
+@font-face {
+    font-family: "ABC Repro";
+    src: url("@/assets/fonts/Repro/ABCRepro-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+body {
+    font: 1.6em / 1.5 "ABC Repro", sans-serif;
+    font-kerning: normal;
+    font-feature-settings: "ss13";
+    font-weight: 400;
+}
+
 html {
     font-size: 62.5%; /* sets the base font to 10px for easier math */
     background-color: $secondary;

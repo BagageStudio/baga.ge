@@ -2,19 +2,7 @@ import { gsap } from "gsap";
 import WebGl from "./WebGL";
 
 export default function () {
-    if (history.scrollRestoration) {
-        history.scrollRestoration = "manual";
-    } else {
-        window.onbeforeunload = function () {
-            window.scrollTo(0, 0);
-        };
-    }
-
     const tl = gsap.timeline({ paused: true });
-
-    window.addEventListener("load", (event) => {
-        tl.play();
-    });
 
     const webglAppear = {
         typoOpacity: 0,
@@ -60,4 +48,6 @@ export default function () {
             },
             "start+=1"
         );
+
+    tl.play();
 }

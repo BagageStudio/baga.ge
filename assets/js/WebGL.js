@@ -69,7 +69,9 @@ class WebGL {
             width: 0,
             height: 0,
         };
+    }
 
+    initialize() {
         this.createRenderer();
         this.onResize();
 
@@ -240,6 +242,7 @@ class WebGL {
     /**
      * Update.
      */
+
     update() {
         const color = new Vec3(
             this.params.color.r,

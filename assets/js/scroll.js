@@ -180,7 +180,9 @@ export function CreateHelloAnimation() {
             scrub: true,
             start: "top -1px",
             end: () => `top -${WebGl.typoSizeInPixels.height * 1.3 + 60}px`,
-            onUpdate: () => WebGl.setLogo(logo),
+            onUpdate: () => {
+                WebGl.setLogo(logo);
+            },
             invalidateOnRefresh: true,
         },
         scrollOut: 1,
