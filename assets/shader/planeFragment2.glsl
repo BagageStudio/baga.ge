@@ -27,12 +27,17 @@ float map(float value,float min1,float max1,float min2,float max2){
     return min2+(value-min1)*(max2-min2)/(max1-min1);
 }
 
+// float verticalOffsetFromCenter=.5;
+// float maxScaleY=.4;
+// float minScaleY=3.8;
+// float verticalTranslation=1.;
+
 // 60px from the top of thw viewport
-float topOffset=60.;
+float topOffset=337.5-68.;
 
 // TODO: The translation should be the number of pixels scrolled and depending of the viewport width, but not of viewport height !
 float scrollOutVerticalTranslation=1.2;
-float scrollOutScale=.7;
+float scrollOutScale=.3;
 
 vec4 typo(){
     
@@ -40,7 +45,7 @@ vec4 typo(){
     vec2 resolution=vec2(gl_FragCoord.xy/vUv.xy);
     
     // /** ----- TOP OFFSET ------- */
-    float normalizedTopOffset=mix(topOffset/uResolution.y,0.,uScrollOut);
+    float normalizedTopOffset=topOffset/uResolution.y;
     uv.y=uv.y+normalizedTopOffset;
     
     /** ----- COVER ------- */
@@ -56,8 +61,7 @@ vec4 typo(){
     // Later we will go back to 1 -> 0, because the next transform will also need 0-> 1
     uv.y=(uv.y-1.)*-1.;
     float finalScale =uv.y*textureScale.y;
-    
-    uv.y=mix(uv.y, finalScale, uAppearTypoScale);
+    uv.y= finalScale;
     
     /** ----- GUTTER ------- */
     
@@ -73,14 +77,41 @@ vec4 typo(){
     
     /** ----- SCROLL ANIMATION ------- */
     
-    float typoMaxVerticalTranslation=1.;
+    float typoMaxVerticalTranslation = 1. ;
     // Vertical translation on scroll
     uv.y-=mix(0.,1.,uScrollOut);
     
     // Scale on scroll, we center the horizontal origin point and then reset it
-    uv.x=(uv.x-.5)*2.;
-    uv=uv*mix(1.,scrollOutScale,uScrollOut);
-    uv.x=(uv.x+1.)*.5;
+    uv.y=(uv.y-.5)*2.;
+    uv.y=uv.y*mix(scrollOutScale,1.,uAppearTypoScale);
+    uv.y=(uv.y+1.)*.5;
+    
+    // /** ----- OLD STUFF JUST IN CASE ------- */
+    
+    // // Making Y going from 0->1 to -1->1 so we can scale it from top and bottom at the same time
+    // // If we don't make it it'll be scaled only from top
+    // float verticalPosition=(uv.y-.5)*2.;
+    // // Offseting the position so the top stay at the top
+    // float beforeAppearingScaleY=verticalPosition*maxScaleY+.5;
+    // // Going back to 0->1 because that what the texture needs
+    // beforeAppearingScaleY=(beforeAppearingScaleY+1.)*.5;
+    
+    // // Making Y going from 0->1 to 1->0 so we can scale it from top
+    // // If we don't make it it'll be scaled only from bottom
+    // float verticalPosition=1.-uv.y;
+    // // Offseting the position so the top stay at the top
+    // float compressedScaleY=verticalPosition*minScaleY;
+    // // Going back to 0->1 because that what the texture needs
+    // compressedScaleY=(compressedScaleY-1.)*-1.;
+    // float currentScaleY=mix(compressedScaleY,uv.y,uReduceScaling);
+    // uv=vec2(uv.x,currentScaleY);
+    
+    // vec2 division=resolution/100.;
+    // vec2 d=1./division;
+    // vec2 pixelizedUV=d*(floor(uv/d)+.5);
+    // uv=mix(uv,pixelizedUV,uScrollOut);
+    
+    // float opacity=min(mix(uv.y-1.,uv.y+1.,uAppear),color.a);
     
     vec4 color=texture2D(tMap,uv);
     float opacity=mix(color.a,mix(color.a,.4,uScrollOut),color.a);
@@ -92,10 +123,9 @@ vec4 typo(){
 
 vec4 noiseTexture(){
     
-    float noise=cnoise(vec3(gl_FragCoord.y/300.,gl_FragCoord.x/600.,(uTime+100.)/30.));
-    noise=map(noise,-1.,1.,1.,-1.);
+    float noise=cnoise(vec3(gl_FragCoord.y/300.,gl_FragCoord.x/600.,(uTime+2500.+10.*uAppearNoiseOpacity)/20.));
     
-    float noiseClamped=map(noise,-1.,1.,0.,.55)-.27;
+    float noiseClamped=map(noise,-1.,1.,0.,uNoiseThreshold)*uNoisePower;
     
     noiseClamped=clamp(noiseClamped,0.,1.);
     
@@ -116,7 +146,6 @@ float bottomTextMaskTexture(){
     // float line=step(heightOfMask,vUv.y);
     // Both at the same time
     // float line=min(step(heightOfMask,vUv.y),smoothstep(heightOfMask,heightOfGradient,vUv.y));
-    line=1.-line;
     return line;
 }
 
@@ -129,14 +158,20 @@ void main(){
     vec4 typo=typo();
     typo.a=mix(0.,typo.a,uAppearTypoOpacity);
     
-    float bottomTextMask=bottomTextMaskTexture();
+    // gl_FragColor+=noise;
+    gl_FragColor+=typo;
     
-    // gl_FragColor+=max(noise,typo);
-    // gl_FragColor+=typo;
-    gl_FragColor=mix(noise,typo,typo.a);
-    // gl_FragColor+=typo;
+    // gl_FragColor=vec4(1.,0.,0.,1.);
     
-    gl_FragColor=mix(gl_FragColor,vec4(0.,0.,0.,0.),bottomTextMask);
+    // float bottomTextMask=bottomTextMaskTexture();
+    // gl_FragColor.a=gl_FragColor.a*bottomTextMask;
+    
+    // vec2 uv=vUv;
+    // uv.y=(uv.y-1.)*-1.;
+    // float normalizedTopOffset=topOffset/uResolution.y;
+    // uv.y=uv.y-normalizedTopOffset;
+    
+    // gl_FragColor=vec4(uv.y,uv.y,uv.y,1.);
     
 }
 

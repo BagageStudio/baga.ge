@@ -37,9 +37,14 @@ export default function () {
                 onUpdate: () => WebGl.setAppearValue(webglAppear),
             },
             "start"
-        )
+        );
 
-        .to(
+    const helloMonolithWrapper = document.getElementById(
+        "helloMonolithWrapper"
+    );
+
+    if (helloMonolithWrapper) {
+        tl.to(
             "#helloMonolithWrapper",
             {
                 y: 0,
@@ -48,6 +53,7 @@ export default function () {
             },
             "start+=1"
         );
+    }
 
     tl.play();
 }

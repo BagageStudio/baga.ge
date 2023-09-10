@@ -25,6 +25,7 @@
                                 </p>
                             </div>
                             <div class="col-intro-txt content-pad">
+                                <NuxtLink to="/about">ABOUT</NuxtLink>
                                 <p>
                                     We have developed partnerships with talented
                                     freelance designers and marketers, and we
@@ -613,9 +614,8 @@
 
 <script setup>
 import CreateLoadedAnimation from "~/assets/js/loadedAnimation";
-
+import WebGL from "~/assets/js/WebGL";
 import {
-    CreateScroll,
     CreateProjectsAnimation,
     CreateHelloAnimation,
     CreateManifestoTitleAnimation,
@@ -623,13 +623,19 @@ import {
     CreateTextMasksAnimation,
 } from "~/assets/js/scroll";
 
-onMounted(() => {
+function createAnimations() {
     CreateLoadedAnimation();
     CreateHelloAnimation();
     CreateProjectsAnimation();
     CreateManifestoTitleAnimation();
     CreateManifestoValuesAnimation();
     CreateTextMasksAnimation();
+}
+
+onMounted(async () => {
+    await WebGL.initializeHome();
+
+    createAnimations();
 });
 </script>
 

@@ -7,10 +7,24 @@
 
 <script setup>
 import WebGL from "~/assets/js/WebGL";
+import { CreateScroll } from "~/assets/js/scroll";
 
-onMounted(() => {
-    WebGL.initialize();
-});
+const nuxtApp = useNuxtApp();
+
+if (process.client) {
+    const lenis = CreateScroll();
+
+    nuxtApp.$router.afterEach((to, from) => {
+        if (to.path !== from.path) {
+            lenis.scrollTo("#app", {
+                offset: 0,
+                duration: 0,
+                easing: () => {},
+                immediate: true,
+            });
+        }
+    });
+}
 
 useHead({
     title: "Bagage — Creative development studio",

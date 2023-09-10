@@ -4,6 +4,15 @@
     </div>
 </template>
 
-<script setup></script>
+<script setup>
+import CreateLoadedAnimation from "~/assets/js/loadedAnimation";
+import WebGL from "~/assets/js/WebGL";
+
+onMounted(async () => {
+    await WebGL.initializeAbout();
+
+    CreateLoadedAnimation();
+});
+</script>
 
 <style lang="scss" scoped></style>
