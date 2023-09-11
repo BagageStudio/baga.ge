@@ -637,6 +637,10 @@ onMounted(async () => {
 
     createAnimations();
 });
+
+definePageMeta({
+    scrollToTop: true,
+});
 </script>
 
 <style lang="scss" scoped></style>

@@ -14,7 +14,11 @@ export function CreateScroll() {
     lenis.on("scroll", () => ScrollTrigger.update());
 
     ScrollTrigger.create({
-        onUpdate: (self) => WebGl.setScroll({ velocity: self.getVelocity() }),
+        onUpdate: (self) =>
+            WebGl.setScroll({
+                y: lenis.animatedScroll,
+                velocity: self.getVelocity(),
+            }),
     });
 
     const raf = (time) => {

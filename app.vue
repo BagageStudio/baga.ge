@@ -14,16 +14,11 @@ const nuxtApp = useNuxtApp();
 if (process.client) {
     const lenis = CreateScroll();
 
-    nuxtApp.$router.afterEach((to, from) => {
-        if (to.path !== from.path) {
-            lenis.scrollTo("#app", {
-                offset: 0,
-                duration: 0,
-                easing: () => {},
-                immediate: true,
-            });
-        }
-    });
+    // nuxtApp.$router.afterEach((to, from) => {
+    //     if (to.path !== from.path) {
+    //         window.scrollTo(0, 0);
+    //     }
+    // });
 }
 
 useHead({

@@ -16,6 +16,8 @@ import { gsap } from "gsap";
 import { SlowMo } from "gsap/EasePack";
 gsap.registerPlugin(SlowMo);
 
+import ImageGL from "./ImageGL";
+
 import { lerp, getNextGenImageSupport } from "./utils.js";
 
 import planeFragment from "../shader/planeFragment.glsl";
@@ -32,6 +34,7 @@ import ditherTextureTiles from "../img/ditherTexture/tiles.png";
 
 import ditherPaletteDefault from "../img/palettes/default.jpg";
 import ditherPaletteGrey from "../img/palettes/grey.jpg";
+import ditherPaletteEga from "../img/palettes/c_ega.jpg";
 
 class WebGL {
     constructor() {
@@ -68,6 +71,7 @@ class WebGL {
         this.textures = {};
 
         this.scroll = {
+            y: 0,
             velocity: 0,
         };
 
@@ -130,25 +134,33 @@ class WebGL {
         this.onResize();
     }
 
-    async initializeAbout() {
-        const textures = await this.loadImages({
-            bagageTypoPng,
-            ditherTextureTiles,
-            ditherPaletteGrey,
+    async initializeAbout(imgs) {
+        return new Promise(async (resolve, reject) => {
+            const textures = await this.loadImages({
+                bagageTypoPng,
+                ditherTextureTiles,
+                ditherPaletteGrey,
+            });
+
+            this.addTextures(textures);
+            this.ditherPalette = this.textures.ditherPaletteGrey;
+            this.ditherTexture = this.textures.ditherTextureTiles;
+
+            if (!this.initialized) this.initialize();
+
+            await this.createGLImages(imgs);
+
+            console.log("alors oui");
+
+            this.ditherPaletteTexture.image = this.ditherPalette;
+            this.ditherTextureTexture.image = this.ditherTexture;
+            this.pass.uniforms.uDitherTextureSize.value =
+                this.ditherTexture.naturalWidth;
+
+            this.onResize();
+
+            resolve();
         });
-        this.addTextures(textures);
-        this.ditherPalette = this.textures.ditherPaletteGrey;
-        this.ditherTexture = this.textures.ditherTextureTiles;
-
-        if (!this.initialized) this.initialize();
-
-        this.ditherPaletteTexture.image = this.ditherPalette;
-        this.ditherTextureTexture.image = this.ditherTexture;
-        this.pass.uniforms.uDitherTextureSize.value =
-            this.ditherTexture.naturalWidth;
-        // this.createImages();
-
-        this.onResize();
     }
 
     async loadImages(images) {
@@ -179,6 +191,28 @@ class WebGL {
 
             resolve(loadedImage);
         });
+    }
+
+    async createGLImages(imgs) {
+        this.imageElements = [...imgs];
+        const imgsPromises = [];
+
+        this.images = this.imageElements.map((element) => {
+            let media = new ImageGL({
+                element,
+                geometry: this.planeGeometry,
+                gl: this.gl,
+                scene: this.scene,
+                screen: this.screen,
+                viewport: this.viewport,
+            });
+
+            imgsPromises.push(media.initialize());
+
+            return media;
+        });
+
+        return Promise.all(imgsPromises);
     }
 
     createSceneCamera() {
@@ -367,14 +401,14 @@ class WebGL {
             this.fullscreenPlane.scale.y = this.viewport.height;
         }
 
-        // if (this.images) {
-        //     this.images.forEach((image) =>
-        //         image.onResize({
-        //             screen: this.screen,
-        //             viewport: this.viewport,
-        //         })
-        //     );
-        // }
+        if (this.images) {
+            this.images.forEach((image) =>
+                image.onResize({
+                    screen: this.screen,
+                    viewport: this.viewport,
+                })
+            );
+        }
 
         const currentTypoWidth = this.screen.width - this.textGutter;
         const currentTypoHeight = currentTypoWidth / this.typoAspectRatio;
@@ -462,9 +496,9 @@ class WebGL {
         this.pass.program.uniforms.uCmDistanceFactor.value =
             this.params.ditherFactor;
 
-        // if (this.images) {
-        //     this.images.forEach((image) => image.update());
-        // }
+        if (this.images) {
+            this.images.forEach((image) => image.update(this.scroll.y));
+        }
 
         this.gl.clearColor(0, 0, 0, 1);
 
@@ -492,8 +526,9 @@ class WebGL {
         this.appear = appear;
     }
 
-    setScroll({ velocity }) {
+    setScroll({ velocity, y }) {
         const speedMultiplier = 5000;
+        this.scroll.y = y;
         this.scroll.velocity =
             1 + Math.min(Math.abs(velocity), 500) / speedMultiplier;
     }
