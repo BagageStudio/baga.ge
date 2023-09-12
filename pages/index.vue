@@ -1,621 +1,664 @@
 <template>
-    <div class="container home page" id="home">
-        <div class="hello-monolith-wrapper" id="helloMonolithWrapper">
-            <div class="monolith bgless" id="helloMonolith">
-                <div class="monolith-bg" id="helloMonolithBg"></div>
-                <div class="hero">
-                    <div class="hero-title wrapper-title">
-                        <span class="subtitle content-pad">Hello</span>
-                        <h1 class="title content-pad">
-                            Bagage is a small creative development studio that
-                            assists projects both technically and visually.
-                        </h1>
+    <div class="home page" id="home">
+        <header class="header">
+            <div class="container">
+                <NuxtLink to="/" class="active">Home</NuxtLink>
+                <NuxtLink to="/about">About</NuxtLink>
+            </div>
+        </header>
+        <div class="container">
+            <div class="hello-monolith-wrapper" id="helloMonolithWrapper">
+                <div class="monolith bgless" id="helloMonolith">
+                    <div class="monolith-bg" id="helloMonolithBg"></div>
+                    <div class="hero">
+                        <div class="hero-title wrapper-title">
+                            <span class="subtitle content-pad">Hello</span>
+                            <h1 class="title content-pad">
+                                Bagage is a small creative development studio
+                                that assists projects both technically and
+                                visually.
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="wrapper-intro">
+                        <div class="intro">
+                            <div class="wrapper-intro-txt">
+                                <div class="col-intro-txt content-pad">
+                                    <p>
+                                        We enjoy working at the intersection of
+                                        design and development. We love to share
+                                        the energy of inspiring people who enjoy
+                                        what they do, and we help them achieve
+                                        the best result.
+                                    </p>
+                                </div>
+                                <div class="col-intro-txt content-pad">
+                                    <p>
+                                        We have developed partnerships with
+                                        talented freelance designers and
+                                        marketers, and we work in collaboration
+                                        with your team.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="stack">
+                                <div class="stack-desc content-pad">
+                                    <p>
+                                        We work on a tech stack that has many
+                                        benefits, including improved
+                                        performance, enhanced security, and
+                                        scalability:
+                                    </p>
+                                </div>
+                                <ul class="stack-list content-pad">
+                                    <li>JAMstack</li>
+                                    <li>Nuxt.js</li>
+                                    <li>Headless CMS</li>
+                                    <li>Creative development</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="wrapper-intro">
-                    <div class="intro">
-                        <div class="wrapper-intro-txt">
-                            <div class="col-intro-txt content-pad">
-                                <p>
-                                    We enjoy working at the intersection of
-                                    design and development. We love to share the
-                                    energy of inspiring people who enjoy what
-                                    they do, and we help them achieve the best
-                                    result.
+            </div>
+            <div class="monolith bgless project-monolith" id="projectsMonolith">
+                <div class="monolith-bg" id="projectsMonolithBg"></div>
+                <div class="wrapper-projects" id="projects">
+                    <div class="wrapper-projects-title">
+                        <div class="projects-title wrapper-title">
+                            <div
+                                id="projectsTitle"
+                                class="inner-projects-title"
+                            >
+                                <span class="subtitle content-pad"
+                                    >Projects</span
+                                >
+                                <h2 class="title content-pad">
+                                    We provide our expertise on projects of any
+                                    scale, and anywhere in the world.
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projects-list">
+                        <a
+                            href="https://shares.io/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project"
+                        >
+                            <div class="project-line wrapper-name-arrow">
+                                <h3 class="project-name line-content">
+                                    Shares
+                                </h3>
+                                <div class="wrapper-arrow-number line-content">
+                                    <div class="project-number">08</div>
+                                    <div class="project-arrow">↗</div>
+                                </div>
+                                <div class="line"></div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-year line-content"
+                                    >2022 — Present</span
+                                >
+                                <div class="line"></div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-stack line-content"
+                                    >Nuxt.js Prismic DatoCMS Netlify</span
+                                >
+                                <div class="line"></div>
+                            </div>
+                            <div class="project-line">
+                                <p class="project-intro line-content">
+                                    Shares is the investment app where friends
+                                    invest and build strategies together. Watch
+                                    your buddies’ moves, chat about strategy and
+                                    grow your investments together.
                                 </p>
+                                <div class="line"></div>
                             </div>
-                            <div class="col-intro-txt content-pad">
-                                <NuxtLink to="/about">ABOUT</NuxtLink>
-                                <p>
-                                    We have developed partnerships with talented
-                                    freelance designers and marketers, and we
-                                    work in collaboration with your team.
+                            <div class="project-line">
+                                <span class="project-type line-content">
+                                    ↳ Website Creation + Development Support
+                                </span>
+                                <div class="line"></div>
+                            </div>
+                        </a>
+                        <a
+                            href="https://lesindiens.netlify.app/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project"
+                        >
+                            <div class="project-line wrapper-name-arrow">
+                                <h3 class="project-name line-content">
+                                    Les Indiens
+                                </h3>
+                                <div class="wrapper-arrow-number line-content">
+                                    <div class="project-number">07</div>
+                                    <div class="project-arrow">↗</div>
+                                </div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-year line-content"
+                                    >2022 — 2023</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-stack line-content"
+                                    >Nuxt.js Storyblok Netlify</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <p class="project-intro line-content">
+                                    Studio Les Indiens is a creative duo expert
+                                    in Branding and Product Design.
                                 </p>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="stack">
-                            <div class="stack-desc content-pad">
-                                <p>
-                                    We work on a tech stack that has many
-                                    benefits, including improved performance,
-                                    enhanced security, and scalability:
+                            <div class="project-line">
+                                <span class="project-type line-content">
+                                    ↳ Website Creation
+                                </span>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                        </a>
+                        <a
+                            href="https://aircall.io/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project"
+                        >
+                            <div class="project-line wrapper-name-arrow">
+                                <h3 class="project-name line-content">
+                                    Aircall
+                                </h3>
+                                <div class="wrapper-arrow-number line-content">
+                                    <div class="project-number">06</div>
+                                    <div class="project-arrow">↗</div>
+                                </div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-year line-content"
+                                    >2021 — Present</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-stack line-content"
+                                    >Nuxt.js Contentful Next.js Storyblok
+                                    Vercel</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <p class="project-intro line-content">
+                                    Call center software for customer-centric
+                                    teams. Transform customers experiences with
+                                    the IT-approved cloud call center solution
+                                    for sales and support teams.
                                 </p>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
-                            <ul class="stack-list content-pad">
-                                <li>JAMstack</li>
-                                <li>Nuxt.js</li>
-                                <li>Headless CMS</li>
-                                <li>Creative development</li>
-                            </ul>
+                            <div class="project-line">
+                                <span class="project-type line-content">
+                                    ↳ Development Support
+                                </span>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                        </a>
+                        <a
+                            href="https://ondorse.co/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project"
+                        >
+                            <div class="project-line wrapper-name-arrow">
+                                <h3 class="project-name line-content">
+                                    Ondorse
+                                </h3>
+                                <div class="wrapper-arrow-number line-content">
+                                    <div class="project-number">05</div>
+                                    <div class="project-arrow">↗</div>
+                                </div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-year line-content"
+                                    >2021 — 2022</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-stack line-content"
+                                    >Nuxt.js DatoCMS Netlify</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <p class="project-intro line-content">
+                                    The easiest way to verify your business
+                                    customers. Ondorse is the business identity
+                                    solution for fintechs and marketplaces.
+                                </p>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-type line-content">
+                                    ↳ Website Creation
+                                </span>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                        </a>
+                        <a
+                            href="https://stuart.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project"
+                        >
+                            <div class="project-line wrapper-name-arrow">
+                                <h3 class="project-name line-content">
+                                    Stuart
+                                </h3>
+                                <div class="wrapper-arrow-number line-content">
+                                    <div class="project-number">04</div>
+                                    <div class="project-arrow">↗</div>
+                                </div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-year line-content"
+                                    >2018 — Present</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-stack line-content"
+                                    >Nuxt.js DatoCMS Netlify</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <p class="project-intro line-content">
+                                    Instant, Same-day, Next-day Delivery
+                                    Service. Partner with Europe's leading urban
+                                    logistics company, powering any business
+                                    with instant, scheduled, same-day, and
+                                    next-day delivery solutions.
+                                </p>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-type line-content">
+                                    ↳ Website Creation + Development Support
+                                </span>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                        </a>
+                        <a
+                            href="https://blinkl.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project"
+                        >
+                            <div class="project-line wrapper-name-arrow">
+                                <h3 class="project-name line-content">
+                                    Blinkl
+                                </h3>
+                                <div class="wrapper-arrow-number line-content">
+                                    <div class="project-number">03</div>
+                                    <div class="project-arrow">↗</div>
+                                </div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-year line-content"
+                                    >2020 — 2022</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-stack line-content"
+                                    >Nuxt.js DatoCMS Netlify</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <p class="project-intro line-content">
+                                    Blinkl is the first solution offering
+                                    interactive 3D players, augmented reality
+                                    and virtual reality 100% web, within a
+                                    single creation editor.
+                                </p>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-type line-content">
+                                    ↳ Website Creation
+                                </span>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                        </a>
+                        <a
+                            href="https://ringcp.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project"
+                        >
+                            <div class="project-line wrapper-name-arrow">
+                                <h3 class="project-name line-content">
+                                    Ring Capital
+                                </h3>
+                                <div class="wrapper-arrow-number line-content">
+                                    <div class="project-number">02</div>
+                                    <div class="project-arrow">↗</div>
+                                </div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-year line-content"
+                                    >2021 — 2022</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-stack line-content"
+                                    >Nuxt.js DatoCMS Netlify</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <p class="project-intro line-content">
+                                    Ring Capital is an investment ecosystem that
+                                    combines business performance with
+                                    sustainability by pulling in responsibly
+                                    minded entrepreneurs and empowering them to
+                                    thrive.
+                                </p>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-type line-content">
+                                    ↳ Website Creation
+                                </span>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                        </a>
+                        <a
+                            href="https://stratumn.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project"
+                        >
+                            <div class="project-line wrapper-name-arrow">
+                                <h3 class="project-name line-content">
+                                    Stratumn
+                                </h3>
+                                <div class="wrapper-arrow-number line-content">
+                                    <div class="project-number">01</div>
+                                    <div class="project-arrow">↗</div>
+                                </div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-year line-content"
+                                    >2021</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-stack line-content"
+                                    >Nuxt.js DatoCMS Netlify</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <p class="project-intro line-content">
+                                    Stratumn is a solution designed for the
+                                    Finance teams of medium and large companies.
+                                    We help our customers optimize end-to-end
+                                    finance processes with our SaaS software.
+                                </p>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-type line-content">
+                                    ↳ Website Creation
+                                </span>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="manifesto-wrapper" id="manifestoWrapper">
+                <div class="manifesto-title" id="manifestoTitle">
+                    <div class="manifesto-title-wrapper">
+                        <div
+                            class="manifesto-title-line"
+                            id="manifestoTitleLineOne"
+                        >
+                            <span class="manifesto-title-rounded"
+                                >Manifesto</span
+                            >
+                            <span class="manifesto-title-arrow">↤</span>
+                            <span>Collaborative</span>
+                            <span class="manifesto-title-arrow">↤</span>
+                            <span>Commitment</span>
+                            <span class="manifesto-title-arrow">↤</span>
+                            <span>Transparency</span>
+                            <span class="manifesto-title-arrow">↤</span>
+                            <span>Enjoy</span>
+                            <span class="manifesto-title-arrow">↤</span>
+                            <span class="manifesto-title-rounded"
+                                >Manifesto</span
+                            >
+                            <span class="manifesto-title-arrow">↤</span>
+                            <span>Collaborative</span>
+                            <span class="manifesto-title-arrow">↤</span>
+                            <span>Commitment</span>
+                            <span class="manifesto-title-arrow">↤</span>
+                            <span>Transparency</span>
+                            <span class="manifesto-title-arrow">↤</span>
+                            <span>Enjoy</span>
+                            <span class="manifesto-title-arrow">↤</span>
+                            <span class="manifesto-title-rounded"
+                                >Manifesto</span
+                            >
+                            <span class="manifesto-title-arrow">↤</span>
+                            <span>Collaborative</span>
+                            <span class="manifesto-title-arrow">↤</span>
+                            <span>Commitment</span>
+                            <span class="manifesto-title-arrow">↤</span>
+                            <span>Transparency</span>
+                            <span class="manifesto-title-arrow">↤</span>
+                            <span>Enjoy</span>
+                            <span class="manifesto-title-arrow">↤</span>
+                        </div>
+                    </div>
+                    <div class="manifesto-title-wrapper reverse">
+                        <div
+                            class="manifesto-title-line"
+                            id="manifestoTitleLineTwo"
+                        >
+                            <span class="manifesto-title-rounded">
+                                Manifesto
+                            </span>
+                            <span class="manifesto-title-arrow">↦</span>
+                            <span> Collaborative </span>
+                            <span class="manifesto-title-arrow">↦</span>
+                            <span> Commitment </span>
+                            <span class="manifesto-title-arrow">↦</span>
+                            <span> Transparency </span>
+                            <span class="manifesto-title-arrow">↦</span>
+                            <span>Enjoy</span>
+                            <span class="manifesto-title-arrow">↦</span>
+                            <span class="manifesto-title-rounded">
+                                Manifesto
+                            </span>
+                            <span class="manifesto-title-arrow">↦</span>
+                            <span> Collaborative </span>
+                            <span class="manifesto-title-arrow">↦</span>
+                            <span> Commitment </span>
+                            <span class="manifesto-title-arrow">↦</span>
+                            <span> Transparency </span>
+                            <span class="manifesto-title-arrow">↦</span>
+                            <span>Enjoy</span>
+                            <span class="manifesto-title-arrow">↦</span>
+                            <span class="manifesto-title-rounded">
+                                Manifesto
+                            </span>
+                            <span class="manifesto-title-arrow">↦</span>
+                            <span> Collaborative </span>
+                            <span class="manifesto-title-arrow">↦</span>
+                            <span> Commitment </span>
+                            <span class="manifesto-title-arrow">↦</span>
+                            <span> Transparency </span>
+                            <span class="manifesto-title-arrow">↦</span>
+                            <span>Enjoy</span>
+                            <span class="manifesto-title-arrow">↦</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="monolith bgless">
+                    <div class="monolith-bg" id="manifestoMonolithBg"></div>
+                    <div class="manifesto" id="manifestoValues">
+                        <div class="value">
+                            <div class="inner-value">
+                                Our goal is to use our creative skills to
+                                highlight your message and make your brand
+                                particularly striking and appealing.
+                            </div>
+                        </div>
+                        <div class="value">
+                            <div class="inner-value">
+                                We are committed to perfection and precision.
+                            </div>
+                        </div>
+                        <div class="value">
+                            <div class="inner-value">
+                                Relying on collaboration and flexibility, we
+                                ensure the best possible service from start to
+                                finish.
+                            </div>
+                        </div>
+                        <div class="value">
+                            <div class="inner-value">
+                                Through the selection of our projects, we strive
+                                at making this journey respectful and enjoyable.
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="monolith bgless project-monolith" id="projectsMonolith">
-            <div class="monolith-bg" id="projectsMonolithBg"></div>
-            <div class="wrapper-projects" id="projects">
-                <div class="wrapper-projects-title">
-                    <div class="projects-title wrapper-title">
-                        <div id="projectsTitle" class="inner-projects-title">
-                            <span class="subtitle content-pad">Projects</span>
-                            <h2 class="title content-pad">
-                                We provide our expertise on projects of any
-                                scale, and anywhere in the world.
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="projects-list">
-                    <a
-                        href="https://shares.io/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project"
-                    >
-                        <div class="project-line wrapper-name-arrow">
-                            <h3 class="project-name line-content">Shares</h3>
-                            <div class="wrapper-arrow-number line-content">
-                                <div class="project-number">08</div>
-                                <div class="project-arrow">↗</div>
-                            </div>
-                            <div class="line"></div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-year line-content"
-                                >2022 — Present</span
-                            >
-                            <div class="line"></div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-stack line-content"
-                                >Nuxt.js Prismic DatoCMS Netlify</span
-                            >
-                            <div class="line"></div>
-                        </div>
-                        <div class="project-line">
-                            <p class="project-intro line-content">
-                                Shares is the investment app where friends
-                                invest and build strategies together. Watch your
-                                buddies’ moves, chat about strategy and grow
-                                your investments together.
-                            </p>
-                            <div class="line"></div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-type line-content">
-                                ↳ Website Creation + Development Support
-                            </span>
-                            <div class="line"></div>
-                        </div>
-                    </a>
-                    <a
-                        href="https://lesindiens.netlify.app/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project"
-                    >
-                        <div class="project-line wrapper-name-arrow">
-                            <h3 class="project-name line-content">
-                                Les Indiens
-                            </h3>
-                            <div class="wrapper-arrow-number line-content">
-                                <div class="project-number">07</div>
-                                <div class="project-arrow">↗</div>
-                            </div>
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-year line-content"
-                                >2022 — 2023</span
-                            >
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-stack line-content"
-                                >Nuxt.js Storyblok Netlify</span
-                            >
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <p class="project-intro line-content">
-                                Studio Les Indiens is a creative duo expert in
-                                Branding and Product Design.
-                            </p>
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-type line-content">
-                                ↳ Website Creation
-                            </span>
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                    </a>
-                    <a
-                        href="https://aircall.io/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project"
-                    >
-                        <div class="project-line wrapper-name-arrow">
-                            <h3 class="project-name line-content">Aircall</h3>
-                            <div class="wrapper-arrow-number line-content">
-                                <div class="project-number">06</div>
-                                <div class="project-arrow">↗</div>
-                            </div>
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-year line-content"
-                                >2021 — Present</span
-                            >
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-stack line-content"
-                                >Nuxt.js Contentful Next.js Storyblok
-                                Vercel</span
-                            >
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <p class="project-intro line-content">
-                                Call center software for customer-centric teams.
-                                Transform customers experiences with the
-                                IT-approved cloud call center solution for sales
-                                and support teams.
-                            </p>
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-type line-content">
-                                ↳ Development Support
-                            </span>
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                    </a>
-                    <a
-                        href="https://ondorse.co/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project"
-                    >
-                        <div class="project-line wrapper-name-arrow">
-                            <h3 class="project-name line-content">Ondorse</h3>
-                            <div class="wrapper-arrow-number line-content">
-                                <div class="project-number">05</div>
-                                <div class="project-arrow">↗</div>
-                            </div>
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-year line-content"
-                                >2021 — 2022</span
-                            >
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-stack line-content"
-                                >Nuxt.js DatoCMS Netlify</span
-                            >
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <p class="project-intro line-content">
-                                The easiest way to verify your business
-                                customers. Ondorse is the business identity
-                                solution for fintechs and marketplaces.
-                            </p>
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-type line-content">
-                                ↳ Website Creation
-                            </span>
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                    </a>
-                    <a
-                        href="https://stuart.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project"
-                    >
-                        <div class="project-line wrapper-name-arrow">
-                            <h3 class="project-name line-content">Stuart</h3>
-                            <div class="wrapper-arrow-number line-content">
-                                <div class="project-number">04</div>
-                                <div class="project-arrow">↗</div>
-                            </div>
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-year line-content"
-                                >2018 — Present</span
-                            >
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-stack line-content"
-                                >Nuxt.js DatoCMS Netlify</span
-                            >
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <p class="project-intro line-content">
-                                Instant, Same-day, Next-day Delivery Service.
-                                Partner with Europe's leading urban logistics
-                                company, powering any business with instant,
-                                scheduled, same-day, and next-day delivery
-                                solutions.
-                            </p>
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-type line-content">
-                                ↳ Website Creation + Development Support
-                            </span>
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                    </a>
-                    <a
-                        href="https://blinkl.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project"
-                    >
-                        <div class="project-line wrapper-name-arrow">
-                            <h3 class="project-name line-content">Blinkl</h3>
-                            <div class="wrapper-arrow-number line-content">
-                                <div class="project-number">03</div>
-                                <div class="project-arrow">↗</div>
-                            </div>
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-year line-content"
-                                >2020 — 2022</span
-                            >
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-stack line-content"
-                                >Nuxt.js DatoCMS Netlify</span
-                            >
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <p class="project-intro line-content">
-                                Blinkl is the first solution offering
-                                interactive 3D players, augmented reality and
-                                virtual reality 100% web, within a single
-                                creation editor.
-                            </p>
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-type line-content">
-                                ↳ Website Creation
-                            </span>
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                    </a>
-                    <a
-                        href="https://ringcp.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project"
-                    >
-                        <div class="project-line wrapper-name-arrow">
-                            <h3 class="project-name line-content">
-                                Ring Capital
-                            </h3>
-                            <div class="wrapper-arrow-number line-content">
-                                <div class="project-number">02</div>
-                                <div class="project-arrow">↗</div>
-                            </div>
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-year line-content"
-                                >2021 — 2022</span
-                            >
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-stack line-content"
-                                >Nuxt.js DatoCMS Netlify</span
-                            >
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <p class="project-intro line-content">
-                                Ring Capital is an investment ecosystem that
-                                combines business performance with
-                                sustainability by pulling in responsibly minded
-                                entrepreneurs and empowering them to thrive.
-                            </p>
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-type line-content">
-                                ↳ Website Creation
-                            </span>
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                    </a>
-                    <a
-                        href="https://stratumn.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project"
-                    >
-                        <div class="project-line wrapper-name-arrow">
-                            <h3 class="project-name line-content">Stratumn</h3>
-                            <div class="wrapper-arrow-number line-content">
-                                <div class="project-number">01</div>
-                                <div class="project-arrow">↗</div>
-                            </div>
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-year line-content">2021</span>
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-stack line-content"
-                                >Nuxt.js DatoCMS Netlify</span
-                            >
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <p class="project-intro line-content">
-                                Stratumn is a solution designed for the Finance
-                                teams of medium and large companies. We help our
-                                customers optimize end-to-end finance processes
-                                with our SaaS software.
-                            </p>
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                        <div class="project-line">
-                            <span class="project-type line-content">
-                                ↳ Website Creation
-                            </span>
-                            <div class="line">
-                                <div class="overflow-line"></div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="manifesto-wrapper" id="manifestoWrapper">
-            <div class="manifesto-title" id="manifestoTitle">
-                <div class="manifesto-title-wrapper">
-                    <div
-                        class="manifesto-title-line"
-                        id="manifestoTitleLineOne"
-                    >
-                        <span class="manifesto-title-rounded">Manifesto</span>
-                        <span class="manifesto-title-arrow">↤</span>
-                        <span>Collaborative</span>
-                        <span class="manifesto-title-arrow">↤</span>
-                        <span>Commitment</span>
-                        <span class="manifesto-title-arrow">↤</span>
-                        <span>Transparency</span>
-                        <span class="manifesto-title-arrow">↤</span>
-                        <span>Enjoy</span>
-                        <span class="manifesto-title-arrow">↤</span>
-                        <span class="manifesto-title-rounded">Manifesto</span>
-                        <span class="manifesto-title-arrow">↤</span>
-                        <span>Collaborative</span>
-                        <span class="manifesto-title-arrow">↤</span>
-                        <span>Commitment</span>
-                        <span class="manifesto-title-arrow">↤</span>
-                        <span>Transparency</span>
-                        <span class="manifesto-title-arrow">↤</span>
-                        <span>Enjoy</span>
-                        <span class="manifesto-title-arrow">↤</span>
-                        <span class="manifesto-title-rounded">Manifesto</span>
-                        <span class="manifesto-title-arrow">↤</span>
-                        <span>Collaborative</span>
-                        <span class="manifesto-title-arrow">↤</span>
-                        <span>Commitment</span>
-                        <span class="manifesto-title-arrow">↤</span>
-                        <span>Transparency</span>
-                        <span class="manifesto-title-arrow">↤</span>
-                        <span>Enjoy</span>
-                        <span class="manifesto-title-arrow">↤</span>
-                    </div>
-                </div>
-                <div class="manifesto-title-wrapper reverse">
-                    <div
-                        class="manifesto-title-line"
-                        id="manifestoTitleLineTwo"
-                    >
-                        <span class="manifesto-title-rounded"> Manifesto </span>
-                        <span class="manifesto-title-arrow">↦</span>
-                        <span> Collaborative </span>
-                        <span class="manifesto-title-arrow">↦</span>
-                        <span> Commitment </span>
-                        <span class="manifesto-title-arrow">↦</span>
-                        <span> Transparency </span>
-                        <span class="manifesto-title-arrow">↦</span>
-                        <span>Enjoy</span>
-                        <span class="manifesto-title-arrow">↦</span>
-                        <span class="manifesto-title-rounded"> Manifesto </span>
-                        <span class="manifesto-title-arrow">↦</span>
-                        <span> Collaborative </span>
-                        <span class="manifesto-title-arrow">↦</span>
-                        <span> Commitment </span>
-                        <span class="manifesto-title-arrow">↦</span>
-                        <span> Transparency </span>
-                        <span class="manifesto-title-arrow">↦</span>
-                        <span>Enjoy</span>
-                        <span class="manifesto-title-arrow">↦</span>
-                        <span class="manifesto-title-rounded"> Manifesto </span>
-                        <span class="manifesto-title-arrow">↦</span>
-                        <span> Collaborative </span>
-                        <span class="manifesto-title-arrow">↦</span>
-                        <span> Commitment </span>
-                        <span class="manifesto-title-arrow">↦</span>
-                        <span> Transparency </span>
-                        <span class="manifesto-title-arrow">↦</span>
-                        <span>Enjoy</span>
-                        <span class="manifesto-title-arrow">↦</span>
-                    </div>
-                </div>
-            </div>
-            <div class="monolith bgless">
-                <div class="monolith-bg" id="manifestoMonolithBg"></div>
-                <div class="manifesto" id="manifestoValues">
-                    <div class="value">
-                        <div class="inner-value">
-                            Our goal is to use our creative skills to highlight
-                            your message and make your brand particularly
-                            striking and appealing.
-                        </div>
-                    </div>
-                    <div class="value">
-                        <div class="inner-value">
-                            We are committed to perfection and precision.
-                        </div>
-                    </div>
-                    <div class="value">
-                        <div class="inner-value">
-                            Relying on collaboration and flexibility, we ensure
-                            the best possible service from start to finish.
-                        </div>
-                    </div>
-                    <div class="value">
-                        <div class="inner-value">
-                            Through the selection of our projects, we strive at
-                            making this journey respectful and enjoyable.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="contact">
-            <div class="subtitle">Contact</div>
-            <a class="mail" href="mailto:hello@baga.ge">hello@baga.ge</a>
+            <div class="contact">
+                <div class="subtitle">Contact</div>
+                <a class="mail" href="mailto:hello@baga.ge">hello@baga.ge</a>
+            </div>
         </div>
+        <footer id="footer">
+            <div class="footer container">
+                <p class="internship">
+                    We are not taking any internship applications
+                    at&nbsp;the&nbsp;moment.
+                </p>
+                <div class="footer-text">
+                    <div class="copyright">©2023</div>
+                    <h2 class="based">Based in Nantes</h2>
+                </div>
+                <div class="social-links">
+                    <a
+                        href="https://twitter.com/BagageStudio"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Twitter ↗</a
+                    >
+                    <a
+                        href="https://www.linkedin.com/company/bagagestudio/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >LinkedIn ↗</a
+                    >
+                </div>
+            </div>
+        </footer>
     </div>
-    <footer id="footer">
-        <div class="footer container">
-            <p class="internship">
-                We are not taking any internship applications
-                at&nbsp;the&nbsp;moment.
-            </p>
-            <div class="footer-text">
-                <div class="copyright">©2023</div>
-                <h2 class="based">Based in Nantes</h2>
-            </div>
-            <div class="social-links">
-                <a
-                    href="https://twitter.com/BagageStudio"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Twitter ↗</a
-                >
-                <a
-                    href="https://www.linkedin.com/company/bagagestudio/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >LinkedIn ↗</a
-                >
-            </div>
-        </div>
-    </footer>
 </template>
 
 <script setup>

@@ -333,6 +333,31 @@ a.project {
     }
 }
 
+// header
+.header {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    > .container {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        text-transform: uppercase;
+    }
+    a {
+        color: $primary;
+        text-decoration: none;
+        text-underline-offset: 2px;
+        &.active {
+            text-decoration: underline;
+        }
+        .secondary & {
+            color: $secondary;
+        }
+    }
+}
+
 // footer
 .footer {
     display: flex;

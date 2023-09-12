@@ -1,32 +1,38 @@
 <template>
     <div class="about page secondary" id="about">
-        <div class="hero container">
-            <div class="hero-title wrapper-title full-width">
-                <span class="subtitle content-pad">About</span>
-                <div class="title content-pad">
-                    <h1>
-                        We are a team of two developers with an expertise in
-                        website creation.
-                    </h1>
-                    <p>
-                        Before starting Bagage, we met in a creative web agency
-                        and then worked as separate freelancers. It became clear
-                        that we had to create our own studio because we enjoy
-                        working with our own clients to share key values and a
-                        common strategy.
-                    </p>
+        <header class="header">
+            <div class="container">
+                <NuxtLink to="/">Home</NuxtLink>
+                <NuxtLink to="/about" class="active">About</NuxtLink>
+            </div>
+        </header>
+        <div class="container">
+            <div class="hero">
+                <div class="hero-title wrapper-title full-width">
+                    <span class="subtitle content-pad">About</span>
+                    <div class="title content-pad">
+                        <h1>
+                            We are a team of two developers with an expertise in
+                            website creation.
+                        </h1>
+                        <p>
+                            Before starting Bagage, we met in a creative web
+                            agency and then worked as separate freelancers. It
+                            became clear that we had to create our own studio
+                            because we enjoy working with our own clients to
+                            share key values and a common strategy.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="images container">
-            <div class="image-gl" ref="img1">
-                <img src="~/assets/img/photos/adrien2.jpg" />
+            <div class="images">
+                <div class="image-gl" ref="img1">
+                    <img src="~/assets/img/photos/adrien2.jpg" />
+                </div>
+                <div class="image-gl" ref="img2">
+                    <img src="~/assets/img/photos/adrien3.jpg" />
+                </div>
             </div>
-            <div class="image-gl" ref="img2">
-                <img src="~/assets/img/photos/adrien3.jpg" />
-            </div>
-        </div>
-        <div class="container">
             <div class="key-values">
                 <div class="key-value">
                     <h2 class="title-a content-pad">
@@ -104,28 +110,6 @@
             <div class="contact">
                 <div class="subtitle">Contact</div>
                 <a class="mail" href="mailto:hello@baga.ge">hello@baga.ge</a>
-            </div>
-        </div>
-        <div class="grid" id="grid">
-            <div class="container">
-                <div class="column-block">
-                    <div class="column-text"></div>
-                </div>
-                <div class="column-block">
-                    <div class="column-text"></div>
-                </div>
-                <div class="column-block">
-                    <div class="column-text"></div>
-                </div>
-                <div class="column-block">
-                    <div class="column-text"></div>
-                </div>
-                <div class="column-block">
-                    <div class="column-text"></div>
-                </div>
-                <div class="column-block">
-                    <div class="column-text"></div>
-                </div>
             </div>
         </div>
         <footer id="footer">
