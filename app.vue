@@ -7,7 +7,7 @@
 
 <script setup>
 import WebGL from "~/assets/js/WebGL";
-import { CreateScroll } from "~/assets/js/scroll";
+import { CreateScroll } from "~/assets/js/scroll/home";
 
 const nuxtApp = useNuxtApp();
 

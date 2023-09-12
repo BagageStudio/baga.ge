@@ -1,26 +1,30 @@
 #version 300 es
 precision highp float;
 
-// Default uniform for previous pass is 'tMap'.
-// Can change this using the 'textureUniform' property
-// when adding a pass.
-uniform sampler2D tMap;
 uniform vec2 uResolution;
 uniform float uTime;
 
-uniform sampler2D uDitherTexture;
-uniform float uDitherTextureSize;
+uniform sampler2D tMap;
+uniform sampler2D tDitherType;
+
+uniform sampler2D uPrimaryDitherTexture;
+uniform float uPrimaryDitherTextureSize;
+
+uniform sampler2D uSecondaryDitherTexture;
+uniform float uSecondaryDitherTextureSize;
+
 uniform float uInversedTexture;
 
 uniform float uDitherType;
 
-uniform float pixelation;
+uniform float uPixelation;
 uniform float pixelRatio;
 uniform float pixelated;
 uniform float dithered;
 uniform float uInversedPalette;
 
-uniform sampler2D uDitherPalette;
+uniform sampler2D uPrimaryDitherPalette;
+uniform sampler2D uSecondaryDitherPalette;
 uniform float uLmRampConstrast;
 uniform float uLmRampOffset;
 
@@ -66,7 +70,7 @@ vec3 findClosestColorFrom(sampler2D palette,vec3 color){
 vec3 getDitherPalette(float lum){
     
     // get the palette texture size mapped so it is 1px high (so the x value however many colour bands there are)
-    ivec2 palette_size=textureSize(uDitherPalette,0);
+    ivec2 palette_size=textureSize(uPrimaryDitherPalette,0);
     int palette_width=palette_size.x/palette_size.y;
     
     float number_of_colors_in_palette=float(palette_width)-1.;// nb of color boundaries is 1 less than the number of colour bands
@@ -79,7 +83,7 @@ vec3 getDitherPalette(float lum){
     return vec3(lower_boundary_color,upper_boundary_color,lum_scaled_between_two_boundaries);
 }
 
-vec2 pixelateUV(vec2 startingUv)
+vec2 pixelateUV(vec2 startingUv,float pixelation)
 {
     vec2 p=startingUv.st;
     float updatedPixelRatio=pixelRatio*10.+1.;
@@ -93,7 +97,7 @@ vec2 pixelateUV(vec2 startingUv)
 
 vec3 ditherByColorMatching(vec3 color,float threshold){
     vec3 color_attempt=color+threshold*uCmDistanceFactor;
-    return findClosestColorFrom(uDitherPalette,color_attempt);
+    return findClosestColorFrom(uSecondaryDitherPalette,color_attempt);
 }
 
 vec3 ditherByLuminanceMapping(vec3 color,float threshold){
@@ -128,23 +132,36 @@ vec3 ditherByLuminanceMapping(vec3 color,float threshold){
     
     x_pos_of_color_to_use=mix(x_pos_of_color_to_use,1.-x_pos_of_color_to_use,uInversedPalette);// we inverse the color palette if uInversedPalette is at 1.
     
-    return texture(uDitherPalette,vec2(x_pos_of_color_to_use,.5)).rgb;
+    return texture(uPrimaryDitherPalette,vec2(x_pos_of_color_to_use,.5)).rgb;
 }
 
 void main(){
+    vec3 color=texture(tMap,vUv).rgb;
+    float ditherType=texture(tDitherType,vUv).r;
     
-    vec4 pixelatedTexture=texture(tMap,pixelateUV(vUv));
-    float threshold=texture(uDitherTexture,mod(gl_FragCoord.xy,uDitherTextureSize)/uDitherTextureSize).r;
+    vec2 primary_uv=pixelateUV(vUv,uPixelation);
+    vec2 secondary_uv=pixelateUV(vUv,400.);
+    vec2 uv_to_use=mix(primary_uv,secondary_uv,ditherType);
+    
+    vec4 pixelatedTexture=texture(tMap,uv_to_use);
+    
+    float primary_threshold=texture(uPrimaryDitherTexture,mod(gl_FragCoord.xy,uPrimaryDitherTextureSize)/uPrimaryDitherTextureSize).r;
+    float secondary_threshold=texture(uSecondaryDitherTexture,mod(gl_FragCoord.xy,uSecondaryDitherTextureSize)/uSecondaryDitherTextureSize).r;
+    float threshold=mix(primary_threshold,secondary_threshold,ditherType);
     threshold=mix(threshold,1.-threshold,uInversedTexture);
     
-    vec3 colorMatchingDithered=ditherByColorMatching(pixelatedTexture.rgb,threshold);
     vec3 luminanceMappingDithered=ditherByLuminanceMapping(pixelatedTexture.rgb,threshold);
+    vec3 colorMatchingDithered=ditherByColorMatching(pixelatedTexture.rgb,threshold);
     
-    vec3 ditherToUse=mix(luminanceMappingDithered,colorMatchingDithered,uDitherType);
+    vec3 ditherToUse=mix(luminanceMappingDithered,colorMatchingDithered,ditherType);
     
     // Adding color
     vec4 ditheredColor=vec4(ditherToUse,1.);
     
-    fragColor=mix(pixelatedTexture,ditheredColor,dithered);
+    fragColor=ditheredColor;
     
+    // fragColor=mix(vec4(1.,0.,0.,1.),vec4(0.,0.,1.,1.),ditherType);
+    
+    // fragColor.rgb=color;
+    // fragColor.a=1.;
 }

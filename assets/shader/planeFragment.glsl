@@ -1,3 +1,4 @@
+#version 300 es
 precision highp float;
 
 uniform vec2 uImageSizes;
@@ -19,7 +20,9 @@ uniform float uBottomMask;
 uniform float uNoiseThreshold;
 uniform float uNoisePower;
 
-varying vec2 vUv;
+in vec2 vUv;
+
+out vec4 FragData[2];
 
 #include "lygia/generative/cnoise.glsl";
 
@@ -82,7 +85,7 @@ vec4 typo(){
     uv=uv*mix(1.,scrollOutScale,uScrollOut);
     uv.x=(uv.x+1.)*.5;
     
-    vec4 color=texture2D(tMap,uv);
+    vec4 color=texture(tMap,uv);
     float opacity=mix(color.a,mix(color.a,.4,uScrollOut),color.a);
     color.a=opacity;
     
@@ -122,7 +125,7 @@ float bottomTextMaskTexture(){
 
 void main(){
     
-    gl_FragColor=vec4(0.,0.,0.,0.);
+    vec4 fragColor=vec4(0.,0.,0.,0.);
     
     vec4 noise=noiseTexture();
     noise.a=mix(0.,noise.a,uAppearNoiseOpacity);
@@ -131,12 +134,15 @@ void main(){
     
     float bottomTextMask=bottomTextMaskTexture();
     
-    // gl_FragColor+=max(noise,typo);
-    // gl_FragColor+=typo;
-    gl_FragColor=mix(noise,typo,typo.a);
-    // gl_FragColor+=typo;
+    // fragColor+=max(noise,typo);
+    // fragColor+=typo;
+    fragColor=mix(noise,typo,typo.a);
+    // fragColor+=typo;
     
-    gl_FragColor=mix(gl_FragColor,vec4(0.,0.,0.,0.),bottomTextMask);
+    fragColor=mix(fragColor,vec4(0.,0.,0.,0.),bottomTextMask);
+    
+    FragData[0]=fragColor;
+    FragData[1]=vec4(0.,0.,1.,1.);
     
 }
 

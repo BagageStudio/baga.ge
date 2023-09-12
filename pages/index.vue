@@ -1,5 +1,5 @@
 <template>
-    <div class="container home" id="home">
+    <div class="container home page" id="home">
         <div class="hello-monolith-wrapper" id="helloMonolithWrapper">
             <div class="monolith bgless" id="helloMonolith">
                 <div class="monolith-bg" id="helloMonolithBg"></div>
@@ -613,7 +613,7 @@
 </template>
 
 <script setup>
-import CreateLoadedAnimation from "~/assets/js/loadedAnimation";
+import { homeLoaded } from "~/assets/js/loadedAnimation";
 import WebGL from "~/assets/js/WebGL";
 import {
     CreateProjectsAnimation,
@@ -621,10 +621,10 @@ import {
     CreateManifestoTitleAnimation,
     CreateManifestoValuesAnimation,
     CreateTextMasksAnimation,
-} from "~/assets/js/scroll";
+} from "~/assets/js/scroll/home";
 
 function createAnimations() {
-    CreateLoadedAnimation();
+    homeLoaded();
     CreateHelloAnimation();
     CreateProjectsAnimation();
     CreateManifestoTitleAnimation();

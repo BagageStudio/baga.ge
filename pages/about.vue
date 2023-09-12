@@ -1,5 +1,5 @@
 <template>
-    <div class="about">
+    <div class="about page" id="about">
         <div class="images container">
             <div class="image-gl" ref="img1">
                 <img src="~/assets/img/photos/adrien2.jpg" />
@@ -12,7 +12,9 @@
 </template>
 
 <script setup>
-import CreateLoadedAnimation from "~/assets/js/loadedAnimation";
+import { aboutLoaded } from "~/assets/js/loadedAnimation";
+import { CreateHelloAnimation } from "~/assets/js/scroll/about";
+
 import WebGL from "~/assets/js/WebGL";
 
 const img1 = ref(null);
@@ -20,7 +22,8 @@ const img2 = ref(null);
 
 onMounted(async () => {
     await WebGL.initializeAbout([img1.value, img2.value]);
-    CreateLoadedAnimation();
+    aboutLoaded();
+    CreateHelloAnimation();
 });
 
 definePageMeta({
@@ -29,15 +32,10 @@ definePageMeta({
 </script>
 
 <style lang="scss" scoped>
-.about {
-    padding-bottom: 200vh;
-}
-
 .images {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding-top: 400px;
     opacity: 0.3;
     visibility: hidden;
 }

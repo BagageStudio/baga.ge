@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SlowMo } from "gsap/EasePack";
 
-import WebGl from "./WebGL";
+import WebGl from "../WebGL";
 
 export function CreateScroll() {
     gsap.registerPlugin(ScrollTrigger, SlowMo);
