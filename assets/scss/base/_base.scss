@@ -92,7 +92,7 @@ p {
     padding-top: calc(30vw + 60px);
 }
 .secondary {
-    color: #f5e8e7;
+    color: $secondary;
 }
 
 .wrapper-title {
@@ -328,14 +328,33 @@ a.project {
     line-height: 66px;
     text-decoration: none;
     color: $primary;
+    .secondary & {
+        color: $secondary;
+    }
 }
 
 // footer
 .footer {
     display: flex;
     align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
     padding-bottom: 20px;
     font-size: 1rem;
+}
+
+.internship {
+    display: block;
+    width: 100%;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    text-align: center;
+    text-transform: uppercase;
+}
+.footer-text {
+    display: flex;
+    align-items: baseline;
 }
 
 .based {
@@ -351,6 +370,9 @@ a.project {
         margin-left: 25px;
         text-decoration: none;
         color: $primary;
+        .secondary & {
+            color: $secondary;
+        }
     }
 }
 
@@ -523,6 +545,22 @@ a.project {
     .mail {
         font-size: 9.6rem;
         line-height: 140px;
+    }
+
+    // footer
+    .footer-text {
+        order: 1;
+        flex: 0 0 auto;
+        width: calc(50% - 300px);
+    }
+    .internship {
+        order: 2;
+        width: auto;
+    }
+    .social-links {
+        order: 3;
+        flex: 0 0 auto;
+        width: calc(50% - 300px);
     }
 }
 @media (min-width: $desktop-large) {

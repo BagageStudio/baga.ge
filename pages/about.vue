@@ -26,77 +26,84 @@
                 <img src="~/assets/img/photos/adrien3.jpg" />
             </div>
         </div>
-        <div class="key-values container">
-            <div class="key-value">
-                <h2 class="title-a content-pad">
-                    Involve developers in shaping the project, at the very first
-                    steps
-                </h2>
-                <p class="content-pad">
-                    We have a keen eye for graphic design, and we identify the
-                    technical constraints imposed by the web, without limiting
-                    our ideas.
-                </p>
-                <p class="content-pad">
-                    AD materials such as animations and interactions always
-                    serve the meaning of the content. The website is not
-                    overwhelmed/saturated with animations.
-                </p>
+        <div class="container">
+            <div class="key-values">
+                <div class="key-value">
+                    <h2 class="title-a content-pad">
+                        Involve developers in shaping the project, at the very
+                        first steps
+                    </h2>
+                    <p class="content-pad">
+                        We have a keen eye for graphic design, and we identify
+                        the technical constraints imposed by the web, without
+                        limiting our ideas.
+                    </p>
+                    <p class="content-pad">
+                        AD materials such as animations and interactions always
+                        serve the meaning of the content. The website is not
+                        overwhelmed/saturated with animations.
+                    </p>
+                </div>
+                <div class="key-value">
+                    <h2 class="title-a content-pad">
+                        Work with you as if we were part of the team
+                    </h2>
+                    <p class="content-pad">
+                        That doesn't mean we understand exactly what you're
+                        doing, but it does mean we'll do our best to deliver the
+                        best possible result.
+                    </p>
+                    <p class="content-pad">
+                        We're honest, we're looking for the best for you, not
+                        the most.
+                    </p>
+                    <p class="content-pad">
+                        Collaboration helps up developing our skills, growing
+                        and going beyond our limits.
+                    </p>
+                </div>
+                <div class="key-value">
+                    <h2 class="title-a content-pad">
+                        Make sure you can scale afterwards, with or without us
+                    </h2>
+                    <p class="content-pad">
+                        We don't claim authorship for what we do. It is
+                        important to us that our work is useful in the long run.
+                    </p>
+                </div>
+                <div class="key-value">
+                    <h2 class="title-a content-pad">
+                        Flexibility and billing arrangements
+                    </h2>
+                    <p class="content-pad">
+                        The team can be composed with in-house developers, other
+                        freelancers or agencies, offering of variety of services
+                        ranging. From redesigning a simple website to providing
+                        long-term support for developing new features.
+                    </p>
+                    <p class="content-pad">
+                        We're based in Nantes, but we can (and love to) move
+                        around to meet our customers.
+                    </p>
+                </div>
+                <div class="key-value">
+                    <h2 class="title-a content-pad">
+                        Taking the immersive experience a step further
+                    </h2>
+                    <p class="content-pad">
+                        We regularly immerse in digital art, with a strong
+                        desire to engage in projects of similar nature.
+                    </p>
+                    <p class="content-pad">
+                        If your idea goes beyond a simple communication need,
+                        we're here to help you translate it and make it
+                        impactful.
+                    </p>
+                </div>
             </div>
-            <div class="key-value">
-                <h2 class="title-a content-pad">
-                    Work with you as if we were part of the team
-                </h2>
-                <p class="content-pad">
-                    That doesn't mean we understand exactly what you're doing,
-                    but it does mean we'll do our best to deliver the best
-                    possible result.
-                </p>
-                <p class="content-pad">
-                    We're honest, we're looking for the best for you, not the
-                    most.
-                </p>
-                <p class="content-pad">
-                    Collaboration helps up developing our skills, growing and
-                    going beyond our limits.
-                </p>
-            </div>
-            <div class="key-value">
-                <h2 class="title-a content-pad">
-                    Make sure you can scale afterwards, with or without us
-                </h2>
-                <p class="content-pad">
-                    We don't claim authorship for what we do. It is important to
-                    us that our work is useful in the long run.
-                </p>
-            </div>
-            <div class="key-value">
-                <h2 class="title-a content-pad">
-                    Flexibility and billing arrangements
-                </h2>
-                <p class="content-pad">
-                    The team can be composed with in-house developers, other
-                    freelancers or agencies, offering of variety of services
-                    ranging. From redesigning a simple website to providing
-                    long-term support for developing new features.
-                </p>
-                <p class="content-pad">
-                    We're based in Nantes, but we can (and love to) move around
-                    to meet our customers.
-                </p>
-            </div>
-            <div class="key-value">
-                <h2 class="title-a content-pad">
-                    Taking the immersive experience a step further
-                </h2>
-                <p class="content-pad">
-                    We regularly immerse in digital art, with a strong desire to
-                    engage in projects of similar nature.
-                </p>
-                <p class="content-pad">
-                    If your idea goes beyond a simple communication need, we're
-                    here to help you translate it and make it impactful.
-                </p>
+            <div class="contact">
+                <div class="subtitle">Contact</div>
+                <a class="mail" href="mailto:hello@baga.ge">hello@baga.ge</a>
             </div>
         </div>
         <div class="grid" id="grid">
@@ -121,6 +128,32 @@
                 </div>
             </div>
         </div>
+        <footer id="footer">
+            <div class="footer container">
+                <p class="internship">
+                    We are not taking any internship applications
+                    at&nbsp;the&nbsp;moment.
+                </p>
+                <div class="footer-text">
+                    <div class="copyright">©2023</div>
+                    <h2 class="based">Based in Nantes</h2>
+                </div>
+                <div class="social-links">
+                    <a
+                        href="https://twitter.com/BagageStudio"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Twitter ↗</a
+                    >
+                    <a
+                        href="https://www.linkedin.com/company/bagagestudio/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >LinkedIn ↗</a
+                    >
+                </div>
+            </div>
+        </footer>
     </div>
 </template>
 

@@ -592,8 +592,14 @@
     </div>
     <footer id="footer">
         <div class="footer container">
-            <div class="copyright">©2023</div>
-            <h2 class="based">Based in Nantes</h2>
+            <p class="internship">
+                We are not taking any internship applications
+                at&nbsp;the&nbsp;moment.
+            </p>
+            <div class="footer-text">
+                <div class="copyright">©2023</div>
+                <h2 class="based">Based in Nantes</h2>
+            </div>
             <div class="social-links">
                 <a
                     href="https://twitter.com/BagageStudio"
