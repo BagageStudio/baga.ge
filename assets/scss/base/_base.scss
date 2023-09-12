@@ -91,6 +91,9 @@ p {
 .page {
     padding-top: calc(30vw + 60px);
 }
+.secondary {
+    color: #f5e8e7;
+}
 
 .wrapper-title {
     position: relative;
@@ -101,6 +104,9 @@ p {
     }
     .title {
         text-indent: calc(percentage(math.div(1, 3)) + (var(--gutter) / 2));
+    }
+    p {
+        font-size: inherit;
     }
 }
 .subtitle {
