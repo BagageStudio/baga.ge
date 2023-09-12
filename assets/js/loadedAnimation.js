@@ -67,20 +67,11 @@ export function aboutLoaded() {
         noiseOpacity: 0,
     };
 
-    tl.to(
+    tl.set(
         webglAppear,
         {
             typoOpacity: 1,
-            duration: 2,
-            onUpdate: () => WebGl.setAppearValue(webglAppear),
-        },
-        "start"
-    ).to(
-        webglAppear,
-        {
             typoScale: 1,
-            duration: 2,
-            ease: "power4.inOut",
             onUpdate: () => WebGl.setAppearValue(webglAppear),
         },
         "start"

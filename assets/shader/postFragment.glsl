@@ -4,7 +4,8 @@ precision highp float;
 uniform vec2 uResolution;
 uniform float uTime;
 
-uniform sampler2D tMap;
+uniform sampler2D tPrimaryMap;
+uniform sampler2D tSecondaryMap;
 uniform sampler2D tDitherType;
 
 uniform sampler2D uPrimaryDitherTexture;
@@ -45,8 +46,6 @@ vec3 findClosestColorFrom(sampler2D palette,vec3 color){
     float number_of_colors_in_palette=float(palette_width)-1.;// nb of color boundaries is 1 less than the number of colour bands
     float color_size=1./number_of_colors_in_palette;// the size of one color boundary
     
-    // color*=color;
-    
     vec3 color_to_use=texture(palette,vec2(.001,.5)).rgb;
     
     for(int i=0;i<(int(palette_width));i++)
@@ -54,7 +53,6 @@ vec3 findClosestColorFrom(sampler2D palette,vec3 color){
         
         float color_to_test_x=color_size*float(i);
         vec3 color_to_test=texture(palette,vec2(color_to_test_x+.0001,.5)).rgb;
-        // color_to_test*=color_to_test;
         
         if(colorDistance(color,color_to_test)<colorDistance(color,color_to_use))
         {
@@ -136,32 +134,46 @@ vec3 ditherByLuminanceMapping(vec3 color,float threshold){
 }
 
 void main(){
-    vec3 color=texture(tMap,vUv).rgb;
-    float ditherType=texture(tDitherType,vUv).r;
     
+    // "primary" === plane and thingies === tPrimaryMap
+    // "secondary" === photos === tSecondaryMap
+    
+    // Primary texture will be more pixelated + luminance dither + primary_pallete + custom_tiles dither matrix
+    // Secondary texture will be less pixelated + color matching dither + secondary_pallete + bayer16 dither matrix
+    
+    // 2 differents pixelisation
     vec2 primary_uv=pixelateUV(vUv,uPixelation);
-    vec2 secondary_uv=pixelateUV(vUv,400.);
-    vec2 uv_to_use=mix(primary_uv,secondary_uv,ditherType);
+    vec2 secondary_uv=pixelateUV(vUv,uPixelation*2.);
     
-    vec4 pixelatedTexture=texture(tMap,uv_to_use);
+    // The mask to use between primary and secondary
+    // In this case we take the less pixaleted uv to not have artefacts
+    vec4 ditherTypeTexture=texture(tDitherType,secondary_uv);
+    float ditherType=ceil(ditherTypeTexture.r);
     
+    // 2 differents textures
+    // (plane and thingies) vs (photos)
+    vec3 primary_pixelatedTexture=texture(tPrimaryMap,primary_uv).rgb;
+    vec3 secondary_pixelatedTexture=texture(tSecondaryMap,secondary_uv).rgb;
+    
+    // 2 differents dither matrix
+    // (custom_tiles) vs (bayer16)
     float primary_threshold=texture(uPrimaryDitherTexture,mod(gl_FragCoord.xy,uPrimaryDitherTextureSize)/uPrimaryDitherTextureSize).r;
+    primary_threshold=mix(primary_threshold,1.-primary_threshold,uInversedTexture);
+    
     float secondary_threshold=texture(uSecondaryDitherTexture,mod(gl_FragCoord.xy,uSecondaryDitherTextureSize)/uSecondaryDitherTextureSize).r;
-    float threshold=mix(primary_threshold,secondary_threshold,ditherType);
-    threshold=mix(threshold,1.-threshold,uInversedTexture);
+    secondary_threshold=mix(secondary_threshold,1.-secondary_threshold,uInversedTexture);
     
-    vec3 luminanceMappingDithered=ditherByLuminanceMapping(pixelatedTexture.rgb,threshold);
-    vec3 colorMatchingDithered=ditherByColorMatching(pixelatedTexture.rgb,threshold);
+    // 2 differents dither techniques and palettes
+    // (luminance dithering + custom duotone palette) vs (color matching dithering + 16-color EGA palette)
+    vec3 primary_dithering=ditherByLuminanceMapping(primary_pixelatedTexture.rgb,primary_threshold);
+    vec3 secondary_dithering=ditherByColorMatching(secondary_pixelatedTexture.rgb,secondary_threshold);
     
-    vec3 ditherToUse=mix(luminanceMappingDithered,colorMatchingDithered,ditherType);
+    // We use the right effect depending in the mask
+    vec3 ditherToUse=mix(primary_dithering,secondary_dithering,ditherType);
     
     // Adding color
     vec4 ditheredColor=vec4(ditherToUse,1.);
     
     fragColor=ditheredColor;
     
-    // fragColor=mix(vec4(1.,0.,0.,1.),vec4(0.,0.,1.,1.),ditherType);
-    
-    // fragColor.rgb=color;
-    // fragColor.a=1.;
 }
