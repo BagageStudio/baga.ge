@@ -1,5 +1,23 @@
 <template>
-    <div class="about page" id="about">
+    <div class="about page secondary" id="about">
+        <div class="hero">
+            <div class="hero-about-title wrapper-title">
+                <span class="subtitle content-pad">About</span>
+                <div class="title content-pad">
+                    <h1>
+                        We are a team of two developers with an expertise in
+                        website creation.
+                    </h1>
+                    <p>
+                        Before starting Bagage, we met in a creative web agency
+                        and then worked as separate freelancers. It became clear
+                        that we had to create our own studio because we enjoy
+                        working with our own clients to share key values and a
+                        common strategy.
+                    </p>
+                </div>
+            </div>
+        </div>
         <div class="images container">
             <div class="image-gl" ref="img1">
                 <img src="~/assets/img/photos/adrien2.jpg" />
@@ -32,6 +50,14 @@ definePageMeta({
 </script>
 
 <style lang="scss" scoped>
+.hero-about-title {
+    .title {
+        > h1,
+        > p {
+            display: inline;
+        }
+    }
+}
 .images {
     display: flex;
     justify-content: space-between;
