@@ -109,6 +109,10 @@ p {
         font-size: inherit;
     }
 }
+.title-a {
+    font-size: 3rem;
+    line-height: 36px;
+}
 .subtitle {
     font-feature-settings: "ss16";
 }
@@ -376,7 +380,8 @@ a.project {
     }
 }
 @media (min-width: $tablet) {
-    .wrapper-title {
+    .wrapper-title,
+    .title-a {
         font-size: 3.5rem;
         line-height: 42px;
     }
@@ -416,7 +421,8 @@ a.project {
     .monolith {
         padding: 130px var(--gutter-out-monolith) 200px;
     }
-    .wrapper-title {
+    .wrapper-title,
+    .title-a {
         font-size: 4.5rem;
         line-height: 54px;
     }
@@ -429,6 +435,14 @@ a.project {
         width: percentage(math.div(5, 6));
         .title {
             text-indent: calc(percentage(math.div(1, 5)) + (var(--gutter) / 2));
+        }
+        &.full-width {
+            width: 100%;
+            .title {
+                text-indent: calc(
+                    percentage(math.div(1, 6)) + (var(--gutter) / 2)
+                );
+            }
         }
     }
 
