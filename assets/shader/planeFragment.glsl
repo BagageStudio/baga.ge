@@ -22,7 +22,7 @@ uniform float uNoisePower;
 
 in vec2 vUv;
 
-out vec4 FragData[2];
+out vec4 FragData[3];
 
 #include "lygia/generative/cnoise.glsl";
 
@@ -142,7 +142,8 @@ void main(){
     fragColor=mix(fragColor,vec4(0.,0.,0.,0.),bottomTextMask);
     
     FragData[0]=fragColor;
-    FragData[1]=vec4(0.,0.,1.,1.);
+    FragData[1]=vec4(0.);
+    FragData[2]=vec4(0.,0.,1.,1.);
     
 }
 

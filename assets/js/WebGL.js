@@ -36,6 +36,7 @@ import ditherTextureTiles from "../img/ditherTexture/tiles.png";
 
 import ditherPaletteDefault from "../img/palettes/default.jpg";
 import ditherPaletteGrey from "../img/palettes/grey.jpg";
+import ditherPaletteDark from "../img/palettes/dark.jpg";
 import ditherPaletteEga from "../img/palettes/c_ega.jpg";
 
 class WebGL {
@@ -151,12 +152,12 @@ class WebGL {
                 bagageTypoPng,
                 ditherTextureTiles,
                 ditherTextureBayer16,
-                ditherPaletteGrey,
+                ditherPaletteDark,
                 ditherPaletteEga,
             });
             this.addTextures(textures);
 
-            this.primaryDitherPalette = this.textures.ditherPaletteGrey;
+            this.primaryDitherPalette = this.textures.ditherPaletteDark;
             this.primaryDitherTexture = this.textures.ditherTextureTiles;
             this.secondaryDitherPalette = this.textures.ditherPaletteEga;
             this.secondaryDitherTexture = this.textures.ditherTextureBayer16;
@@ -241,7 +242,7 @@ class WebGL {
         this.camera.position.z = 5;
 
         this.renderTarget = new RenderTarget(this.gl, {
-            color: 2,
+            color: 3,
             width: window.innerWidth,
             height: window.innerHeight,
             dpr: 0.5,
@@ -343,8 +344,9 @@ class WebGL {
             vertex: postVertex,
             fragment: postFragment,
             uniforms: {
-                tMap: { value: this.renderTarget.textures[0] },
-                tDitherType: { value: this.renderTarget.textures[1] },
+                tPrimaryMap: { value: this.renderTarget.textures[0] },
+                tSecondaryMap: { value: this.renderTarget.textures[1] },
+                tDitherType: { value: this.renderTarget.textures[2] },
                 uPrimaryDitherTexture: {
                     value: this.primaryDitherTextureTexture,
                 },
