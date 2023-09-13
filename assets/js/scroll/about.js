@@ -28,3 +28,40 @@ export function CreateHelloAnimation() {
         ease: "linear",
     });
 }
+
+export function CreateThingiesAnimation(thingies) {
+    thingies.forEach((thingy) => {
+        const values = {
+            opacity: 0,
+            rotate: 0,
+        };
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: thingy,
+                scrub: false,
+                start: "top bottom-=400px",
+                end: "bottom top",
+            },
+        });
+
+        tl.to(
+            values,
+            {
+                opacity: 1,
+                duration: 1,
+                ease: "power3.out",
+                onUpdate: () => (thingy.dataset.opacity = values.opacity),
+            },
+            "start"
+        ).to(
+            values,
+            {
+                rotate: 1,
+                duration: 3,
+                ease: "elastic.out(1, 0.3)",
+                onUpdate: () => (thingy.dataset.rotate = values.rotate),
+            },
+            "start"
+        );
+    });
+}

@@ -3,6 +3,9 @@
 precision highp float;
 
 uniform float uTime;
+uniform float uIndex;
+uniform int uType;
+uniform float uVelocity;
 uniform float uAppearOpacity;
 uniform float uAppearRotate;
 
@@ -37,26 +40,43 @@ float fill(float sdf,float size){
 
 float petal(vec2 uv,int index){
     
-    float wiggle=random(float(index))*1.2;
+    float seed=float(index)+uIndex+.3;
+    
+    float wiggle=random(seed)*1.2;
     wiggle*=uAppearRotate;
     
     uv-=vec2(.5);
     uv*=scale(vec2(mix(8.,1.,uAppearOpacity)));
     
     // rotation
-    uv*=rotate2d((random(float(index+2))-wiggle)*PI);
+    uv*=rotate2d((random(seed+2.)-wiggle)*PI);
+    
+    float floating_speed=4.;
+    float floating_strength=.1;
+    
+    float floating=cos((uTime-float(index)*.15)*floating_speed)*floating_strength;
+    floating=mix(0.,floating,uVelocity);
+    
+    uv*=rotate2d(floating*PI);
     
     // move it back to the original place
     uv+=vec2(.5);
+    float shape;
+    if(uType==1){
+        
+        float size=float(index+1)/float(number)*.5;
+        shape=fill(starSDF(uv,7,.04),size);
+    }else if(uType==2){
+        
+        float size=float(index+1)/float(number)*.5;
+        shape=fill(polySDF(uv,4),size);
+    }else if(uType==3){
+        float size=float(index+1)/float(number)*.36;
+        shape=fill(starSDF(uv,5,.06),size);
+        
+    }
     
-    // float size=random(float(index))*1.;
-    float size=float(index+1)/float(number)*.5;
-    
-    return fill(polySDF(uv,4),size);
-    // return fill(starSDF(uv,4,.04),size);
-    
-    // return stroke(polySDF(uv,4),size,.05);
-    // return stroke(starSDF(uv,4,.04),size,.08);
+    return shape;
 }
 
 void main(){

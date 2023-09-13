@@ -242,16 +242,16 @@ class WebGL {
     }
 
     createThingies(thingies) {
-        this.thingies = thingies.map((options) => {
+        this.thingies = thingies.map((options, index) => {
             let thingy = new Thingy({
                 element: options.el,
                 type: options.type,
-                layers: options.layers,
                 geometry: this.planeGeometry,
                 gl: this.gl,
                 scene: this.scene,
                 screen: this.screen,
                 viewport: this.viewport,
+                index,
             });
 
             return thingy;
@@ -592,7 +592,9 @@ class WebGL {
         }
 
         if (this.thingies) {
-            this.thingies.forEach((thingy) => thingy.update(this.scroll.y));
+            this.thingies.forEach((thingy) =>
+                thingy.update(this.scroll.y, this.scroll.velocity)
+            );
         }
 
         this.gl.clearColor(0, 0, 0, 1);
@@ -630,10 +632,10 @@ class WebGL {
     }
 
     setScroll({ velocity, y }) {
-        const speedMultiplier = 5000;
         this.scroll.y = y;
+        const maxSpeed = 70;
         this.scroll.velocity =
-            1 + Math.min(Math.abs(velocity), 500) / speedMultiplier;
+            Math.min(Math.abs(velocity), maxSpeed) / maxSpeed;
     }
     setTextMasks(textMasks) {
         this.textMasks = textMasks;
