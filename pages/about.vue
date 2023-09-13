@@ -315,4 +315,16 @@ definePageMeta({
         }
     }
 }
+@media (min-width: $desktop-3xl) {
+    .key-value {
+        width: percentage(math.div(3, 6));
+        .title-a {
+            width: percentage(math.div(2, 3));
+        }
+        p {
+            width: percentage(math.div(2, 3));
+            margin-left: percentage(math.div(1, 3));
+        }
+    }
+}
 </style>
