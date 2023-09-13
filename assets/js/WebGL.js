@@ -18,6 +18,7 @@ import { SlowMo } from "gsap/EasePack";
 gsap.registerPlugin(SlowMo);
 
 import ImageGL from "./ImageGL";
+import Thingy from "./Thingy";
 
 import { lerp, getNextGenImageSupport } from "./utils.js";
 
@@ -147,7 +148,7 @@ class WebGL {
         this.onResize();
     }
 
-    async initializeAbout(imgs) {
+    async initializeAbout({ imgs, thingies }) {
         return new Promise(async (resolve, reject) => {
             const textures = await this.loadImages({
                 bagageTypoPng,
@@ -178,6 +179,8 @@ class WebGL {
                 this.secondaryDitherTexture;
             this.post.program.uniforms.uSecondaryDitherTextureSize.value =
                 this.secondaryDitherTexture.naturalWidth;
+
+            this.createThingies(thingies);
 
             this.onResize();
 
@@ -223,6 +226,7 @@ class WebGL {
             let media = new ImageGL({
                 element,
                 geometry: this.planeGeometry,
+                camera: this.camera,
                 gl: this.gl,
                 scene: this.scene,
                 screen: this.screen,
@@ -235,6 +239,23 @@ class WebGL {
         });
 
         return Promise.all(imgsPromises);
+    }
+
+    createThingies(thingies) {
+        this.thingies = thingies.map((options) => {
+            let thingy = new Thingy({
+                element: options.el,
+                type: options.type,
+                layers: options.layers,
+                geometry: this.planeGeometry,
+                gl: this.gl,
+                scene: this.scene,
+                screen: this.screen,
+                viewport: this.viewport,
+            });
+
+            return thingy;
+        });
     }
 
     createSceneCamera() {
@@ -499,6 +520,15 @@ class WebGL {
             );
         }
 
+        if (this.thingies) {
+            this.thingies.forEach((thingy) =>
+                thingy.onResize({
+                    screen: this.screen,
+                    viewport: this.viewport,
+                })
+            );
+        }
+
         const currentTypoWidth = this.screen.width - this.textGutter;
         const currentTypoHeight = currentTypoWidth / this.typoAspectRatio;
         this.typoSizeInPixels = {
@@ -561,6 +591,10 @@ class WebGL {
             this.images.forEach((image) => image.update(this.scroll.y));
         }
 
+        if (this.thingies) {
+            this.thingies.forEach((thingy) => thingy.update(this.scroll.y));
+        }
+
         this.gl.clearColor(0, 0, 0, 1);
 
         this.renderer.render({
@@ -569,12 +603,16 @@ class WebGL {
             target: this.renderTarget,
         });
 
-        // const renderTarget = this.params.post ? this.post : this.renderer;
-        // renderTarget.render({ scene: this.scene, camera: this.camera });
-
-        this.renderer.render({
-            scene: this.post,
-        });
+        if (this.params.post) {
+            this.renderer.render({
+                scene: this.post,
+            });
+        } else {
+            this.renderer.render({
+                scene: this.scene,
+                camera: this.camera,
+            });
+        }
 
         window.requestAnimationFrame(this.update.bind(this));
     }

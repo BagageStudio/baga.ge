@@ -35,6 +35,7 @@
             </div>
             <div class="key-values">
                 <div class="key-value">
+                    <div class="thingy thingy-1" ref="thingyEl1"></div>
                     <h2 class="title-a content-pad">
                         Involve developers in shaping the project, at the very
                         first steps
@@ -51,6 +52,8 @@
                     </p>
                 </div>
                 <div class="key-value">
+                    <div class="thingy thingy-2" ref="thingyEl2"></div>
+
                     <h2 class="title-a content-pad">
                         Work with you as if we were part of the team
                     </h2>
@@ -76,6 +79,11 @@
                         We don't claim authorship for what we do. It is
                         important to us that our work is useful in the long run.
                     </p>
+                    <p class="content-pad">
+                        We train you to use the CMS we've set up. We transfer
+                        knowledge to your developers, the day they join your
+                        team. The code is yours.
+                    </p>
                 </div>
                 <div class="key-value">
                     <h2 class="title-a content-pad">
@@ -93,6 +101,7 @@
                     </p>
                 </div>
                 <div class="key-value">
+                    <div class="thingy thingy-3" ref="thingyEl3"></div>
                     <h2 class="title-a content-pad">
                         Taking the immersive experience a step further
                     </h2>
@@ -150,8 +159,31 @@ import WebGL from "~/assets/js/WebGL";
 const img1 = ref(null);
 const img2 = ref(null);
 
+const thingyEl1 = ref(null);
+const thingyEl2 = ref(null);
+const thingyEl3 = ref(null);
+
 onMounted(async () => {
-    await WebGL.initializeAbout([img1.value, img2.value]);
+    const thingy1 = {
+        el: thingyEl1.value,
+        type: "rect",
+        layers: 5,
+    };
+    const thingy2 = {
+        el: thingyEl2.value,
+        type: "rect",
+        layers: 5,
+    };
+    const thingy3 = {
+        el: thingyEl3.value,
+        type: "rect",
+        layers: 5,
+    };
+
+    await WebGL.initializeAbout({
+        imgs: [img1.value, img2.value],
+        thingies: [thingy1, thingy2, thingy3],
+    });
     aboutLoaded();
     CreateHelloAnimation();
 });
@@ -174,8 +206,8 @@ definePageMeta({
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    opacity: 0.3;
     visibility: hidden;
+    margin-bottom: 300px;
 }
 .image-gl {
     width: 40%;
@@ -210,6 +242,10 @@ definePageMeta({
     }
 }
 
+.thingy {
+    display: none;
+}
+
 @media (min-width: $tablet) {
     .key-value {
         .title-a {
@@ -225,7 +261,34 @@ definePageMeta({
     }
 }
 @media (min-width: $desktop) {
+    .thingy {
+        display: block;
+        visibility: hidden;
+    }
+
+    .thingy-1 {
+        position: absolute;
+        top: -500px;
+        right: -1050px;
+        width: 1200px;
+        height: 1200px;
+    }
+    .thingy-2 {
+        position: absolute;
+        top: 0px;
+        left: -900px;
+        width: 1200px;
+        height: 1200px;
+    }
+    .thingy-3 {
+        position: absolute;
+        top: -500px;
+        right: -1100px;
+        width: 1200px;
+        height: 1200px;
+    }
     .key-value {
+        position: relative;
         width: percentage(math.div(4, 6));
         &:not(:last-child) {
             margin-bottom: 225px;

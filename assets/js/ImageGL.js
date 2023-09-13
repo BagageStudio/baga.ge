@@ -4,11 +4,12 @@ import fragment from "../shader/imageFragment.glsl";
 import vertex from "../shader/imageVertex.glsl";
 
 export default class {
-    constructor({ element, geometry, gl, scene, screen, viewport }) {
+    constructor({ element, geometry, gl, scene, screen, viewport, camera }) {
         this.element = element;
         this.image = this.element.querySelector("img");
 
         this.geometry = geometry;
+        this.camera = camera;
         this.gl = gl;
         this.scene = scene;
         this.screen = screen;
@@ -57,10 +58,23 @@ export default class {
             program,
         });
 
+        this.plane.position.z = 1;
+
         this.plane.setParent(this.scene);
     }
 
     createBounds() {
+        const fov = this.camera.fov * (Math.PI / 180);
+        const height =
+            2 * Math.tan(fov / 2) * this.camera.position.z -
+            this.plane.position.z;
+        const width = height * this.camera.aspect;
+
+        this.viewport = {
+            height,
+            width,
+        };
+
         this.bounds = this.element.getBoundingClientRect();
 
         this.updateScale();
@@ -87,6 +101,7 @@ export default class {
 
     update(y) {
         if (y !== this.scroll && this.plane) {
+            this.scroll = y;
             this.createBounds();
         }
     }
