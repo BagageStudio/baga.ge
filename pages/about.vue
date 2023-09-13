@@ -35,7 +35,12 @@
             </div>
             <div class="key-values">
                 <div class="key-value">
-                    <div class="thingy thingy-1" ref="thingyEl1"></div>
+                    <div
+                        data-rotate="0"
+                        data-opacity="0"
+                        class="thingy thingy-1"
+                        ref="thingyEl1"
+                    ></div>
                     <h2 class="title-a content-pad">
                         Involve developers in shaping the project, at the very
                         first steps
@@ -52,7 +57,12 @@
                     </p>
                 </div>
                 <div class="key-value">
-                    <div class="thingy thingy-2" ref="thingyEl2"></div>
+                    <div
+                        data-rotate="0"
+                        data-opacity="0"
+                        class="thingy thingy-2"
+                        ref="thingyEl2"
+                    ></div>
 
                     <h2 class="title-a content-pad">
                         Work with you as if we were part of the team
@@ -101,7 +111,12 @@
                     </p>
                 </div>
                 <div class="key-value">
-                    <div class="thingy thingy-3" ref="thingyEl3"></div>
+                    <div
+                        data-rotate="0"
+                        data-opacity="0"
+                        class="thingy thingy-3"
+                        ref="thingyEl3"
+                    ></div>
                     <h2 class="title-a content-pad">
                         Taking the immersive experience a step further
                     </h2>
@@ -152,7 +167,10 @@
 
 <script setup>
 import { aboutLoaded } from "~/assets/js/loadedAnimation";
-import { CreateHelloAnimation } from "~/assets/js/scroll/about";
+import {
+    CreateHelloAnimation,
+    CreateThingiesAnimation,
+} from "~/assets/js/scroll/about";
 
 import WebGL from "~/assets/js/WebGL";
 
@@ -166,18 +184,15 @@ const thingyEl3 = ref(null);
 onMounted(async () => {
     const thingy1 = {
         el: thingyEl1.value,
-        type: "rect",
-        layers: 5,
+        type: 1,
     };
     const thingy2 = {
         el: thingyEl2.value,
-        type: "rect",
-        layers: 5,
+        type: 2,
     };
     const thingy3 = {
         el: thingyEl3.value,
-        type: "rect",
-        layers: 5,
+        type: 3,
     };
 
     await WebGL.initializeAbout({
@@ -186,6 +201,11 @@ onMounted(async () => {
     });
     aboutLoaded();
     CreateHelloAnimation();
+    CreateThingiesAnimation([
+        thingyEl1.value,
+        thingyEl2.value,
+        thingyEl3.value,
+    ]);
 });
 
 definePageMeta({
@@ -263,7 +283,10 @@ definePageMeta({
 @media (min-width: $desktop) {
     .thingy {
         display: block;
-        visibility: hidden;
+        // visibility: hidden;
+        // opacity: 0.3;
+        background-color: red;
+        opacity: 0;
     }
 
     .thingy-1 {

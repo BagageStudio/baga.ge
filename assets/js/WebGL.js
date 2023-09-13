@@ -242,16 +242,16 @@ class WebGL {
     }
 
     createThingies(thingies) {
-        this.thingies = thingies.map((options) => {
+        this.thingies = thingies.map((options, index) => {
             let thingy = new Thingy({
                 element: options.el,
                 type: options.type,
-                layers: options.layers,
                 geometry: this.planeGeometry,
                 gl: this.gl,
                 scene: this.scene,
                 screen: this.screen,
                 viewport: this.viewport,
+                index,
             });
 
             return thingy;
@@ -592,7 +592,9 @@ class WebGL {
         }
 
         if (this.thingies) {
-            this.thingies.forEach((thingy) => thingy.update(this.scroll.y));
+            this.thingies.forEach((thingy) =>
+                thingy.update(this.scroll.y, this.scroll.velocity)
+            );
         }
 
         this.gl.clearColor(0, 0, 0, 1);

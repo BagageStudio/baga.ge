@@ -4,15 +4,28 @@ import fragment from "../shader/thingyFragment.glsl";
 import vertex from "../shader/thingyVertex.glsl";
 
 export default class {
-    constructor({ element, geometry, gl, scene, screen, viewport }) {
+    constructor({
+        element,
+        geometry,
+        gl,
+        scene,
+        screen,
+        viewport,
+        index,
+        type,
+    }) {
         this.element = element;
+
+        this.index = index;
 
         this.geometry = geometry;
         this.gl = gl;
         this.scene = scene;
         this.screen = screen;
         this.viewport = viewport;
+        this.type = type;
         this.scroll = 0;
+        this.velocity = 0;
 
         this.createMesh();
         this.createBounds();
@@ -27,6 +40,9 @@ export default class {
                 uTime: { value: 0 },
                 uAppearOpacity: { value: 1 },
                 uAppearRotate: { value: 1 },
+                uIndex: { value: this.index },
+                uVelocity: { value: this.velocity },
+                uType: { value: this.type },
             },
             transparent: true,
         });
@@ -61,9 +77,23 @@ export default class {
             this.mesh.scale.x / 2 +
             (this.bounds.left / this.screen.width) * this.viewport.width;
     }
+    updateAppear() {
+        this.mesh.program.uniforms.uAppearOpacity.value = parseFloat(
+            this.element.dataset.opacity
+        );
+        this.mesh.program.uniforms.uAppearRotate.value = parseFloat(
+            this.element.dataset.rotate
+        );
+    }
 
-    update(y) {
-        if (y !== this.scroll && this.mesh) {
+    update(y, velocity) {
+        if (!this.mesh) return;
+        this.updateAppear();
+        if (this.velocity !== velocity) {
+            this.velocity = velocity;
+            this.mesh.program.uniforms.uVelocity.value = velocity;
+        }
+        if (y !== this.scroll) {
             this.scroll = y;
             this.createBounds();
         }
