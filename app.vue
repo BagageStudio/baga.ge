@@ -39,12 +39,16 @@ const nuxtApp = useNuxtApp();
 
 if (process.client) {
     const lenis = CreateScroll();
-
-    // nuxtApp.$router.afterEach((to, from) => {
-    //     if (to.path !== from.path) {
-    //         window.scrollTo(0, 0);
-    //     }
-    // });
+    if (window.history.scrollRestoration) {
+        window.history.scrollRestoration = "manual";
+    } else {
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        };
+    }
+    nuxtApp.$router.afterEach((to, from) => {
+        window.scrollTo(0, 0);
+    });
 }
 
 useHead({
