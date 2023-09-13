@@ -1,6 +1,6 @@
 <template>
     <div class="home page" id="home">
-        <header class="header">
+        <header class="header" id="header">
             <div class="container">
                 <NuxtLink to="/" class="active">Home</NuxtLink>
                 <NuxtLink to="/about">About</NuxtLink>

@@ -16,6 +16,7 @@ uniform float uReduceScaling;
 uniform float uVerticalTranslation;
 uniform float uScrollOut;
 uniform float uBottomMask;
+uniform float uTopMask;
 
 uniform float uNoiseThreshold;
 uniform float uNoisePower;
@@ -31,7 +32,7 @@ float map(float value,float min1,float max1,float min2,float max2){
 }
 
 // 60px from the top of thw viewport
-float topOffset=60.;
+float topOffset=100.;
 
 // TODO: The translation should be the number of pixels scrolled and depending of the viewport width, but not of viewport height !
 float scrollOutVerticalTranslation=1.2;
@@ -122,6 +123,27 @@ float bottomTextMaskTexture(){
     line=1.-line;
     return line;
 }
+float topTextMaskTexture(){
+    
+    float offset=200./uResolution.y*(1.-uTopMask);
+    float heightOfMask=max(50./uResolution.y-offset,0.);
+    float heightOfGradient=max(50./uResolution.y-offset,0.);
+    
+    // Only gradient mask
+    float line=smoothstep(heightOfMask,heightOfGradient+heightOfMask,1.-vUv.y);
+    // Only full mask
+    // float line=step(heightOfMask,1.-vUv.y);
+    // Both at the same time
+    // float line=min(step(heightOfMask,vUv.y),smoothstep(heightOfMask,heightOfGradient,vUv.y));
+    line=1.-line;
+    return line;
+}
+
+float textMasksTexture(){
+    float bottomTextMask=bottomTextMaskTexture();
+    float topTextMask=topTextMaskTexture();
+    return bottomTextMask+topTextMask;
+}
 
 void main(){
     
@@ -132,14 +154,11 @@ void main(){
     vec4 typo=typo();
     typo.a=mix(0.,typo.a,uAppearTypoOpacity);
     
-    float bottomTextMask=bottomTextMaskTexture();
+    float textMasks=textMasksTexture();
     
-    // fragColor+=max(noise,typo);
-    // fragColor+=typo;
     fragColor=mix(noise,typo,typo.a);
-    // fragColor+=typo;
     
-    fragColor=mix(fragColor,vec4(0.,0.,0.,0.),bottomTextMask);
+    fragColor=mix(fragColor,vec4(0.,0.,0.,0.),textMasks);
     
     FragData[0]=fragColor;
     FragData[1]=vec4(0.);

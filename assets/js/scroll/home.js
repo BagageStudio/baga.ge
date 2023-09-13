@@ -282,6 +282,7 @@ export function CreateManifestoValuesAnimation() {
 export function CreateTextMasksAnimation() {
     const textMasks = {
         bottom: 0,
+        top: 1,
     };
 
     gsap.to(textMasks, {
@@ -295,6 +296,20 @@ export function CreateTextMasksAnimation() {
             invalidateOnRefresh: true,
         },
         bottom: 1,
+        ease: "linear",
+    });
+
+    gsap.to(textMasks, {
+        scrollTrigger: {
+            trigger: "#header",
+            scrub: true,
+            start: () => "top top",
+            end: () => `bottom+=100px top`,
+            onUpdate: () => WebGl.setTextMasks(textMasks),
+            onRefresh: () => WebGl.setTextMasks(textMasks),
+            invalidateOnRefresh: true,
+        },
+        top: 0,
         ease: "linear",
     });
 }

@@ -80,6 +80,7 @@ class WebGL {
 
         this.textMasks = {
             bottom: 0,
+            top: 0,
         };
 
         this.logo = {
@@ -272,6 +273,7 @@ class WebGL {
                 uVerticalTranslation: { value: this.logo.y },
                 uScrollOut: { value: this.logo.scrollOut },
                 uBottomMask: { value: this.textMasks.bottom },
+                uTopMask: { value: this.textMasks.top },
                 uNoiseThreshold: { value: this.params.noiseThreshold },
                 uNoisePower: { value: this.params.noisePower },
             },
@@ -506,36 +508,6 @@ class WebGL {
     }
 
     update() {
-        if (this.fullscreenShader) {
-            this.fullscreenShader.program.uniforms.uResolution =
-                this.resolution;
-            this.fullscreenShader.program.uniforms.uTextGutter.value =
-                this.textGutter;
-            this.fullscreenShader.program.uniforms.uTime.value += 0.04;
-            this.fullscreenShader.program.uniforms.uAppearNoiseOpacity.value =
-                this.appear.noiseOpacity;
-            this.fullscreenShader.program.uniforms.uAppearTypoOpacity.value =
-                this.appear.typoOpacity;
-            this.fullscreenShader.program.uniforms.uAppearTypoScale.value =
-                this.appear.typoScale;
-
-            this.fullscreenShader.program.uniforms.uScrollOut.value =
-                this.logo.scrollOut;
-
-            this.fullscreenShader.program.uniforms.uReduceScaling.value =
-                this.logo.scaleY;
-
-            this.fullscreenShader.program.uniforms.uVerticalTranslation.value =
-                this.logo.y;
-
-            this.fullscreenShader.program.uniforms.uBottomMask.value =
-                this.textMasks.bottom;
-            this.fullscreenShader.program.uniforms.uNoiseThreshold.value =
-                this.params.noiseThreshold;
-            this.fullscreenShader.program.uniforms.uNoisePower.value =
-                this.params.noisePower;
-        }
-
         if (this.fullscreenPlane) {
             this.fullscreenPlane.program.uniforms.uResolution = this.resolution;
             this.fullscreenPlane.program.uniforms.uTextGutter.value =
@@ -559,6 +531,8 @@ class WebGL {
 
             this.fullscreenPlane.program.uniforms.uBottomMask.value =
                 this.textMasks.bottom;
+            this.fullscreenPlane.program.uniforms.uTopMask.value =
+                this.textMasks.top;
 
             this.fullscreenPlane.program.uniforms.uNoiseThreshold.value =
                 this.params.noiseThreshold;

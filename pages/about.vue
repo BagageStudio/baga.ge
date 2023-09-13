@@ -1,6 +1,6 @@
 <template>
     <div class="about page secondary" id="about">
-        <header class="header">
+        <header class="header" id="header">
             <div class="container">
                 <NuxtLink to="/">Home</NuxtLink>
                 <NuxtLink to="/about" class="active">About</NuxtLink>
