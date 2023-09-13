@@ -77,18 +77,19 @@ export default class {
             this.mesh.scale.x / 2 +
             (this.bounds.left / this.screen.width) * this.viewport.width;
     }
-    updateAppear() {
+    updateUniforms() {
         this.mesh.program.uniforms.uAppearOpacity.value = parseFloat(
             this.element.dataset.opacity
         );
         this.mesh.program.uniforms.uAppearRotate.value = parseFloat(
             this.element.dataset.rotate
         );
+        this.mesh.program.uniforms.uTime.value += 0.04;
     }
 
     update(y, velocity) {
         if (!this.mesh) return;
-        this.updateAppear();
+        this.updateUniforms();
         if (this.velocity !== velocity) {
             this.velocity = velocity;
             this.mesh.program.uniforms.uVelocity.value = velocity;

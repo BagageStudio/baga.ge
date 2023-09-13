@@ -42,8 +42,6 @@ float petal(vec2 uv,int index){
     
     float seed=float(index)+uIndex+.3;
     
-    float velocity=(uVelocity-1.)*.4;
-    
     float wiggle=random(seed)*1.2;
     wiggle*=uAppearRotate;
     
@@ -52,6 +50,14 @@ float petal(vec2 uv,int index){
     
     // rotation
     uv*=rotate2d((random(seed+2.)-wiggle)*PI);
+    
+    float floating_speed=4.;
+    float floating_strength=.1;
+    
+    float floating=cos((uTime-float(index)*.15)*floating_speed)*floating_strength;
+    floating=mix(0.,floating,uVelocity);
+    
+    uv*=rotate2d(floating*PI);
     
     // move it back to the original place
     uv+=vec2(.5);

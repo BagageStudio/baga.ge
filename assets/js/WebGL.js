@@ -632,10 +632,10 @@ class WebGL {
     }
 
     setScroll({ velocity, y }) {
-        const speedMultiplier = 5000;
         this.scroll.y = y;
+        const maxSpeed = 70;
         this.scroll.velocity =
-            1 + Math.min(Math.abs(velocity), 500) / speedMultiplier;
+            Math.min(Math.abs(velocity), maxSpeed) / maxSpeed;
     }
     setTextMasks(textMasks) {
         this.textMasks = textMasks;
