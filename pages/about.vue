@@ -172,6 +172,9 @@
                         <li>Snipcart</li>
                         <li>GSAP</li>
                         <li>Figma</li>
+                        <li>Notion</li>
+                        <li>Linear</li>
+                        <li>APIs integration</li>
                     </ul>
                 </div>
             </div>
@@ -266,11 +269,6 @@ useHead({
     link: [
         {
             rel: "icon",
-            href: "/favicon-dark.ico",
-            sizes: "any",
-        },
-        {
-            rel: "icon",
             href: "/icon-dark.svg",
             type: "image/svg+xml",
         },
@@ -281,6 +279,11 @@ useHead({
         {
             rel: "manifest",
             href: "/manifest-dark.webmanifest",
+        },
+        {
+            rel: "mask-icon",
+            href: "/safari-pinned-tab.svg",
+            color: "#000000",
         },
     ],
 });
@@ -361,7 +364,7 @@ definePageMeta({
 }
 .keywords {
     margin: 30px 0 0;
-    padding: 30px 0;
+    padding: 0;
     list-style: none;
     > li {
         margin: 10px 0;
@@ -406,6 +409,7 @@ definePageMeta({
     .keywords {
         display: flex;
         flex-wrap: wrap;
+        padding: 30px 0;
         > li {
             flex: 0 0 auto;
             width: 50%;
@@ -532,13 +536,10 @@ definePageMeta({
             margin-left: percentage(math.div(1, 3));
         }
     }
-    .section-keywords {
-        .title-a {
-            width: percentage(math.div(2, 6));
-        }
-    }
     .wrapper-keywords {
         width: percentage(math.div(5, 6));
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 </style>
