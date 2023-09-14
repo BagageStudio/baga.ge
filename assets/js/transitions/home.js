@@ -116,16 +116,6 @@ export function homeLeave(done) {
             "start"
         )
         .to(
-            webglAppear,
-            {
-                typoScale: 0,
-                duration: 0.7,
-                ease: "power4.inOut",
-                onUpdate: () => WebGL.setAppearValue(webglAppear),
-            },
-            "start"
-        )
-        .to(
             "#helloMonolithWrapper",
             {
                 y: () => `${window.innerHeight - window.innerWidth / 3}`,
