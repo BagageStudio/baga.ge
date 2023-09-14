@@ -55,6 +55,8 @@ export function aboutLoaded(done) {
         },
     });
 
+    tl.set("#overlay", { backgroundColor: "transparent" });
+
     tl.to(
         webglAppear,
         {
@@ -111,37 +113,35 @@ export function aboutLeave(done) {
         webglAppear,
         {
             typoOpacity: 0,
-            duration: 0.7,
+            duration: 0.4,
             onUpdate: () => WebGL.setAppearValue(webglAppear),
         },
         "start"
     )
         .to(
-            webglAppear,
-            {
-                typoScale: 0,
-                duration: 0.7,
-                ease: "power4.inOut",
-                onUpdate: () => WebGL.setAppearValue(webglAppear),
-            },
-            "start"
-        )
-        .to(
             "#heroWithImages",
             {
                 y: () => `${window.innerHeight - window.innerWidth / 3}`,
-                duration: 0.7,
+                duration: 0.4,
                 ease: "power3.out",
             },
-            "start+=0.2"
+            "start"
         )
         .to(
             "#header",
             {
-                duration: 0.7,
+                duration: 0.4,
                 opacity: 0,
             },
             "start"
+        )
+        .to(
+            "#overlay",
+            {
+                duration: 0.4,
+                backgroundColor: "#F5E8E7",
+            },
+            "start+=0.4"
         );
 
     tl.play();

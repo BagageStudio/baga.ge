@@ -36,6 +36,8 @@ export function homeLoaded(done) {
         },
     });
 
+    tl.set("#overlay", { backgroundColor: "transparent" });
+
     tl.to(
         webglAppear,
         {
@@ -101,7 +103,7 @@ export function homeLeave(done) {
         webglAppear,
         {
             noiseOpacity: 0,
-            duration: 0.7,
+            duration: 0.4,
             onUpdate: () => WebGL.setAppearValue(webglAppear),
         },
         "start"
@@ -110,7 +112,7 @@ export function homeLeave(done) {
             webglAppear,
             {
                 typoOpacity: 0,
-                duration: 0.7,
+                duration: 0.4,
                 onUpdate: () => WebGL.setAppearValue(webglAppear),
             },
             "start"
@@ -119,18 +121,26 @@ export function homeLeave(done) {
             "#helloMonolithWrapper",
             {
                 y: () => `${window.innerHeight - window.innerWidth / 3}`,
-                duration: 0.7,
+                duration: 0.4,
                 ease: "power3.out",
             },
-            "start+=0.2"
+            "start"
         )
         .to(
             "#header",
             {
-                duration: 0.7,
+                duration: 0.4,
                 opacity: 0,
             },
             "start"
+        )
+        .to(
+            "#overlay",
+            {
+                duration: 0.4,
+                backgroundColor: "#191919",
+            },
+            "start+=0.4"
         );
 
     tl.play();
