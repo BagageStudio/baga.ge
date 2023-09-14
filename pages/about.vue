@@ -239,6 +239,19 @@ onMounted(async () => {
     ]);
 });
 
+useHead({
+    meta: [
+        {
+            property: "og:image",
+            content: "https://baga.ge/bagage-dark.jpg",
+        },
+        {
+            property: "og:image:secure_url",
+            content: "https://baga.ge/bagage-dark.jpg",
+        },
+    ],
+});
+
 definePageMeta({
     scrollToTop: true,
 });
