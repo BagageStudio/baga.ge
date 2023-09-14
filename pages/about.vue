@@ -139,18 +139,23 @@
                 <div class="wrapper-keywords">
                     <ul class="keywords">
                         <li>Jamstack</li>
-                        <li>Nuxt.js</li>
-                        <li>Vue.js</li>
-                        <li>Creative dev</li>
                         <li>WebGL</li>
                         <li>Headless CMS</li>
+                        <li>Nuxt</li>
+                        <li>Netlify</li>
+                        <li>Creative dev</li>
+                        <li>Vue.js</li>
+                        <li>GLSL</li>
                         <li>DatoCMS</li>
                         <li>Storyblok</li>
                         <li>Prismic</li>
-                        <li>Netlify</li>
+                        <li>Generative</li>
+                        <li>3D</li>
+                        <li>Stripe</li>
                         <li>Vercel</li>
+                        <li>Motion</li>
                         <li>Cloudflare Pages</li>
-                        <li>Healess e‑commerce</li>
+                        <li>Headless e‑commerce</li>
                         <li>Snipcart</li>
                         <li>GSAP</li>
                         <li>Figma</li>
