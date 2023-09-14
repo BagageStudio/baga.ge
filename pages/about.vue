@@ -35,101 +35,113 @@
                 </div>
             </div>
             <div class="key-values">
-                <div class="key-value">
+                <div class="key-value-wrapper">
                     <div
                         data-rotate="0"
                         data-opacity="0"
                         class="thingy thingy-1"
                         ref="thingyEl1"
                     ></div>
-                    <h2 class="title-a content-pad">
-                        Involve developers in shaping the project, at the very
-                        first steps
-                    </h2>
-                    <p class="content-pad">
-                        We have a keen eye for graphic design, and we identify
-                        the technical constraints imposed by the web, without
-                        limiting our ideas.
-                    </p>
-                    <p class="content-pad">
-                        AD materials such as animations and interactions always
-                        serve the meaning of the content. The website is not
-                        overwhelmed/saturated with animations.
-                    </p>
+                    <div class="key-value">
+                        <h2 class="title-a content-pad">
+                            Involve developers in shaping the project, at the
+                            very first steps
+                        </h2>
+                        <p class="content-pad">
+                            We have a keen eye for graphic design, and we
+                            identify the technical constraints imposed by the
+                            web, without limiting our ideas.
+                        </p>
+                        <p class="content-pad">
+                            AD materials such as animations and interactions
+                            always serve the meaning of the content. The website
+                            is not overwhelmed/saturated with animations.
+                        </p>
+                    </div>
                 </div>
-                <div class="key-value">
+                <div class="key-value-wrapper">
                     <div
                         data-rotate="0"
                         data-opacity="0"
                         class="thingy thingy-2"
                         ref="thingyEl2"
                     ></div>
-
-                    <h2 class="title-a content-pad">
-                        Work with you as if we were part of the team
-                    </h2>
-                    <p class="content-pad">
-                        That doesn't mean we understand exactly what you're
-                        doing, but it does mean we'll do our best to deliver the
-                        best possible result.
-                    </p>
-                    <p class="content-pad">
-                        We're honest, we're looking for the best for you, not
-                        the most.
-                    </p>
-                    <p class="content-pad">
-                        Collaboration helps up developing our skills, growing
-                        and going beyond our limits.
-                    </p>
+                    <div class="key-value">
+                        <h2 class="title-a content-pad">
+                            Work with you as if we were part of the team
+                        </h2>
+                        <p class="content-pad">
+                            That doesn't mean we understand exactly what you're
+                            doing, but it does mean we'll do our best to deliver
+                            the best possible result.
+                        </p>
+                        <p class="content-pad">
+                            We're honest, we're looking for the best for you,
+                            not the most.
+                        </p>
+                        <p class="content-pad">
+                            Collaboration helps up developing our skills,
+                            growing and going beyond our limits.
+                        </p>
+                    </div>
                 </div>
-                <div class="key-value">
-                    <h2 class="title-a content-pad">
-                        Make sure you can scale afterwards, with or without us
-                    </h2>
-                    <p class="content-pad">
-                        We don't claim authorship for what we do. It is
-                        important to us that our work is useful in the long run.
-                    </p>
-                    <p class="content-pad">
-                        We train you to use the CMS we've set up. We transfer
-                        knowledge to your developers, the day they join your
-                        team. The code is yours.
-                    </p>
+                <div class="key-value-wrapper">
+                    <div class="key-value">
+                        <h2 class="title-a content-pad">
+                            Make sure you can scale afterwards, with or without
+                            us
+                        </h2>
+                        <p class="content-pad">
+                            We don't claim authorship for what we do. It is
+                            important to us that our work is useful in the long
+                            run.
+                        </p>
+                        <p class="content-pad">
+                            We train you to use the CMS we've set up. We
+                            transfer knowledge to your developers, the day they
+                            join your team. The code is yours.
+                        </p>
+                    </div>
                 </div>
-                <div class="key-value">
-                    <h2 class="title-a content-pad">
-                        Flexibility and billing arrangements
-                    </h2>
-                    <p class="content-pad">
-                        The team can be composed with in-house developers, other
-                        freelancers or agencies, offering of variety of services
-                        ranging. From redesigning a simple website to providing
-                        long-term support for developing new features.
-                    </p>
-                    <p class="content-pad">
-                        We're based in Nantes, but we can (and love to) move
-                        around to meet our customers.
-                    </p>
+                <div class="key-value-wrapper">
+                    <div class="key-value">
+                        <h2 class="title-a content-pad">
+                            Flexibility and billing arrangements
+                        </h2>
+                        <p class="content-pad">
+                            The team can be composed with in-house developers,
+                            other freelancers or agencies, offering of variety
+                            of services ranging. From redesigning a simple
+                            website to providing long-term support for
+                            developing new features.
+                        </p>
+                        <p class="content-pad">
+                            We're based in Nantes, but we can (and love to) move
+                            around to meet our customers.
+                        </p>
+                    </div>
                 </div>
-                <div class="key-value">
+                <div class="key-value-wrapper">
                     <div
                         data-rotate="0"
                         data-opacity="0"
                         class="thingy thingy-3"
                         ref="thingyEl3"
                     ></div>
-                    <h2 class="title-a content-pad">
-                        Taking the immersive experience a step further
-                    </h2>
-                    <p class="content-pad">
-                        We regularly immerse in digital art, with a strong
-                        desire to engage in projects of similar nature.
-                    </p>
-                    <p class="content-pad">
-                        If your idea goes beyond a simple communication need,
-                        we're here to help you translate it and make it
-                        impactful.
-                    </p>
+                    <div class="key-value">
+                        <h2 class="title-a content-pad">
+                            Taking the immersive experience a step further
+                        </h2>
+                        <p class="content-pad">
+                            We regularly immerse in digital art, with a strong
+                            desire to engage in projects of similar nature.
+                        </p>
+                        <p class="content-pad">
+                            If your idea goes beyond a simple communication
+                            need, we're here to help you translate it and make
+                            it impactful.
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="section-keywords">
@@ -315,10 +327,12 @@ definePageMeta({
         margin-top: 120px;
     }
 }
-.key-value {
+.key-value-wrapper {
     &:not(:last-child) {
         margin-bottom: 150px;
     }
+}
+.key-value {
     .title-a {
         margin-bottom: 30px;
     }
@@ -442,39 +456,41 @@ definePageMeta({
     .thingy-1 {
         position: absolute;
         top: -500px;
-        right: -1050px;
+        right: -550px;
         width: 1200px;
         height: 1200px;
     }
     .thingy-2 {
         position: absolute;
         top: 0px;
-        left: -900px;
+        left: -600px;
         width: 1200px;
         height: 1200px;
     }
     .thingy-3 {
         position: absolute;
         top: -500px;
-        right: -1100px;
+        right: -550px;
         width: 1200px;
         height: 1200px;
     }
-    .key-value {
+    .key-value-wrapper {
         position: relative;
-        width: percentage(math.div(4, 6));
         &:not(:last-child) {
             margin-bottom: 225px;
         }
-        &:nth-child(2) {
+        &:nth-child(2) .key-value {
             margin-left: percentage(math.div(1, 6));
         }
-        &:nth-child(3) {
+        &:nth-child(3) .key-value {
             margin-left: percentage(math.div(2, 6));
         }
-        &:nth-child(4) {
+        &:nth-child(4) .key-value {
             margin-left: percentage(math.div(1, 6));
         }
+    }
+    .key-value {
+        width: percentage(math.div(4, 6));
         .title-a {
             width: percentage(math.div(3, 4));
             margin-bottom: 40px;
@@ -494,6 +510,18 @@ definePageMeta({
     }
 }
 @media (min-width: $desktop-3xl) {
+    .key-value-wrapper {
+        &:nth-child(2) .key-value {
+            margin-left: percentage(math.div(1.5, 6));
+        }
+        &:nth-child(3) .key-value {
+            margin-left: percentage(math.div(3, 6));
+        }
+        &:nth-child(4) .key-value {
+            margin-left: percentage(math.div(1.5, 6));
+        }
+    }
+
     .key-value {
         width: percentage(math.div(3, 6));
         .title-a {
