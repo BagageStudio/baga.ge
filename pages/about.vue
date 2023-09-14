@@ -131,6 +131,32 @@
                     </p>
                 </div>
             </div>
+            <div class="section-keywords">
+                <h2 class="title-a content-pad">
+                    We use the latest, most efficient and innovative
+                    technologies
+                </h2>
+                <div class="wrapper-keywords">
+                    <ul class="keywords">
+                        <li>Jamstack</li>
+                        <li>Nuxt.js</li>
+                        <li>Vue.js</li>
+                        <li>Creative dev</li>
+                        <li>WebGL</li>
+                        <li>Headless CMS</li>
+                        <li>DatoCMS</li>
+                        <li>Storyblok</li>
+                        <li>Prismic</li>
+                        <li>Netlify</li>
+                        <li>Vercel</li>
+                        <li>Cloudflare Pages</li>
+                        <li>Healess e‑commerce</li>
+                        <li>Snipcart</li>
+                        <li>GSAP</li>
+                        <li>Figma</li>
+                    </ul>
+                </div>
+            </div>
             <div class="contact">
                 <div class="subtitle">Contact</div>
                 <a class="mail" href="mailto:hello@baga.ge">hello@baga.ge</a>
@@ -266,10 +292,79 @@ definePageMeta({
     display: none;
 }
 
+.section-keywords {
+    margin-top: 150px;
+}
+.wrapper-keywords {
+    position: relative;
+    &::before,
+    &::after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        border-right: 1px solid #343434;
+    }
+    &::before {
+        content: "";
+        left: 50%;
+    }
+}
+.keywords {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px 0 0;
+    padding: 30px 0;
+    list-style: none;
+    > li {
+        flex: 0 0 auto;
+        width: 50%;
+        margin: 10px 0;
+        padding: 0 var(--gutter);
+        font-size: 2.3rem;
+        line-height: 1;
+        &:nth-child(2n) {
+            padding-left: calc(var(--gutter) * 2);
+        }
+    }
+}
+@media (min-width: $phone) {
+    .keywords {
+        margin-top: 60px;
+        > li {
+            font-size: 2.6rem;
+        }
+    }
+}
 @media (min-width: $tablet) {
     .key-value {
         .title-a {
             width: percentage(math.div(2, 3));
+        }
+    }
+    .section-keywords {
+        .title-a {
+            width: percentage(math.div(2, 3));
+        }
+    }
+    .wrapper-keywords {
+        &::before {
+            left: percentage(math.div(1, 3));
+        }
+        &::after {
+            content: "";
+            left: percentage(math.div(2, 3));
+        }
+    }
+    .keywords {
+        > li {
+            width: percentage(math.div(1, 3));
+            &:nth-child(2n) {
+                padding-left: var(--gutter);
+            }
+            &:nth-child(3n + 2),
+            &:nth-child(3n + 3) {
+                padding-left: calc(var(--gutter) * 2);
+            }
         }
     }
 }
@@ -337,6 +432,16 @@ definePageMeta({
             }
         }
     }
+    .section-keywords {
+        .title-a {
+            width: percentage(math.div(3, 6));
+        }
+    }
+}
+@media (min-width: $desktop-xxl) {
+    .wrapper-keywords {
+        width: percentage(math.div(5, 6));
+    }
 }
 @media (min-width: $desktop-3xl) {
     .key-value {
@@ -348,6 +453,14 @@ definePageMeta({
             width: percentage(math.div(2, 3));
             margin-left: percentage(math.div(1, 3));
         }
+    }
+    .section-keywords {
+        .title-a {
+            width: percentage(math.div(2, 6));
+        }
+    }
+    .wrapper-keywords {
+        width: percentage(math.div(3, 6));
     }
 }
 </style>
