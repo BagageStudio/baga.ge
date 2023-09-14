@@ -687,6 +687,39 @@ onMounted(async () => {
     createAnimations();
 });
 
+useHead({
+    meta: [
+        {
+            property: "og:image",
+            content: "https://baga.ge/bagage.jpg",
+        },
+        {
+            property: "og:image:secure_url",
+            content: "https://baga.ge/bagage.jpg",
+        },
+    ],
+    link: [
+        {
+            rel: "icon",
+            href: "/favicon.ico",
+            sizes: "any",
+        },
+        {
+            rel: "icon",
+            href: "/icon.svg",
+            type: "image/svg+xml",
+        },
+        {
+            rel: "apple-touch-icon",
+            href: "/apple-touch-icon.png",
+        },
+        {
+            rel: "manifest",
+            href: "/manifest.webmanifest",
+        },
+    ],
+});
+
 definePageMeta({
     scrollToTop: true,
 });

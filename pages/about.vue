@@ -16,6 +16,7 @@
                             website creation.
                         </h1>
                         <p>
+                            <span class="img-shape"></span>
                             Before starting Bagage, we met in a creative web
                             agency and then worked as separate freelancers. It
                             became clear that we had to create our own studio
@@ -250,6 +251,26 @@ useHead({
             content: "https://baga.ge/bagage-dark.jpg",
         },
     ],
+    link: [
+        {
+            rel: "icon",
+            href: "/favicon-dark.ico",
+            sizes: "any",
+        },
+        {
+            rel: "icon",
+            href: "/icon-dark.svg",
+            type: "image/svg+xml",
+        },
+        {
+            rel: "apple-touch-icon",
+            href: "/apple-touch-icon-dark.png",
+        },
+        {
+            rel: "manifest",
+            href: "/manifest-dark.webmanifest",
+        },
+    ],
 });
 
 definePageMeta({
@@ -265,6 +286,17 @@ definePageMeta({
             display: inline;
         }
     }
+}
+.img-shape {
+    float: right;
+    width: calc(percentage(math.div(3, 6)) - var(--gutter));
+    aspect-ratio: 1 / 1.5;
+    margin-left: calc(var(--gutter) * 2);
+    background: red;
+    margin-top: 162px;
+    shape-margin: 30px;
+    // 162px = line-height * 3
+    shape-outside: inset(162px 0 0 0);
 }
 .images {
     display: flex;
@@ -313,36 +345,15 @@ definePageMeta({
 .section-keywords {
     margin-top: 150px;
 }
-.wrapper-keywords {
-    position: relative;
-    &::before,
-    &::after {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        border-right: 1px solid #343434;
-    }
-    &::before {
-        content: "";
-        left: 50%;
-    }
-}
 .keywords {
-    display: flex;
-    flex-wrap: wrap;
     margin: 30px 0 0;
     padding: 30px 0;
     list-style: none;
     > li {
-        flex: 0 0 auto;
-        width: 50%;
         margin: 10px 0;
         padding: 0 var(--gutter);
         font-size: 2.3rem;
         line-height: 1;
-        &:nth-child(2n) {
-            padding-left: calc(var(--gutter) * 2);
-        }
     }
 }
 @media (min-width: $phone) {
@@ -365,23 +376,27 @@ definePageMeta({
         }
     }
     .wrapper-keywords {
-        &::before {
-            left: percentage(math.div(1, 3));
-        }
+        position: relative;
+        &::before,
         &::after {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            border-right: 1px solid #343434;
+        }
+        &::before {
             content: "";
-            left: percentage(math.div(2, 3));
+            left: 50%;
         }
     }
     .keywords {
+        display: flex;
+        flex-wrap: wrap;
         > li {
-            width: percentage(math.div(1, 3));
+            flex: 0 0 auto;
+            width: 50%;
             &:nth-child(2n) {
-                padding-left: var(--gutter);
-            }
-            &:nth-child(3n + 2),
-            &:nth-child(3n + 3) {
-                padding-left: calc(var(--gutter) * 2);
+                // padding-left: calc(var(--gutter) * 2);
             }
         }
     }
@@ -400,6 +415,28 @@ definePageMeta({
         // opacity: 0.3;
         background-color: red;
         opacity: 0;
+    }
+
+    .wrapper-keywords {
+        &::before {
+            left: percentage(math.div(1, 3));
+        }
+        &::after {
+            content: "";
+            left: percentage(math.div(2, 3));
+        }
+    }
+    .keywords {
+        > li {
+            width: percentage(math.div(1, 3));
+            &:nth-child(2n) {
+                // padding-left: var(--gutter);
+            }
+            &:nth-child(3n + 2),
+            &:nth-child(3n + 3) {
+                // padding-left: calc(var(--gutter) * 2);
+            }
+        }
     }
 
     .thingy-1 {
@@ -456,11 +493,6 @@ definePageMeta({
         }
     }
 }
-@media (min-width: $desktop-xxl) {
-    .wrapper-keywords {
-        width: percentage(math.div(5, 6));
-    }
-}
 @media (min-width: $desktop-3xl) {
     .key-value {
         width: percentage(math.div(3, 6));
@@ -478,7 +510,7 @@ definePageMeta({
         }
     }
     .wrapper-keywords {
-        width: percentage(math.div(3, 6));
+        width: percentage(math.div(5, 6));
     }
 }
 </style>
