@@ -72,11 +72,6 @@ export default defineNuxtConfig({
             link: [
                 {
                     rel: "icon",
-                    href: "/favicon.ico",
-                    sizes: "any",
-                },
-                {
-                    rel: "icon",
                     href: "/icon.svg",
                     type: "image/svg+xml",
                 },
@@ -87,6 +82,11 @@ export default defineNuxtConfig({
                 {
                     rel: "manifest",
                     href: "/manifest.webmanifest",
+                },
+                {
+                    rel: "mask-icon",
+                    href: "/safari-pinned-tab.svg",
+                    color: "#f24f2b",
                 },
             ],
         },

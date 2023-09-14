@@ -254,11 +254,6 @@ useHead({
     link: [
         {
             rel: "icon",
-            href: "/favicon-dark.ico",
-            sizes: "any",
-        },
-        {
-            rel: "icon",
             href: "/icon-dark.svg",
             type: "image/svg+xml",
         },
@@ -269,6 +264,11 @@ useHead({
         {
             rel: "manifest",
             href: "/manifest-dark.webmanifest",
+        },
+        {
+            rel: "mask-icon",
+            href: "/safari-pinned-tab.svg",
+            color: "#000000",
         },
     ],
 });
