@@ -395,6 +395,7 @@ a.project {
         margin-left: 25px;
         text-decoration: none;
         color: $primary;
+        text-transform: uppercase;
         .secondary & {
             color: $secondary;
         }
