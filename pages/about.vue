@@ -1,5 +1,5 @@
 <template>
-    <div class="about page secondary" id="about">
+    <div class="about page secondary" id="about" ref="about">
         <header class="header" id="header">
             <div class="container">
                 <NuxtLink to="/">Home</NuxtLink>
@@ -7,31 +7,34 @@
             </div>
         </header>
         <div class="container">
-            <div class="hero">
-                <div class="hero-title wrapper-title full-width">
-                    <span class="subtitle content-pad">About</span>
-                    <div class="title content-pad">
-                        <h1>
-                            We are a team of two developers with an expertise in
-                            website creation.
-                        </h1>
-                        <p>
-                            <span class="img-shape"></span>
-                            Before starting Bagage, we met in a creative web
-                            agency and then worked as separate freelancers. It
-                            became clear that we had to create our own studio
-                            because we enjoy working with our own clients to
-                            share key values and a common strategy.
-                        </p>
+            <div id="heroWithImages" class="hero-images">
+                <div class="hero">
+                    <div class="hero-title wrapper-title full-width">
+                        <span class="subtitle content-pad">About</span>
+                        <div class="title content-pad">
+                            <h1>
+                                We are a team of two developers with an
+                                expertise in website creation.
+                            </h1>
+                            <p>
+                                <span class="img-shape"></span>
+                                Before starting Bagage, we met in a creative web
+                                agency and then worked as separate freelancers.
+                                It became clear that we had to create our own
+                                studio because we enjoy working with our own
+                                clients to share key values and a common
+                                strategy.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="images">
-                <div class="image-gl" ref="img1">
-                    <img src="~/assets/img/photos/adrien2.jpg" />
-                </div>
-                <div class="image-gl" ref="img2">
-                    <img src="~/assets/img/photos/adrien3.jpg" />
+                <div class="images">
+                    <div class="image-gl" id="img1">
+                        <img src="~/assets/img/photos/adrien2.jpg" />
+                    </div>
+                    <div class="image-gl" id="img2">
+                        <img src="~/assets/img/photos/adrien3.jpg" />
+                    </div>
                 </div>
             </div>
             <div class="key-values">
@@ -40,7 +43,7 @@
                         data-rotate="0"
                         data-opacity="0"
                         class="thingy thingy-1"
-                        ref="thingyEl1"
+                        id="thingyEl1"
                     ></div>
                     <div class="key-value">
                         <h2 class="title-a content-pad">
@@ -64,7 +67,7 @@
                         data-rotate="0"
                         data-opacity="0"
                         class="thingy thingy-2"
-                        ref="thingyEl2"
+                        id="thingyEl2"
                     ></div>
                     <div class="key-value">
                         <h2 class="title-a content-pad">
@@ -126,7 +129,7 @@
                         data-rotate="0"
                         data-opacity="0"
                         class="thingy thingy-3"
-                        ref="thingyEl3"
+                        id="thingyEl3"
                     ></div>
                     <div class="key-value">
                         <h2 class="title-a content-pad">
@@ -213,46 +216,17 @@
 </template>
 
 <script setup>
-import { aboutLoaded } from "~/assets/js/loadedAnimation";
-import {
-    CreateHelloAnimation,
-    CreateThingiesAnimation,
-} from "~/assets/js/scroll/about";
+import { aboutEnter, aboutLeave } from "~/assets/js/transitions/about";
 
-import WebGL from "~/assets/js/WebGL";
-
-const img1 = ref(null);
-const img2 = ref(null);
-
-const thingyEl1 = ref(null);
-const thingyEl2 = ref(null);
-const thingyEl3 = ref(null);
+const about = ref(null);
 
 onMounted(async () => {
-    const thingy1 = {
-        el: thingyEl1.value,
-        type: 1,
-    };
-    const thingy2 = {
-        el: thingyEl2.value,
-        type: 2,
-    };
-    const thingy3 = {
-        el: thingyEl3.value,
-        type: 3,
-    };
-
-    await WebGL.initializeAbout({
-        imgs: [img1.value, img2.value],
-        thingies: [thingy1, thingy2, thingy3],
-    });
-    aboutLoaded();
-    CreateHelloAnimation();
-    CreateThingiesAnimation([
-        thingyEl1.value,
-        thingyEl2.value,
-        thingyEl3.value,
-    ]);
+    const initialLoad =
+        !document.documentElement.classList.contains("already-loaded");
+    if (initialLoad) {
+        aboutEnter(about.value);
+        document.documentElement.classList.add("already-loaded");
+    }
 });
 
 useHead({
@@ -290,6 +264,16 @@ useHead({
 
 definePageMeta({
     scrollToTop: true,
+    pageTransition: {
+        name: "about",
+        mode: "out-in",
+        onEnter: (el, done) => {
+            aboutEnter(el, done);
+        },
+        onLeave: (el, done) => {
+            aboutLeave(done);
+        },
+    },
 });
 </script>
 
@@ -373,6 +357,11 @@ definePageMeta({
         line-height: 1;
     }
 }
+
+.hero-images {
+    transform: translateY(calc(100vh - 33vw));
+}
+
 @media (min-width: $phone) {
     .keywords {
         margin-top: 60px;

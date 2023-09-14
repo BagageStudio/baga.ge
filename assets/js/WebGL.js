@@ -121,6 +121,7 @@ class WebGL {
     }
 
     async initializeHome() {
+        this.textMasks = { bottom: 0, top: 1 };
         const textures = await this.loadImages({
             bagageTypoPng,
             ditherTextureBayer16,
@@ -158,6 +159,7 @@ class WebGL {
                 ditherPaletteEga,
             });
             this.addTextures(textures);
+            this.textMasks = { bottom: 0, top: 0 };
 
             this.primaryDitherPalette = this.textures.ditherPaletteDark;
             this.primaryDitherTexture = this.textures.ditherTextureTiles;

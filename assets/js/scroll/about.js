@@ -13,7 +13,7 @@ export function CreateHelloAnimation() {
         scrollOut: 0,
     };
 
-    gsap.to(logo, {
+    return gsap.to(logo, {
         scrollTrigger: {
             trigger: "#about",
             scrub: true,
@@ -30,6 +30,7 @@ export function CreateHelloAnimation() {
 }
 
 export function CreateThingiesAnimation(thingies) {
+    const tls = [];
     thingies.forEach((thingy) => {
         const values = {
             opacity: 0,
@@ -63,5 +64,7 @@ export function CreateThingiesAnimation(thingies) {
             },
             "start"
         );
+        tls.push(tl);
     });
+    return tls;
 }

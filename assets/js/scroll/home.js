@@ -174,6 +174,8 @@ export function CreateProjectsAnimation() {
             duration: 1.4,
             scaleX: 1,
         });
+
+    return { tl: expandTl, mm };
 }
 
 export function CreateHelloAnimation() {
@@ -183,7 +185,7 @@ export function CreateHelloAnimation() {
         scrollOut: 0,
     };
 
-    gsap.to(logo, {
+    return gsap.to(logo, {
         scrollTrigger: {
             trigger: "#home",
             scrub: true,
@@ -228,7 +230,7 @@ export function CreateManifestoTitleAnimation() {
         "start"
     );
 
-    ScrollTrigger.create({
+    const speed = ScrollTrigger.create({
         trigger: "#manifestoTitle",
         start: "top bottom",
         end: "bottom top",
@@ -238,10 +240,12 @@ export function CreateManifestoTitleAnimation() {
             tl.timeScale(1 + velocity);
         },
     });
+    return { title: tl, speed };
 }
 
 export function CreateManifestoValuesAnimation() {
     const values = document.querySelectorAll(".value");
+    const tls = [];
     [...values].forEach((value, index) => {
         const innerValue = value.querySelector(".inner-value");
         const isLast = index === values.length - 1;
@@ -274,7 +278,10 @@ export function CreateManifestoValuesAnimation() {
                 duration: 0,
                 opacity: isLast ? 1 : 0.2,
             });
+
+        tls.push(activeTl);
     });
+    return tls;
 }
 
 export function CreateTextMasksAnimation() {
@@ -283,9 +290,9 @@ export function CreateTextMasksAnimation() {
         top: 1,
     };
 
-    gsap.to(textMasks, {
+    const footerTween = gsap.to(textMasks, {
         scrollTrigger: {
-            trigger: "#footer",
+            trigger: "#footer.home-footer",
             scrub: true,
             start: () => "top-=156px bottom",
             end: () => `bottom bottom`,
@@ -297,9 +304,9 @@ export function CreateTextMasksAnimation() {
         ease: "linear",
     });
 
-    gsap.to(textMasks, {
+    const headerTween = gsap.to(textMasks, {
         scrollTrigger: {
-            trigger: "#header",
+            trigger: "#header.home-header",
             scrub: true,
             start: () => "top top",
             end: () => `bottom+=100px top`,
@@ -310,4 +317,6 @@ export function CreateTextMasksAnimation() {
         top: 0,
         ease: "linear",
     });
+
+    return { footerTween, headerTween };
 }
