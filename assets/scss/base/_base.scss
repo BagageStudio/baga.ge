@@ -84,8 +84,8 @@ h6 {
 }
 
 p {
-    font-size: 2.1rem;
-    line-height: 29px;
+    font-size: 1.8rem;
+    line-height: 25px;
 }
 
 .page {
@@ -97,8 +97,8 @@ p {
 
 .wrapper-title {
     position: relative;
-    font-size: 3rem;
-    line-height: 36px;
+    font-size: 2rem;
+    line-height: 26px;
     .subtitle {
         position: absolute;
     }
@@ -111,8 +111,8 @@ p {
     }
 }
 .title-a {
-    font-size: 3rem;
-    line-height: 36px;
+    font-size: 2rem;
+    line-height: 26px;
 }
 .subtitle {
     font-feature-settings: "ss16";
@@ -223,8 +223,8 @@ a.project {
 }
 .project-name,
 .wrapper-arrow-number {
-    font-size: 2.5rem;
-    line-height: 36px;
+    font-size: 2rem;
+    line-height: 26px;
 }
 .wrapper-arrow-number {
     display: flex;
@@ -305,8 +305,8 @@ a.project {
 }
 .value {
     padding: 40px var(--gutter);
-    font-size: 3.5rem;
-    line-height: 42px;
+    font-size: 3rem;
+    line-height: 35px;
     border-bottom: 1px solid $primary-light;
     &:not(:first-child) {
         .inner-value {
@@ -350,6 +350,7 @@ a.project {
         color: $primary;
         text-decoration: none;
         text-underline-offset: 2px;
+        font-size: 1.4rem;
         &.active {
             text-decoration: underline;
         }
@@ -408,13 +409,44 @@ a.project {
     }
 }
 
-@media (min-width: $phone-small) {
+@media (min-width: 450px) {
+    .wrapper-title,
+    .title-a {
+        font-size: 2.4rem;
+        line-height: 30px;
+    }
     .footer {
         font-size: 1.4rem;
+    }
+    p {
+        font-size: 2.1rem;
+        line-height: 29px;
     }
 }
 
 @media (min-width: $phone) {
+    .header {
+        a {
+            color: $primary;
+            text-decoration: none;
+            text-underline-offset: 2px;
+            font-size: 1.6rem;
+        }
+    }
+    .wrapper-title,
+    .title-a {
+        font-size: 3rem;
+        line-height: 36px;
+    }
+    .project-name,
+    .wrapper-arrow-number {
+        font-size: 2.5rem;
+        line-height: 36px;
+    }
+    .value {
+        font-size: 3.5rem;
+        line-height: 42px;
+    }
     // contact
     .contact {
         padding: 120px 0;

@@ -54,7 +54,7 @@
                     <p class="content-pad">
                         AD materials such as animations and interactions always
                         serve the meaning of the content. The website is not
-                        overwhelmed/saturated with animations.
+                        overwhelmed with animations.
                     </p>
                 </div>
                 <div class="key-value">
@@ -290,17 +290,6 @@ definePageMeta({
         }
     }
 }
-.img-shape {
-    float: right;
-    width: calc(percentage(math.div(3, 6)) - var(--gutter));
-    aspect-ratio: 1 / 1.5;
-    margin-left: calc(var(--gutter) * 2);
-    background: red;
-    margin-top: 162px;
-    shape-margin: 30px;
-    // 162px = line-height * 3
-    shape-outside: inset(162px 0 0 0);
-}
 .images {
     display: flex;
     justify-content: space-between;
@@ -355,7 +344,7 @@ definePageMeta({
     > li {
         margin: 10px 0;
         padding: 0 var(--gutter);
-        font-size: 2.3rem;
+        font-size: 2rem;
         line-height: 1;
     }
 }
@@ -512,6 +501,128 @@ definePageMeta({
         width: percentage(math.div(5, 6));
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+////////////////////////////////////////////
+/////////// img-shape responsive ///////////
+////////////////////////////////////////////
+.img-shape {
+    --line-height: 26px;
+    float: right;
+    width: 150px;
+    aspect-ratio: 1 / 1.5;
+    margin-left: var(--gutter);
+    background: red;
+    shape-margin: 20px;
+    margin-top: calc(var(--line-height) * 8);
+    shape-outside: inset(calc(var(--line-height) * 8) 0 0 0);
+}
+
+@media (min-width: 430px) {
+    .img-shape {
+        width: 200px;
+        // margin-top: 240px;
+        // shape-outside: inset(240px 0 0 0);
+        margin-top: calc(var(--line-height) * 6);
+        shape-outside: inset(calc(var(--line-height) * 6) 0 0 0);
+    }
+}
+@media (min-width: 450px) {
+    .img-shape {
+        --line-height: 30px;
+        width: 200px;
+        margin-top: calc(var(--line-height) * 6);
+        shape-outside: inset(calc(var(--line-height) * 6) 0 0 0);
+    }
+}
+@media (min-width: 450px) {
+    .img-shape {
+        margin-top: calc(var(--line-height) * 7);
+        shape-outside: inset(calc(var(--line-height) * 7) 0 0 0);
+    }
+}
+@media (min-width: 500px) {
+    .img-shape {
+        margin-top: calc(var(--line-height) * 6);
+        shape-outside: inset(calc(var(--line-height) * 6) 0 0 0);
+    }
+}
+@media (min-width: $phone) {
+    .img-shape {
+        --line-height: 36px;
+        width: 250px;
+        margin-top: calc(var(--line-height) * 7);
+        shape-outside: inset(calc(var(--line-height) * 7) 0 0 0);
+    }
+}
+@media (min-width: 620px) {
+    .img-shape {
+        width: calc(percentage(math.div(2, 3)) - var(--gutter));
+    }
+}
+@media (min-width: 723px) {
+    .img-shape {
+        margin-top: calc(var(--line-height) * 6);
+        shape-outside: inset(calc(var(--line-height) * 6) 0 0 0);
+    }
+}
+@media (min-width: $tablet) {
+    .img-shape {
+        --line-height: 42px;
+        width: 50%;
+        margin-top: calc(var(--line-height) * 7);
+        shape-outside: inset(calc(var(--line-height) * 7) 0 0 0);
+    }
+}
+@media (min-width: 820px) {
+    .img-shape {
+        margin-top: calc(var(--line-height) * 6);
+        shape-outside: inset(calc(var(--line-height) * 6) 0 0 0);
+    }
+}
+@media (min-width: 900px) {
+    .img-shape {
+        width: calc(percentage(math.div(2, 3)) - var(--gutter));
+    }
+}
+@media (min-width: 945px) {
+    .img-shape {
+        margin-top: calc(var(--line-height) * 5);
+        shape-outside: inset(calc(var(--line-height) * 5) 0 0 0);
+    }
+}
+@media (min-width: 1021px) {
+    .img-shape {
+        margin-top: calc(var(--line-height) * 4);
+        shape-outside: inset(calc(var(--line-height) * 4) 0 0 0);
+    }
+}
+@media (min-width: $desktop) {
+    .img-shape {
+        --line-height: 54px;
+        width: calc(percentage(math.div(3, 6)) - (var(--gutter) * 2));
+        margin-right: var(--gutter);
+        margin-top: calc(var(--line-height) * 5);
+        shape-outside: inset(calc(var(--line-height) * 5) 0 0 0);
+    }
+}
+@media (min-width: 1150px) {
+    .img-shape {
+        margin-top: calc(var(--line-height) * 4);
+        shape-outside: inset(calc(var(--line-height) * 4) 0 0 0);
+    }
+}
+@media (min-width: $desktop-xxl) {
+    .img-shape {
+        width: calc(percentage(math.div(3, 6)) - (var(--gutter)));
+        margin-right: 0;
+    }
+}
+@media (min-width: $desktop-3xl) {
+    .img-shape {
+        margin-top: calc(var(--line-height) * 3);
+        shape-outside: inset(calc(var(--line-height) * 3) 0 0 0);
     }
 }
 </style>
