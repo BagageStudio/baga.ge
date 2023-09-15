@@ -356,14 +356,13 @@ definePageMeta({
     }
     p {
         position: relative;
+        margin-left: 1.5em;
         &::before {
             position: absolute;
             top: 0;
             left: calc(var(--gutter) - 1.5em);
             content: "↦";
         }
-        width: percentage(math.div(2, 3));
-        margin-left: percentage(math.div(1, 3));
         &:not(:last-child) {
             margin-bottom: 20px;
         }
@@ -394,6 +393,12 @@ definePageMeta({
         margin-top: 60px;
         > li {
             font-size: 2.6rem;
+        }
+    }
+    .key-value {
+        p {
+            width: percentage(math.div(2, 3));
+            margin-left: percentage(math.div(1, 3));
         }
     }
 }
