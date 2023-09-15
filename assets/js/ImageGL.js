@@ -14,7 +14,7 @@ export default class {
         this.scene = scene;
         this.screen = screen;
         this.viewport = viewport;
-        this.scroll = 0;
+        this.scroll = -1;
     }
 
     async initialize() {
@@ -100,7 +100,7 @@ export default class {
     }
 
     update(y) {
-        if (y !== this.scroll && this.plane) {
+        if (this.plane) {
             this.scroll = y;
             this.createBounds();
         }

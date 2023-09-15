@@ -3,9 +3,7 @@ import {
     Triangle,
     Program,
     Mesh,
-    Post,
     Vec2,
-    Vec3,
     Texture,
     Plane,
     Camera,
@@ -20,8 +18,6 @@ gsap.registerPlugin(SlowMo);
 import ImageGL from "./ImageGL";
 import Thingy from "./Thingy";
 
-import { lerp, getNextGenImageSupport } from "./utils.js";
-
 import planeFragment from "../shader/planeFragment.glsl";
 import planeVertex from "../shader/planeVertex.glsl";
 
@@ -29,20 +25,13 @@ import postFragment from "../shader/postFragment.glsl";
 import postVertex from "../shader/postVertex.glsl";
 
 import bagageTypoPng from "../img/bagage-white.png";
-import bagageTypoWebp from "../img/bagage-white.png";
-import bagageTypoAvif from "../img/bagage-white.png";
 
 import ditherTextureBayer16 from "../img/ditherTexture/bayer16.png";
 import ditherTextureTiles from "../img/ditherTexture/tiles.png";
 
 import ditherPaletteDefault from "../img/palettes/default.jpg";
-import ditherPaletteGrey from "../img/palettes/grey.jpg";
-import ditherPalettePastari from "../img/palettes/pastari.jpg";
-import ditherPaletteCommodore from "../img/palettes/commodore64.png";
-import ditherPaletteCommodoreVic from "../img/palettes/commodoreVic.png";
 import ditherPaletteVision from "../img/palettes/vision.png";
 import ditherPaletteDark from "../img/palettes/dark.jpg";
-import ditherPaletteEga from "../img/palettes/c_ega.jpg";
 
 class WebGL {
     constructor() {
@@ -55,22 +44,10 @@ class WebGL {
             pixelation: 165,
             pixelRatio: 0.1,
             postProcessingType: "luminance",
-            ditherTexture: "tiles",
-            ditherPalette: "grey.jpg",
             inversedPalette: true,
             inversedTexture: false,
             rampContrast: 1,
             rampOffset: 0,
-            color: {
-                r: 0.95,
-                g: 0.31,
-                b: 0.17,
-            },
-            backgroundColor: {
-                r: 0.961,
-                g: 0.91,
-                b: 0.906,
-            },
             ditherFactor: 0.2,
             noiseThreshold: 0.2,
             noisePower: 1,
@@ -120,7 +97,6 @@ class WebGL {
 
         this.createPost();
 
-        // this.createPostProcessing();
         this.onResize();
         this.update();
         this.isMobile = window.innerWidth < 800;
@@ -165,7 +141,6 @@ class WebGL {
                 ditherTextureTiles,
                 ditherTextureBayer16,
                 ditherPaletteDark,
-                ditherPaletteEga,
                 ditherPaletteVision,
             });
             this.addTextures(textures);
@@ -174,7 +149,6 @@ class WebGL {
             this.primaryDitherPalette = this.textures.ditherPaletteDark;
             this.primaryDitherTexture = this.textures.ditherTextureTiles;
             this.secondaryDitherPalette = this.textures.ditherPaletteVision;
-            this.secondaryDitherPaletteFirst = this.textures.ditherPaletteEga;
             this.secondaryDitherTexture = this.textures.ditherTextureBayer16;
 
             if (!this.initialized) this.initialize();
@@ -373,11 +347,6 @@ class WebGL {
             minFilter: this.gl.NEAREST,
         });
 
-        this.secondaryDitherPaletteTextureFirst = new Texture(this.gl, {
-            image: this.secondaryDitherPaletteFirst,
-            magFilter: this.gl.NEAREST,
-            minFilter: this.gl.NEAREST,
-        });
         this.secondaryDitherPaletteTexture = new Texture(this.gl, {
             image: this.secondaryDitherPalette,
             magFilter: this.gl.NEAREST,
@@ -404,10 +373,6 @@ class WebGL {
                 uSecondaryDitherTexture: {
                     value: this.secondaryDitherTextureTexture,
                 },
-
-                uSecondaryDitherPaletteFirst: {
-                    value: this.secondaryDitherPaletteTextureFirst,
-                },
                 uSecondaryDitherTextureSize: {
                     value: this.secondaryDitherPaletteTexture,
                 },
@@ -419,9 +384,6 @@ class WebGL {
                 pixelated: { value: 1 },
                 uPixelation: { value: 100 },
                 dithered: { value: 1 },
-                uDitherType: {
-                    value: this.params.postProcessingType === "color" ? 1 : 0,
-                },
                 uInversedPalette: { value: 0 },
                 uInversedTexture: { value: 0 },
                 pixelRatio: { value: 0 },
@@ -433,57 +395,6 @@ class WebGL {
         });
 
         this.post = new Mesh(this.gl, { geometry, program });
-    }
-
-    createPostProcessing() {
-        this.post = new Post(this.gl);
-
-        this.ditherTextureTexture = new Texture(this.gl, {
-            magFilter: this.gl.NEAREST,
-            minFilter: this.gl.NEAREST,
-        });
-        this.ditherPaletteTexture = new Texture(this.gl, {
-            magFilter: this.gl.NEAREST,
-            minFilter: this.gl.NEAREST,
-        });
-
-        this.pass = this.post.addPass({
-            vertex: `#version 300 es
-                in vec2 uv;
-                in vec2 position;
-
-                out vec2 vUv;
-
-                void main() {
-                    vUv = uv;
-                    gl_Position = vec4(position, 0, 1);
-                }`,
-            fragment: post,
-            uniforms: {
-                uDitherTexture: { value: this.ditherTextureTexture },
-                uDitherTextureSize: { value: 0 },
-                uDitherPalette: { value: this.ditherPaletteTexture },
-                uTime: { value: 0 },
-                pixelated: { value: 1 },
-                uPixelation: { value: 100 },
-                dithered: { value: 1 },
-                uDitherType: {
-                    value: this.params.postProcessingType === "color" ? 1 : 0,
-                },
-                uInversedPalette: { value: 0 },
-                uInversedTexture: { value: 0 },
-                pixelRatio: { value: 0 },
-                uResolution: this.resolution,
-                uLmRampConstrast: { value: this.params.rampContrast },
-                uLmRampOffset: { value: this.params.rampOffset },
-                uCmDistanceFactor: { value: this.params.ditherFactor },
-            },
-        });
-
-        this.ditherTextureTexture.image = this.ditherTexture;
-        this.pass.uniforms.uDitherTextureSize.value =
-            this.ditherTexture.naturalWidth;
-        this.ditherPaletteTexture.image = this.ditherPalette;
     }
 
     createRenderer() {

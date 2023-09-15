@@ -38,16 +38,18 @@ export async function aboutEnter(el, done = () => {}) {
         thingies: [thingy1, thingy2, thingy3],
     });
 
-    aboutLoaded(done);
+    aboutLoaded(() => {
+        done();
+        imagesAnimation = CreateImagesAnimation();
+    });
 
     helloAnimation = CreateHelloAnimation();
+
     thingiesAnimation = CreateThingiesAnimation([
         thingyEl1,
         thingyEl2,
         thingyEl3,
     ]);
-
-    imagesAnimation = CreateImagesAnimation();
 }
 
 export function aboutLoaded(done) {

@@ -16,8 +16,6 @@ uniform float uSecondaryDitherTextureSize;
 
 uniform float uInversedTexture;
 
-uniform float uDitherType;
-
 uniform float uPixelation;
 uniform float pixelRatio;
 uniform float pixelated;
@@ -26,7 +24,6 @@ uniform float uInversedPalette;
 
 uniform sampler2D uPrimaryDitherPalette;
 uniform sampler2D uSecondaryDitherPalette;
-uniform sampler2D uSecondaryDitherPaletteFirst;
 uniform float uLmRampConstrast;
 uniform float uLmRampOffset;
 
@@ -173,8 +170,8 @@ void main(){
     // (luminance dithering + custom duotone palette) vs (color matching dithering + 16-color EGA palette)
     vec3 primary_dithering=ditherByLuminanceMapping(primary_pixelatedTexture.rgb,primary_threshold);
     vec3 secondary_dithering_1=ditherByColorMatching(secondary_pixelatedTexture.rgb,secondary_threshold,uSecondaryDitherPalette);
-    vec3 secondary_dithering_2=ditherByColorMatching(secondary_pixelatedTexture.rgb,secondary_threshold,uSecondaryDitherPaletteFirst);
-    vec3 secondary_dithering=mix(secondary_dithering_1,secondary_dithering_2,imgAppear);
+    // vec3 secondary_dithering_2=ditherByColorMatching(secondary_pixelatedTexture.rgb,secondary_threshold,uSecondaryDitherPaletteFirst);
+    vec3 secondary_dithering=secondary_dithering_1;
     
     // We use the right effect depending in the mask
     vec3 ditherToUse=mix(primary_dithering,secondary_dithering,ditherType);

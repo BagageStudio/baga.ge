@@ -29,20 +29,36 @@
                     </div>
                 </div>
                 <div class="images" id="images">
+                    <div class="images-proxy" id="imagesProxy"></div>
                     <div class="images-inner">
                         <div class="image-gl-wrapper left" id="imgWrap0">
                             <div class="image-gl" id="img0">
-                                <img src="~/assets/img/photos/adrien3.jpg" />
+                                <img
+                                    width="1365"
+                                    height="2048"
+                                    src="~/assets/img/photos/office-table.jpg"
+                                    alt="Photo of a wooden interior. A computer and a glass on a table"
+                                />
                             </div>
                         </div>
                         <div class="image-gl-wrapper middle" id="imgWrap1">
                             <div class="image-gl" id="img1">
-                                <img src="~/assets/img/photos/adrien2.jpg" />
+                                <img
+                                    width="1365"
+                                    height="2048"
+                                    src="~/assets/img/photos/office-art.jpg"
+                                    alt="Photo of art frame next to a furniture"
+                                />
                             </div>
                         </div>
                         <div class="image-gl-wrapper right" id="imgWrap2">
                             <div class="image-gl" id="img2">
-                                <img src="~/assets/img/photos/adrien3.jpg" />
+                                <img
+                                    width="1365"
+                                    height="2048"
+                                    src="~/assets/img/photos/office-table.jpg"
+                                    alt="Photo of a wooden interior. A computer and a glass on a table"
+                                />
                             </div>
                         </div>
                     </div>
@@ -303,7 +319,7 @@ definePageMeta({
 .hero-images {
     position: relative;
     transform: translateY(calc(100vh - 33vw));
-    margin-bottom: 80vw;
+    margin-bottom: 90vw;
 }
 
 .images {
@@ -311,38 +327,49 @@ definePageMeta({
     display: flex;
     justify-content: flex-end;
     visibility: hidden;
+    max-width: 100%;
     img {
         max-width: 100%;
         height: auto;
     }
 }
 
+.images-proxy {
+    --verticalOffset: 125px;
+    --horizontalOffset: fixed;
+    position: absolute;
+    top: -125px;
+    left: 0;
+    bottom: 125px;
+    right: 0;
+}
+
 .images-inner {
+    visibility: hidden;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-shrink: 0;
-    width: 150%;
+    width: 550px;
 }
 
 .image-gl-wrapper {
     flex-shrink: 0;
     padding-left: 12px;
     padding-right: 12px;
+    --verticalOffset: 125px;
+    width: 170px;
     &.left {
-        width: calc(33% - 50px);
-        margin-top: 225px;
+        margin-top: var(--verticalOffset);
         transform: scale(0.7);
         transform-origin: 0% 100%;
     }
     &.middle {
-        width: calc(33% - 50px);
         transform-origin: 100% 0%;
         transform: scale(1.3);
     }
     &.right {
-        width: calc(33% - 50px);
-        margin-top: -225px;
+        margin-top: calc(var(--verticalOffset) * -1);
         transform-origin: 0% 100%;
         transform: scale(1);
     }
@@ -563,10 +590,31 @@ definePageMeta({
     width: 150px;
     aspect-ratio: 1 / 1.5;
     margin-left: var(--gutter);
-    // outline: 1px solid red;
     shape-margin: 20px;
-    margin-top: calc(var(--line-height) * 8);
-    shape-outside: inset(calc(var(--line-height) * 8) 0 0 0);
+    margin-top: calc(var(--line-height) * 10);
+    shape-outside: inset(calc(var(--line-height) * 10) 0 0 0);
+}
+
+@media (min-width: 400px) {
+    .hero-images {
+        margin-bottom: 80vw;
+    }
+    .images-inner {
+        width: 150%;
+    }
+
+    .image-gl-wrapper {
+        --verticalOffset: 125px;
+        width: calc(33% - 10px);
+    }
+    .images-proxy {
+        --horizontalOffset: fluid;
+    }
+
+    .img-shape {
+        margin-top: calc(var(--line-height) * 8);
+        shape-outside: inset(calc(var(--line-height) * 8) 0 0 0);
+    }
 }
 
 @media (min-width: 430px) {
@@ -632,6 +680,9 @@ definePageMeta({
     }
 }
 @media (min-width: 900px) {
+    .image-gl-wrapper {
+        --verticalOffset: 225px;
+    }
     .img-shape {
         width: calc(percentage(math.div(2, 3)) - var(--gutter));
     }
@@ -649,6 +700,9 @@ definePageMeta({
     }
 }
 @media (min-width: $desktop) {
+    .image-gl-wrapper {
+        width: calc(33% - 50px);
+    }
     .img-shape {
         --line-height: 54px;
         width: calc(percentage(math.div(3, 6)) - (var(--gutter) * 2));

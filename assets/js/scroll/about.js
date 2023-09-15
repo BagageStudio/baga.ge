@@ -70,13 +70,16 @@ export function CreateThingiesAnimation(thingies) {
 }
 
 export function CreateImagesAnimation() {
+    const imagesProxy = document.getElementById("imagesProxy");
+    const offsetProxy = document.querySelectorAll(".image-gl-wrapper")[0];
+
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: "#imgShape",
             scrub: true,
-            markers: false,
-            start: "top-=225px bottom-=200px",
-            end: "bottom top",
+            start: "top 80%",
+            end: () => `bottom+=${window.innerWidth * 0.2}px 30%`,
+            invalidateOnRefresh: true,
         },
     });
 
@@ -85,8 +88,27 @@ export function CreateImagesAnimation() {
         {
             scale: 1.3,
             duration: 1,
-            y: -300,
-            xPercent: 100,
+            xPercent: () => {
+                return getComputedStyle(imagesProxy).getPropertyValue(
+                    "--horizontalOffset"
+                ) === "fixed"
+                    ? 0
+                    : 100;
+            },
+            x: () => {
+                return getComputedStyle(imagesProxy).getPropertyValue(
+                    "--horizontalOffset"
+                ) === "fixed"
+                    ? 230
+                    : 0;
+            },
+            y: () => {
+                return (
+                    getComputedStyle(offsetProxy)
+                        .getPropertyValue("--verticalOffset")
+                        .split("px")[0] * -1
+                );
+            },
             ease: "power3.inOut",
         },
         "start"
@@ -96,8 +118,27 @@ export function CreateImagesAnimation() {
             {
                 scale: 1,
                 duration: 1,
-                y: -300,
-                xPercent: 100,
+                y: () => {
+                    return (
+                        getComputedStyle(offsetProxy)
+                            .getPropertyValue("--verticalOffset")
+                            .split("px")[0] * -1
+                    );
+                },
+                xPercent: () => {
+                    return getComputedStyle(imagesProxy).getPropertyValue(
+                        "--horizontalOffset"
+                    ) === "fixed"
+                        ? 0
+                        : 100;
+                },
+                x: () => {
+                    return getComputedStyle(imagesProxy).getPropertyValue(
+                        "--horizontalOffset"
+                    ) === "fixed"
+                        ? 230
+                        : 0;
+                },
                 ease: "power3.inOut",
             },
             "start"
@@ -107,42 +148,30 @@ export function CreateImagesAnimation() {
             {
                 scale: 1,
                 duration: 1,
-                y: -300,
-                xPercent: 100,
+                y: () => {
+                    return (
+                        getComputedStyle(offsetProxy)
+                            .getPropertyValue("--verticalOffset")
+                            .split("px")[0] * -1
+                    );
+                },
+                xPercent: () => {
+                    return getComputedStyle(imagesProxy).getPropertyValue(
+                        "--horizontalOffset"
+                    ) === "fixed"
+                        ? 0
+                        : 100;
+                },
+                x: () => {
+                    return getComputedStyle(imagesProxy).getPropertyValue(
+                        "--horizontalOffset"
+                    ) === "fixed"
+                        ? 230
+                        : 0;
+                },
                 ease: "power3.inOut",
             },
             "start"
         );
-    // .to(
-    //     "#imgWrap2",
-    //     {
-    //         xPercent: 120,
-    //         yPercent: -70,
-    //         duration: 1,
-    //         ease: "linear",
-    //     },
-    //     "start+=1"
-    // )
-    // .to(
-    //     "#imgWrap1",
-    //     {
-    //         // scale: 2,
-    //         xPercent: 200,
-    //         y: -225,
-    //         duration: 1,
-    //         ease: "linear",
-    //     },
-    //     "start+=1"
-    // );
-    //     .to(
-    //     values,
-    //     {
-    //         rotate: 1,
-    //         duration: 3,
-    //         ease: "elastic.out(1, 0.3)",
-    //         onUpdate: () => (thingy.dataset.rotate = values.rotate),
-    //     },
-    //     "start"
-    // );
     return tl;
 }
