@@ -17,6 +17,7 @@ uniform float uVerticalTranslation;
 uniform float uScrollOut;
 uniform float uBottomMask;
 uniform float uTopMask;
+uniform float uHasNoise;
 
 uniform float uNoiseThreshold;
 uniform float uNoisePower;
@@ -94,7 +95,7 @@ vec4 typo(){
     
 }
 
-vec4 noiseTexture(){
+float noiseTexture(){
     
     float noise=cnoise(vec3(gl_FragCoord.y/300.,gl_FragCoord.x/600.,(uTime+100.)/30.));
     noise=map(noise,-1.,1.,1.,-1.);
@@ -103,9 +104,7 @@ vec4 noiseTexture(){
     
     noiseClamped=clamp(noiseClamped,0.,1.);
     
-    vec4 noiseTexture=vec4(noiseClamped,noiseClamped,noiseClamped,1.);
-    
-    return noiseTexture;
+    return noiseClamped;
 }
 
 float bottomTextMaskTexture(){
@@ -148,9 +147,10 @@ float textMasksTexture(){
 void main(){
     
     vec4 fragColor=vec4(0.,0.,0.,0.);
+    vec4 noise;
+    noise.rgb=vec3(mix(0.,noiseTexture(),uHasNoise));
+    noise.a=mix(0.,1.,uAppearNoiseOpacity);
     
-    vec4 noise=noiseTexture();
-    noise.a=mix(0.,noise.a,uAppearNoiseOpacity);
     vec4 typo=typo();
     typo.a=mix(0.,typo.a,uAppearTypoOpacity);
     

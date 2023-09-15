@@ -1,6 +1,6 @@
 <template>
     <div class="home page" id="home">
-        <header class="header" id="header">
+        <header class="header home-header" id="header">
             <div class="container">
                 <NuxtLink to="/" class="active">Home</NuxtLink>
                 <NuxtLink to="/about">About</NuxtLink>
@@ -632,7 +632,7 @@
                 <a class="mail" href="mailto:hello@baga.ge">hello@baga.ge</a>
             </div>
         </div>
-        <footer id="footer">
+        <footer id="footer" class="home-footer">
             <div class="footer container">
                 <p class="internship">
                     We are not taking any internship applications
@@ -662,29 +662,16 @@
 </template>
 
 <script setup>
-import { homeLoaded } from "~/assets/js/loadedAnimation";
-import WebGL from "~/assets/js/WebGL";
-import {
-    CreateProjectsAnimation,
-    CreateHelloAnimation,
-    CreateManifestoTitleAnimation,
-    CreateManifestoValuesAnimation,
-    CreateTextMasksAnimation,
-} from "~/assets/js/scroll/home";
-
-function createAnimations() {
-    homeLoaded();
-    CreateHelloAnimation();
-    CreateProjectsAnimation();
-    CreateManifestoTitleAnimation();
-    CreateManifestoValuesAnimation();
-    CreateTextMasksAnimation();
-}
+import { homeLeave, homeEnter } from "~/assets/js/transitions/home";
 
 onMounted(async () => {
-    await WebGL.initializeHome();
+    const initialLoad =
+        !document.documentElement.classList.contains("already-loaded");
 
-    createAnimations();
+    if (initialLoad) {
+        document.documentElement.classList.add("already-loaded");
+        homeEnter();
+    }
 });
 
 useHead({
@@ -722,7 +709,22 @@ useHead({
 
 definePageMeta({
     scrollToTop: true,
+    pageTransition: {
+        name: "home",
+        mode: "out-in",
+        onEnter(el, done) {
+            homeEnter(done);
+        },
+        onLeave: (el, done) => {
+            homeLeave(done);
+        },
+    },
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.hello-monolith-wrapper {
+    position: relative;
+    transform: translateY(calc(100vh - 33vw));
+}
+</style>

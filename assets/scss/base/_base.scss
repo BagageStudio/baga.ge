@@ -149,11 +149,6 @@ p {
     list-style: none;
 }
 
-.hello-monolith-wrapper {
-    position: relative;
-    transform: translateY(calc(100vh - 33vw));
-}
-
 // intro
 .col-intro-txt {
     margin-bottom: 40px;
@@ -340,6 +335,7 @@ a.project {
     top: 20px;
     left: 0;
     right: 0;
+    opacity: 0;
     > .container {
         display: flex;
         align-items: baseline;

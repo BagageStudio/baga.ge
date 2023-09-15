@@ -27,6 +27,9 @@ export default class {
         this.scroll = 0;
         this.velocity = 0;
 
+        this.element.dataset.opacity = 0;
+        this.element.dataset.rotate = 0;
+
         this.createMesh();
         this.createBounds();
         this.onResize();

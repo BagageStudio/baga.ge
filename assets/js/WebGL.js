@@ -121,6 +121,7 @@ class WebGL {
     }
 
     async initializeHome() {
+        this.textMasks = { bottom: 0, top: 1 };
         const textures = await this.loadImages({
             bagageTypoPng,
             ditherTextureBayer16,
@@ -134,6 +135,8 @@ class WebGL {
         this.secondaryDitherTexture = this.primaryDitherTexture;
 
         if (!this.initialized) this.initialize();
+
+        this.fullscreenPlane.program.uniforms.uHasNoise.value = 1;
 
         this.primaryDitherPaletteTexture.image = this.primaryDitherPalette;
         this.primaryDitherTextureTexture.image = this.primaryDitherTexture;
@@ -158,6 +161,7 @@ class WebGL {
                 ditherPaletteEga,
             });
             this.addTextures(textures);
+            this.textMasks = { bottom: 0, top: 0 };
 
             this.primaryDitherPalette = this.textures.ditherPaletteDark;
             this.primaryDitherTexture = this.textures.ditherTextureTiles;
@@ -165,6 +169,8 @@ class WebGL {
             this.secondaryDitherTexture = this.textures.ditherTextureBayer16;
 
             if (!this.initialized) this.initialize();
+
+            this.fullscreenPlane.program.uniforms.uHasNoise.value = 0;
 
             await this.createGLImages(imgs);
 
@@ -297,6 +303,7 @@ class WebGL {
                 uTopMask: { value: this.textMasks.top },
                 uNoiseThreshold: { value: this.params.noiseThreshold },
                 uNoisePower: { value: this.params.noisePower },
+                uHasNoise: { value: 0 },
             },
             transparent: true,
         });
@@ -312,7 +319,6 @@ class WebGL {
             this.textures.bagageTypoPng.naturalHeight;
         this.onResize();
         this.ready = true;
-        if (this.readyCallback) this.readyCallback();
 
         // getNextGenImageSupport().then((supportedImageFormats) => {
         //     let bagageTypoImage = bagageTypoPng;
@@ -639,10 +645,6 @@ class WebGL {
     }
     setTextMasks(textMasks) {
         this.textMasks = textMasks;
-    }
-
-    setReadyCallback(callback) {
-        this.readyCallback = callback;
     }
 
     addTextures(textures) {

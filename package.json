@@ -17,6 +17,6 @@
   "dependencies": {
     "@studio-freight/lenis": "^1.0.22",
     "gsap": "^3.12.2",
-    "ogl": "^0.0.68"
+    "ogl": "0.0.68"
   }
 }
