@@ -165,6 +165,7 @@ class WebGL {
                 ditherTextureTiles,
                 ditherTextureBayer16,
                 ditherPaletteDark,
+                ditherPaletteEga,
                 ditherPaletteVision,
             });
             this.addTextures(textures);
@@ -173,8 +174,7 @@ class WebGL {
             this.primaryDitherPalette = this.textures.ditherPaletteDark;
             this.primaryDitherTexture = this.textures.ditherTextureTiles;
             this.secondaryDitherPalette = this.textures.ditherPaletteVision;
-            this.secondaryDitherPaletteFirst =
-                this.textures.ditherPaletteVision;
+            this.secondaryDitherPaletteFirst = this.textures.ditherPaletteEga;
             this.secondaryDitherTexture = this.textures.ditherTextureBayer16;
 
             if (!this.initialized) this.initialize();
@@ -367,14 +367,14 @@ class WebGL {
             minFilter: this.gl.NEAREST,
         });
 
-        this.secondaryDitherPaletteTextureFirst = new Texture(this.gl, {
-            image: this.secondaryDitherpaletteFirst,
+        this.secondaryDitherTextureTexture = new Texture(this.gl, {
+            image: this.secondaryDitherTexture,
             magFilter: this.gl.NEAREST,
             minFilter: this.gl.NEAREST,
         });
 
-        this.secondaryDitherTextureTexture = new Texture(this.gl, {
-            image: this.secondaryDitherTexture,
+        this.secondaryDitherPaletteTextureFirst = new Texture(this.gl, {
+            image: this.secondaryDitherPaletteFirst,
             magFilter: this.gl.NEAREST,
             minFilter: this.gl.NEAREST,
         });
@@ -405,7 +405,7 @@ class WebGL {
                     value: this.secondaryDitherTextureTexture,
                 },
 
-                uSecondaryDitherPaletteTextureFirst: {
+                uSecondaryDitherPaletteFirst: {
                     value: this.secondaryDitherPaletteTextureFirst,
                 },
                 uSecondaryDitherTextureSize: {

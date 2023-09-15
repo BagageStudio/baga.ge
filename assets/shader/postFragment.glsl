@@ -145,11 +145,11 @@ void main(){
     // 2 differents pixelisation
     vec2 primary_uv=pixelateUV(vUv,uPixelation);
     vec2 secondary_uv_1=vUv;
-    vec2 secondary_uv_2=pixelateUV(vUv,uPixelation*2.);
+    vec2 secondary_uv_2=pixelateUV(vUv,uPixelation);
     
     float imgAppear=0.;
     
-    vec2 secondary_uv=secondary_uv_1;
+    vec2 secondary_uv=mix(secondary_uv_1,secondary_uv_2,imgAppear);
     
     // The mask to use between primary and secondary
     // In this case we take the less pixaleted uv to not have artefacts
@@ -174,7 +174,7 @@ void main(){
     vec3 primary_dithering=ditherByLuminanceMapping(primary_pixelatedTexture.rgb,primary_threshold);
     vec3 secondary_dithering_1=ditherByColorMatching(secondary_pixelatedTexture.rgb,secondary_threshold,uSecondaryDitherPalette);
     vec3 secondary_dithering_2=ditherByColorMatching(secondary_pixelatedTexture.rgb,secondary_threshold,uSecondaryDitherPaletteFirst);
-    vec3 secondary_dithering=secondary_dithering_1;
+    vec3 secondary_dithering=mix(secondary_dithering_1,secondary_dithering_2,imgAppear);
     
     // We use the right effect depending in the mask
     vec3 ditherToUse=mix(primary_dithering,secondary_dithering,ditherType);

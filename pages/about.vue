@@ -289,6 +289,9 @@ definePageMeta({
 </script>
 
 <style lang="scss" scoped>
+.about {
+    overflow: hidden;
+}
 .hero-title {
     .title {
         > h1,
@@ -434,9 +437,6 @@ definePageMeta({
         > li {
             flex: 0 0 auto;
             width: 50%;
-            &:nth-child(2n) {
-                // padding-left: calc(var(--gutter) * 2);
-            }
         }
     }
 }
@@ -450,10 +450,7 @@ definePageMeta({
 @media (min-width: $desktop) {
     .thingy {
         display: block;
-        // visibility: hidden;
-        // opacity: 0.3;
-        background-color: red;
-        opacity: 0;
+        visibility: hidden;
     }
 
     .wrapper-keywords {
@@ -468,13 +465,6 @@ definePageMeta({
     .keywords {
         > li {
             width: percentage(math.div(1, 3));
-            &:nth-child(2n) {
-                // padding-left: var(--gutter);
-            }
-            &:nth-child(3n + 2),
-            &:nth-child(3n + 3) {
-                // padding-left: calc(var(--gutter) * 2);
-            }
         }
     }
 

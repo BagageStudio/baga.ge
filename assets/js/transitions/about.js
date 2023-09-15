@@ -154,5 +154,6 @@ export function aboutLeave(done) {
 
 function killAnimations() {
     if (helloAnimation) helloAnimation.kill();
+    if (imagesAnimation) imagesAnimation.kill();
     if (thingiesAnimation) thingiesAnimation.forEach((t) => t.kill());
 }
