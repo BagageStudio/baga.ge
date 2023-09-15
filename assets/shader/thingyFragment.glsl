@@ -18,16 +18,10 @@ const int number=6;
 
 #define PI 3.14159265359
 
-#include "lygia/animation/easing/quadratic.glsl";
 #include "lygia/generative/random.glsl";
 #include "lygia/math/rotate2d.glsl";
-#include "lygia/animation/easing/back.glsl";
-#include "lygia/animation/easing/elastic.glsl";
-#include "lygia/sdf/circleSDF.glsl";
-#include "lygia/sdf/rectSDF.glsl";
-#include "lygia/sdf/polySDF.glsl";
 #include "lygia/sdf/starSDF.glsl";
-#include "lygia/draw/stroke.glsl";
+#include "lygia/sdf/polySDF.glsl";
 
 mat2 scale(vec2 _scale){
     return mat2(_scale.x,0.,
