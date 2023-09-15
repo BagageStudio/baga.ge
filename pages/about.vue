@@ -330,7 +330,7 @@ definePageMeta({
         width: calc(33% - 50px);
         margin-top: 225px;
         transform: scale(0.7);
-        transform-origin: 0% 0%;
+        transform-origin: 0% 100%;
     }
     &.middle {
         width: calc(33% - 50px);

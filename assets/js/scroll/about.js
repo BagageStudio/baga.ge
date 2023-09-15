@@ -83,7 +83,7 @@ export function CreateImagesAnimation() {
     tl.to(
         "#imgWrap2",
         {
-            scale: 1,
+            scale: 1.3,
             duration: 1,
             y: -300,
             xPercent: 100,

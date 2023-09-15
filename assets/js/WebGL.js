@@ -106,6 +106,8 @@ class WebGL {
             width: 0,
             height: 0,
         };
+
+        this.isMobile = false;
     }
 
     initialize() {
@@ -121,6 +123,7 @@ class WebGL {
         // this.createPostProcessing();
         this.onResize();
         this.update();
+        this.isMobile = window.innerWidth < 800;
         this.initialized = true;
     }
 
@@ -279,7 +282,7 @@ class WebGL {
             color: 3,
             width: window.innerWidth,
             height: window.innerHeight,
-            dpr: 0.5,
+            dpr: this.isMobile ? 1 : 0.5,
         });
     }
 
@@ -487,7 +490,7 @@ class WebGL {
         this.renderer = new Renderer({
             width: window.innerWidth,
             height: window.innerHeight,
-            dpr: 0.5,
+            dpr: this.isMobile ? 1 : 0.5,
         });
 
         this.gl = this.renderer.gl;
@@ -497,6 +500,12 @@ class WebGL {
     }
 
     onResize() {
+        const isMobile = window.innerWidth < 800;
+        if (isMobile !== this.isMobile) {
+            this.isMobile = isMobile;
+            this.renderer.dpr = this.isMobile ? 1 : 0.5;
+            this.renderTarget.dpr = this.isMobile ? 1 : 0.5;
+        }
         if (this.camera) {
             this.camera.perspective({
                 aspect: this.gl.canvas.width / this.gl.canvas.height,
