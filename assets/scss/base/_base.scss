@@ -389,7 +389,7 @@ a.project {
     align-items: baseline;
     justify-content: flex-end;
     > a {
-        margin-left: 25px;
+        margin-left: 15px;
         text-decoration: none;
         color: $primary;
         text-transform: uppercase;
@@ -453,6 +453,11 @@ a.project {
     }
     .footer {
         font-size: 1.6rem;
+    }
+    .social-links {
+        > a {
+            margin-left: 25px;
+        }
     }
 }
 @media (min-width: $tablet) {
