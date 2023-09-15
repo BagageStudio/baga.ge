@@ -68,8 +68,8 @@ export default class {
         const height =
             2 * Math.tan(fov / 2) * this.camera.position.z -
             this.plane.position.z;
-        const width = height * this.camera.aspect;
 
+        const width = height * this.camera.aspect;
         this.viewport = {
             height,
             width,
@@ -111,7 +111,6 @@ export default class {
             const { screen, viewport } = sizes;
 
             if (screen) this.screen = screen;
-            if (viewport) this.viewport = viewport;
         }
 
         this.createBounds();

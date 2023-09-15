@@ -17,7 +17,7 @@
                                 expertise in website creation.
                             </h1>
                             <p>
-                                <span class="img-shape"></span>
+                                <span class="img-shape" id="imgShape"></span>
                                 Before starting Bagage, we met in a creative web
                                 agency and then worked as separate freelancers.
                                 It became clear that we had to create our own
@@ -28,12 +28,23 @@
                         </div>
                     </div>
                 </div>
-                <div class="images">
-                    <div class="image-gl" id="img1">
-                        <img src="~/assets/img/photos/adrien2.jpg" />
-                    </div>
-                    <div class="image-gl" id="img2">
-                        <img src="~/assets/img/photos/adrien3.jpg" />
+                <div class="images" id="images">
+                    <div class="images-inner">
+                        <div class="image-gl-wrapper left" id="imgWrap0">
+                            <div class="image-gl" id="img0">
+                                <img src="~/assets/img/photos/adrien3.jpg" />
+                            </div>
+                        </div>
+                        <div class="image-gl-wrapper middle" id="imgWrap1">
+                            <div class="image-gl" id="img1">
+                                <img src="~/assets/img/photos/adrien2.jpg" />
+                            </div>
+                        </div>
+                        <div class="image-gl-wrapper right" id="imgWrap2">
+                            <div class="image-gl" id="img2">
+                                <img src="~/assets/img/photos/adrien3.jpg" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -286,23 +297,54 @@ definePageMeta({
         }
     }
 }
-.images {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    visibility: hidden;
-    margin-bottom: 300px;
+.hero-images {
+    position: relative;
+    transform: translateY(calc(100vh - 33vw));
+    margin-bottom: 80vw;
 }
-.image-gl {
-    width: 40%;
+
+.images {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    visibility: hidden;
     img {
         max-width: 100%;
         height: auto;
     }
-    &:last-child {
-        margin-top: 120px;
+}
+
+.images-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-shrink: 0;
+    width: 150%;
+}
+
+.image-gl-wrapper {
+    flex-shrink: 0;
+    padding-left: 12px;
+    padding-right: 12px;
+    &.left {
+        width: calc(33% - 50px);
+        margin-top: 225px;
+        transform: scale(0.7);
+        transform-origin: 0% 0%;
+    }
+    &.middle {
+        width: calc(33% - 50px);
+        transform-origin: 100% 0%;
+        transform: scale(1.3);
+    }
+    &.right {
+        width: calc(33% - 50px);
+        margin-top: -225px;
+        transform-origin: 0% 100%;
+        transform: scale(1);
     }
 }
+
 .key-value-wrapper {
     &:not(:last-child) {
         margin-bottom: 150px;
@@ -345,10 +387,6 @@ definePageMeta({
         font-size: 2rem;
         line-height: 1;
     }
-}
-
-.hero-images {
-    transform: translateY(calc(100vh - 33vw));
 }
 
 @media (min-width: $phone) {
@@ -530,7 +568,7 @@ definePageMeta({
     width: 150px;
     aspect-ratio: 1 / 1.5;
     margin-left: var(--gutter);
-    background: red;
+    // outline: 1px solid red;
     shape-margin: 20px;
     margin-top: calc(var(--line-height) * 8);
     shape-outside: inset(calc(var(--line-height) * 8) 0 0 0);

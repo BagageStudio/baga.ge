@@ -26,6 +26,7 @@ uniform float uInversedPalette;
 
 uniform sampler2D uPrimaryDitherPalette;
 uniform sampler2D uSecondaryDitherPalette;
+uniform sampler2D uSecondaryDitherPaletteFirst;
 uniform float uLmRampConstrast;
 uniform float uLmRampOffset;
 
@@ -93,9 +94,9 @@ vec2 pixelateUV(vec2 startingUv,float pixelation)
     return p;
 }
 
-vec3 ditherByColorMatching(vec3 color,float threshold){
+vec3 ditherByColorMatching(vec3 color,float threshold,sampler2D palette){
     vec3 color_attempt=color+threshold*uCmDistanceFactor;
-    return findClosestColorFrom(uSecondaryDitherPalette,color_attempt);
+    return findClosestColorFrom(palette,color_attempt);
 }
 
 vec3 ditherByLuminanceMapping(vec3 color,float threshold){
@@ -143,7 +144,12 @@ void main(){
     
     // 2 differents pixelisation
     vec2 primary_uv=pixelateUV(vUv,uPixelation);
-    vec2 secondary_uv=pixelateUV(vUv,uPixelation*2.);
+    vec2 secondary_uv_1=vUv;
+    vec2 secondary_uv_2=pixelateUV(vUv,uPixelation*2.);
+    
+    float imgAppear=0.;
+    
+    vec2 secondary_uv=secondary_uv_1;
     
     // The mask to use between primary and secondary
     // In this case we take the less pixaleted uv to not have artefacts
@@ -166,7 +172,9 @@ void main(){
     // 2 differents dither techniques and palettes
     // (luminance dithering + custom duotone palette) vs (color matching dithering + 16-color EGA palette)
     vec3 primary_dithering=ditherByLuminanceMapping(primary_pixelatedTexture.rgb,primary_threshold);
-    vec3 secondary_dithering=ditherByColorMatching(secondary_pixelatedTexture.rgb,secondary_threshold);
+    vec3 secondary_dithering_1=ditherByColorMatching(secondary_pixelatedTexture.rgb,secondary_threshold,uSecondaryDitherPalette);
+    vec3 secondary_dithering_2=ditherByColorMatching(secondary_pixelatedTexture.rgb,secondary_threshold,uSecondaryDitherPaletteFirst);
+    vec3 secondary_dithering=secondary_dithering_1;
     
     // We use the right effect depending in the mask
     vec3 ditherToUse=mix(primary_dithering,secondary_dithering,ditherType);

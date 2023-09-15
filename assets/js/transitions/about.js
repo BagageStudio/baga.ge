@@ -3,14 +3,17 @@ import { gsap } from "gsap";
 import {
     CreateHelloAnimation,
     CreateThingiesAnimation,
+    CreateImagesAnimation,
 } from "~/assets/js/scroll/about";
 
 import WebGL from "~/assets/js/WebGL";
 
 let helloAnimation;
 let thingiesAnimation;
+let imagesAnimation;
 
 export async function aboutEnter(el, done = () => {}) {
+    const img0 = el.querySelector("#img0");
     const img1 = el.querySelector("#img1");
     const img2 = el.querySelector("#img2");
 
@@ -31,7 +34,7 @@ export async function aboutEnter(el, done = () => {}) {
     };
 
     await WebGL.initializeAbout({
-        imgs: [img1, img2],
+        imgs: [img0, img1, img2],
         thingies: [thingy1, thingy2, thingy3],
     });
 
@@ -43,6 +46,8 @@ export async function aboutEnter(el, done = () => {}) {
         thingyEl2,
         thingyEl3,
     ]);
+
+    imagesAnimation = CreateImagesAnimation();
 }
 
 export function aboutLoaded(done) {

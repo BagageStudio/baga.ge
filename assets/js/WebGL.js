@@ -37,6 +37,10 @@ import ditherTextureTiles from "../img/ditherTexture/tiles.png";
 
 import ditherPaletteDefault from "../img/palettes/default.jpg";
 import ditherPaletteGrey from "../img/palettes/grey.jpg";
+import ditherPalettePastari from "../img/palettes/pastari.jpg";
+import ditherPaletteCommodore from "../img/palettes/commodore64.png";
+import ditherPaletteCommodoreVic from "../img/palettes/commodoreVic.png";
+import ditherPaletteVision from "../img/palettes/vision.png";
 import ditherPaletteDark from "../img/palettes/dark.jpg";
 import ditherPaletteEga from "../img/palettes/c_ega.jpg";
 
@@ -158,14 +162,16 @@ class WebGL {
                 ditherTextureTiles,
                 ditherTextureBayer16,
                 ditherPaletteDark,
-                ditherPaletteEga,
+                ditherPaletteVision,
             });
             this.addTextures(textures);
             this.textMasks = { bottom: 0, top: 0 };
 
             this.primaryDitherPalette = this.textures.ditherPaletteDark;
             this.primaryDitherTexture = this.textures.ditherTextureTiles;
-            this.secondaryDitherPalette = this.textures.ditherPaletteEga;
+            this.secondaryDitherPalette = this.textures.ditherPaletteVision;
+            this.secondaryDitherPaletteFirst =
+                this.textures.ditherPaletteVision;
             this.secondaryDitherTexture = this.textures.ditherTextureBayer16;
 
             if (!this.initialized) this.initialize();
@@ -358,13 +364,19 @@ class WebGL {
             minFilter: this.gl.NEAREST,
         });
 
+        this.secondaryDitherPaletteTextureFirst = new Texture(this.gl, {
+            image: this.secondaryDitherpaletteFirst,
+            magFilter: this.gl.NEAREST,
+            minFilter: this.gl.NEAREST,
+        });
+
         this.secondaryDitherTextureTexture = new Texture(this.gl, {
             image: this.secondaryDitherTexture,
             magFilter: this.gl.NEAREST,
             minFilter: this.gl.NEAREST,
         });
         this.secondaryDitherPaletteTexture = new Texture(this.gl, {
-            image: this.secondaryDitherTexture,
+            image: this.secondaryDitherPalette,
             magFilter: this.gl.NEAREST,
             minFilter: this.gl.NEAREST,
         });
@@ -388,6 +400,10 @@ class WebGL {
 
                 uSecondaryDitherTexture: {
                     value: this.secondaryDitherTextureTexture,
+                },
+
+                uSecondaryDitherPaletteTextureFirst: {
+                    value: this.secondaryDitherPaletteTextureFirst,
                 },
                 uSecondaryDitherTextureSize: {
                     value: this.secondaryDitherPaletteTexture,
