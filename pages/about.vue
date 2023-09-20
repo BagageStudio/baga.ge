@@ -36,8 +36,8 @@
                                 <img
                                     width="1365"
                                     height="2048"
-                                    src="~/assets/img/photos/office-table.jpg"
-                                    alt="Photo of a wooden interior. A computer and a glass on a table"
+                                    src="~/assets/img/photos/office-buffet.jpg"
+                                    alt="Photo of a wooden interior. A cup of coffee and books on a buffet."
                                 />
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                                     width="1365"
                                     height="2048"
                                     src="~/assets/img/photos/office-art.jpg"
-                                    alt="Photo of art frame next to a furniture"
+                                    alt="Photo of art frame next to a furniture."
                                 />
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                                     width="1365"
                                     height="2048"
                                     src="~/assets/img/photos/office-table.jpg"
-                                    alt="Photo of a wooden interior. A computer and a glass on a table"
+                                    alt="A computer and a glass on a table."
                                 />
                             </div>
                         </div>
