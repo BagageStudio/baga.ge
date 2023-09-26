@@ -377,7 +377,7 @@ definePageMeta({
 
 .key-value-wrapper {
     &:not(:last-child) {
-        margin-bottom: 150px;
+        margin-bottom: 100px;
     }
 }
 .key-value {
@@ -404,16 +404,18 @@ definePageMeta({
 }
 
 .section-keywords {
-    margin-top: 150px;
+    margin-top: 100px;
 }
 .keywords {
+    display: flex;
+    flex-wrap: wrap;
     margin: 30px 0 0;
     padding: 0;
     list-style: none;
     > li {
         margin: 10px 0;
         padding: 0 var(--gutter);
-        font-size: 2rem;
+        font-size: 1.8rem;
         line-height: 1;
     }
 }
@@ -425,11 +427,19 @@ definePageMeta({
             font-size: 2.6rem;
         }
     }
+    .key-value-wrapper {
+        &:not(:last-child) {
+            margin-bottom: 150px;
+        }
+    }
     .key-value {
         p {
             width: percentage(math.div(2, 3));
             margin-left: percentage(math.div(1, 3));
         }
+    }
+    .section-keywords {
+        margin-top: 150px;
     }
 }
 @media (min-width: $tablet) {
@@ -458,8 +468,6 @@ definePageMeta({
         }
     }
     .keywords {
-        display: flex;
-        flex-wrap: wrap;
         padding: 30px 0;
         > li {
             flex: 0 0 auto;
