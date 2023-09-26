@@ -1,0 +1,21 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect y="48" width="24" height="24" class="bagage-rect"/>
+    <rect x="24" y="24" width="24" height="24" class="bagage-rect"/>
+    <rect x="48" width="24" height="24" class="bagage-rect"/>
+    <rect x="48" y="48" width="24" height="24" class="bagage-rect"/>
+    <rect x="24" y="72" width="24" height="24" class="bagage-rect"/>
+    <rect x="48" y="96" width="24" height="24" class="bagage-rect"/>
+    <rect x="72" y="72" width="24" height="24" class="bagage-rect"/>
+    <rect x="72" y="24" width="24" height="24" class="bagage-rect"/>
+    <rect x="96" y="48" width="24" height="24" class="bagage-rect"/>
+    <style>
+        .bagage-rect {
+            fill: #191919;
+        }
+        @media (prefers-color-scheme: dark) {
+            .bagage-rect {
+                fill: #F5E8E7;
+            }
+        }
+    </style>
+</svg>
