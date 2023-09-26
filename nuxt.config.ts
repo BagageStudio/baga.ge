@@ -31,10 +31,12 @@ export default defineNuxtConfig({
                     content: "website",
                 },
                 {
+                    name: "image",
                     property: "og:image",
                     content: "https://baga.ge/bagage.jpg",
                 },
                 {
+                    name: "image",
                     property: "og:image:secure_url",
                     content: "https://baga.ge/bagage.jpg",
                 },
