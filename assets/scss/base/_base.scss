@@ -42,6 +42,7 @@ html {
         top: var(--scroll-top);
     }
     &.about-page {
+        background-color: $black;
         ::-moz-selection {
             color: $black;
         }
