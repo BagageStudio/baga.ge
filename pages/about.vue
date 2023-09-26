@@ -287,6 +287,9 @@ useHead({
             color: "#000000",
         },
     ],
+    htmlAttrs: {
+        class: "about-page",
+    },
 });
 
 definePageMeta({

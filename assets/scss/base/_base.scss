@@ -41,6 +41,14 @@ html {
         right: 0;
         top: var(--scroll-top);
     }
+    &.about-page {
+        ::-moz-selection {
+            color: $black;
+        }
+        ::selection {
+            color: $black;
+        }
+    }
 }
 
 body {
