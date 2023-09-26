@@ -259,10 +259,12 @@ onMounted(async () => {
 useHead({
     meta: [
         {
+            name: "image",
             property: "og:image",
             content: "https://baga.ge/bagage-dark.jpg",
         },
         {
+            name: "image",
             property: "og:image:secure_url",
             content: "https://baga.ge/bagage-dark.jpg",
         },
