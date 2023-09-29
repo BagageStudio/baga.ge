@@ -6,6 +6,9 @@ export default defineNuxtConfig({
     app: {
         head: {
             title: "Bagage — Creative development studio",
+            htmlAttrs: {
+                lang: "en",
+            },
             meta: [
                 {
                     charset: "utf-8",
