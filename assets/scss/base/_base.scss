@@ -378,6 +378,7 @@ a.project {
 .internship {
     display: block;
     width: 100%;
+    margin-bottom: 10px;
     font-size: inherit;
     font-weight: inherit;
     line-height: inherit;
@@ -624,6 +625,7 @@ a.project {
     .internship {
         order: 2;
         width: auto;
+        margin-bottom: 0;
     }
     .social-links {
         order: 3;
