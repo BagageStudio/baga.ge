@@ -46,8 +46,8 @@
                                     <p>
                                         We work on a tech stack that has many
                                         benefits, including improved
-                                        performance, enhanced security, and
-                                        scalability:
+                                        performance, enhanced security,
+                                        and&nbsp;scalability:
                                     </p>
                                 </div>
                                 <ul class="stack-list content-pad">
