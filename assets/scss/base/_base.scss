@@ -356,7 +356,8 @@ a.project {
         text-decoration: none;
         text-underline-offset: 2px;
         font-size: 1.4rem;
-        &.active {
+        &.active,
+        &:hover {
             text-decoration: underline;
         }
         .secondary & {
