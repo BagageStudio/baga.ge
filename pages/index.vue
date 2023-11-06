@@ -14,7 +14,7 @@
                         <div class="hero-title wrapper-title">
                             <span class="subtitle content-pad">Hello</span>
                             <h1 class="title content-pad">
-                                Bagage is a small creative development studio
+                                Bagage is a two man creative development studio
                                 that assists projects both technically and
                                 visually.
                             </h1>

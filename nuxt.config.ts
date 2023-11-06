@@ -63,12 +63,12 @@ export default defineNuxtConfig({
                 {
                     property: "og:description",
                     content:
-                        "Bagage is a small creative development studio that assists projects both technically and visually.",
+                        "Bagage is a two man creative development studio that assists projects both technically and visually.",
                 },
                 {
                     property: "description",
                     content:
-                        "Bagage is a small creative development studio that assists projects both technically and visually.",
+                        "Bagage is a two man creative development studio that assists projects both technically and visually.",
                 },
             ],
             link: [
