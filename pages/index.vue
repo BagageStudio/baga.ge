@@ -14,9 +14,10 @@
                         <div class="hero-title wrapper-title">
                             <span class="subtitle content-pad">Hello</span>
                             <h1 class="title content-pad">
-                                Bagage is a two man creative development studio
-                                that assists projects both technically and
-                                visually.
+                                Bagage is a two‑man creative development studio
+                                specializing in customizable, brand‑ and
+                                conversion‑focused websites for fast‑growing
+                                businesses.
                             </h1>
                         </div>
                     </div>
@@ -51,7 +52,7 @@
                                     </p>
                                 </div>
                                 <ul class="stack-list content-pad">
-                                    <li>JAMstack</li>
+                                    <li>Composable architecture / JAMstack</li>
                                     <li>Nuxt.js</li>
                                     <li>Headless CMS</li>
                                     <li>Creative development</li>
