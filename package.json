@@ -11,6 +11,7 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "nuxt": "^3.7.1",
+    "nuxt-calendly": "^0.1.17",
     "sass": "^1.66.1",
     "vite-plugin-glsl": "^1.1.2"
   },

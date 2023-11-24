@@ -1,16 +1,15 @@
 <template>
     <div class="cal secondary">
         <div class="container">
-            <div
-                class="calendly-inline-widget"
-                data-url="https://calendly.com/bagage-adrien/echange-de-30-min?text_color=191919&primary_color=f24f2b"
-                style="min-width: 320px; height: 700px"
-            ></div>
+            <CalendlyInlineWidget class="calendly-wrapper" v-bind="options" />
         </div>
     </div>
 </template>
 
 <script setup>
+const options = {
+    url: "https://calendly.com/bagage-adrien/echange-de-30-min?text_color=191919&primary_color=f24f2b",
+};
 useHead({
     meta: [
         {
@@ -44,18 +43,20 @@ useHead({
             color: "#000000",
         },
     ],
-    script: [
-        {
-            type: "text/javascript",
-            innerHTML: "https://assets.calendly.com/assets/external/widget.js",
-            async: true,
-        },
-    ],
 });
 </script>
 
 <style lang="scss" scoped>
 .cal {
     overflow: hidden;
+}
+.calendly-wrapper {
+    height: 1110px !important;
+}
+
+@media (min-width: 1060px) {
+    .calendly-wrapper {
+        height: 700px !important;
+    }
 }
 </style>
