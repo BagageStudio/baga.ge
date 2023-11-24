@@ -13,34 +13,32 @@ const options = {
 useHead({
     meta: [
         {
-            name: "image",
             property: "og:image",
-            content: "https://baga.ge/bagage-dark.jpg",
+            content: "https://baga.ge/bagage.jpg",
         },
         {
-            name: "image",
             property: "og:image:secure_url",
-            content: "https://baga.ge/bagage-dark.jpg",
+            content: "https://baga.ge/bagage.jpg",
         },
     ],
     link: [
         {
             rel: "icon",
-            href: "/icon-dark.svg",
+            href: "/icon.svg",
             type: "image/svg+xml",
         },
         {
             rel: "apple-touch-icon",
-            href: "/apple-touch-icon-dark.png",
+            href: "/apple-touch-icon.png",
         },
         {
             rel: "manifest",
-            href: "/manifest-dark.webmanifest",
+            href: "/manifest.webmanifest",
         },
         {
             rel: "mask-icon",
             href: "/safari-pinned-tab.svg",
-            color: "#000000",
+            color: "#f24f2b",
         },
     ],
 });
