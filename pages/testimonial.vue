@@ -1,7 +1,5 @@
 <template>
-    <div>
-        <div data-tf-live="01HGB6MAF5Z406E72ETQ0XCXJ8"></div>
-    </div>
+    <div data-tf-live="01HGB6MAF5Z406E72ETQ0XCXJ8"></div>
 </template>
 
 <script setup>
