@@ -205,6 +205,11 @@ a.project {
         }
     }
 }
+
+div.project {
+    cursor: not-allowed;
+}
+
 .project-line {
     position: relative;
     padding: 10px 0;
