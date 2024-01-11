@@ -7,13 +7,13 @@
 // }
 
 ::-moz-selection {
-    background: $secondary;
-    color: $primary;
+    background: var(--background);
+    color: var(--color);
     text-shadow: none;
 }
 ::selection {
-    background: $secondary;
-    color: $primary;
+    background: var(--background);
+    color: var(--color);
     text-shadow: none;
 }
 
@@ -32,7 +32,9 @@ body {
 
 html {
     font-size: 62.5%; /* sets the base font to 10px for easier math */
-    background-color: $secondary;
+    --color: #f24f2b;
+    --background: #f5e8e7;
+    background-color: var(--background);
     &.no-scroll {
         position: fixed;
         overflow: hidden;
@@ -53,7 +55,7 @@ html {
 }
 
 body {
-    color: $primary;
+    color: var(--color);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -100,8 +102,10 @@ p {
 .page {
     padding-top: calc(30vw + 100px);
 }
+
 .secondary {
-    color: $secondary;
+    --color: #f5e8e7;
+    color: var(--color);
 }
 
 .wrapper-title {
@@ -133,7 +137,7 @@ p {
 .monolith {
     margin: 0 0 60px;
     padding: 60px var(--gutter-out-monolith);
-    background: $primary;
+    background: var(--color);
     color: $white;
     &.bgless {
         position: relative;
@@ -144,7 +148,7 @@ p {
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: $primary;
+            background-color: var(--color);
             z-index: -1;
         }
     }
@@ -337,38 +341,7 @@ div.project {
     font-size: 4rem;
     line-height: 66px;
     text-decoration: none;
-    color: $primary;
-    .secondary & {
-        color: $secondary;
-    }
-}
-
-// header
-.header {
-    position: absolute;
-    top: 20px;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    > .container {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        text-transform: uppercase;
-    }
-    a {
-        color: $primary;
-        text-decoration: none;
-        text-underline-offset: 2px;
-        font-size: 1.4rem;
-        &.active,
-        &:hover {
-            text-decoration: underline;
-        }
-        .secondary & {
-            color: $secondary;
-        }
-    }
+    color: var(--color);
 }
 
 // footer
@@ -407,11 +380,8 @@ div.project {
     > a {
         margin-left: 15px;
         text-decoration: none;
-        color: $primary;
+        color: var(--color);
         text-transform: uppercase;
-        .secondary & {
-            color: $secondary;
-        }
     }
 }
 
@@ -494,14 +464,6 @@ div.project {
 }
 
 @media (min-width: $phone) {
-    .header {
-        a {
-            color: $primary;
-            text-decoration: none;
-            text-underline-offset: 2px;
-            font-size: 1.6rem;
-        }
-    }
     .wrapper-title,
     .title-a {
         font-size: 3rem;

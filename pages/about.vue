@@ -1,11 +1,6 @@
 <template>
     <div class="about page secondary" id="about" ref="about">
-        <header class="header" id="header">
-            <div class="container">
-                <NuxtLink to="/">Home</NuxtLink>
-                <NuxtLink to="/about" class="active">About</NuxtLink>
-            </div>
-        </header>
+        <Header />
         <div class="container">
             <div id="heroWithImages" class="hero-images">
                 <div class="hero">

@@ -63,10 +63,10 @@ vec3 findClosestColorFrom(sampler2D palette,vec3 color){
     
 }
 
-vec3 getDitherPalette(float lum){
+vec3 getDitherPalette(float lum,sampler2D palette){
     
     // get the palette texture size mapped so it is 1px high (so the x value however many colour bands there are)
-    ivec2 palette_size=textureSize(uPrimaryDitherPalette,0);
+    ivec2 palette_size=textureSize(palette,0);
     int palette_width=palette_size.x/palette_size.y;
     
     float number_of_colors_in_palette=float(palette_width)-1.;// nb of color boundaries is 1 less than the number of colour bands
@@ -96,7 +96,7 @@ vec3 ditherByColorMatching(vec3 color,float threshold,sampler2D palette){
     return findClosestColorFrom(palette,color_attempt);
 }
 
-vec3 ditherByLuminanceMapping(vec3 color,float threshold){
+vec3 ditherByLuminanceMapping(vec3 color,float threshold,sampler2D palette){
     
     // calculate pixel luminosity (https://stackoverflow.com/questions/596216/formula-to-determine-brightness-of-rgb-color)
     float lum=(color.r*.299)+(color.g*.587)+(color.b*.114);
@@ -117,7 +117,7 @@ vec3 ditherByLuminanceMapping(vec3 color,float threshold){
     // bound of that band, then later we will use the dither texture to pick either the upper or
     // lower colour.
     
-    vec3 ditherPalette=getDitherPalette(lum);
+    vec3 ditherPalette=getDitherPalette(lum,palette);
     float lower_boundary_color=ditherPalette.x;
     float upper_boundary_color=ditherPalette.y;
     float lum_scaled_between_two_boundaries=ditherPalette.z;
@@ -128,7 +128,7 @@ vec3 ditherByLuminanceMapping(vec3 color,float threshold){
     
     x_pos_of_color_to_use=mix(x_pos_of_color_to_use,1.-x_pos_of_color_to_use,uInversedPalette);// we inverse the color palette if uInversedPalette is at 1.
     
-    return texture(uPrimaryDitherPalette,vec2(x_pos_of_color_to_use,.5)).rgb;
+    return texture(palette,vec2(x_pos_of_color_to_use,.5)).rgb;
 }
 
 void main(){
@@ -168,7 +168,7 @@ void main(){
     
     // 2 differents dither techniques and palettes
     // (luminance dithering + custom duotone palette) vs (color matching dithering + 16-color EGA palette)
-    vec3 primary_dithering=ditherByLuminanceMapping(primary_pixelatedTexture.rgb,primary_threshold);
+    vec3 primary_dithering=ditherByLuminanceMapping(primary_pixelatedTexture.rgb,primary_threshold,uPrimaryDitherPalette);
     vec3 secondary_dithering_1=ditherByColorMatching(secondary_pixelatedTexture.rgb,secondary_threshold,uSecondaryDitherPalette);
     // vec3 secondary_dithering_2=ditherByColorMatching(secondary_pixelatedTexture.rgb,secondary_threshold,uSecondaryDitherPaletteFirst);
     vec3 secondary_dithering=secondary_dithering_1;
