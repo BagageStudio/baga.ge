@@ -1,11 +1,6 @@
 <template>
     <div class="home page" id="home">
-        <header class="header home-header" id="header">
-            <div class="container">
-                <NuxtLink to="/" class="active">Home</NuxtLink>
-                <NuxtLink to="/about">About</NuxtLink>
-            </div>
-        </header>
+        <Header class="home-header" />
         <div class="container">
             <div class="hello-monolith-wrapper" id="helloMonolithWrapper">
                 <div class="monolith bgless" id="helloMonolith">
