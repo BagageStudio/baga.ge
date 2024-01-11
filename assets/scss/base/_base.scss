@@ -385,6 +385,63 @@ div.project {
     }
 }
 
+// case study
+.case-study {
+    h2,
+    .h2 {
+        font-size: 3.2rem;
+        line-height: 120%;
+        margin-bottom: 40px;
+    }
+    p {
+        font-size: 1.8rem;
+        line-height: 140%;
+        &:not(:last-child) {
+            margin-bottom: 1em;
+        }
+    }
+}
+
+.mod {
+    margin: 100px 0;
+}
+
+// Fifty-fifty
+.col-fifty-fifty {
+    &.square {
+        aspect-ratio: 1 / 1;
+    }
+    &.col-img {
+        margin-top: 45px;
+        > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+    .dithered-bg {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 45px;
+        background-color: var(--cs-primary);
+    }
+}
+
+// image full size
+.wrapper-img-full {
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
 @media (min-width: 360px) {
     .footer {
         font-size: 1.2rem;
@@ -474,6 +531,50 @@ div.project {
         font-size: 6.5rem;
         line-height: 78px;
         margin-bottom: 75px;
+    }
+    // case study
+    .case-study {
+        h2,
+        .h2 {
+            margin-bottom: 70px;
+        }
+    }
+
+    .mod {
+        margin: 130px 0;
+    }
+    // Fifty-fifty
+    .wrapper-fifty-fifty {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        &.reversed {
+            flex-direction: row-reverse;
+            .col-fifty-fifty {
+                &.col-img {
+                    padding-left: 0;
+                    padding-right: 45px;
+                }
+            }
+            &.col-title {
+                padding-left: 70px;
+                padding-right: 0;
+            }
+        }
+    }
+    .col-fifty-fifty {
+        flex: 0 0 auto;
+        width: 50%;
+        &:first-child {
+            margin-bottom: 0;
+        }
+        &.col-img {
+            margin-top: 0;
+            padding-left: 45px;
+        }
+        &.col-title {
+            padding-right: 70px;
+        }
     }
 }
 @media (min-width: $desktop) {
