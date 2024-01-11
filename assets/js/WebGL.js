@@ -25,6 +25,7 @@ import postFragment from "../shader/postFragment.glsl";
 import postVertex from "../shader/postVertex.glsl";
 
 import bagageTypoPng from "../img/bagage-white.png";
+import stuartTypoPng from "../img/STUART.png";
 
 import ditherTextureBayer16 from "../img/ditherTexture/bayer16.png";
 import ditherTextureTiles from "../img/ditherTexture/tiles.png";
@@ -32,6 +33,7 @@ import ditherTextureTiles from "../img/ditherTexture/tiles.png";
 import ditherPaletteDefault from "../img/palettes/default.jpg";
 import ditherPaletteVision from "../img/palettes/vision.png";
 import ditherPaletteDark from "../img/palettes/dark.jpg";
+import ditherPaletteStuart from "../img/palettes/stuart_quad.jpg";
 
 class WebGL {
     constructor() {
@@ -170,6 +172,45 @@ class WebGL {
                 this.secondaryDitherTexture.naturalWidth;
 
             this.createThingies(thingies);
+
+            this.onResize();
+
+            resolve();
+        });
+    }
+
+    async initializeCase() {
+        return new Promise(async (resolve, reject) => {
+            const textures = await this.loadImages({
+                bagageTypoPng,
+                ditherTextureBayer16,
+                ditherPaletteStuart,
+            });
+            this.addTextures(textures);
+            this.textMasks = { bottom: 0, top: 0 };
+
+            this.primaryDitherPalette = this.textures.ditherPaletteStuart;
+            this.primaryDitherTexture = this.textures.ditherTextureBayer16;
+            this.secondaryDitherPalette = this.textures.ditherPaletteStuart;
+            this.secondaryDitherTexture = this.textures.ditherTextureBayer16;
+
+            if (!this.initialized) this.initialize();
+
+            this.fullscreenPlane.program.uniforms.uHasNoise.value = 0;
+
+            // await this.createGLImages(imgs);
+
+            this.primaryDitherPaletteTexture.image = this.primaryDitherPalette;
+            this.primaryDitherTextureTexture.image = this.primaryDitherTexture;
+            this.post.program.uniforms.uPrimaryDitherTextureSize.value =
+                this.primaryDitherTexture.naturalWidth;
+
+            this.secondaryDitherPaletteTexture.image =
+                this.secondaryDitherPalette;
+            this.secondaryDitherTextureTexture.image =
+                this.secondaryDitherTexture;
+            this.post.program.uniforms.uSecondaryDitherTextureSize.value =
+                this.secondaryDitherTexture.naturalWidth;
 
             this.onResize();
 
