@@ -216,4 +216,11 @@ definePageMeta({
 .case {
     overflow: hidden;
 }
+.case-study {
+    padding-top: 120px;
+    background-color: $black;
+}
+footer {
+    background-color: $black;
+}
 </style>
