@@ -9,7 +9,7 @@
         <div class="case-study container">
             <div class="case-study-content">
                 <div class="mod wrapper-fifty-fifty reversed">
-                    <div class="col-fifty-fifty">
+                    <div class="col-fifty-fifty content-pad">
                         <h2>
                             Driving Seamless CRM Integration and Marketing
                             Strategy for Stuart's Growth
@@ -30,7 +30,7 @@
                             analytics, using Piwik PRO.
                         </p>
                     </div>
-                    <div class="col-fifty-fifty col-img square">
+                    <div class="col-fifty-fifty col-img square content-pad">
                         <div class="dithered-bg">
                             <img
                                 width="1273"
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mod wrapper-img-full">
+                <div class="mod wrapper-img-full content-pad">
                     <img
                         width="1273"
                         height="716"
@@ -50,13 +50,13 @@
                     />
                 </div>
                 <div class="mod wrapper-fifty-fifty">
-                    <div class="col-fifty-fifty col-title">
+                    <div class="col-fifty-fifty content-pad">
                         <h2>
                             Stuart's Courier Space Redefined with Nuxt 3 and
                             Dato CMS
                         </h2>
                     </div>
-                    <div class="col-fifty-fifty">
+                    <div class="col-fifty-fifty content-pad">
                         <p>
                             In late 2022, early 2023, we worked on the
                             migration/reconstruction of the courier space on an
@@ -75,7 +75,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="mod wrapper-img-full">
+                <div class="mod wrapper-img-full content-pad">
                     <img
                         width="1273"
                         height="716"
@@ -84,7 +84,7 @@
                     />
                 </div>
                 <div class="mod wrapper-fifty-fifty">
-                    <div class="col-fifty-fifty">
+                    <div class="col-fifty-fifty content-pad">
                         <h2>
                             Driving Seamless CRM Integration and Marketing
                             Strategy for Stuart's Growth
@@ -105,7 +105,7 @@
                             analytics, using Piwik PRO.
                         </p>
                     </div>
-                    <div class="col-fifty-fifty col-img square">
+                    <div class="col-fifty-fifty col-img square content-pad">
                         <img
                             width="1273"
                             height="716"
@@ -266,6 +266,7 @@ footer {
     }
 }
 .credits-detail {
+    font-size: 2.1rem;
     &:not(:last-child) {
         margin-bottom: 20px;
     }
@@ -277,10 +278,9 @@ footer {
     margin-bottom: 8px;
     font-feature-settings: "ss16";
     text-transform: uppercase;
-    font-size: 2.1rem;
 }
 
-@media (min-width: $phone) {
+@media (min-width: $tablet) {
     .col-credits {
         display: flex;
         flex-wrap: wrap;

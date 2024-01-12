@@ -550,16 +550,6 @@ div.project {
         align-items: flex-start;
         &.reversed {
             flex-direction: row-reverse;
-            .col-fifty-fifty {
-                &.col-img {
-                    padding-left: 0;
-                    padding-right: 45px;
-                }
-            }
-            &.col-title {
-                padding-left: 70px;
-                padding-right: 0;
-            }
         }
     }
     .col-fifty-fifty {
@@ -570,10 +560,6 @@ div.project {
         }
         &.col-img {
             margin-top: 0;
-            padding-left: 45px;
-        }
-        &.col-title {
-            padding-right: 70px;
         }
     }
 }
