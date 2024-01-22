@@ -393,13 +393,6 @@ div.project {
         line-height: 120%;
         margin-bottom: 40px;
     }
-    p {
-        font-size: 1.8rem;
-        line-height: 140%;
-        &:not(:last-child) {
-            margin-bottom: 1em;
-        }
-    }
 }
 
 .mod {
@@ -432,6 +425,13 @@ div.project {
         padding: 45px;
         background-color: var(--cs-primary);
     }
+    p {
+        font-size: 1.8rem;
+        line-height: 140%;
+        &:not(:last-child) {
+            margin-bottom: 1em;
+        }
+    }
 }
 
 // image full size
@@ -439,6 +439,32 @@ div.project {
     img {
         width: 100%;
         height: auto;
+    }
+}
+
+// testimonial
+.wrapper-testimonial {
+    blockquote {
+        p {
+            position: relative;
+            display: block;
+            &::before {
+                content: "“";
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translate3d(-150%, 0, 0);
+            }
+            &::after {
+                content: "\00a0”";
+            }
+        }
+        footer {
+            margin-top: 20px;
+            > span {
+                display: block;
+            }
+        }
     }
 }
 
@@ -560,6 +586,17 @@ div.project {
         }
         &.col-img {
             margin-top: 0;
+        }
+    }
+
+    // testimonial
+    .wrapper-testimonial {
+        blockquote {
+            footer {
+                margin-top: 40px;
+                font-size: 2.1rem;
+                line-height: 120%;
+            }
         }
     }
 }

@@ -83,6 +83,25 @@
                         alt=""
                     />
                 </div>
+                <div class="mod wrapper-testimonial content-pad">
+                    <blockquote>
+                        <p class="title-a"
+                            >We've been working together for quite a while now,
+                            and throughout this time, Bagage has consistently
+                            delivered high-quality work on time and excelled at
+                            tackling complex challenges, showcasing exceptional
+                            skills. I recommend them to anyone seeking
+                            developers who are not only reliable and
+                            professional but also innovative and adaptable.</p
+                        >
+                        <footer>
+                            <span class="name">Viktoriia Zakorchemna</span>
+                            <span class="job-company"
+                                >Web developer — Stuart</span
+                            >
+                        </footer>
+                    </blockquote>
+                </div>
                 <div class="mod wrapper-fifty-fifty">
                     <div class="col-fifty-fifty content-pad">
                         <h2>
