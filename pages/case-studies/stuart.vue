@@ -6,6 +6,66 @@
         style="--cs-primary: #0091fe"
     >
         <Header />
+        <div class="case-study-intro">
+            <div class="container">
+                <div class="col-intro">
+                    <div class="wrapper-title">
+                        <span class="subtitle content-pad">Challenge</span>
+                        <h1 class="title title-case-study content-pad">
+                            Long-term support on the creation and evolution of
+                            two sites, following strong growth challenges.
+                        </h1>
+                    </div>
+                    <div class="wrapper-intro-case-study content-pad">
+                        <p
+                            >Stuart is a last-mile delivery platform that
+                            connects businesses with independent couriers to
+                            provide fast, reliable, and sustainable delivery
+                            services.</p
+                        >
+                        <p
+                            >We’ve been working with the great Stuart team since
+                            late 2018 and supporting them on many of their
+                            projects, and we continue to maintain and evolve
+                            their websites to this day.</p
+                        >
+                        <a
+                            href="https://stuart.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="intro-link"
+                        >
+                            See it live ↗
+                        </a>
+                    </div>
+                </div>
+                <div class="col-infos">
+                    <div class="info content-pad">
+                        <span class="info-title">Date</span>
+                        <span class="info-content">2018 - Present</span>
+                    </div>
+                    <div class="info content-pad">
+                        <span class="info-title">Tech</span>
+                        <span class="info-content">
+                            <ul>
+                                <li>Nuxt</li>
+                                <li>DatoCMS</li>
+                                <li>Netlify</li>
+                                <li>HubSpot</li>
+                            </ul>
+                        </span>
+                    </div>
+                    <div class="info content-pad">
+                        <span class="info-title">Industry</span>
+                        <span class="info-content">Last-Mile Delivery</span>
+                    </div>
+                    <div class="info content-pad">
+                        <span class="info-title">Market</span>
+                        <span class="info-content">B2B and B2C</span>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="case-study container">
             <div class="case-study-content">
                 <div class="mod wrapper-fifty-fifty reversed">
@@ -260,7 +320,42 @@ definePageMeta({
 
 <style lang="scss" scoped>
 .case {
+    padding-top: calc(25vw + 100px);
     overflow: hidden;
+}
+.wrapper-intro-case-study {
+    margin-top: 20px;
+    p {
+        font-size: 1.8rem;
+        line-height: 140%;
+    }
+}
+.intro-link {
+    display: inline-flex;
+    margin-top: 15px;
+    text-decoration: none;
+    color: var(--color);
+    text-transform: uppercase;
+}
+.col-infos {
+    margin-top: 30px;
+}
+.info {
+    font-size: 2.1rem;
+    line-height: 120%;
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    > span {
+        display: block;
+    }
+    ul {
+        list-style: none;
+    }
+}
+.info-title {
+    font-feature-settings: "ss16";
+    margin-bottom: 5px;
 }
 .case-study {
     padding-top: 120px;
@@ -299,7 +394,19 @@ footer {
     text-transform: uppercase;
 }
 
+.case-study-intro {
+    padding: 0 0 50px 0;
+}
+
 @media (min-width: $tablet) {
+    .col-infos {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .info {
+        flex: 0 0 auto;
+        width: percentage(math.div(1, 3));
+    }
     .col-credits {
         display: flex;
         flex-wrap: wrap;
@@ -322,6 +429,28 @@ footer {
 }
 
 @media (min-width: $desktop) {
+    .case-study-intro {
+        padding-bottom: 100px;
+        > .container {
+            display: flex;
+        }
+    }
+    .col-intro {
+        flex: 0 0 auto;
+        width: percentage(math.div(4, 6));
+    }
+    .title-case-study {
+        text-indent: calc(percentage(math.div(1, 4)) + (var(--gutter) / 2));
+    }
+    .col-infos {
+        flex: 0 0 auto;
+        width: percentage(math.div(2, 6));
+        display: block;
+        margin: 0;
+    }
+    .info {
+        width: 100%;
+    }
     .credits {
         display: flex;
         align-items: flex-start;
@@ -329,6 +458,29 @@ footer {
     .col-title {
         flex: 0 0 auto;
         width: percentage(math.div(2, 6));
+    }
+}
+
+@media (min-width: $desktop-large) {
+    .col-intro {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .wrapper-intro-case-study {
+        width: percentage(math.div(3, 4));
+        margin-top: 40px;
+    }
+    .intro-link {
+        margin-top: 25px;
+    }
+    .info {
+        &:not(:last-child) {
+            margin-bottom: 25px;
+        }
+    }
+    .info-title {
+        margin-bottom: 8px;
     }
 }
 </style>
