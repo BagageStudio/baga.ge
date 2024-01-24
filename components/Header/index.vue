@@ -15,13 +15,12 @@
 <style lang="scss" scoped>
 .header {
     position: absolute;
-    top: 20px;
+    top: 30px;
     left: 0;
     right: 0;
     opacity: 0;
     > .container {
         display: flex;
-        align-items: baseline;
         justify-content: space-between;
         text-transform: uppercase;
     }
@@ -39,6 +38,10 @@
     &:first-child {
         margin-left: 0;
     }
+}
+.links {
+    display: flex;
+    align-items: center;
 }
 
 @media (min-width: $phone) {
