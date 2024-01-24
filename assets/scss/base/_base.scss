@@ -432,6 +432,23 @@ div.project {
             margin-bottom: 1em;
         }
     }
+    ul {
+        font-size: 1.8rem;
+        line-height: 140%;
+        list-style: none;
+        &:not(:last-child) {
+            margin-bottom: 1em;
+        }
+        > li {
+            position: relative;
+            &::before {
+                position: absolute;
+                top: 0;
+                left: -1.5em;
+                content: "↦";
+            }
+        }
+    }
 }
 
 // image full size
