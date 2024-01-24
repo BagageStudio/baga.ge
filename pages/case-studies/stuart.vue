@@ -1,6 +1,6 @@
 <template>
     <div
-        class="case page secondary"
+        class="case page"
         id="case"
         ref="caseStudy"
         style="--cs-primary: #0091fe"
@@ -18,18 +18,18 @@
                         </h1>
                     </div>
                     <div class="wrapper-intro-case-study content-pad">
-                        <p
-                            >Stuart is a last-mile delivery platform that
+                        <p>
+                            Stuart is a last-mile delivery platform that
                             connects businesses with independent couriers to
                             provide fast, reliable, and sustainable delivery
-                            services.</p
-                        >
-                        <p
-                            >We’ve been working with the great Stuart team since
+                            services.
+                        </p>
+                        <p>
+                            We’ve been working with the great Stuart team since
                             late 2018 and supporting them on many of their
                             projects, and we continue to maintain and evolve
-                            their websites to this day.</p
-                        >
+                            their websites to this day.
+                        </p>
                         <a
                             href="https://stuart.com/"
                             target="_blank"
@@ -71,7 +71,7 @@
             <div class="case-study-content">
                 <div class="mod wrapper-fifty-fifty reversed">
                     <div class="col-fifty-fifty content-pad">
-                        <h2> Initial website development and rebranding </h2>
+                        <h2>Initial website development and rebranding</h2>
                         <p>
                             We initially worked with Stuart on the complete
                             development of their website, based on a Jamstack
@@ -89,18 +89,18 @@
                             <li>Enhanced security</li>
                             <li>Less expensive web hosting</li>
                         </ul>
-                        <p
-                            >We then adopted DatoCMS for many other projects.
+                        <p>
+                            We then adopted DatoCMS for many other projects.
                             It's constantly improving and bringing more and more
-                            great features.</p
-                        >
-                        <p
-                            >Following Stuart's rebrand in 2021, we reworked the
+                            great features.
+                        </p>
+                        <p>
+                            Following Stuart's rebrand in 2021, we reworked the
                             site to adapt to the new graphic language. The
                             site's modular construction made it easy to rework
                             the existing layout, modifying typography, colors
-                            and illustrations.</p
-                        >
+                            and illustrations.
+                        </p>
                     </div>
                     <div class="col-fifty-fifty col-img square content-pad">
                         <div class="dithered-bg" id="ditherBg1">
@@ -154,15 +154,15 @@
                 </div>
                 <div class="mod wrapper-testimonial content-pad">
                     <blockquote>
-                        <p class="title-a"
-                            >We've been working together for quite a while now,
+                        <p class="title-a">
+                            We've been working together for quite a while now,
                             and throughout this time, Bagage has consistently
                             delivered high-quality work on time and excelled at
                             tackling complex challenges, showcasing exceptional
                             skills. I recommend them to anyone seeking
                             developers who are not only reliable and
-                            professional but also innovative and adaptable.</p
-                        >
+                            professional but also innovative and adaptable.
+                        </p>
                         <footer>
                             <span class="name">Viktoriia Zakorchemna</span>
                             <span class="job-company"
@@ -173,10 +173,10 @@
                 </div>
                 <div class="mod wrapper-fifty-fifty reversed">
                     <div class="col-fifty-fifty content-pad">
-                        <h2
-                            >Leveraging Modular structure and DatoCMS for
-                            Stuart's International Presence</h2
-                        >
+                        <h2>
+                            Leveraging Modular structure and DatoCMS for
+                            Stuart's International Presence
+                        </h2>
                         <p>
                             One of Stuart's main challenges in recent years has
                             been to open up its service internationally (UK,
@@ -187,15 +187,15 @@
                             can include, for example:
                         </p>
                         <ul>
-                            <li
-                                >Translation of certain pages for services
-                                offered at the opening of a new market</li
-                            >
+                            <li>
+                                Translation of certain pages for services
+                                offered at the opening of a new market
+                            </li>
                             <li>Specific navigations</li>
-                            <li
-                                >Landings pages created specifically for one or
-                                more countries</li
-                            >
+                            <li>
+                                Landings pages created specifically for one or
+                                more countries
+                            </li>
                         </ul>
                         <p>
                             Technically, adding a locale and translating content
@@ -206,12 +206,11 @@
                             role management allows you, for example, to give
                             translators access only to certain types of content.
                         </p>
-                        <p
-                            >More generally, a large part of our work with
-                            Stuart consists of adding new bricks to the site's
-                            modular architecture and fine-tuning existing
-                            modules.</p
-                        >
+                        <p>
+                            More generally, a large part of our work with Stuart
+                            consists of adding new bricks to the site's modular
+                            architecture and fine-tuning existing modules.
+                        </p>
                     </div>
                     <div class="col-fifty-fifty col-img square content-pad">
                         <div class="dithered-bg">
@@ -379,6 +378,8 @@ definePageMeta({
 .case {
     padding-top: calc(25vw + 100px);
     overflow: hidden;
+    --color: #fff;
+    color: var(--color);
 }
 .wrapper-intro-case-study {
     margin-top: 20px;
