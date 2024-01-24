@@ -24,8 +24,7 @@ import planeVertex from "../shader/planeVertex.glsl";
 import postFragment from "../shader/postFragment.glsl";
 import postVertex from "../shader/postVertex.glsl";
 
-import bagageTypoPng from "../img/bagage-white.png";
-import stuartTypoPng from "../img/STUART.png";
+import bagageTypoPng from "../img/mainTypo/bagage.png";
 
 import ditherTextureBayer16 from "../img/ditherTexture/bayer16.png";
 import ditherTextureTiles from "../img/ditherTexture/tiles.png";
@@ -33,7 +32,6 @@ import ditherTextureTiles from "../img/ditherTexture/tiles.png";
 import ditherPaletteDefault from "../img/palettes/default.jpg";
 import ditherPaletteVision from "../img/palettes/vision.png";
 import ditherPaletteDark from "../img/palettes/dark.jpg";
-import ditherPaletteStuart from "../img/palettes/stuart_quad.jpg";
 
 class WebGL {
     constructor() {
@@ -56,6 +54,8 @@ class WebGL {
         };
 
         this.textures = {};
+
+        this.mainTextImageName = "";
 
         this.scroll = {
             y: 0,
@@ -113,6 +113,7 @@ class WebGL {
             ditherPaletteDefault,
         });
         this.addTextures(textures);
+        this.setMainTextImage("bagageTypoPng");
 
         this.primaryDitherPalette = this.textures.ditherPaletteDefault;
         this.primaryDitherTexture = this.textures.ditherTextureBayer16;
@@ -146,6 +147,8 @@ class WebGL {
                 ditherPaletteVision,
             });
             this.addTextures(textures);
+            this.setMainTextImage("bagageTypoPng");
+
             this.textMasks = { bottom: 0, top: 0 };
 
             this.primaryDitherPalette = this.textures.ditherPaletteDark;
@@ -179,26 +182,32 @@ class WebGL {
         });
     }
 
-    async initializeCase() {
+    async initializeCase({
+        id,
+        mainTypoImage,
+        ditherTextureImage,
+        ditherPaletteImage,
+    }) {
+        console.log(id, mainTypoImage, ditherTextureImage, ditherPaletteImage);
         return new Promise(async (resolve, reject) => {
             const textures = await this.loadImages({
-                bagageTypoPng,
-                ditherTextureBayer16,
-                ditherPaletteStuart,
+                [id + "TypoImage"]: mainTypoImage,
+                [id + "ditherTexture"]: ditherTextureImage,
+                [id + "ditherPalette"]: ditherPaletteImage,
             });
             this.addTextures(textures);
+            this.setMainTextImage(id + "TypoImage");
+
             this.textMasks = { bottom: 0, top: 0 };
 
-            this.primaryDitherPalette = this.textures.ditherPaletteStuart;
-            this.primaryDitherTexture = this.textures.ditherTextureBayer16;
-            this.secondaryDitherPalette = this.textures.ditherPaletteStuart;
-            this.secondaryDitherTexture = this.textures.ditherTextureBayer16;
+            this.primaryDitherPalette = this.textures[id + "ditherPalette"];
+            this.primaryDitherTexture = this.textures[id + "ditherTexture"];
+            this.secondaryDitherPalette = this.textures[id + "ditherPalette"];
+            this.secondaryDitherTexture = this.textures[id + "ditherTexture"];
 
             if (!this.initialized) this.initialize();
 
             this.fullscreenPlane.program.uniforms.uHasNoise.value = 0;
-
-            // await this.createGLImages(imgs);
 
             this.primaryDitherPaletteTexture.image = this.primaryDitherPalette;
             this.primaryDitherTextureTexture.image = this.primaryDitherTexture;
@@ -302,7 +311,7 @@ class WebGL {
     }
 
     async createFullscreenPlane() {
-        const texture = new Texture(this.gl, {
+        this.mainTextTexture = new Texture(this.gl, {
             magFilter: this.gl.NEAREST,
             minFilter: this.gl.NEAREST,
         });
@@ -311,7 +320,7 @@ class WebGL {
             fragment: planeFragment,
             vertex: planeVertex,
             uniforms: {
-                tMap: { value: texture },
+                tMap: { value: this.mainTextTexture },
                 uPlaneSizes: { value: [0, 0] },
                 uImageSizes: { value: [0, 0] },
                 uTextGutter: { value: 0 },
@@ -332,15 +341,15 @@ class WebGL {
             transparent: true,
         });
 
-        texture.image = this.textures.bagageTypoPng;
+        this.mainTextTexture.image = this.textures[this.mainTextImageName];
 
         program.uniforms.uImageSizes.value = [
-            this.textures.bagageTypoPng.naturalWidth,
-            this.textures.bagageTypoPng.naturalHeight,
+            this.textures[this.mainTextImageName].naturalWidth,
+            this.textures[this.mainTextImageName].naturalHeight,
         ];
         this.typoAspectRatio =
-            this.textures.bagageTypoPng.naturalWidth /
-            this.textures.bagageTypoPng.naturalHeight;
+            this.textures[this.mainTextImageName].naturalWidth /
+            this.textures[this.mainTextImageName].naturalHeight;
         this.onResize();
         this.ready = true;
 
@@ -366,6 +375,22 @@ class WebGL {
         });
 
         this.fullscreenPlane.setParent(this.scene);
+    }
+
+    setMainTextImage(imageName) {
+        this.mainTextImageName = imageName;
+
+        if (this.mainTextTexture) {
+            this.mainTextTexture.image = this.textures[imageName];
+
+            this.fullscreenPlane.program.uniforms.uImageSizes.value = [
+                this.textures[imageName].naturalWidth,
+                this.textures[imageName].naturalHeight,
+            ];
+            this.typoAspectRatio =
+                this.textures[imageName].naturalWidth /
+                this.textures[imageName].naturalHeight;
+        }
     }
 
     createPost() {

@@ -2,8 +2,9 @@
     <div
         class="case page secondary"
         id="case"
-        ref="case"
+        ref="caseStudy"
         style="--cs-primary: #0091fe"
+        data-id="stuart"
     >
         <Header />
         <div class="case-study container">
@@ -31,7 +32,7 @@
                         </p>
                     </div>
                     <div class="col-fifty-fifty col-img square content-pad">
-                        <div class="dithered-bg">
+                        <div class="dithered-bg" id="ditherBg1">
                             <img
                                 width="1273"
                                 height="716"
@@ -175,13 +176,13 @@
 <script setup>
 import { caseEnter, caseLeave } from "~/assets/js/transitions/case";
 
-const about = ref(null);
+const caseStudy = ref(null);
 
 onMounted(async () => {
     const initialLoad =
         !document.documentElement.classList.contains("already-loaded");
     if (initialLoad) {
-        caseEnter(about.value);
+        caseEnter(caseStudy.value);
         document.documentElement.classList.add("already-loaded");
     }
 });

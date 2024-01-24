@@ -4,10 +4,35 @@ import { CreateHelloAnimation } from "~/assets/js/scroll/case";
 
 import WebGL from "~/assets/js/WebGL";
 
+import cases from "~/assets/data/cases";
+
 let helloAnimation;
 
+async function getWebGlOptions(id) {
+    const caseData = cases[id];
+
+    const mainTypoImage = await import(
+        `../../img/mainTypo/${caseData.mainTypoImage}.png`
+    );
+    const ditherPaletteImage = await import(
+        `../../img/palettes/${caseData.ditherPaletteImage}.png`
+    );
+    const ditherTextureImage = await import(
+        `../../img/ditherTexture/${caseData.ditherTextureImage}.png`
+    );
+
+    return {
+        id,
+        mainTypoImage: mainTypoImage.default,
+        ditherPaletteImage: ditherPaletteImage.default,
+        ditherTextureImage: ditherTextureImage.default,
+    };
+}
+
 export async function caseEnter(el, done = () => {}) {
-    await WebGL.initializeCase();
+    const options = await getWebGlOptions(el.dataset.id);
+
+    await WebGL.initializeCase(options);
 
     caseLoaded(() => {
         done();
@@ -80,15 +105,6 @@ export function caseLeave(done) {
         },
         "start"
     )
-        .to(
-            "#heroWithImages",
-            {
-                y: () => `${window.innerHeight - window.innerWidth / 3}`,
-                duration: 0.4,
-                ease: "power3.out",
-            },
-            "start"
-        )
         .to(
             "#header",
             {
