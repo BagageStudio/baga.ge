@@ -70,25 +70,36 @@
             <div class="case-study-content">
                 <div class="mod wrapper-fifty-fifty reversed">
                     <div class="col-fifty-fifty content-pad">
-                        <h2>
-                            Driving Seamless CRM Integration and Marketing
-                            Strategy for Stuart's Growth
-                        </h2>
+                        <h2> Initial website development and rebranding </h2>
                         <p>
-                            Since the initial development of the website, we've
-                            been supporting Stuart's marketing teams in the
-                            implementation of their acquisition strategy.
+                            We initially worked with Stuart on the complete
+                            development of their website, based on a Jamstack
+                            architecture. At the time, sites rendered in SSG
+                            (Static Site Generation) with Nuxt were quite rare,
+                            and Stuart's main constraint was to use Dato as a
+                            CMS.
                         </p>
                         <p>
-                            This includes, of course, connecting to the APIs of
-                            the various CRMs used by their teams. In this
-                            context, we have migrated from Salesforce to
-                            HubSpot, and in the CMS we enable the creation of
-                            forms that are linked to campaigns, while
-                            maintaining a consistent graphic style. At the same
-                            time, we've implemented GDPR compliance and
-                            analytics, using Piwik PRO.
+                            Jamstack (or now Composable architecture) offers
+                            many advantages, including:
                         </p>
+                        <ul>
+                            <li>Improved performance</li>
+                            <li>Enhanced security</li>
+                            <li>Less expensive web hosting</li>
+                        </ul>
+                        <p
+                            >We then adopted DatoCMS for many other projects.
+                            It's constantly improving and bringing more and more
+                            great features.</p
+                        >
+                        <p
+                            >Following Stuart's rebrand in 2021, we reworked the
+                            site to adapt to the new graphic language. The
+                            site's modular construction made it easy to rework
+                            the existing layout, modifying typography, colors
+                            and illustrations.</p
+                        >
                     </div>
                     <div class="col-fifty-fifty col-img square content-pad">
                         <div class="dithered-bg">
@@ -108,59 +119,6 @@
                         src="~/assets/img/case-studies/stuart/stuart-screen.png"
                         alt=""
                     />
-                </div>
-                <div class="mod wrapper-fifty-fifty">
-                    <div class="col-fifty-fifty content-pad">
-                        <h2>
-                            Stuart's Courier Space Redefined with Nuxt 3 and
-                            Dato CMS
-                        </h2>
-                    </div>
-                    <div class="col-fifty-fifty content-pad">
-                        <p>
-                            In late 2022, early 2023, we worked on the
-                            migration/reconstruction of the courier space on an
-                            associated sub-domain. The complexity of this
-                            exercise lay mainly in the fact that we had to
-                            create a new site on a Nuxt 3 (stuart.com is on Nuxt
-                            2) and on a new Dato project, while reusing modules
-                            present on the B2B site.<br />
-                            The registration forms for the courier platform are
-                            connected to the Fountain API.
-                        </p>
-                        <p>
-                            We regularly audit both sites with the Seobility
-                            tool, which gives us an overall SEO score and
-                            solutions for improvement.
-                        </p>
-                    </div>
-                </div>
-                <div class="mod wrapper-img-full content-pad">
-                    <img
-                        width="1273"
-                        height="716"
-                        src="~/assets/img/case-studies/stuart/stuart-screen.png"
-                        alt=""
-                    />
-                </div>
-                <div class="mod wrapper-testimonial content-pad">
-                    <blockquote>
-                        <p class="title-a"
-                            >We've been working together for quite a while now,
-                            and throughout this time, Bagage has consistently
-                            delivered high-quality work on time and excelled at
-                            tackling complex challenges, showcasing exceptional
-                            skills. I recommend them to anyone seeking
-                            developers who are not only reliable and
-                            professional but also innovative and adaptable.</p
-                        >
-                        <footer>
-                            <span class="name">Viktoriia Zakorchemna</span>
-                            <span class="job-company"
-                                >Web developer — Stuart</span
-                            >
-                        </footer>
-                    </blockquote>
                 </div>
                 <div class="mod wrapper-fifty-fifty">
                     <div class="col-fifty-fifty content-pad">
@@ -191,6 +149,104 @@
                             src="~/assets/img/case-studies/stuart/stuart-screen.png"
                             alt=""
                         />
+                    </div>
+                </div>
+                <div class="mod wrapper-testimonial content-pad">
+                    <blockquote>
+                        <p class="title-a"
+                            >We've been working together for quite a while now,
+                            and throughout this time, Bagage has consistently
+                            delivered high-quality work on time and excelled at
+                            tackling complex challenges, showcasing exceptional
+                            skills. I recommend them to anyone seeking
+                            developers who are not only reliable and
+                            professional but also innovative and adaptable.</p
+                        >
+                        <footer>
+                            <span class="name">Viktoriia Zakorchemna</span>
+                            <span class="job-company"
+                                >Web developer — Stuart</span
+                            >
+                        </footer>
+                    </blockquote>
+                </div>
+                <div class="mod wrapper-fifty-fifty reversed">
+                    <div class="col-fifty-fifty content-pad">
+                        <h2
+                            >Leveraging Modular structure and DatoCMS for
+                            Stuart's International Presence</h2
+                        >
+                        <p>
+                            One of Stuart's main challenges in recent years has
+                            been to open up its service internationally (UK,
+                            Spain, Poland, Portugal and Italy). The modular
+                            structure and the use of DatoCMS has enabled us to
+                            deploy the site in new languages following precise
+                            strategies adapted to the market. These strategies
+                            can include, for example:
+                        </p>
+                        <ul>
+                            <li
+                                >Translation of certain pages for services
+                                offered at the opening of a new market</li
+                            >
+                            <li>Specific navigations</li>
+                            <li
+                                >Landings pages created specifically for one or
+                                more countries</li
+                            >
+                        </ul>
+                        <p>
+                            Technically, adding a locale and translating content
+                            is easy with Dato. When fields are defined, they can
+                            be made translatable or not. In addition, it's
+                            possible to duplicate a page from one locale to
+                            another. And last but not least, Dato's advanced
+                            role management allows you, for example, to give
+                            translators access only to certain types of content.
+                        </p>
+                        <p
+                            >More generally, a large part of our work with
+                            Stuart consists of adding new bricks to the site's
+                            modular architecture and fine-tuning existing
+                            modules.</p
+                        >
+                    </div>
+                    <div class="col-fifty-fifty col-img square content-pad">
+                        <div class="dithered-bg">
+                            <img
+                                width="1273"
+                                height="716"
+                                src="~/assets/img/case-studies/stuart/stuart-screen.png"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="mod wrapper-fifty-fifty">
+                    <div class="col-fifty-fifty content-pad">
+                        <h2>
+                            Stuart's Courier Space Redefined with Nuxt 3 and
+                            Dato CMS
+                        </h2>
+                    </div>
+                    <div class="col-fifty-fifty content-pad">
+                        <p>
+                            In late 2022, early 2023, we worked on the
+                            migration/reconstruction of the courier space on an
+                            associated sub-domain. The complexity of this
+                            exercise lay mainly in the fact that we had to
+                            create a new site on a Nuxt 3 (stuart.com is on Nuxt
+                            2) and on a new Dato project, while reusing modules
+                            present on the B2B site.<br />
+                            The registration forms for the courier platform are
+                            connected to the Fountain API.
+                        </p>
+                        <p>
+                            We regularly audit both sites with the Seobility
+                            tool, which gives us an overall SEO score and
+                            solutions for improvement.
+                        </p>
                     </div>
                 </div>
                 <div class="credits">
@@ -328,6 +384,9 @@ definePageMeta({
     p {
         font-size: 1.8rem;
         line-height: 140%;
+        &:not(:last-child) {
+            margin-bottom: 1em;
+        }
     }
 }
 .intro-link {
