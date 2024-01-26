@@ -79,6 +79,39 @@ export function caseLoaded(done) {
                 opacity: 1,
             },
             "start+=1"
+        )
+        .to(
+            "#wrapperTitle",
+            {
+                duration: 1.4,
+                opacity: 1,
+                y: 0,
+                rotateX: 0,
+                ease: "power4.inOut",
+            },
+            "start+=0.3"
+        )
+        .to(
+            "#wrapperIntro",
+            {
+                duration: 1.4,
+                opacity: 1,
+                y: 0,
+                rotateX: 0,
+                ease: "power4.inOut",
+            },
+            "start+=0.4"
+        )
+        .to(
+            "#colInfos",
+            {
+                duration: 1.4,
+                opacity: 1,
+                y: 0,
+                rotateX: 0,
+                ease: "power4.inOut",
+            },
+            "start+=0.5"
         );
 
     tl.play();

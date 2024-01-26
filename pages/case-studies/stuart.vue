@@ -10,14 +10,17 @@
         <div class="case-study-intro">
             <div class="container">
                 <div class="col-intro">
-                    <div class="wrapper-title">
+                    <div class="wrapper-title" id="wrapperTitle">
                         <span class="subtitle content-pad">Challenge</span>
                         <h1 class="title title-case-study content-pad">
                             Long-term support on the creation and evolution of
                             two sites, following strong growth challenges.
                         </h1>
                     </div>
-                    <div class="wrapper-intro-case-study content-pad">
+                    <div
+                        class="wrapper-intro-case-study content-pad"
+                        id="wrapperIntro"
+                    >
                         <p>
                             Stuart is a last-mile delivery platform that
                             connects businesses with independent couriers to
@@ -40,7 +43,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-infos">
+                <div class="col-infos" id="colInfos">
                     <div class="info content-pad">
                         <span class="info-title">Date</span>
                         <span class="info-content">2018 - Present</span>
@@ -383,6 +386,8 @@ definePageMeta({
 }
 .wrapper-intro-case-study {
     margin-top: 20px;
+    transform: translateY(200px) rotateX(-45deg);
+    opacity: 0;
     p {
         font-size: 1.8rem;
         line-height: 140%;
@@ -400,6 +405,8 @@ definePageMeta({
 }
 .col-infos {
     margin-top: 30px;
+    transform: translateY(200px) rotateX(-45deg);
+    opacity: 0;
 }
 .info {
     font-size: 2.1rem;
@@ -457,6 +464,11 @@ footer {
 
 .case-study-intro {
     padding: 0 0 50px 0;
+}
+
+.wrapper-title {
+    transform: translateY(200px) rotateX(-45deg);
+    opacity: 0;
 }
 
 @media (min-width: $tablet) {
