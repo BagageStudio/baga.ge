@@ -52,6 +52,10 @@ export function caseLoaded(done) {
     });
 
     tl.set("#overlay", { backgroundColor: "transparent" });
+    tl.set(["#wrapperTitle", "#wrapperIntro", "#colInfos"], {
+        y: 200,
+        rotateX: -45,
+    });
 
     tl.to(
         webglAppear,
@@ -153,6 +157,30 @@ export function caseLeave(done) {
                 backgroundColor: "#F5E8E7",
             },
             "start+=0.4"
+        )
+        .to(
+            "#wrapperTitle",
+            {
+                duration: 0.4,
+                opacity: 0,
+            },
+            "start"
+        )
+        .to(
+            "#wrapperIntro",
+            {
+                duration: 0.4,
+                opacity: 0,
+            },
+            "start"
+        )
+        .to(
+            "#colInfos",
+            {
+                duration: 0.4,
+                opacity: 0,
+            },
+            "start"
         );
 
     tl.play();
