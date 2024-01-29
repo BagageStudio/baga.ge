@@ -154,6 +154,7 @@ export function caseLeave(done) {
             "#overlay",
             {
                 duration: 0.4,
+                // need this to be dynamic
                 backgroundColor: "#F5E8E7",
             },
             "start+=0.4"
