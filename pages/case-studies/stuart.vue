@@ -374,6 +374,11 @@ definePageMeta({
             caseLeave(done);
         },
     },
+    middleware(to, from) {
+        console.log(to, from);
+        // to.meta.pageTransition.name =
+        //     +to.params.id > +from.params.id ? "slide-left" : "slide-right";
+    },
 });
 </script>
 

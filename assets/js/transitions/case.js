@@ -32,6 +32,11 @@ async function getWebGlOptions(id) {
 export async function caseEnter(el, done = () => {}) {
     const options = await getWebGlOptions(el.dataset.id);
 
+    await gsap.to("#overlay", {
+        duration: 0.4,
+        backgroundColor: "#00249C",
+    });
+
     await WebGL.initializeCase(options);
 
     caseLoaded(() => {
@@ -149,15 +154,6 @@ export function caseLeave(done) {
                 opacity: 0,
             },
             "start"
-        )
-        .to(
-            "#overlay",
-            {
-                duration: 0.4,
-                // need this to be dynamic
-                backgroundColor: "#F5E8E7",
-            },
-            "start+=0.4"
         )
         .to(
             "#wrapperTitle",
