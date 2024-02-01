@@ -33,6 +33,11 @@ export async function aboutEnter(el, done = () => {}) {
         type: 3,
     };
 
+    await gsap.to("#overlay", {
+        duration: 0.4,
+        backgroundColor: "#191919",
+    });
+
     await WebGL.initializeAbout({
         imgs: [img0, img1, img2],
         thingies: [thingy1, thingy2, thingy3],
@@ -141,14 +146,6 @@ export function aboutLeave(done) {
                 opacity: 0,
             },
             "start"
-        )
-        .to(
-            "#overlay",
-            {
-                duration: 0.4,
-                backgroundColor: "#F5E8E7",
-            },
-            "start+=0.4"
         );
 
     tl.play();
