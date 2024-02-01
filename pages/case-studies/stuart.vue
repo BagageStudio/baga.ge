@@ -107,23 +107,23 @@
                     </div>
                     <div class="col-fifty-fifty col-img square content-pad">
                         <div class="dithered-bg">
-                            <img
-                                width="1273"
-                                height="716"
-                                src="~/assets/img/case-studies/stuart/stuart-screen-1.png"
-                                alt=""
-                            />
+                            <video
+                                type="video/mp4"
+                                src="~/assets/img/case-studies/stuart/stuart-restaurants.mp4"
+                                autoplay
+                                muted
+                                loop
+                            ></video>
                         </div>
                     </div>
                 </div>
                 <div class="mod wrapper-img-full content-pad">
-                    <video
-                        type="video/mp4"
-                        src="~/assets/img/case-studies/stuart/stuart-restaurants.mp4"
-                        autoplay
-                        muted
-                        loop
-                    ></video>
+                    <img
+                        width="2880"
+                        height="1580"
+                        src="~/assets/img/case-studies/stuart/stuart-screen-1.png"
+                        alt=""
+                    />
                 </div>
                 <div class="mod wrapper-fifty-fifty">
                     <div class="col-fifty-fifty content-pad">
@@ -150,8 +150,8 @@
                     <div class="col-fifty-fifty col-img square content-pad">
                         <div class="dithered-bg">
                             <img
-                                width="1273"
-                                height="716"
+                                width="2880"
+                                height="1580"
                                 src="~/assets/img/case-studies/stuart/stuart-screen-2.png"
                                 alt=""
                             />
