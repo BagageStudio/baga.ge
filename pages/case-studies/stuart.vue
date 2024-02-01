@@ -106,21 +106,22 @@
                         </p>
                     </div>
                     <div class="col-fifty-fifty col-img square content-pad">
-                        <div class="dithered-bg" id="ditherBg1">
-                            <img
-                                width="1273"
-                                height="716"
-                                src="~/assets/img/case-studies/stuart/stuart-screen.png"
-                                alt=""
-                            />
+                        <div class="dithered-bg">
+                            <video
+                                type="video/mp4"
+                                src="~/assets/img/case-studies/stuart/stuart-restaurants.mp4"
+                                autoplay
+                                muted
+                                loop
+                            ></video>
                         </div>
                     </div>
                 </div>
                 <div class="mod wrapper-img-full content-pad">
                     <img
-                        width="1273"
-                        height="716"
-                        src="~/assets/img/case-studies/stuart/stuart-screen.png"
+                        width="2880"
+                        height="1580"
+                        src="~/assets/img/case-studies/stuart/stuart-screen-1.png"
                         alt=""
                     />
                 </div>
@@ -147,12 +148,14 @@
                         </p>
                     </div>
                     <div class="col-fifty-fifty col-img square content-pad">
-                        <img
-                            width="1273"
-                            height="716"
-                            src="~/assets/img/case-studies/stuart/stuart-screen.png"
-                            alt=""
-                        />
+                        <div class="dithered-bg">
+                            <img
+                                width="2880"
+                                height="1580"
+                                src="~/assets/img/case-studies/stuart/stuart-screen-2.png"
+                                alt=""
+                            />
+                        </div>
                     </div>
                 </div>
                 <div class="mod wrapper-testimonial content-pad">
@@ -216,14 +219,13 @@
                         </p>
                     </div>
                     <div class="col-fifty-fifty col-img square content-pad">
-                        <div class="dithered-bg">
-                            <img
-                                width="1273"
-                                height="716"
-                                src="~/assets/img/case-studies/stuart/stuart-screen.png"
-                                alt=""
-                            />
-                        </div>
+                        <video
+                            type="video/mp4"
+                            src="~/assets/img/case-studies/stuart/stuart-multilingual.mp4"
+                            autoplay
+                            muted
+                            loop
+                        ></video>
                     </div>
                 </div>
                 <div class="mod wrapper-fifty-fifty">
@@ -288,7 +290,7 @@
                     at&nbsp;the&nbsp;moment.
                 </p>
                 <div class="footer-text">
-                    <div class="copyright">©2023</div>
+                    <div class="copyright">©2024</div>
                     <h2 class="based">Based in Nantes</h2>
                 </div>
                 <div class="social-links">
