@@ -122,7 +122,7 @@
                         width="2880"
                         height="1580"
                         src="~/assets/img/case-studies/stuart/stuart-screen-1.png"
-                        alt=""
+                        alt="A screenshot of Stuart home page."
                     />
                 </div>
                 <div class="mod wrapper-fifty-fifty">
@@ -153,7 +153,7 @@
                                 width="2880"
                                 height="1580"
                                 src="~/assets/img/case-studies/stuart/stuart-screen-2.png"
-                                alt=""
+                                alt="A screenshot of the 'Get in touch' form on Stuart website."
                             />
                         </div>
                     </div>
@@ -327,7 +327,12 @@ onMounted(async () => {
 });
 
 useHead({
+    title: "Stuart — Bagage",
     meta: [
+        {
+            property: "og:title",
+            content: "Stuart — Bagage",
+        },
         {
             name: "image",
             property: "og:image",
@@ -337,6 +342,16 @@ useHead({
             name: "image",
             property: "og:image:secure_url",
             content: "https://baga.ge/bagage-dark.jpg",
+        },
+        {
+            property: "og:description",
+            content:
+                "Bagage provided ongoing support for the development and evolution of two websites for Stuart, addressing significant growth challenges.",
+        },
+        {
+            name: "description",
+            content:
+                "Bagage provided ongoing support for the development and evolution of two websites for Stuart, addressing significant growth challenges.",
         },
     ],
     link: [
