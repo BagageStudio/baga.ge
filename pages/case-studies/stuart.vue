@@ -336,12 +336,12 @@ useHead({
         {
             name: "image",
             property: "og:image",
-            content: "https://baga.ge/bagage-dark.jpg",
+            content: "https://baga.ge/stuart.jpg",
         },
         {
             name: "image",
             property: "og:image:secure_url",
-            content: "https://baga.ge/bagage-dark.jpg",
+            content: "https://baga.ge/stuart.jpg",
         },
         {
             property: "og:description",
