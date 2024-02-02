@@ -109,7 +109,7 @@
                         <div class="dithered-bg">
                             <video
                                 type="video/mp4"
-                                src="~/assets/img/case-studies/stuart/stuart-restaurants.mp4"
+                                src="/stuart-restaurants.mp4"
                                 autoplay
                                 muted
                                 loop
@@ -118,11 +118,11 @@
                     </div>
                 </div>
                 <div class="mod wrapper-img-full content-pad">
-                    <img
-                        width="2880"
-                        height="1580"
-                        src="~/assets/img/case-studies/stuart/stuart-screen-1.png"
-                        alt="A screenshot of Stuart home page."
+                    <Image
+                        :url="'/stuart-screen-1.png'"
+                        :alt="'A screenshot of Stuart home page.'"
+                        :width="2880"
+                        :height="1580"
                     />
                 </div>
                 <div class="mod wrapper-fifty-fifty">
@@ -149,11 +149,11 @@
                     </div>
                     <div class="col-fifty-fifty col-img square content-pad">
                         <div class="dithered-bg">
-                            <img
-                                width="2880"
-                                height="1580"
-                                src="~/assets/img/case-studies/stuart/stuart-screen-2.png"
-                                alt="A screenshot of the 'Get in touch' form on Stuart website."
+                            <Image
+                                :url="'/stuart-screen-2.png'"
+                                :alt="`A screenshot of the 'Get in touch' form on Stuart website`"
+                                :width="2880"
+                                :height="1580"
                             />
                         </div>
                     </div>
@@ -221,7 +221,7 @@
                     <div class="col-fifty-fifty col-img square content-pad">
                         <video
                             type="video/mp4"
-                            src="~/assets/img/case-studies/stuart/stuart-multilingual.mp4"
+                            src="/stuart-multilingual.mp4"
                             autoplay
                             muted
                             loop
