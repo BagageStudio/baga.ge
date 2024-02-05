@@ -1,11 +1,6 @@
 <template>
     <div class="home page" id="home">
-        <header class="header home-header" id="header">
-            <div class="container">
-                <NuxtLink to="/" class="active">Home</NuxtLink>
-                <NuxtLink to="/about">About</NuxtLink>
-            </div>
-        </header>
+        <Header class="home-header" />
         <div class="container">
             <div class="hello-monolith-wrapper" id="helloMonolithWrapper">
                 <div class="monolith bgless" id="helloMonolith">
@@ -771,7 +766,7 @@
                     at&nbsp;the&nbsp;moment.
                 </p>
                 <div class="footer-text">
-                    <div class="copyright">©2023</div>
+                    <div class="copyright">©2024</div>
                     <h2 class="based">Based in Nantes</h2>
                 </div>
                 <div class="social-links">

@@ -17,6 +17,11 @@ let manifestoTitleAnimation;
 let manifestoValuesAnimation;
 
 export async function homeEnter(done = () => {}) {
+    await gsap.to("#overlay", {
+        duration: 0.4,
+        backgroundColor: "#F5E8E7",
+    });
+
     await WebGL.initializeHome();
     homeLoaded(done);
     helloAnimation = CreateHelloAnimation();
@@ -133,14 +138,6 @@ export function homeLeave(done) {
                 opacity: 0,
             },
             "start"
-        )
-        .to(
-            "#overlay",
-            {
-                duration: 0.4,
-                backgroundColor: "#191919",
-            },
-            "start+=0.4"
         );
 
     tl.play();

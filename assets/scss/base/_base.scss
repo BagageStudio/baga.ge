@@ -7,13 +7,13 @@
 // }
 
 ::-moz-selection {
-    background: $secondary;
-    color: $primary;
+    background: var(--background);
+    color: var(--color);
     text-shadow: none;
 }
 ::selection {
-    background: $secondary;
-    color: $primary;
+    background: var(--background);
+    color: var(--color);
     text-shadow: none;
 }
 
@@ -32,7 +32,9 @@ body {
 
 html {
     font-size: 62.5%; /* sets the base font to 10px for easier math */
-    background-color: $secondary;
+    --color: #f24f2b;
+    --background: #f5e8e7;
+    background-color: var(--background);
     &.no-scroll {
         position: fixed;
         overflow: hidden;
@@ -53,7 +55,7 @@ html {
 }
 
 body {
-    color: $primary;
+    color: var(--color);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -100,8 +102,10 @@ p {
 .page {
     padding-top: calc(30vw + 100px);
 }
+
 .secondary {
-    color: $secondary;
+    --color: #f5e8e7;
+    color: var(--color);
 }
 
 .wrapper-title {
@@ -133,7 +137,7 @@ p {
 .monolith {
     margin: 0 0 60px;
     padding: 60px var(--gutter-out-monolith);
-    background: $primary;
+    background: var(--color);
     color: $white;
     &.bgless {
         position: relative;
@@ -144,7 +148,7 @@ p {
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: $primary;
+            background-color: var(--color);
             z-index: -1;
         }
     }
@@ -337,38 +341,7 @@ div.project {
     font-size: 4rem;
     line-height: 66px;
     text-decoration: none;
-    color: $primary;
-    .secondary & {
-        color: $secondary;
-    }
-}
-
-// header
-.header {
-    position: absolute;
-    top: 20px;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    > .container {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        text-transform: uppercase;
-    }
-    a {
-        color: $primary;
-        text-decoration: none;
-        text-underline-offset: 2px;
-        font-size: 1.4rem;
-        &.active,
-        &:hover {
-            text-decoration: underline;
-        }
-        .secondary & {
-            color: $secondary;
-        }
-    }
+    color: var(--color);
 }
 
 // footer
@@ -407,10 +380,110 @@ div.project {
     > a {
         margin-left: 15px;
         text-decoration: none;
-        color: $primary;
+        color: var(--color);
         text-transform: uppercase;
-        .secondary & {
-            color: $secondary;
+    }
+}
+
+// case study
+.case-study {
+    h2,
+    .h2 {
+        font-size: 3.2rem;
+        line-height: 120%;
+        margin-bottom: 40px;
+    }
+}
+
+.mod {
+    margin: 100px 0;
+}
+
+// Fifty-fifty
+.col-fifty-fifty {
+    &.square {
+        aspect-ratio: 1 / 1;
+    }
+    &.col-img {
+        margin-top: 45px;
+        > img,
+        > video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    img,
+    video {
+        width: 100%;
+        height: auto;
+    }
+    .dithered-bg {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 45px;
+        background-color: var(--cs-primary);
+    }
+    p {
+        font-size: 1.8rem;
+        line-height: 140%;
+        &:not(:last-child) {
+            margin-bottom: 1em;
+        }
+    }
+    ul {
+        font-size: 1.8rem;
+        line-height: 140%;
+        list-style: none;
+        &:not(:last-child) {
+            margin-bottom: 1em;
+        }
+        > li {
+            position: relative;
+            &::before {
+                position: absolute;
+                top: 0;
+                left: -1.5em;
+                content: "↦";
+            }
+        }
+    }
+}
+
+// image full size
+.wrapper-img-full {
+    img,
+    video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+// testimonial
+.wrapper-testimonial {
+    blockquote {
+        p {
+            position: relative;
+            display: block;
+            &::before {
+                content: "“";
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translate3d(-150%, 0, 0);
+            }
+            &::after {
+                content: "\00a0”";
+            }
+        }
+        footer {
+            margin-top: 20px;
+            > span {
+                display: block;
+            }
         }
     }
 }
@@ -437,14 +510,6 @@ div.project {
 }
 
 @media (min-width: $phone) {
-    .header {
-        a {
-            color: $primary;
-            text-decoration: none;
-            text-underline-offset: 2px;
-            font-size: 1.6rem;
-        }
-    }
     .wrapper-title,
     .title-a {
         font-size: 3rem;
@@ -512,6 +577,47 @@ div.project {
         font-size: 6.5rem;
         line-height: 78px;
         margin-bottom: 75px;
+    }
+    // case study
+    .case-study {
+        h2,
+        .h2 {
+            margin-bottom: 70px;
+        }
+    }
+
+    .mod {
+        margin: 130px 0;
+    }
+    // Fifty-fifty
+    .wrapper-fifty-fifty {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        &.reversed {
+            flex-direction: row-reverse;
+        }
+    }
+    .col-fifty-fifty {
+        flex: 0 0 auto;
+        width: 50%;
+        &:first-child {
+            margin-bottom: 0;
+        }
+        &.col-img {
+            margin-top: 0;
+        }
+    }
+
+    // testimonial
+    .wrapper-testimonial {
+        blockquote {
+            footer {
+                margin-top: 40px;
+                font-size: 2.1rem;
+                line-height: 120%;
+            }
+        }
     }
 }
 @media (min-width: $desktop) {
