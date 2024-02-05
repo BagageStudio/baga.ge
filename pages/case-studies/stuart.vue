@@ -344,6 +344,10 @@ useHead({
             content: "https://baga.ge/stuart.jpg",
         },
         {
+            property: "og:url",
+            content: "https://baga.ge/case-studies/stuart",
+        },
+        {
             property: "og:description",
             content:
                 "Bagage provided ongoing support for the development and evolution of two websites for Stuart, addressing significant growth challenges.",

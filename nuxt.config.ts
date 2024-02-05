@@ -19,30 +19,12 @@ export default defineNuxtConfig({
                     content: "width=device-width, initial-scale=1.0",
                 },
                 {
-                    property: "og:title",
-                    content: "Bagage — Creative development studio",
-                },
-                {
                     property: "og:site_name",
                     content: "Bagage",
                 },
                 {
-                    property: "og:url",
-                    content: "https://baga.ge/",
-                },
-                {
                     property: "og:type",
                     content: "website",
-                },
-                {
-                    name: "image",
-                    property: "og:image",
-                    content: "https://baga.ge/bagage.jpg",
-                },
-                {
-                    name: "image",
-                    property: "og:image:secure_url",
-                    content: "https://baga.ge/bagage.jpg",
                 },
                 {
                     property: "og:image:width",
@@ -50,7 +32,7 @@ export default defineNuxtConfig({
                 },
                 {
                     property: "og:image:height",
-                    content: "627",
+                    content: "630",
                 },
                 {
                     property: "twitter:card",
@@ -63,16 +45,6 @@ export default defineNuxtConfig({
                 {
                     property: "twitter:creator",
                     content: "BagageStudio",
-                },
-                {
-                    property: "og:description",
-                    content:
-                        "Bagage is a two man creative development studio that assists projects both technically and visually.",
-                },
-                {
-                    name: "description",
-                    content:
-                        "Bagage is a two man creative development studio that assists projects both technically and visually.",
                 },
             ],
             link: [
