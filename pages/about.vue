@@ -254,6 +254,10 @@ onMounted(async () => {
 useHead({
     meta: [
         {
+            property: "og:title",
+            content: "Bagage — Creative development studio",
+        },
+        {
             name: "image",
             property: "og:image",
             content: "https://baga.ge/bagage-dark.jpg",
@@ -262,6 +266,20 @@ useHead({
             name: "image",
             property: "og:image:secure_url",
             content: "https://baga.ge/bagage-dark.jpg",
+        },
+        {
+            property: "og:url",
+            content: "https://baga.ge/about",
+        },
+        {
+            property: "og:description",
+            content:
+                "Bagage is a two man creative development studio that assists projects both technically and visually.",
+        },
+        {
+            name: "description",
+            content:
+                "Bagage is a two man creative development studio that assists projects both technically and visually.",
         },
     ],
     link: [

@@ -13,12 +13,30 @@ const options = {
 useHead({
     meta: [
         {
+            property: "og:title",
+            content: "Bagage — Creative development studio",
+        },
+        {
             property: "og:image",
             content: "https://baga.ge/bagage.jpg",
         },
         {
             property: "og:image:secure_url",
             content: "https://baga.ge/bagage.jpg",
+        },
+        {
+            property: "og:url",
+            content: "https://baga.ge/cal",
+        },
+        {
+            property: "og:description",
+            content:
+                "Bagage is a two man creative development studio that assists projects both technically and visually.",
+        },
+        {
+            name: "description",
+            content:
+                "Bagage is a two man creative development studio that assists projects both technically and visually.",
         },
     ],
     link: [
