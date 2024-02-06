@@ -16,11 +16,17 @@ let projectsAnimation;
 let manifestoTitleAnimation;
 let manifestoValuesAnimation;
 
-export async function homeEnter(done = () => {}) {
-    await gsap.to("#overlay", {
-        duration: 0.4,
-        backgroundColor: "#F5E8E7",
-    });
+export async function homeEnter({ done = () => {}, firstLoad = false }) {
+    if (!firstLoad) {
+        gsap.set("#overlay", {
+            backgroundColor: "#F5E8E7",
+        });
+
+        await gsap.to("#overlay", {
+            duration: 0.4,
+            opacity: 1,
+        });
+    }
 
     await WebGL.initializeHome();
     homeLoaded(done);
@@ -41,7 +47,9 @@ export function homeLoaded(done) {
         },
     });
 
-    tl.set("#overlay", { backgroundColor: "transparent" });
+    tl.set("#overlay", { opacity: 0 });
+
+    document.documentElement.classList.remove("no-scroll");
 
     tl.to(
         webglAppear,
@@ -93,13 +101,14 @@ export function homeLoaded(done) {
 }
 
 export function homeLeave(done) {
-    killAnimations();
+    document.documentElement.classList.add("no-scroll");
 
     const webglAppear = { typoOpacity: 1, typoScale: 1, noiseOpacity: 1 };
 
     const tl = gsap.timeline({
         paused: true,
         onComplete: () => {
+            killAnimations();
             done();
         },
     });

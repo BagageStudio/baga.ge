@@ -8,6 +8,7 @@ export function CreateHelloAnimation() {
         y: 0,
         scrollOut: 0,
     };
+    WebGl.setLogo(logo);
 
     return gsap.to(logo, {
         scrollTrigger: {

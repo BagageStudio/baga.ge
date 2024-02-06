@@ -52,6 +52,17 @@ html {
             color: $black;
         }
     }
+    &.case-stuart {
+        background-color: #00249c;
+        ::-moz-selection {
+            background: #fff;
+            color: #00249c;
+        }
+        ::selection {
+            background: #fff;
+            color: #00249c;
+        }
+    }
 }
 
 body {
