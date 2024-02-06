@@ -6,6 +6,8 @@ import {
     CreateImagesAnimation,
 } from "~/assets/js/scroll/about";
 
+import { lenis } from "~/assets/js/scroll/scroll";
+
 import WebGL from "~/assets/js/WebGL";
 
 let helloAnimation;
@@ -75,6 +77,7 @@ export function aboutLoaded(done) {
 
     tl.set("#overlay", { opacity: 0 });
 
+    if (lenis && lenis.isStopped) lenis.start();
     document.documentElement.classList.remove("no-scroll");
 
     tl.to(
@@ -118,6 +121,7 @@ export function aboutLoaded(done) {
 }
 
 export function aboutLeave(done) {
+    if (lenis) lenis.stop();
     document.documentElement.classList.add("no-scroll");
     killAnimations();
 

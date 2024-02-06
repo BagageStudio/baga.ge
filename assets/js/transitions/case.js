@@ -2,6 +2,8 @@ import { gsap } from "gsap";
 
 import { CreateHelloAnimation } from "~/assets/js/scroll/case";
 
+import { lenis } from "~/assets/js/scroll/scroll";
+
 import WebGL from "~/assets/js/WebGL";
 
 import cases from "~/assets/data/cases";
@@ -63,6 +65,7 @@ export function caseLoaded(done) {
 
     tl.set("#overlay", { opacity: 0 });
 
+    if (lenis && lenis.isStopped) lenis.start();
     document.documentElement.classList.remove("no-scroll");
 
     tl.set(["#wrapperTitle", "#wrapperIntro", "#colInfos"], {
@@ -145,6 +148,7 @@ export function caseLoaded(done) {
 }
 
 export function caseLeave(done) {
+    if (lenis) lenis.stop();
     document.documentElement.classList.add("no-scroll");
     killAnimations();
 

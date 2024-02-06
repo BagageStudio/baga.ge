@@ -6,29 +6,6 @@ import { SlowMo } from "gsap/EasePack";
 
 import WebGl from "../WebGL";
 
-export function CreateScroll() {
-    gsap.registerPlugin(ScrollTrigger, SlowMo);
-
-    const lenis = new Lenis({ smooth: true });
-
-    lenis.on("scroll", () => {
-        ScrollTrigger.update();
-        WebGl.setScroll({
-            y: lenis.animatedScroll,
-            velocity: lenis.velocity,
-        });
-    });
-
-    const raf = (time) => {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    };
-
-    requestAnimationFrame(raf);
-
-    return { lenis };
-}
-
 export function CreateProjectsAnimation() {
     const mm = gsap.matchMedia();
 

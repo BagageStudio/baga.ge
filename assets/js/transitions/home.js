@@ -10,6 +10,8 @@ import {
     CreateTextMasksAnimation,
 } from "~/assets/js/scroll/home";
 
+import { lenis } from "~/assets/js/scroll/scroll";
+
 let textMasksAnimation;
 let helloAnimation;
 let projectsAnimation;
@@ -49,6 +51,7 @@ export function homeLoaded(done) {
 
     tl.set("#overlay", { opacity: 0 });
 
+    if (lenis && lenis.isStopped) lenis.start();
     document.documentElement.classList.remove("no-scroll");
 
     tl.to(
@@ -101,6 +104,7 @@ export function homeLoaded(done) {
 }
 
 export function homeLeave(done) {
+    if (lenis) lenis.stop();
     document.documentElement.classList.add("no-scroll");
 
     const webglAppear = { typoOpacity: 1, typoScale: 1, noiseOpacity: 1 };

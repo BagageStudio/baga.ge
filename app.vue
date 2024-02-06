@@ -31,18 +31,19 @@
 </template>
 
 <script setup>
-import { CreateScroll } from "~/assets/js/scroll/home";
+import { CreateScroll, lenis } from "~/assets/js/scroll/scroll";
 
 const showGrid = ref(false);
 
 const nuxtApp = useNuxtApp();
 
 if (process.client) {
-    const { lenis } = CreateScroll();
+    const scroll = CreateScroll();
     if (window.history.scrollRestoration) {
         window.history.scrollRestoration = "manual";
     } else {
         window.onbeforeunload = function () {
+            lenis.scrollTo(0, { immediate: true });
             window.scrollTo(0, 0);
         };
     }
