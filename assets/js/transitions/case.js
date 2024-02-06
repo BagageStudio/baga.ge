@@ -29,13 +29,18 @@ async function getWebGlOptions(id) {
     };
 }
 
-export async function caseEnter(el, done = () => {}) {
+export async function caseEnter({ el, done = () => {}, firstLoad = false }) {
     const options = await getWebGlOptions(el.dataset.id);
 
-    await gsap.to("#overlay", {
-        duration: 0.4,
-        backgroundColor: "#00249C",
-    });
+    if (!firstLoad) {
+        gsap.set("#overlay", {
+            backgroundColor: "#00249C",
+        });
+        await gsap.to("#overlay", {
+            duration: 0.4,
+            opacity: 1,
+        });
+    }
 
     await WebGL.initializeCase(options);
 
@@ -56,7 +61,7 @@ export function caseLoaded(done) {
         },
     });
 
-    tl.set("#overlay", { backgroundColor: "transparent" });
+    tl.set("#overlay", { opacity: 0 });
     tl.set(["#wrapperTitle", "#wrapperIntro", "#colInfos"], {
         y: 200,
         rotateX: -45,
@@ -111,6 +116,7 @@ export function caseLoaded(done) {
             },
             "start+=0.4"
         )
+
         .to(
             "#colInfos",
             {
@@ -121,6 +127,15 @@ export function caseLoaded(done) {
                 ease: "power4.inOut",
             },
             "start+=0.5"
+        )
+        .to(
+            "#mainCase",
+            {
+                y: 0,
+                duration: 1,
+                ease: "power3.out",
+            },
+            "start+=0.8"
         );
 
     tl.play();
@@ -160,6 +175,15 @@ export function caseLeave(done) {
             {
                 duration: 0.4,
                 opacity: 0,
+            },
+            "start"
+        )
+        .to(
+            "#mainCase",
+            {
+                y: () => `${window.innerHeight - window.innerWidth / 3}`,
+                duration: 0.4,
+                ease: "power3.out",
             },
             "start"
         )

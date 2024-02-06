@@ -70,7 +70,7 @@
                 </div>
             </div>
         </div>
-        <div class="case-study container">
+        <div class="case-study container" id="mainCase">
             <div class="case-study-content">
                 <div class="mod wrapper-fifty-fifty reversed">
                     <div class="col-fifty-fifty content-pad">
@@ -321,7 +321,7 @@ onMounted(async () => {
     const initialLoad =
         !document.documentElement.classList.contains("already-loaded");
     if (initialLoad) {
-        caseEnter(caseStudy.value);
+        caseEnter({ el: caseStudy.value, firstLoad: true });
         document.documentElement.classList.add("already-loaded");
     }
 });
@@ -379,7 +379,7 @@ useHead({
         },
     ],
     htmlAttrs: {
-        class: "about-page",
+        class: "case-stuart",
     },
 });
 
@@ -389,7 +389,7 @@ definePageMeta({
         name: "about",
         mode: "out-in",
         onEnter: (el, done) => {
-            caseEnter(el, done);
+            caseEnter({ el, done });
         },
         onLeave: (el, done) => {
             caseLeave(done);
@@ -449,6 +449,7 @@ definePageMeta({
 .case-study {
     padding-top: 120px;
     background-color: $black;
+    transform: translateY(calc(100vh - 33vw));
 }
 .case-study-content {
     padding: 0 var(--gutter-out-monolith);

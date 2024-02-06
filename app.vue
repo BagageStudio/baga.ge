@@ -61,6 +61,7 @@ if (process.client) {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: transparent;
+    background-color: #f5e8e7;
+    opacity: 0;
 }
 </style>

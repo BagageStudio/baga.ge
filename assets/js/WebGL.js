@@ -188,7 +188,6 @@ class WebGL {
         ditherTextureImage,
         ditherPaletteImage,
     }) {
-        console.log(id, mainTypoImage, ditherTextureImage, ditherPaletteImage);
         return new Promise(async (resolve, reject) => {
             const textures = await this.loadImages({
                 [id + "TypoImage"]: mainTypoImage,

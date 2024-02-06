@@ -12,7 +12,7 @@ let helloAnimation;
 let thingiesAnimation;
 let imagesAnimation;
 
-export async function aboutEnter(el, done = () => {}) {
+export async function aboutEnter({ el, done = () => {}, firstLoad = false }) {
     const img0 = el.querySelector("#img0");
     const img1 = el.querySelector("#img1");
     const img2 = el.querySelector("#img2");
@@ -33,10 +33,16 @@ export async function aboutEnter(el, done = () => {}) {
         type: 3,
     };
 
-    await gsap.to("#overlay", {
-        duration: 0.4,
-        backgroundColor: "#191919",
-    });
+    if (!firstLoad) {
+        gsap.set("#overlay", {
+            backgroundColor: "#191919",
+        });
+
+        await gsap.to("#overlay", {
+            duration: 0.4,
+            opacity: 1,
+        });
+    }
 
     await WebGL.initializeAbout({
         imgs: [img0, img1, img2],
@@ -67,7 +73,7 @@ export function aboutLoaded(done) {
         },
     });
 
-    tl.set("#overlay", { backgroundColor: "transparent" });
+    tl.set("#overlay", { opacity: 0 });
 
     tl.to(
         webglAppear,

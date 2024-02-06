@@ -246,7 +246,7 @@ onMounted(async () => {
     const initialLoad =
         !document.documentElement.classList.contains("already-loaded");
     if (initialLoad) {
-        aboutEnter(about.value);
+        aboutEnter({ el: about.value, firstLoad: true });
         document.documentElement.classList.add("already-loaded");
     }
 });
@@ -313,7 +313,7 @@ definePageMeta({
         name: "about",
         mode: "out-in",
         onEnter: (el, done) => {
-            aboutEnter(el, done);
+            aboutEnter({ el, done });
         },
         onLeave: (el, done) => {
             aboutLeave(done);

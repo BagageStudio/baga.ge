@@ -330,12 +330,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a
-                            href="https://stuart.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project"
-                        >
+                        <nuxt-link to="/case-studies/stuart" class="project">
                             <div class="project-line wrapper-name-arrow">
                                 <h3 class="project-name line-content">
                                     Stuart
@@ -376,13 +371,13 @@
                             </div>
                             <div class="project-line">
                                 <span class="project-type line-content">
-                                    ↳ See it live
+                                    ↳ View case study
                                 </span>
                                 <div class="line">
                                     <div class="overflow-line"></div>
                                 </div>
                             </div>
-                        </a>
+                        </nuxt-link>
                         <div class="project">
                             <div class="project-line wrapper-name-arrow">
                                 <h3 class="project-name line-content">
@@ -797,7 +792,7 @@ onMounted(async () => {
 
     if (initialLoad) {
         document.documentElement.classList.add("already-loaded");
-        homeEnter();
+        homeEnter({ firstLoad: true });
     }
 });
 
@@ -858,7 +853,7 @@ definePageMeta({
         name: "home",
         mode: "out-in",
         onEnter(el, done) {
-            homeEnter(done);
+            homeEnter({ done });
         },
         onLeave: (el, done) => {
             homeLeave(done);
