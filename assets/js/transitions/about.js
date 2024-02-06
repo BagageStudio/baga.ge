@@ -75,6 +75,8 @@ export function aboutLoaded(done) {
 
     tl.set("#overlay", { opacity: 0 });
 
+    document.documentElement.classList.remove("no-scroll");
+
     tl.to(
         webglAppear,
         {
@@ -116,6 +118,7 @@ export function aboutLoaded(done) {
 }
 
 export function aboutLeave(done) {
+    document.documentElement.classList.add("no-scroll");
     killAnimations();
 
     const webglAppear = { typoOpacity: 1, typoScale: 1, noiseOpacity: 0 };

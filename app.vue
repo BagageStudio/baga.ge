@@ -31,7 +31,6 @@
 </template>
 
 <script setup>
-import WebGL from "~/assets/js/WebGL";
 import { CreateScroll } from "~/assets/js/scroll/home";
 
 const showGrid = ref(false);
@@ -39,7 +38,7 @@ const showGrid = ref(false);
 const nuxtApp = useNuxtApp();
 
 if (process.client) {
-    const lenis = CreateScroll();
+    const { lenis } = CreateScroll();
     if (window.history.scrollRestoration) {
         window.history.scrollRestoration = "manual";
     } else {
@@ -48,6 +47,7 @@ if (process.client) {
         };
     }
     nuxtApp.$router.afterEach((to, from) => {
+        lenis.scrollTo(0, { immediate: true });
         window.scrollTo(0, 0);
     });
 }

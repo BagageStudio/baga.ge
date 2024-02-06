@@ -62,6 +62,9 @@ export function caseLoaded(done) {
     });
 
     tl.set("#overlay", { opacity: 0 });
+
+    document.documentElement.classList.remove("no-scroll");
+
     tl.set(["#wrapperTitle", "#wrapperIntro", "#colInfos"], {
         y: 200,
         rotateX: -45,
@@ -142,6 +145,7 @@ export function caseLoaded(done) {
 }
 
 export function caseLeave(done) {
+    document.documentElement.classList.add("no-scroll");
     killAnimations();
 
     const webglAppear = { typoOpacity: 1, typoScale: 1, noiseOpacity: 0 };
