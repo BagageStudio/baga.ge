@@ -51,8 +51,9 @@ export function homeLoaded(done) {
 
     tl.set("#overlay", { opacity: 0 });
 
-    if (lenis && lenis.isStopped) lenis.start();
     document.documentElement.classList.remove("no-scroll");
+    if (lenis && lenis.isStopped) lenis.start();
+    lenis.resize();
 
     tl.to(
         webglAppear,
