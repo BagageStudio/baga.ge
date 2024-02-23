@@ -4,7 +4,7 @@
         id="case"
         ref="caseStudy"
         style="--cs-primary: #1bd292"
-        data-id="stuart"
+        data-id="spacefill"
     >
         <Header />
         <div class="case-study-intro">
@@ -132,7 +132,7 @@
                 </div>
                 <div class="mod wrapper-fifty-fifty">
                     <div class="col-fifty-fifty content-pad">
-                        <h2> Combining Two Websites into One </h2>
+                        <h2>Combining Two Websites into One</h2>
                         <p>
                             In addition to the goal of creating a modular site,
                             the objective of this new website was to combine
@@ -144,14 +144,14 @@
                             to harness the best of both worlds:
                         </p>
                         <ul>
-                            <li
-                                >Greater scalability and code control than
-                                Webflow</li
-                            >
-                            <li
-                                >Enhanced security and better performance than
-                                WordPress</li
-                            >
+                            <li>
+                                Greater scalability and code control than
+                                Webflow
+                            </li>
+                            <li>
+                                Enhanced security and better performance than
+                                WordPress
+                            </li>
                         </ul>
                     </div>
                     <div class="col-fifty-fifty col-img square content-pad">

@@ -4,4 +4,9 @@ export default {
         ditherPaletteImage: "stuart-quad",
         ditherTextureImage: "spiral",
     },
+    spacefill: {
+        mainTypoImage: "spacefill",
+        ditherPaletteImage: "spacefill-quad",
+        ditherTextureImage: "five",
+    },
 };
