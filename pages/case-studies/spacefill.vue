@@ -3,7 +3,7 @@
         class="case page"
         id="case"
         ref="caseStudy"
-        style="--cs-primary: #0091fe"
+        style="--cs-primary: #1bd292"
         data-id="stuart"
     >
         <Header />
@@ -99,20 +99,18 @@
                         </p>
                     </div>
                     <div class="col-fifty-fifty col-img square content-pad">
-                        <div class="dithered-bg">
-                            <video
-                                type="video/mp4"
-                                src="/stuart-restaurants.mp4"
-                                autoplay
-                                muted
-                                loop
-                            ></video>
-                        </div>
+                        <video
+                            type="video/mp4"
+                            src="/spacefill-modular.mp4"
+                            autoplay
+                            muted
+                            loop
+                        ></video>
                     </div>
                 </div>
                 <div class="mod wrapper-img-full content-pad">
                     <Image
-                        :url="'/stuart-screen-1.png'"
+                        :url="'/spacefill-screen-3.png'"
                         :alt="'A screenshot of Stuart home page.'"
                         :width="2880"
                         :height="1580"
@@ -144,12 +142,13 @@
                     </div>
                     <div class="col-fifty-fifty col-img square content-pad">
                         <div class="dithered-bg">
-                            <Image
-                                :url="'/stuart-screen-2.png'"
-                                :alt="`A screenshot of the 'Get in touch' form on Stuart website`"
-                                :width="2880"
-                                :height="1580"
-                            />
+                            <video
+                                type="video/mp4"
+                                src="/spacefill-integrations.mp4"
+                                autoplay
+                                muted
+                                loop
+                            ></video>
                         </div>
                     </div>
                 </div>
@@ -183,7 +182,7 @@
                         </div>
                         <div class="credits-detail content-pad">
                             <div class="detail-title">Font</div>
-                            <span>René Bieder</span>
+                            <span>Campton by René Bieder</span>
                         </div>
                     </div>
                 </div>
@@ -260,12 +259,12 @@ useHead({
         {
             property: "og:description",
             content:
-                "Bagage combine two sites into one new modular website, allowing landing pages to be created on the fly.",
+                "Bagage combined two sites into one new modular website, allowing landing pages to be created on the fly.",
         },
         {
             name: "description",
             content:
-                "Bagage combine two sites into one new modular website, allowing landing pages to be created on the fly.",
+                "Bagage combined two sites into one new modular website, allowing landing pages to be created on the fly.",
         },
     ],
     link: [
@@ -463,6 +462,10 @@ footer {
     .col-title {
         flex: 0 0 auto;
         width: percentage(math.div(2, 6));
+    }
+    .col-credits {
+        flex: 0 0 auto;
+        width: percentage(math.div(4, 6));
     }
 }
 

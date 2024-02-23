@@ -273,7 +273,7 @@
                         </div>
                         <div class="credits-detail content-pad">
                             <div class="detail-title">Font</div>
-                            <span>Grilli Type</span>
+                            <span>GT Walsheim by Grilli Type</span>
                         </div>
                     </div>
                 </div>
@@ -553,6 +553,10 @@ footer {
     .col-title {
         flex: 0 0 auto;
         width: percentage(math.div(2, 6));
+    }
+    .col-credits {
+        flex: 0 0 auto;
+        width: percentage(math.div(4, 6));
     }
 }
 
