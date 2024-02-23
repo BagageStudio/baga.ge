@@ -116,6 +116,20 @@
                         :height="1580"
                     />
                 </div>
+                <div class="mod wrapper-kpis">
+                    <div class="col-kpi content-pad">
+                        <span class="key-figure">-25%</span>
+                        <span>Bounce rate</span>
+                    </div>
+                    <div class="col-kpi content-pad">
+                        <span class="key-figure">+25%</span>
+                        <span>Engagement rate</span>
+                    </div>
+                    <div class="col-kpi content-pad">
+                        <span class="key-figure">+3.5%</span>
+                        <span>Conversion rate</span>
+                    </div>
+                </div>
                 <div class="mod wrapper-fifty-fifty">
                     <div class="col-fifty-fifty content-pad">
                         <h2> Combining Two Websites into One </h2>
@@ -178,7 +192,8 @@
                     <div class="col-credits credits-details">
                         <div class="credits-detail content-pad">
                             <div class="detail-title">Design</div>
-                            <span>?</span>
+                            <span>Make the Grade</span>
+                            <span>Philippine Breuil</span>
                         </div>
                         <div class="credits-detail content-pad">
                             <div class="detail-title">Font</div>

@@ -499,6 +499,32 @@ div.project {
     }
 }
 
+// kpis
+.col-kpi {
+    position: relative;
+    padding-top: 30px;
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: var(--gutter);
+        right: var(--gutter);
+        border-top: 1px solid $secondary;
+    }
+    span {
+        display: block;
+        font-size: 2.1rem;
+        line-height: 120%;
+        &.key-figure {
+            font-size: 3.2rem;
+            margin-bottom: 5px;
+        }
+    }
+}
+
 @media (min-width: 360px) {
     .footer {
         font-size: 1.2rem;
@@ -630,6 +656,19 @@ div.project {
             }
         }
     }
+
+    // kpis
+    .wrapper-kpis {
+        display: flex;
+        align-items: flex-start;
+    }
+    .col-kpi {
+        flex: 0 0 auto;
+        width: percentage(math.div(1, 3));
+        &:not(:last-child) {
+            margin-bottom: 0;
+        }
+    }
 }
 @media (min-width: $desktop) {
     .monolith {
@@ -754,6 +793,17 @@ div.project {
         order: 3;
         flex: 0 0 auto;
         width: calc(50% - 300px);
+    }
+
+    // kpis
+    .col-kpi {
+        span {
+            font-size: 3.2rem;
+            &.key-figure {
+                font-size: 4.5rem;
+                margin-bottom: 10px;
+            }
+        }
     }
 }
 @media (min-width: $desktop-large) {
