@@ -34,6 +34,7 @@ float map(float value,float min1,float max1,float min2,float max2){
 
 // 60px from the top of thw viewport
 float topOffset=100.;
+float typoHeightInVw=.17;// 17vw
 
 // TODO: The translation should be the number of pixels scrolled and depending of the viewport width, but not of viewport height !
 float scrollOutVerticalTranslation=1.2;
@@ -54,7 +55,10 @@ vec4 typo(){
     float textureAspect=uImageSizes.x/uImageSizes.y;
     float frameAspect=uResolution.x/uResolution.y;
     float textureFrameRatio=textureAspect/frameAspect;
-    vec2 textureScale=vec2(1.,textureFrameRatio);
+    // vec2 textureScale=vec2(1.,textureFrameRatio);
+    
+    // Force typo height to be always the same size. No matter the width
+    vec2 textureScale=vec2(1.,uResolution.y/uResolution.x * (1. / typoHeightInVw));
     
     
     // We want the text to be at the top, so we apply the ratio when y in 0 -> 1 (it's 1 -> 0 by default).
