@@ -28,6 +28,7 @@ async function getWebGlOptions(id) {
         mainTypoImage: mainTypoImage.default,
         ditherPaletteImage: ditherPaletteImage.default,
         ditherTextureImage: ditherTextureImage.default,
+        color: caseData.color,
     };
 }
 
@@ -36,7 +37,7 @@ export async function caseEnter({ el, done = () => {}, firstLoad = false }) {
 
     if (!firstLoad) {
         gsap.set("#overlay", {
-            backgroundColor: "#00249C",
+            backgroundColor: options.color,
         });
         await gsap.to("#overlay", {
             duration: 0.4,
