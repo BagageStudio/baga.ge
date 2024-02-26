@@ -22,10 +22,8 @@
                         id="wrapperIntro"
                     >
                         <p>
-                            Spacefill acts as a bridge, allowing businesses to
-                            find the perfect storage solution for their needs
-                            while helping warehouses connect with new customers
-                            and optimize their operations.
+                            Spacefill is a B2B SaaS solution for the management
+                            of outsourced warehouses and logistics partners.
                         </p>
                         <p>
                             In 2023, we worked on the creation of their new
