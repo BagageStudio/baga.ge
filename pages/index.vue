@@ -77,12 +77,7 @@
                         </div>
                     </div>
                     <div class="projects-list">
-                        <a
-                            href="https://spacefill.eu/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project"
-                        >
+                        <nuxt-link to="/case-studies/spacefill" class="project">
                             <div class="project-line wrapper-name-arrow">
                                 <h3 class="project-name line-content">
                                     Spacefill
@@ -115,11 +110,11 @@
                             </div>
                             <div class="project-line">
                                 <span class="project-type line-content">
-                                    ↳ See it live
+                                    ↳ View case study
                                 </span>
                                 <div class="line"></div>
                             </div>
-                        </a>
+                        </nuxt-link>
                         <a
                             href="https://shares.io/"
                             target="_blank"

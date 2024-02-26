@@ -63,6 +63,17 @@ html {
             color: #00249c;
         }
     }
+    &.case-spacefill {
+        background-color: #1bd292;
+        ::-moz-selection {
+            background: #fff;
+            color: #1bd292;
+        }
+        ::selection {
+            background: #fff;
+            color: #1bd292;
+        }
+    }
 }
 
 body {

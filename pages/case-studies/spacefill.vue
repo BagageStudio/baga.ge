@@ -111,7 +111,7 @@
                 <div class="mod wrapper-img-full content-pad">
                     <Image
                         :url="'/spacefill-screen-3.png'"
-                        :alt="'A screenshot of Stuart home page.'"
+                        :alt="'A screenshot of Spacefill for 3PL page.'"
                         :width="2880"
                         :height="1580"
                     />
@@ -260,12 +260,12 @@ useHead({
         {
             name: "image",
             property: "og:image",
-            content: "https://baga.ge/stuart.jpg",
+            content: "https://baga.ge/spacefill.jpg",
         },
         {
             name: "image",
             property: "og:image:secure_url",
-            content: "https://baga.ge/stuart.jpg",
+            content: "https://baga.ge/spacefill.jpg",
         },
         {
             property: "og:url",
