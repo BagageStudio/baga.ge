@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxtjs/sitemap": "^5.1.0",
     "nuxt": "^3.7.1",
     "nuxt-calendly": "^0.1.17",
     "sass": "^1.66.1",
