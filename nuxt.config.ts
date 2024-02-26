@@ -7,6 +7,9 @@ export default defineNuxtConfig({
     site: {
         url: 'https://baga.ge',
     },
+    sitemap: {
+        exclude: ['/cal', '/testimonial']
+    },
     app: {
         head: {
             title: "Bagage — Creative development studio",

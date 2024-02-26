@@ -10,9 +10,6 @@
 const options = {
     url: "https://calendly.com/bagage-adrien/echange-de-30-min?text_color=191919&primary_color=f24f2b",
 };
-defineRouteRules({
-    robots: false,
-});
 useHead({
     meta: [
         {

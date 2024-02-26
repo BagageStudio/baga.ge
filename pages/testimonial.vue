@@ -3,9 +3,6 @@
 </template>
 
 <script setup>
-defineRouteRules({
-    robots: false,
-});
 useHead({
     meta: [
         {
