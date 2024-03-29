@@ -50,6 +50,7 @@
                                     <li>Composable architecture / JAMstack</li>
                                     <li>Nuxt.js</li>
                                     <li>Headless CMS</li>
+                                    <li>Webflow</li>
                                     <li>Creative development</li>
                                 </ul>
                             </div>
@@ -77,6 +78,96 @@
                         </div>
                     </div>
                     <div class="projects-list">
+                        <a
+                            href="https://www.silvr.co/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project"
+                        >
+                            <div class="project-line wrapper-name-arrow">
+                                <h3 class="project-name line-content">
+                                    Silvr
+                                </h3>
+                                <div class="wrapper-arrow-number line-content">
+                                    <div class="project-number">13</div>
+                                    <div class="project-arrow">↗</div>
+                                </div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-year line-content"
+                                    >2024 — Present</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-stack line-content"
+                                    >Webflow</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <p class="project-intro line-content">
+                                    Adding new features and interactivity to the
+                                    existing Webflow website.
+                                </p>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-type line-content">
+                                    ↳ See it live
+                                </span>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="project">
+                            <div class="project-line wrapper-name-arrow">
+                                <h3 class="project-name line-content">
+                                    HeyTeam
+                                </h3>
+                                <div class="wrapper-arrow-number line-content">
+                                    <div class="project-number">12</div>
+                                </div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-year line-content"
+                                    >2024 — Present</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-stack line-content"
+                                    >Vue.js</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <p class="project-intro line-content">
+                                    Revamping the app components based on new
+                                    designs to enhance the user experience.
+                                </p>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                        </div>
                         <nuxt-link to="/case-studies/spacefill" class="project">
                             <div class="project-line wrapper-name-arrow">
                                 <h3 class="project-name line-content">
