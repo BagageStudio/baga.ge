@@ -92,42 +92,32 @@
                                     <div class="project-number">13</div>
                                     <div class="project-arrow">↗</div>
                                 </div>
-                                <div class="line">
-                                    <div class="overflow-line"></div>
-                                </div>
+                                <div class="line"></div>
                             </div>
                             <div class="project-line">
                                 <span class="project-year line-content"
                                     >2024 — Present</span
                                 >
-                                <div class="line">
-                                    <div class="overflow-line"></div>
-                                </div>
+                                <div class="line"></div>
                             </div>
                             <div class="project-line">
                                 <span class="project-stack line-content"
                                     >Webflow</span
                                 >
-                                <div class="line">
-                                    <div class="overflow-line"></div>
-                                </div>
+                                <div class="line"></div>
                             </div>
                             <div class="project-line">
                                 <p class="project-intro line-content">
                                     Adding new features and interactivity to the
                                     existing Webflow website.
                                 </p>
-                                <div class="line">
-                                    <div class="overflow-line"></div>
-                                </div>
+                                <div class="line"></div>
                             </div>
                             <div class="project-line">
                                 <span class="project-type line-content">
                                     ↳ See it live
                                 </span>
-                                <div class="line">
-                                    <div class="overflow-line"></div>
-                                </div>
+                                <div class="line"></div>
                             </div>
                         </a>
                         <div class="project">
@@ -177,19 +167,25 @@
                                     <div class="project-number">11</div>
                                     <div class="project-arrow">↗</div>
                                 </div>
-                                <div class="line"></div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
                             <div class="project-line">
                                 <span class="project-year line-content"
                                     >2023 — Present</span
                                 >
-                                <div class="line"></div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
                             <div class="project-line">
                                 <span class="project-stack line-content"
                                     >Nuxt.js DatoCMS Netlify</span
                                 >
-                                <div class="line"></div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
                             <div class="project-line">
                                 <p class="project-intro line-content">
@@ -197,13 +193,17 @@
                                     website, allowing landing pages to be
                                     created on the fly.
                                 </p>
-                                <div class="line"></div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
                             <div class="project-line">
                                 <span class="project-type line-content">
                                     ↳ View case study
                                 </span>
-                                <div class="line"></div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
                         </nuxt-link>
                         <a
