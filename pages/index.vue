@@ -142,7 +142,7 @@
                             </div>
                             <div class="project-line">
                                 <span class="project-stack line-content"
-                                    >Vue.js</span
+                                    >Vue.js Storybook</span
                                 >
                                 <div class="line">
                                     <div class="overflow-line"></div>
@@ -150,8 +150,8 @@
                             </div>
                             <div class="project-line">
                                 <p class="project-intro line-content">
-                                    Revamping the app components based on new
-                                    designs to enhance the user experience.
+                                    Revamping and documenting app components
+                                    based on a new design&nbsp;system.
                                 </p>
                                 <div class="line">
                                     <div class="overflow-line"></div>
