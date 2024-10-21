@@ -78,6 +78,44 @@
                         </div>
                     </div>
                     <div class="projects-list">
+                        <nuxt-link to="/case-studies/ring" class="project">
+                            <div class="project-line wrapper-name-arrow">
+                                <h3 class="project-name line-content">
+                                    Ring Capital
+                                </h3>
+                                <div class="wrapper-arrow-number line-content">
+                                    <div class="project-number">13</div>
+                                    <div class="project-arrow">↗</div>
+                                </div>
+                                <div class="line"></div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-year line-content"
+                                    >2021 — Present</span
+                                >
+                                <div class="line"></div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-stack line-content"
+                                    >Nuxt.js DatoCMS Netlify</span
+                                >
+                                <div class="line"></div>
+                            </div>
+                            <div class="project-line">
+                                <p class="project-intro line-content">
+                                    A VC website co-created to deploy a new,
+                                    impactful identity, and present their
+                                    portfolio.
+                                </p>
+                                <div class="line"></div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-type line-content">
+                                    ↳ See it live
+                                </span>
+                                <div class="line"></div>
+                            </div>
+                        </nuxt-link>
                         <a
                             href="https://www.silvr.co/"
                             target="_blank"
@@ -89,35 +127,45 @@
                                     Silvr
                                 </h3>
                                 <div class="wrapper-arrow-number line-content">
-                                    <div class="project-number">13</div>
+                                    <div class="project-number">12</div>
                                     <div class="project-arrow">↗</div>
                                 </div>
-                                <div class="line"></div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
                             <div class="project-line">
                                 <span class="project-year line-content"
                                     >2024 — Present</span
                                 >
-                                <div class="line"></div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
                             <div class="project-line">
                                 <span class="project-stack line-content"
                                     >Webflow</span
                                 >
-                                <div class="line"></div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
                             <div class="project-line">
                                 <p class="project-intro line-content">
                                     Adding new features and interactivity to the
                                     existing Webflow website.
                                 </p>
-                                <div class="line"></div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
                             <div class="project-line">
                                 <span class="project-type line-content">
                                     ↳ See it live
                                 </span>
-                                <div class="line"></div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
                         </a>
                         <div class="project">
@@ -126,7 +174,7 @@
                                     HeyTeam
                                 </h3>
                                 <div class="wrapper-arrow-number line-content">
-                                    <div class="project-number">12</div>
+                                    <div class="project-number">11</div>
                                 </div>
                                 <div class="line">
                                     <div class="overflow-line"></div>
@@ -164,7 +212,7 @@
                                     Spacefill
                                 </h3>
                                 <div class="wrapper-arrow-number line-content">
-                                    <div class="project-number">11</div>
+                                    <div class="project-number">10</div>
                                     <div class="project-arrow">↗</div>
                                 </div>
                                 <div class="line">
@@ -206,18 +254,13 @@
                                 </div>
                             </div>
                         </nuxt-link>
-                        <a
-                            href="https://shares.io/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project"
-                        >
+                        <div class="project">
                             <div class="project-line wrapper-name-arrow">
                                 <h3 class="project-name line-content">
                                     Shares
                                 </h3>
                                 <div class="wrapper-arrow-number line-content">
-                                    <div class="project-number">10</div>
+                                    <div class="project-number">9</div>
                                     <div class="project-arrow">↗</div>
                                 </div>
                                 <div class="line">
@@ -226,7 +269,7 @@
                             </div>
                             <div class="project-line">
                                 <span class="project-year line-content"
-                                    >2022 — Present</span
+                                    >2022 — 2024</span
                                 >
                                 <div class="line">
                                     <div class="overflow-line"></div>
@@ -257,7 +300,7 @@
                                     <div class="overflow-line"></div>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                         <a
                             href="https://lesindiens.netlify.app/"
                             target="_blank"
@@ -269,7 +312,7 @@
                                     Les Indiens
                                 </h3>
                                 <div class="wrapper-arrow-number line-content">
-                                    <div class="project-number">09</div>
+                                    <div class="project-number">08</div>
                                     <div class="project-arrow">↗</div>
                                 </div>
                                 <div class="line">
@@ -321,7 +364,7 @@
                                     Aircall
                                 </h3>
                                 <div class="wrapper-arrow-number line-content">
-                                    <div class="project-number">08</div>
+                                    <div class="project-number">07</div>
                                     <div class="project-arrow">↗</div>
                                 </div>
                                 <div class="line">
@@ -375,7 +418,7 @@
                                     Ondorse
                                 </h3>
                                 <div class="wrapper-arrow-number line-content">
-                                    <div class="project-number">07</div>
+                                    <div class="project-number">06</div>
                                     <div class="project-arrow">↗</div>
                                 </div>
                                 <div class="line">
@@ -422,7 +465,7 @@
                                     Stuart
                                 </h3>
                                 <div class="wrapper-arrow-number line-content">
-                                    <div class="project-number">06</div>
+                                    <div class="project-number">05</div>
                                     <div class="project-arrow">↗</div>
                                 </div>
                                 <div class="line">
@@ -470,7 +513,7 @@
                                     Blinkl
                                 </h3>
                                 <div class="wrapper-arrow-number line-content">
-                                    <div class="project-number">05</div>
+                                    <div class="project-number">04</div>
                                 </div>
                                 <div class="line">
                                     <div class="overflow-line"></div>
@@ -503,59 +546,6 @@
                                 </div>
                             </div>
                         </div>
-                        <a
-                            href="https://ringcp.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project"
-                        >
-                            <div class="project-line wrapper-name-arrow">
-                                <h3 class="project-name line-content">
-                                    Ring Capital
-                                </h3>
-                                <div class="wrapper-arrow-number line-content">
-                                    <div class="project-number">04</div>
-                                    <div class="project-arrow">↗</div>
-                                </div>
-                                <div class="line">
-                                    <div class="overflow-line"></div>
-                                </div>
-                            </div>
-                            <div class="project-line">
-                                <span class="project-year line-content"
-                                    >2021 — 2022</span
-                                >
-                                <div class="line">
-                                    <div class="overflow-line"></div>
-                                </div>
-                            </div>
-                            <div class="project-line">
-                                <span class="project-stack line-content"
-                                    >Nuxt.js DatoCMS Netlify</span
-                                >
-                                <div class="line">
-                                    <div class="overflow-line"></div>
-                                </div>
-                            </div>
-                            <div class="project-line">
-                                <p class="project-intro line-content">
-                                    A VC website co-created to deploy a new,
-                                    impactful identity, and present their
-                                    portfolio.
-                                </p>
-                                <div class="line">
-                                    <div class="overflow-line"></div>
-                                </div>
-                            </div>
-                            <div class="project-line">
-                                <span class="project-type line-content">
-                                    ↳ See it live
-                                </span>
-                                <div class="line">
-                                    <div class="overflow-line"></div>
-                                </div>
-                            </div>
-                        </a>
                         <a
                             href="https://shop.vrankenpommery.com/"
                             target="_blank"

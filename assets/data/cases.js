@@ -11,4 +11,10 @@ export default {
         ditherTextureImage: "five",
         color: "#19B77F",
     },
+    ring: {
+        mainTypoImage: "spacefill",
+        ditherPaletteImage: "spacefill-quad",
+        ditherTextureImage: "five",
+        color: "#FDDF41",
+    },
 };

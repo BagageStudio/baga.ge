@@ -74,6 +74,17 @@ html {
             color: #19b77f;
         }
     }
+    &.case-ring {
+        background-color: #FDDF41;
+        ::-moz-selection {
+            background: #fff;
+            color: #FDDF41;
+        }
+        ::selection {
+            background: #fff;
+            color: #FDDF41;
+        }
+    }
 }
 
 body {
