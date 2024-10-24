@@ -23,10 +23,10 @@
                     >
                         <p>
                             Ring Capital trusted us again for their website
-                            redesign following their rebranding initiative. Our
-                            deep understanding of their existing platform
-                            enabled us to efficiently modernize certain page
-                            templates while optimizing development costs.
+                            redesign following their rebranding initiative. As
+                            their long-term technical partner, we could
+                            precisely target improvements while optimizing
+                            resources and development time.
                         </p>
                         <a
                             href="https://ringcp.com/"
@@ -99,20 +99,7 @@
                             infrastructure from scratch.</p
                         >
                     </div>
-                    <div class="col-fifty-fifty col-img square content-pad">
-                        <div class="dithered-bg">
-                            <video
-                                type="video/mp4"
-                                src="/stuart-restaurants.mp4"
-                                autoplay
-                                muted
-                                loop
-                            ></video>
-                        </div>
-                    </div>
-                </div>
-                <div class="mod wrapper-fifty-fifty reversed">
-                    <div class="col-fifty-fifty col-img square content-pad">
+                    <!-- <div class="col-fifty-fifty col-img square content-pad">
                         <video
                             type="video/mp4"
                             src="/stuart-multilingual.mp4"
@@ -120,6 +107,27 @@
                             muted
                             loop
                         ></video>
+                    </div> -->
+                    <div class="col-fifty-fifty col-img square content-pad">
+                        <Image
+                            :url="'/ring-screen-1.png'"
+                            :alt="`A screenshot of a modular page on Ring's DatoCMS dashboard`"
+                            :width="2880"
+                            :height="1582"
+                        />
+                    </div>
+                </div>
+                <div class="mod wrapper-fifty-fifty reversed">
+                    <div class="col-fifty-fifty col-img square content-pad">
+                        <div class="dithered-bg">
+                            <video
+                                type="video/mp4"
+                                src="/ring-home.mp4"
+                                autoplay
+                                muted
+                                loop
+                            ></video>
+                        </div>
                     </div>
                     <div class="col-fifty-fifty content-pad">
                         <h2> Bringing Brand Identity to Life </h2>
@@ -162,7 +170,7 @@
                             for our new website for good reason: you're a
                             pleasure to work with. Your availability and
                             pedagogy make the task of redesigning a website
-                            quite east, even for people who have no experience
+                            quite easy, even for people who have no experience
                             in this field, as was my case. Finally, on a human
                             level, the contact was also very pleasant.
                         </p>
@@ -177,11 +185,20 @@
                 </div>
                 <div class="mod wrapper-img-full content-pad">
                     <Image
-                        :url="'/stuart-screen-1.png'"
-                        :alt="'A screenshot of Stuart home page.'"
+                        :url="'/ring-screen-2.png'"
+                        :alt="'A screenshot of the Enerdigit startup page from the Ring website portfolio.'"
                         :width="2880"
-                        :height="1580"
+                        :height="1582"
                     />
+                </div>
+                <div class="mod wrapper-img-full content-pad">
+                    <video
+                        type="video/mp4"
+                        src="/ring-portfolio.mp4"
+                        autoplay
+                        muted
+                        loop
+                    ></video>
                 </div>
                 <div class="mod wrapper-fifty-fifty">
                     <div class="col-fifty-fifty content-pad">
@@ -348,7 +365,7 @@ definePageMeta({
     color: var(--color);
 }
 .wrapper-intro-case-study {
-    margin-top: 20px;
+    margin-top: 30px;
     transform: translateY(200px) rotateX(-45deg);
     opacity: 0;
     p {

@@ -373,7 +373,7 @@
                             </div>
                             <div class="project-line">
                                 <span class="project-year line-content"
-                                    >2021 — Present</span
+                                    >2021 — 2024</span
                                 >
                                 <div class="line">
                                     <div class="overflow-line"></div>

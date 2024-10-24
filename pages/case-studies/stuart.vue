@@ -406,7 +406,7 @@ definePageMeta({
     color: var(--color);
 }
 .wrapper-intro-case-study {
-    margin-top: 20px;
+    margin-top: 30px;
     transform: translateY(200px) rotateX(-45deg);
     opacity: 0;
     p {
