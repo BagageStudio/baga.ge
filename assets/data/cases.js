@@ -12,9 +12,9 @@ export default {
         color: "#19B77F",
     },
     ring: {
-        mainTypoImage: "spacefill",
-        ditherPaletteImage: "spacefill-quad",
-        ditherTextureImage: "five",
-        color: "#FDDF41",
+        mainTypoImage: "ringcapital",
+        ditherPaletteImage: "ring-quad",
+        ditherTextureImage: "cross",
+        color: "#CD5A49",
     },
 };

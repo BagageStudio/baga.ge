@@ -3,7 +3,7 @@
         class="case page"
         id="case"
         ref="caseStudy"
-        style="--cs-primary: #fddf41"
+        style="--cs-primary: #CD5A49"
         data-id="ring"
     >
         <Header />
