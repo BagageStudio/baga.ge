@@ -286,25 +286,25 @@ onMounted(async () => {
 });
 
 useHead({
-    title: "Stuart — Bagage",
+    title: "Ring Capital — Bagage",
     meta: [
         {
             property: "og:title",
-            content: "Stuart — Bagage",
+            content: "Ring Capital — Bagage",
         },
         {
             name: "image",
             property: "og:image",
-            content: "https://baga.ge/stuart.jpg",
+            content: "https://baga.ge/ringcapital.jpg",
         },
         {
             name: "image",
             property: "og:image:secure_url",
-            content: "https://baga.ge/stuart.jpg",
+            content: "https://baga.ge/ringcapital.jpg",
         },
         {
             property: "og:url",
-            content: "https://baga.ge/case-studies/stuart",
+            content: "https://baga.ge/case-studies/ring",
         },
         {
             property: "og:description",
