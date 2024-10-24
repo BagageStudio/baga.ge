@@ -111,7 +111,7 @@
                             </div>
                             <div class="project-line">
                                 <span class="project-type line-content">
-                                    ↳ See it live
+                                    ↳ View case study
                                 </span>
                                 <div class="line"></div>
                             </div>
@@ -292,14 +292,6 @@
                                     <div class="overflow-line"></div>
                                 </div>
                             </div>
-                            <div class="project-line">
-                                <span class="project-type line-content">
-                                    ↳ See it live
-                                </span>
-                                <div class="line">
-                                    <div class="overflow-line"></div>
-                                </div>
-                            </div>
                         </div>
                         <a
                             href="https://lesindiens.netlify.app/"
@@ -407,12 +399,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a
-                            href="https://ondorse.co/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project"
-                        >
+                        <div class="project">
                             <div class="project-line wrapper-name-arrow">
                                 <h3 class="project-name line-content">
                                     Ondorse
@@ -450,15 +437,7 @@
                                     <div class="overflow-line"></div>
                                 </div>
                             </div>
-                            <div class="project-line">
-                                <span class="project-type line-content">
-                                    ↳ See it live
-                                </span>
-                                <div class="line">
-                                    <div class="overflow-line"></div>
-                                </div>
-                            </div>
-                        </a>
+                        </div>
                         <nuxt-link to="/case-studies/stuart" class="project">
                             <div class="project-line wrapper-name-arrow">
                                 <h3 class="project-name line-content">
