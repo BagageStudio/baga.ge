@@ -3,7 +3,7 @@
         class="case page"
         id="case"
         ref="caseStudy"
-        style="--cs-primary: #CD5A49"
+        style="--cs-primary: #cd5a49"
         data-id="ring"
     >
         <Header />
@@ -182,14 +182,6 @@
                             >
                         </footer>
                     </blockquote>
-                </div>
-                <div class="mod wrapper-img-full content-pad">
-                    <Image
-                        :url="'/ring-screen-2.png'"
-                        :alt="'A screenshot of the Enerdigit startup page from the Ring website portfolio.'"
-                        :width="2880"
-                        :height="1582"
-                    />
                 </div>
                 <div class="mod wrapper-img-full content-pad">
                     <video
