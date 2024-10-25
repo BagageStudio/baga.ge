@@ -99,15 +99,6 @@
                             infrastructure from scratch.</p
                         >
                     </div>
-                    <!-- <div class="col-fifty-fifty col-img square content-pad">
-                        <video
-                            type="video/mp4"
-                            src="/stuart-multilingual.mp4"
-                            autoplay
-                            muted
-                            loop
-                        ></video>
-                    </div> -->
                     <div class="col-fifty-fifty col-img square content-pad">
                         <Image
                             :url="'/ring-screen-1.png'"
@@ -301,12 +292,12 @@ useHead({
         {
             property: "og:description",
             content:
-                "Bagage provided ongoing support for the development and evolution of two websites for Stuart, addressing significant growth challenges.",
+                "From brand evolution to technical implementation: discover how Bagage second collaboration with Ring Capital showcases the benefits of long-term technological partnership.",
         },
         {
             name: "description",
             content:
-                "Bagage provided ongoing support for the development and evolution of two websites for Stuart, addressing significant growth challenges.",
+                "From brand evolution to technical implementation: discover how Bagage second collaboration with Ring Capital showcases the benefits of long-term technological partnership.",
         },
     ],
     link: [
