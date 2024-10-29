@@ -66,7 +66,7 @@
         </div>
         <div class="case-study container" id="mainCase">
             <div class="case-study-content">
-                <div class="mod wrapper-fifty-fifty reversed">
+                <div class="mod wrapper-fifty-fifty">
                     <div class="col-fifty-fifty content-pad">
                         <h2>Leveraging Existing Infrastructure</h2>
                         <p>
@@ -109,18 +109,6 @@
                     </div>
                 </div>
                 <div class="mod wrapper-fifty-fifty reversed">
-                    <div class="col-fifty-fifty col-img square content-pad">
-                        <div class="dithered-bg">
-                            <video
-                                type="video/mp4"
-                                src="/ring-home.mp4"
-                                autoplay
-                                muted
-                                loop
-                                playsinline
-                            ></video>
-                        </div>
-                    </div>
                     <div class="col-fifty-fifty content-pad">
                         <h2> Bringing Brand Identity to Life </h2>
                         <p
@@ -153,6 +141,18 @@
                                 perfectly with the proposed design</li
                             >
                         </ul>
+                    </div>
+                    <div class="col-fifty-fifty col-img square content-pad">
+                        <div class="dithered-bg">
+                            <video
+                                type="video/mp4"
+                                src="/ring-home.mp4"
+                                autoplay
+                                muted
+                                loop
+                                playsinline
+                            ></video>
+                        </div>
                     </div>
                 </div>
                 <div class="mod wrapper-testimonial content-pad">
