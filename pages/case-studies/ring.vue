@@ -117,6 +117,7 @@
                                 autoplay
                                 muted
                                 loop
+                                playsinline
                             ></video>
                         </div>
                     </div>
@@ -181,6 +182,7 @@
                         autoplay
                         muted
                         loop
+                        playsinline
                     ></video>
                 </div>
                 <div class="mod wrapper-fifty-fifty">

@@ -113,6 +113,7 @@
                                 autoplay
                                 muted
                                 loop
+                                playsinline
                             ></video>
                         </div>
                     </div>
@@ -225,6 +226,7 @@
                             autoplay
                             muted
                             loop
+                            playsinline
                         ></video>
                     </div>
                 </div>
