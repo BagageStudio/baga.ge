@@ -3,7 +3,7 @@ import glsl from "vite-plugin-glsl";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ["@nuxt/image", "nuxt-calendly", "@nuxtjs/sitemap"],
+    modules: ["@nuxt/image", "nuxt-calendly", "@nuxtjs/sitemap", "@nuxt/content"],
     site: {
         url: 'https://baga.ge',
     },
