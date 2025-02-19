@@ -176,13 +176,14 @@
                 </h2>
                 <div class="wrapper-keywords">
                     <ul class="keywords">
-                        <li>Jamstack</li>
+                        <li>Composable Arch</li>
                         <li>WebGL</li>
                         <li>Headless CMS</li>
                         <li>Nuxt</li>
-                        <li>Netlify</li>
-                        <li>Creative dev</li>
                         <li>Vue.js</li>
+                        <li>Netlify</li>
+                        <li>Astro</li>
+                        <li>Creative dev</li>
                         <li>GLSL</li>
                         <li>DatoCMS</li>
                         <li>Storyblok</li>
@@ -194,11 +195,10 @@
                         <li>Motion</li>
                         <li>Cloudflare Pages</li>
                         <li>Headless e‑commerce</li>
-                        <li>Snipcart</li>
+                        <li>Tailwind</li>
                         <li>GSAP</li>
                         <li>Figma</li>
-                        <li>Notion</li>
-                        <li>Linear</li>
+                        <li>Storybook</li>
                         <li>APIs integration</li>
                     </ul>
                 </div>
@@ -215,7 +215,7 @@
                     at&nbsp;the&nbsp;moment.
                 </p>
                 <div class="footer-text">
-                    <div class="copyright">©2024</div>
+                    <div class="copyright">©2025</div>
                     <h2 class="based">Based in Nantes</h2>
                 </div>
                 <div class="social-links">
