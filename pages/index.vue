@@ -48,7 +48,7 @@
                                 </div>
                                 <ul class="stack-list content-pad">
                                     <li>Composable architecture / JAMstack</li>
-                                    <li>Nuxt.js</li>
+                                    <li>Nuxt.js / Astro</li>
                                     <li>Headless CMS</li>
                                     <li>Webflow</li>
                                     <li>Creative development</li>
@@ -84,7 +84,7 @@
                                     Ring Capital
                                 </h3>
                                 <div class="wrapper-arrow-number line-content">
-                                    <div class="project-number">13</div>
+                                    <div class="project-number">15</div>
                                     <div class="project-arrow">↗</div>
                                 </div>
                                 <div class="line"></div>
@@ -116,6 +116,97 @@
                                 <div class="line"></div>
                             </div>
                         </nuxt-link>
+                        <div class="project">
+                            <div class="project-line wrapper-name-arrow">
+                                <h3 class="project-name line-content">
+                                    Maieuticapp
+                                </h3>
+                                <div class="wrapper-arrow-number line-content">
+                                    <div class="project-number">14</div>
+                                </div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-year line-content"
+                                    >2025</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-stack line-content"
+                                    >Astro Vercel</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <p class="project-intro line-content">
+                                    Create two landing pages, laying the
+                                    foundations for a new technical stack.
+                                </p>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <a
+                            href="https://singa.com/en"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project"
+                        >
+                            <div class="project-line wrapper-name-arrow">
+                                <h3 class="project-name line-content">
+                                    Singa
+                                </h3>
+                                <div class="wrapper-arrow-number line-content">
+                                    <div class="project-number">13</div>
+                                    <div class="project-arrow">↗</div>
+                                </div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-year line-content"
+                                    >2024</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-stack line-content"
+                                    >Nuxt.js Storyblok</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <p class="project-intro line-content">
+                                    Help the in-house team improve website
+                                    performance, by switching from server-side
+                                    rendering to static generation.
+                                </p>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-type line-content">
+                                    ↳ See it live
+                                </span>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                        </a>
                         <a
                             href="https://www.silvr.co/"
                             target="_blank"
@@ -136,7 +227,7 @@
                             </div>
                             <div class="project-line">
                                 <span class="project-year line-content"
-                                    >2024 — Present</span
+                                    >2024</span
                                 >
                                 <div class="line">
                                     <div class="overflow-line"></div>
@@ -816,7 +907,7 @@
                     at&nbsp;the&nbsp;moment.
                 </p>
                 <div class="footer-text">
-                    <div class="copyright">©2024</div>
+                    <div class="copyright">©2025</div>
                     <h2 class="based">Based in Nantes</h2>
                 </div>
                 <div class="social-links">
