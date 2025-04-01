@@ -78,6 +78,48 @@
                         </div>
                     </div>
                     <div class="projects-list">
+                        <a
+                            href="https://homerun.today"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project"
+                        >
+                            <div class="project-line wrapper-name-arrow">
+                                <h3 class="project-name line-content">
+                                    Homerun
+                                </h3>
+                                <div class="wrapper-arrow-number line-content">
+                                    <div class="project-number">16</div>
+                                    <div class="project-arrow">↗</div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-year line-content"
+                                    >2025</span
+                                >
+                                <div class="line"></div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-stack line-content"
+                                    >Astro Storyblok Netlify</span
+                                >
+                                <div class="line"></div>
+                            </div>
+                            <div class="project-line">
+                                <p class="project-intro line-content">
+                                    An interactive website featuring smooth
+                                    animations and playful details to express a
+                                    fresh brand identity.
+                                </p>
+                                <div class="line"></div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-type line-content">
+                                    ↳ See it live
+                                </span>
+                                <div class="line"></div>
+                            </div>
+                        </a>
                         <nuxt-link to="/case-studies/ring" class="project">
                             <div class="project-line wrapper-name-arrow">
                                 <h3 class="project-name line-content">
@@ -87,19 +129,25 @@
                                     <div class="project-number">15</div>
                                     <div class="project-arrow">↗</div>
                                 </div>
-                                <div class="line"></div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
                             <div class="project-line">
                                 <span class="project-year line-content"
                                     >2021 — Present</span
                                 >
-                                <div class="line"></div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
                             <div class="project-line">
                                 <span class="project-stack line-content"
                                     >Nuxt.js DatoCMS Netlify</span
                                 >
-                                <div class="line"></div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
                             <div class="project-line">
                                 <p class="project-intro line-content">
@@ -107,13 +155,17 @@
                                     impactful identity, and present their
                                     portfolio.
                                 </p>
-                                <div class="line"></div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
                             <div class="project-line">
                                 <span class="project-type line-content">
                                     ↳ View case study
                                 </span>
-                                <div class="line"></div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
                         </nuxt-link>
                         <div class="project">
@@ -161,9 +213,7 @@
                             class="project"
                         >
                             <div class="project-line wrapper-name-arrow">
-                                <h3 class="project-name line-content">
-                                    Singa
-                                </h3>
+                                <h3 class="project-name line-content">Singa</h3>
                                 <div class="wrapper-arrow-number line-content">
                                     <div class="project-number">13</div>
                                     <div class="project-arrow">↗</div>
@@ -214,9 +264,7 @@
                             class="project"
                         >
                             <div class="project-line wrapper-name-arrow">
-                                <h3 class="project-name line-content">
-                                    Silvr
-                                </h3>
+                                <h3 class="project-name line-content">Silvr</h3>
                                 <div class="wrapper-arrow-number line-content">
                                     <div class="project-number">12</div>
                                     <div class="project-arrow">↗</div>
