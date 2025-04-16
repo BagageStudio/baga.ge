@@ -77,27 +77,25 @@
                             + DatoCMS stack while:
                         </p>
                         <ul>
-                            <li
-                                >Restructuring content into modular
-                                components</li
-                            >
-                            <li
-                                >Preserving SEO value and performance
-                                optimizations</li
-                            >
-                            <li
-                                >Minimizing required content updates in the
-                                CMS</li
-                            >
+                            <li>
+                                Restructuring content into modular components
+                            </li>
+                            <li>
+                                Preserving SEO value and performance
+                                optimizations
+                            </li>
+                            <li>
+                                Minimizing required content updates in the CMS
+                            </li>
                         </ul>
-                        <p
-                            >This strategic decision to maintain the existing
+                        <p>
+                            This strategic decision to maintain the existing
                             technical foundation while enhancing its modularity
                             allowed us to focus our efforts on implementing the
                             new brand identity and improving the user
                             experience, rather than rebuilding the entire
-                            infrastructure from scratch.</p
-                        >
+                            infrastructure from scratch.
+                        </p>
                     </div>
                     <div class="col-fifty-fifty col-img square content-pad">
                         <Image
@@ -110,36 +108,35 @@
                 </div>
                 <div class="mod wrapper-fifty-fifty reversed">
                     <div class="col-fifty-fifty content-pad">
-                        <h2> Bringing Brand Identity to Life </h2>
-                        <p
-                            >We approached the brand implementation
-                            holistically, ensuring that both design and
-                            development worked together to express Ring
-                            Capital's values.</p
-                        >
-                        <p
-                            >This led to discussions with Marion, the designer,
-                            right from the start of the project.</p
-                        >
-                        <p
-                            >Our technical expertise helped translate their
+                        <h2>Bringing Brand Identity to Life</h2>
+                        <p>
+                            We approached the brand implementation holistically,
+                            ensuring that both design and development worked
+                            together to express Ring Capital's values.
+                        </p>
+                        <p>
+                            This led to discussions with Marion, the designer,
+                            right from the start of the project.
+                        </p>
+                        <p>
+                            Our technical expertise helped translate their
                             identity into an engaging digital experience
-                            through:</p
-                        >
+                            through:
+                        </p>
                         <ul>
-                            <li
-                                >Purposeful animations that reinforce the
-                                organic and fluid feel, to illustrate social and
-                                environmental impact</li
-                            >
-                            <li
-                                >Hover states that highlight elements of the
-                                brand guidelines</li
-                            >
-                            <li
-                                >Performance-optimized animations that fit in
-                                perfectly with the proposed design</li
-                            >
+                            <li>
+                                Purposeful animations that reinforce the organic
+                                and fluid feel, to illustrate social and
+                                environmental impact
+                            </li>
+                            <li>
+                                Hover states that highlight elements of the
+                                brand guidelines
+                            </li>
+                            <li>
+                                Performance-optimized animations that fit in
+                                perfectly with the proposed design
+                            </li>
                         </ul>
                     </div>
                     <div class="col-fifty-fifty col-img square content-pad">
@@ -156,24 +153,30 @@
                     </div>
                 </div>
                 <div class="mod wrapper-testimonial content-pad">
-                    <blockquote>
-                        <p class="title-a">
-                            Ring Capital has chosen to call on you once again
-                            for our new website for good reason: you're a
-                            pleasure to work with. Your availability and
-                            pedagogy make the task of redesigning a website
-                            quite easy, even for people who have no experience
-                            in this field, as was my case. Finally, on a human
-                            level, the contact was also very pleasant.
-                        </p>
-                        <footer>
-                            <span class="name">Victoire Cruanes-Lubrano</span>
-                            <span class="job-company"
-                                >Head of marketing and content strategy — Ring
-                                Capital</span
-                            >
-                        </footer>
-                    </blockquote>
+                    <div class="wrapper-trustfolio-testimonial">
+                        <a
+                            class="trustfolio-iframe-widget"
+                            data-name="endorsements-page-slider"
+                            href="https://trustfolio.co/profil/bagage-abUOsEnH9Rn"
+                            data-selection="kha4I4RZrOA,i3q5KOQShTK"
+                            data-limit="2"
+                            data-layout="full"
+                            data-colorlight="cd5a49"
+                            data-colormedium="cd5a49"
+                            data-colordark="cd5a49"
+                            data-ctacolorlight="cd5a49"
+                            data-ctacolormedium="cd5a49"
+                            data-ctacolordark="cd5a49"
+                            data-media="1"
+                            data-person="1"
+                            data-title="1"
+                            data-description="1"
+                            data-verbatim="1"
+                            data-qualities="0"
+                            data-about="0"
+                            >Découvrez les témoignages de nos clients</a
+                        >
+                    </div>
                 </div>
                 <div class="mod wrapper-img-full content-pad">
                     <video
@@ -187,7 +190,7 @@
                 </div>
                 <div class="mod wrapper-fifty-fifty">
                     <div class="col-fifty-fifty content-pad">
-                        <h2> Long-Term Partnership Benefits </h2>
+                        <h2>Long-Term Partnership Benefits</h2>
                     </div>
                     <div class="col-fifty-fifty content-pad">
                         <p>
@@ -198,12 +201,12 @@
                             alongside growing business needs, whether they're
                             tool-related or content-focused.
                         </p>
-                        <p
-                            >Fun fact: Some of our partnerships have lasted for
+                        <p>
+                            Fun fact: Some of our partnerships have lasted for
                             several years, and we've even helped clients build
                             their in-house web development teams by assisting
-                            with their first technical hires.</p
-                        >
+                            with their first technical hires.
+                        </p>
                     </div>
                 </div>
                 <div class="credits">
@@ -262,6 +265,13 @@ import { caseEnter, caseLeave } from "~/assets/js/transitions/case";
 const caseStudy = ref(null);
 
 onMounted(async () => {
+    // Load the Trustfolio widget script
+    const trustfolioScript = document.createElement("script");
+    trustfolioScript.async = true;
+    trustfolioScript.src = "https://share.trustfolio.co/widgets/embed.js";
+    trustfolioScript.charset = "utf-8";
+    document.head.appendChild(trustfolioScript);
+
     const initialLoad =
         !document.documentElement.classList.contains("already-loaded");
     if (initialLoad) {

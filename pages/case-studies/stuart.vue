@@ -160,23 +160,29 @@
                     </div>
                 </div>
                 <div class="mod wrapper-testimonial content-pad">
-                    <blockquote>
-                        <p class="title-a">
-                            We've been working together for quite a while now,
-                            and throughout this time, Bagage has consistently
-                            delivered high-quality work on time and excelled at
-                            tackling complex challenges, showcasing exceptional
-                            skills. I recommend them to anyone seeking
-                            developers who are not only reliable and
-                            professional but also innovative and adaptable.
-                        </p>
-                        <footer>
-                            <span class="name">Viktoriia Zakorchemna</span>
-                            <span class="job-company"
-                                >Web developer — Stuart</span
-                            >
-                        </footer>
-                    </blockquote>
+                    <div class="wrapper-trustfolio-testimonial">
+                        <a
+                            class="trustfolio-iframe-widget"
+                            data-name="endorsement"
+                            href="https://trustfolio.co/profil/bagage-abUOsEnH9Rn"
+                            data-id="PM0q9yl8yNt"
+                            data-size="L"
+                            data-colorlight="0091fe"
+                            data-colormedium="0091fe"
+                            data-colordark="0091fe"
+                            data-ctacolorlight="0091fe"
+                            data-ctacolormedium="0091fe"
+                            data-ctacolordark="0091fe"
+                            data-media="1"
+                            data-person="1"
+                            data-title="1"
+                            data-description="1"
+                            data-verbatim="1"
+                            data-qualities="0"
+                            data-about="0"
+                            >Découvrez les témoignages de nos clients</a
+                        >
+                    </div>
                 </div>
                 <div class="mod wrapper-fifty-fifty reversed">
                     <div class="col-fifty-fifty content-pad">
@@ -320,6 +326,13 @@ import { caseEnter, caseLeave } from "~/assets/js/transitions/case";
 const caseStudy = ref(null);
 
 onMounted(async () => {
+    // Load the Trustfolio widget script
+    const trustfolioScript = document.createElement("script");
+    trustfolioScript.async = true;
+    trustfolioScript.src = "https://share.trustfolio.co/widgets/embed.js";
+    trustfolioScript.charset = "utf-8";
+    document.head.appendChild(trustfolioScript);
+
     const initialLoad =
         !document.documentElement.classList.contains("already-loaded");
     if (initialLoad) {

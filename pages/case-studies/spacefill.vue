@@ -167,23 +167,29 @@
                     </div>
                 </div>
                 <div class="mod wrapper-testimonial content-pad">
-                    <blockquote>
-                        <p class="title-a">
-                            I've been working with Adrien and Clément on
-                            Spacefill's website revamp. We've migrated from a
-                            Wordpress, to Dato CMS, changed the whole UX and UI.
-                            Our one-shot project has evolved to an ongoing
-                            partnership. I appreciate their reactivity and sense
-                            of design and branding. The collaboration is
-                            seamless, they understand marketers and our need.
-                        </p>
-                        <footer>
-                            <span class="name">Philippine Breuil</span>
-                            <span class="job-company"
-                                >Head of marketing — Spacefill</span
-                            >
-                        </footer>
-                    </blockquote>
+                    <div class="wrapper-trustfolio-testimonial">
+                        <a
+                            class="trustfolio-iframe-widget"
+                            data-name="endorsement"
+                            href="https://trustfolio.co/profil/bagage-abUOsEnH9Rn"
+                            data-id="8sFNphF_ERP"
+                            data-size="L"
+                            data-colorlight="1bd292"
+                            data-colormedium="1bd292"
+                            data-colordark="1bd292"
+                            data-ctacolorlight="1bd292"
+                            data-ctacolormedium="1bd292"
+                            data-ctacolordark="1bd292"
+                            data-media="1"
+                            data-person="1"
+                            data-title="1"
+                            data-description="1"
+                            data-verbatim="1"
+                            data-qualities="0"
+                            data-about="0"
+                            >Découvrez les témoignages de nos clients</a
+                        >
+                    </div>
                 </div>
                 <div class="credits">
                     <div class="col-title content-pad">
@@ -242,6 +248,13 @@ import { caseEnter, caseLeave } from "~/assets/js/transitions/case";
 const caseStudy = ref(null);
 
 onMounted(async () => {
+    // Load the Trustfolio widget script
+    const trustfolioScript = document.createElement("script");
+    trustfolioScript.async = true;
+    trustfolioScript.src = "https://share.trustfolio.co/widgets/embed.js";
+    trustfolioScript.charset = "utf-8";
+    document.head.appendChild(trustfolioScript);
+
     const initialLoad =
         !document.documentElement.classList.contains("already-loaded");
     if (initialLoad) {
