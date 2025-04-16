@@ -519,8 +519,32 @@ div.project {
 
 // testimonial
 .wrapper-testimonial {
-    .wrapper-trustfolio-testimonial {
+    .authenticated-testimonial {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .authenticated-testimonial-link {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        width: fit-content;
+        font-size: 1.4rem;
+        padding: 5px 10px;
+        border-radius: 6px;
+        text-decoration: none;
+        color: $black;
         background-color: $white;
+        transition: opacity 0.2s ease-out;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    .authenticated-testimonial-icon {
+        flex: none;
+        width: 20px;
+        height: 20px;
+        color: var(--cs-primary);
     }
     blockquote {
         p {

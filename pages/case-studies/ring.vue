@@ -153,30 +153,48 @@
                     </div>
                 </div>
                 <div class="mod wrapper-testimonial content-pad">
-                    <div class="wrapper-trustfolio-testimonial">
+                    <div class="authenticated-testimonial">
                         <a
-                            class="trustfolio-iframe-widget"
-                            data-name="endorsements-page-slider"
-                            href="https://trustfolio.co/profil/bagage-abUOsEnH9Rn"
-                            data-selection="kha4I4RZrOA,i3q5KOQShTK"
-                            data-limit="2"
-                            data-layout="full"
-                            data-colorlight="cd5a49"
-                            data-colormedium="cd5a49"
-                            data-colordark="cd5a49"
-                            data-ctacolorlight="cd5a49"
-                            data-ctacolormedium="cd5a49"
-                            data-ctacolordark="cd5a49"
-                            data-media="1"
-                            data-person="1"
-                            data-title="1"
-                            data-description="1"
-                            data-verbatim="1"
-                            data-qualities="0"
-                            data-about="0"
-                            >Découvrez les témoignages de nos clients</a
+                            href="https://trustfolio.co/profil/bagage-abUOsEnH9Rn/reference/kha4I4RZrOA"
+                            target="_blank"
+                            class="authenticated-testimonial-link"
                         >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                                aria-hidden="true"
+                                class="authenticated-testimonial-icon"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M9.661 2.237a.531.531 0 01.678 0 11.947 11.947 0 007.078 2.749.5.5 0 01.479.425c.069.52.104 1.05.104 1.59 0 5.162-3.26 9.563-7.834 11.256a.48.48 0 01-.332 0C5.26 16.564 2 12.163 2 7c0-.538.035-1.069.104-1.589a.5.5 0 01.48-.425 11.947 11.947 0 007.077-2.75zm4.196 5.954a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                                    clip-rule="evenodd"
+                                ></path>
+                            </svg>
+                            Authenticated by Trustfolio
+                        </a>
                     </div>
+                    <blockquote
+                        cite="https://trustfolio.co/profil/bagage-abUOsEnH9Rn/reference/kha4I4RZrOA"
+                    >
+                        <p class="title-a">
+                            Ring Capital has chosen to call on you once again
+                            for our new website for good reason: you're a
+                            pleasure to work with. Your availability and
+                            pedagogy make the task of redesigning a website
+                            quite easy, even for people who have no experience
+                            in this field, as was my case. Finally, on a human
+                            level, the contact was also very pleasant.
+                        </p>
+                        <footer>
+                            <span class="name">Victoire Cruanes-Lubrano</span>
+                            <span class="job-company"
+                                >Head of marketing and content strategy — Ring
+                                Capital</span
+                            >
+                        </footer>
+                    </blockquote>
                 </div>
                 <div class="mod wrapper-img-full content-pad">
                     <video
@@ -265,13 +283,6 @@ import { caseEnter, caseLeave } from "~/assets/js/transitions/case";
 const caseStudy = ref(null);
 
 onMounted(async () => {
-    // Load the Trustfolio widget script
-    const trustfolioScript = document.createElement("script");
-    trustfolioScript.async = true;
-    trustfolioScript.src = "https://share.trustfolio.co/widgets/embed.js";
-    trustfolioScript.charset = "utf-8";
-    document.head.appendChild(trustfolioScript);
-
     const initialLoad =
         !document.documentElement.classList.contains("already-loaded");
     if (initialLoad) {
