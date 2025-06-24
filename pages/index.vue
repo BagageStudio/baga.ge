@@ -89,7 +89,7 @@
                                     Homerun
                                 </h3>
                                 <div class="wrapper-arrow-number line-content">
-                                    <div class="project-number">16</div>
+                                    <div class="project-number">17</div>
                                     <div class="project-arrow">↗</div>
                                 </div>
                             </div>
@@ -126,7 +126,7 @@
                                     Ring Capital
                                 </h3>
                                 <div class="wrapper-arrow-number line-content">
-                                    <div class="project-number">15</div>
+                                    <div class="project-number">16</div>
                                     <div class="project-arrow">↗</div>
                                 </div>
                                 <div class="line">
@@ -168,6 +168,54 @@
                                 </div>
                             </div>
                         </nuxt-link>
+                        <a
+                            href="https://trustfolio.co/profil/bagage-abUOsEnH9Rn"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project"
+                        >
+                            <div class="project-line wrapper-name-arrow">
+                                <h3 class="project-name line-content">
+                                    Trustfolio
+                                </h3>
+                                <div class="wrapper-arrow-number line-content">
+                                    <div class="project-number">15</div>
+                                    <div class="project-arrow">↗</div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-year line-content"
+                                    >2025</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-stack line-content"
+                                    >Nuxt.js Vercel</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <p class="project-intro line-content">
+                                    Development of several key components following graphic redesign.
+                                </p>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-type line-content">
+                                    ↳ See it live
+                                </span>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                        </a>
                         <div class="project">
                             <div class="project-line wrapper-name-arrow">
                                 <h3 class="project-name line-content">
