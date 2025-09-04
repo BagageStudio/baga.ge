@@ -89,7 +89,7 @@
                                     Homerun
                                 </h3>
                                 <div class="wrapper-arrow-number line-content">
-                                    <div class="project-number">17</div>
+                                    <div class="project-number">18</div>
                                     <div class="project-arrow">↗</div>
                                 </div>
                             </div>
@@ -118,6 +118,56 @@
                                     ↳ See it live
                                 </span>
                                 <div class="line"></div>
+                            </div>
+                        </a>
+                        <a
+                            href="https://heal.dev"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project"
+                        >
+                            <div class="project-line wrapper-name-arrow">
+                                <h3 class="project-name line-content">
+                                    Heal.dev
+                                </h3>
+                                <div class="wrapper-arrow-number line-content">
+                                    <div class="project-number">17</div>
+                                    <div class="project-arrow">↗</div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-year line-content"
+                                    >2025</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-stack line-content"
+                                    >Astro Storyblok Netlify</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <p class="project-intro line-content">
+                                    A developer-focused platform featuring
+                                    custom animations and micro‑interactions
+                                    that bring the brand experience to life.
+                                </p>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-type line-content">
+                                    ↳ See it live
+                                </span>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
                         </a>
                         <nuxt-link to="/case-studies/ring" class="project">
@@ -201,7 +251,8 @@
                             </div>
                             <div class="project-line">
                                 <p class="project-intro line-content">
-                                    Development of several key components following graphic redesign.
+                                    Development of several key components
+                                    following graphic redesign.
                                 </p>
                                 <div class="line">
                                     <div class="overflow-line"></div>
