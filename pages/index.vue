@@ -89,7 +89,7 @@
                                     Homerun
                                 </h3>
                                 <div class="wrapper-arrow-number line-content">
-                                    <div class="project-number">18</div>
+                                    <div class="project-number">19</div>
                                     <div class="project-arrow">↗</div>
                                 </div>
                             </div>
@@ -118,6 +118,56 @@
                                     ↳ See it live
                                 </span>
                                 <div class="line"></div>
+                            </div>
+                        </a>
+                        <a
+                            href="https://www.allocab.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project"
+                        >
+                            <div class="project-line wrapper-name-arrow">
+                                <h3 class="project-name line-content">
+                                    Allocab
+                                </h3>
+                                <div class="wrapper-arrow-number line-content">
+                                    <div class="project-number">18</div>
+                                    <div class="project-arrow">↗</div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-year line-content"
+                                    >2025</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-stack line-content"
+                                    >Astro Storyblok</span
+                                >
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <p class="project-intro line-content">
+                                    A scalable 5,000+ page website with modular
+                                    architecture and smooth animations
+                                    supporting a complete brand refresh.
+                                </p>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-type line-content">
+                                    ↳ See it live
+                                </span>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
                         </a>
                         <a
@@ -185,7 +235,7 @@
                             </div>
                             <div class="project-line">
                                 <span class="project-year line-content"
-                                    >2021 — Present</span
+                                    >2021 — 2025</span
                                 >
                                 <div class="line">
                                     <div class="overflow-line"></div>
@@ -420,7 +470,7 @@
                             </div>
                             <div class="project-line">
                                 <span class="project-year line-content"
-                                    >2024 — Present</span
+                                    >2024 — 2025</span
                                 >
                                 <div class="line">
                                     <div class="overflow-line"></div>
@@ -691,7 +741,7 @@
                             </div>
                             <div class="project-line">
                                 <span class="project-year line-content"
-                                    >2018 — Present</span
+                                    >2018 — 2025</span
                                 >
                                 <div class="line">
                                     <div class="overflow-line"></div>
