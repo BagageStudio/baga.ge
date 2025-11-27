@@ -21,19 +21,23 @@
                             <div class="wrapper-intro-txt">
                                 <div class="col-intro-txt content-pad">
                                     <p>
-                                        We enjoy working at the intersection of
-                                        design and development. We love to share
-                                        the energy of inspiring people who enjoy
-                                        what they do, and we help them achieve
-                                        the best result.
+                                        We thrive at the intersection of design
+                                        and development, partnering with
+                                        creative studios and agencies to bring
+                                        ambitious projects to life, while also
+                                        working directly with forward-thinking
+                                        companies.
                                     </p>
                                 </div>
                                 <div class="col-intro-txt content-pad">
                                     <p>
-                                        We have developed partnerships with
-                                        talented freelance designers and
-                                        marketers, and we work in collaboration
-                                        with your team.
+                                        Through collaborations with studios like
+                                        Pelo and LEOLEO, and direct partnerships
+                                        with companies like Aircall and Stuart,
+                                        we've proven that the best digital
+                                        experiences happen when technical
+                                        expertise meets creative vision from day
+                                        one.
                                     </p>
                                 </div>
                             </div>
@@ -917,7 +921,7 @@
                             </div>
                         </a>
                         <a
-                            href="https://www.stratumn.com/"
+                            href="https://stratumn.com/"
                             target="_blank"
                             rel="noopener noreferrer"
                             class="project"
