@@ -83,6 +83,48 @@
                     </div>
                     <div class="projects-list">
                         <a
+                            href="https://neon-noir.ai/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project"
+                        >
+                            <div class="project-line wrapper-name-arrow">
+                                <h3 class="project-name line-content">
+                                    Neon Noir
+                                </h3>
+                                <div class="wrapper-arrow-number line-content">
+                                    <div class="project-number">20</div>
+                                    <div class="project-arrow">↗</div>
+                                </div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-year line-content"
+                                    >2026</span
+                                >
+                                <div class="line"></div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-stack line-content"
+                                    >Astro Storyblok Netlify</span
+                                >
+                                <div class="line"></div>
+                            </div>
+                            <div class="project-line">
+                                <p class="project-intro line-content">
+                                    An OS-inspired one-page interface for a
+                                    label and community space powered by ZML,
+                                    UMA and Drysdale.
+                                </p>
+                                <div class="line"></div>
+                            </div>
+                            <div class="project-line">
+                                <span class="project-type line-content">
+                                    ↳ See it live
+                                </span>
+                                <div class="line"></div>
+                            </div>
+                        </a>
+                        <a
                             href="https://homerun.today"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -101,13 +143,17 @@
                                 <span class="project-year line-content"
                                     >2025</span
                                 >
-                                <div class="line"></div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
                             <div class="project-line">
                                 <span class="project-stack line-content"
                                     >Astro Storyblok Netlify</span
                                 >
-                                <div class="line"></div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
                             <div class="project-line">
                                 <p class="project-intro line-content">
@@ -115,13 +161,17 @@
                                     animations and playful details to express a
                                     fresh brand identity.
                                 </p>
-                                <div class="line"></div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
                             <div class="project-line">
                                 <span class="project-type line-content">
                                     ↳ See it live
                                 </span>
-                                <div class="line"></div>
+                                <div class="line">
+                                    <div class="overflow-line"></div>
+                                </div>
                             </div>
                         </a>
                         <a
