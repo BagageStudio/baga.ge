@@ -238,7 +238,7 @@
                     at&nbsp;the&nbsp;moment.
                 </p>
                 <div class="footer-text">
-                    <div class="copyright">©2025</div>
+                    <div class="copyright">©2026</div>
                     <h2 class="based">Based in Nantes</h2>
                 </div>
                 <div class="social-links">
